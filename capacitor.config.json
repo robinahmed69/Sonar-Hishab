@@ -1,0 +1,6 @@
+{
+  "appId": "com.sonarupa.hisab",
+  "appName": "সোনা-রুপার হিসাব",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
