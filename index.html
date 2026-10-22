@@ -6,14 +6,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>সোনা-রুপার হিসাবের খাতা</title>
+<title>Gold Manager</title>
 <style>
 :root{--bg:#f3f6fa;--card:#fff;--ink:#18212f;--muted:#657184;--line:#e2e6ec;--gold:#9a6a00;--blue:#2457a7;--red:#b42318;color-scheme:light}body.dark-mode{--bg:#0b1220;--card:#121c2b;--ink:#e8eef7;--muted:#a3b0c2;--line:#29374a;--gold:#f4c45d;--blue:#477fe0;--red:#ff7777;color-scheme:dark}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
 body.font-hind{font-family:"Hind Siliguri",sans-serif}
 body.font-noto{font-family:"Noto Sans Bengali",sans-serif}
 body.font-system{font-family:system-ui,-apple-system,sans-serif}
-header{background:#172b3a;color:#fff;padding:20px 16px 62px;position:relative;padding-right:68px}header h1{font-size:17px;margin:0 0 5px}header p{margin:0;color:#dbe4eb;font-size:13px}
+header{background:#172b3a;color:#fff;padding:20px 16px 16px;position:relative;padding-right:68px}header h1{font-size:17px;margin:0 0 5px}header p{margin:0;color:#dbe4eb;font-size:13px}
 .header-tools{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;align-items:center;gap:7px}.crypto-launch{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 3px;background:#172b3a;color:#fff;border:0;border-radius:8px;width:58px;box-sizing:border-box;position:relative;z-index:2}.crypto-launch svg{width:32px;height:32px;filter:drop-shadow(0 1px 2px #0004)}.crypto-launch span{font-size:10px;line-height:1.1;font-weight:700;color:#f3d58a}.crypto-launch:active{transform:scale(.96)}.crypto-overlay{display:none;position:fixed;inset:0;background:#0b1724a8;z-index:1000;padding:14px;align-items:center;justify-content:center}.crypto-overlay.open{display:flex}.crypto-panel{width:min(620px,100%);max-height:88vh;overflow:auto;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 18px 60px #0005;padding:14px}.crypto-head{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:-14px;background:#fff;padding:2px 0 10px;z-index:1}.crypto-head h2{font-size:16px;margin:0}.crypto-head .actions{gap:6px}.crypto-head button{font-size:12px;padding:7px 9px}.crypto-meta{font-size:12px;color:var(--muted);margin:0 0 8px}.crypto-table{font-size:12px;white-space:normal}.crypto-table th,.crypto-table td{padding:6px 5px}.crypto-table td:nth-child(2){min-width:115px}.crypto-price{font-variant-numeric:tabular-nums;text-align:right}.crypto-change-up{color:#16803d}.crypto-change-down{color:#c62828}.crypto-loading{text-align:center;padding:24px;color:var(--muted);font-size:13px}.tool-icon{width:38px;height:38px;border-radius:12px;padding:0;background:#ffffff1c;color:#fff;border:1px solid #ffffff55;font-size:18px;display:grid;place-items:center}.font-pop{display:none;position:absolute;right:0;top:44px;width:220px;background:#fff;color:var(--ink);padding:12px;border-radius:12px;box-shadow:0 8px 28px #0003;z-index:20}.font-pop.open{display:block}.font-pop label{display:block;margin-bottom:7px}.font-pop select{padding:8px}.clock{font-size:14px;font-weight:700;color:#ffe08a;font-variant-numeric:tabular-nums;white-space:normal;line-height:1.6;letter-spacing:.2px}.author-link{color:#f3d58a;text-decoration:none;font-weight:600}.author-link:active,.author-link:hover{text-decoration:underline}.contact-footer{padding:16px 12px 22px;text-align:center;color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px}.contact-footer a{display:inline-flex;align-items:center;gap:6px;color:#1877f2;text-decoration:none;font-size:12px;font-weight:650}.contact-footer a svg{width:15px;height:15px;flex:none}.contact-footer a:hover{text-decoration:underline}
 main{max-width:900px;margin:0 auto;padding:14px;display:grid;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 2px 8px #172b3a08}
 h2{font-size:17px;margin:0 0 12px}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{border:1px solid var(--line);border-radius:10px;padding:11px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:17px;margin-top:4px;overflow-wrap:anywhere}
@@ -29,17 +29,21 @@ details.card{padding:0;overflow:hidden;border:1px solid #dce3eb;border-radius:16
 details.precious-calc-card{border:1px solid #c7a45b;border-radius:20px;overflow:hidden;background:var(--card);box-shadow:0 10px 28px #13263b12}
 details.precious-calc-card>summary{background:linear-gradient(120deg,#172b3a 0%,#243f52 58%,#6e5525 100%);color:#fff;padding:18px 16px;letter-spacing:.1px}
 
-/* Four distinct premium folder colors, matching the mathematical calculator style */
-details.card#goldrRatesCard>summary{background:linear-gradient(120deg,#173b32 0%,#23745d 58%,#b18b35 100%);color:#fff}
-details.card#goldrRatesCard>summary::before{content:'৳';background:linear-gradient(145deg,#d7f5e7,#8bc9ae);color:#14513f}
-main>details.card:nth-of-type(2)>summary{background:linear-gradient(120deg,#4b2b72 0%,#7650a6 58%,#bd8bd4 100%);color:#fff}
-main>details.card:nth-of-type(2)>summary::before{content:'◆';background:linear-gradient(145deg,#f0dcff,#c5a0e8);color:#4b2b72}
-main>details.card.precious-calc-card>summary{background:linear-gradient(120deg,#172b3a 0%,#243f52 58%,#6e5525 100%);color:#fff}
-main>details.card:nth-of-type(4)>summary{background:linear-gradient(120deg,#71332f 0%,#a64e48 58%,#d79b55 100%);color:#fff}
-main>details.card:nth-of-type(4)>summary::before{content:'৳';background:linear-gradient(145deg,#ffe2c4,#e9a978);color:#71332f}
-main>details.card>summary::after{background:#ffffff30;color:#fff}
-
-details.precious-calc-card>summary::before{content:'✦';background:linear-gradient(145deg,#f8e6a7,#c89b3d);color:#263746}
+/* Four compact square folders in one consistent light-purple shade */
+main{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+main>details.card{min-width:0;border:1px solid #d9c8f5;border-radius:16px;box-shadow:0 4px 12px #8c6ac01a;transition:transform .18s ease,box-shadow .18s ease}
+main>details.card:active{transform:scale(.985)}
+main>details.card>summary{min-height:112px;height:112px;padding:12px 9px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;text-align:center;font-size:13px;line-height:1.35;font-weight:750;background:#eee5ff;color:#563b83;border-radius:15px}
+main>details.card>summary::before{content:'▦';flex:0 0 30px;width:30px;height:30px;border-radius:9px;background:#e0d1ff;color:#684a9d;font-size:17px}
+main>details.card:nth-of-type(2)>summary::before{content:'◆'}
+main>details.card.precious-calc-card>summary{background:#eee5ff;color:#563b83;padding:12px 9px;letter-spacing:0}
+main>details.card.precious-calc-card>summary::before{content:'✦';background:#e0d1ff;color:#684a9d}
+main>details.card:nth-of-type(4)>summary::before{content:'৳'}
+main>details.card>summary::after{position:absolute;right:7px;top:7px;width:22px;height:22px;flex:0 0 22px;margin:0;background:#e0d1ff;color:#684a9d;font-size:16px}
+main>details.card>summary{position:relative;padding-top:28px}
+main>details.card[open]>summary{border-radius:15px 15px 0 0}
+main>details.card[open]{grid-column:1/-1}
+@media(max-width:420px){main{padding:10px;gap:10px}main>details.card>summary{height:100px;min-height:100px;font-size:12px;padding:26px 7px 8px}main>details.card>summary::before{flex-basis:27px;width:27px;height:27px}}
 .precious-calc-content{padding:16px;background:linear-gradient(180deg,#f7f8fa 0%,#fff 42%)}
 .calc-intro{padding:15px 16px;margin:0 0 14px;border:1px solid #ead9aa;border-radius:15px;background:linear-gradient(125deg,#fff9e9,#f5f7fa 75%)}
 .calc-kicker{font-size:10px;letter-spacing:1.8px;font-weight:800;color:#98702a}
@@ -99,6 +103,158 @@ body.dark-mode .weight-result>div {background:linear-gradient(135deg,#302a1b,#24
 body.dark-mode .weight-result>div+div {background:linear-gradient(135deg,#1b2c3e,#142235);border-color:#344b63;}
 body.dark-mode .weight-result strong {color:#f1f5f9;}
 
+
+.clock-card{margin-top:8px;display:block;max-width:100%;padding:0;background:none;border:0;box-shadow:none;animation:clockIn .7s cubic-bezier(.2,.8,.2,1) both}
+.clock-top{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.6px;color:#cfdbe8;font-weight:700}
+.clock-label{flex:1}
+.clock-live{display:none;font-size:9px;letter-spacing:1.4px;color:#ffe08a;border:1px solid rgba(255,224,138,.45);border-radius:999px;padding:1px 7px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#35d07f;box-shadow:0 0 0 0 rgba(53,208,127,.6);animation:livePulse 2s ease-out infinite}
+.clock-time{display:flex;align-items:baseline;gap:1px;margin-top:3px;font-variant-numeric:tabular-nums;line-height:1.05;color:#fff2c7}
+.cd{display:inline-block;min-width:1.15ch;text-align:center;font-size:20px;font-weight:800;letter-spacing:.2px;text-shadow:0 1px 8px rgba(255,224,138,.25)}
+.cds{font-size:14px;font-weight:700;color:#f3d58a;opacity:.95}
+.cc{font-size:17px;font-weight:700;color:#f3d58a;opacity:.9;animation:colonBlink 1s steps(1) infinite;position:relative;top:-1px}
+.cc.cs{font-size:13px}
+.clock-ap{margin-left:6px;align-self:center;font-size:9px;font-weight:800;letter-spacing:.6px;color:#172b3a;background:linear-gradient(135deg,#ffe08a,#e8b84a);border-radius:5px;padding:2px 5px}
+.clock-date{margin-top:3px;font-size:11px;font-weight:600;color:#e6edf5;letter-spacing:.2px}
+.clock-bar{margin-top:6px;height:2px;max-width:150px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+.clock-bar i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#f3d58a,#ffe08a);transition:width 1s linear}
+.cd.tick{animation:digitIn .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes digitIn{from{opacity:0;transform:translateY(-38%) scale(.94)}to{opacity:1;transform:none}}
+@keyframes colonBlink{0%,55%{opacity:.95}56%,100%{opacity:.3}}
+@keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(53,208,127,.55)}70%,100%{box-shadow:0 0 0 8px rgba(53,208,127,0)}}
+@keyframes clockIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.clock-card,.cd.tick,.cc,.live-dot{animation:none}.clock-bar i{transition:none}}
+
+/* Gold Manager: compact Other's launcher */
+#gmOthers{position:fixed!important;left:8px!important;bottom:8px!important;top:auto!important;z-index:99999!important;width:40px;max-width:calc(100vw - 16px);border:0!important;border-radius:12px!important;overflow:visible!important;box-shadow:0 4px 14px #0003!important;background:transparent!important;margin:0!important;transform:none!important}
+#gmOthers>summary{width:40px;height:40px;min-height:40px;box-sizing:border-box;padding:4px!important;border-radius:12px!important;justify-content:center!important;gap:0!important;font-size:0!important;box-shadow:0 3px 10px #0002}
+#gmOthers>summary:before{content:'✦'!important;flex:0 0 27px!important;width:27px!important;height:27px!important;border-radius:9px!important;font-size:17px!important}
+#gmOthers>summary:after{display:none!important}
+#gmOthers[open]{position:fixed!important;left:8px!important;bottom:8px!important;top:auto!important;width:min(420px,calc(100vw - 16px));max-height:78vh;background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important;overflow:hidden!important}
+#gmOthers[open]>summary{width:100%;height:45px;min-height:45px;border-radius:0!important;font-size:14px!important;justify-content:flex-start!important;padding:7px 12px!important}
+#gmOthers[open]>summary:before{flex:0 0 28px!important;width:28px!important;height:28px!important;font-size:17px!important}
+#gmOthers[open]>summary:after{display:grid!important;content:'×';transform:none!important;background:#ffffff24;color:inherit}
+#gmOthers .folder-content{max-height:calc(78vh - 45px);overflow-y:auto;padding:10px!important}
+#gmOthers .gm-tool{padding:10px;margin-bottom:9px;border-radius:11px}
+#gmOthers .gm-tool h3{font-size:14px;margin-bottom:7px}
+#gmOthers .gm-result{padding:8px;font-size:13px}
+#gmOthers .hint{font-size:11px}
+@media(max-width:480px){#gmOthers[open]{width:calc(100vw - 16px)}}
+}
+#gmOthers>summary{background:linear-gradient(120deg,#24384b,#536b7c 58%,#a37b2a)!important;color:#fff}
+#gmOthers>summary:before{content:'✦'!important;background:linear-gradient(145deg,#fff1bb,#d8aa3d)!important;color:#293849!important}
+.gm-tool{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:13px;background:var(--card)}.gm-tool h3{font-size:15px;margin:0 0 10px}.gm-result{padding:11px;border-radius:10px;background:#fff7df;border:1px solid #ead7a1;margin-top:10px;line-height:1.65;overflow-wrap:anywhere}.gm-result strong{color:#785300}body.dark-mode .gm-result{background:#282316;border-color:#63512a}body.dark-mode .gm-result strong{color:#f5d27a}
+/* Three compact animated folders inside Other's */
+#gmOthers .gm-folder-list{display:flex;flex-direction:column;gap:9px;padding:10px!important}
+#gmOthers .gm-subfolder{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--card);box-shadow:0 2px 7px #0000000a}
+#gmOthers .gm-subfolder>summary{list-style:none;display:flex;align-items:center;gap:10px;padding:11px;min-height:45px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text);background:linear-gradient(110deg,var(--card),rgba(180,145,65,.09))}
+#gmOthers .gm-subfolder>summary::-webkit-details-marker{display:none}
+#gmOthers .gm-sub-icon{display:grid;place-items:center;flex:0 0 29px;width:29px;height:29px;border-radius:9px;background:linear-gradient(140deg,#f8e6a9,#d5a438);color:#263545;font-size:17px;font-weight:800}
+#gmOthers .gm-sub-chevron{margin-left:auto;font-size:18px;transition:transform .24s ease;opacity:.75}
+#gmOthers .gm-subfolder[open]>summary .gm-sub-chevron{transform:rotate(180deg)}
+#gmOthers .gm-subcontent{padding:0 10px 10px;animation:gmFolderOpen .28s cubic-bezier(.2,.8,.2,1) both;transform-origin:top}
+#gmOthers .gm-subfolder:not([open]) .gm-subcontent{display:none}
+#gmOthers .gm-subcontent .gm-tool{margin:0;border:0;box-shadow:none;padding:8px 2px 2px;background:transparent}
+@keyframes gmFolderOpen{from{opacity:0;transform:translateY(-7px) scaleY(.97)}to{opacity:1;transform:translateY(0) scaleY(1)}}
+@media(prefers-reduced-motion:reduce){#gmOthers .gm-subcontent,#gmOthers .gm-sub-chevron{animation:none;transition:none}}
+
+/* Classic premium Gold Manager live price panel — visual-only refresh */
+.estimate-box{position:relative!important;overflow:hidden!important;border:1px solid #b99443!important;border-radius:18px!important;padding:15px!important;background:linear-gradient(135deg,#111923 0%,#1d2935 52%,#302719 100%)!important;box-shadow:0 10px 26px #0b15251c,inset 0 1px #ffffff18!important}
+.estimate-box:before{content:"LIVE MARKET";display:block;font-size:10px;font-weight:800;letter-spacing:2.1px;color:#e8c66f;margin:0 0 11px 2px}
+.estimate-grid{gap:11px!important}
+.estimate-item{position:relative!important;overflow:hidden!important;border:1px solid #ffffff22!important;border-radius:14px!important;padding:13px!important;background:linear-gradient(145deg,#24313d,#19232e)!important;box-shadow:inset 0 1px #ffffff0b,0 5px 14px #0002!important;transition:transform .2s ease,border-color .2s ease!important}
+.estimate-item:after{content:"";position:absolute;right:-20px;top:-27px;width:74px;height:74px;border:1px solid #d6ad4e35;border-radius:50%;pointer-events:none}
+.estimate-item:first-child{border-top:1px solid #d6ad4e!important;border-left:3px solid #d6ad4e!important}
+.estimate-item:last-child{border-top:1px solid #aebdce!important;border-left:3px solid #aebdce!important}
+.estimate-item span{font-size:11px!important;font-weight:650;letter-spacing:.15px;color:#c8d0da!important;line-height:1.5}
+.estimate-metal-icon{width:20px!important;height:16px!important;filter:drop-shadow(0 1px 2px #0005)}
+.estimate-item strong{font-size:clamp(17px,4.5vw,22px)!important;font-weight:800!important;line-height:1.35;color:#f6d77f!important;margin-top:8px!important;letter-spacing:.1px;text-shadow:0 1px 12px #d6ad4e1c}
+.estimate-item:last-child strong{color:#e1e8f1!important;text-shadow:0 1px 12px #b9c7d51c}
+.estimate-change{font-size:11px!important;margin-top:6px!important}
+.estimate-refresh-row{margin-top:11px!important;justify-content:flex-end!important}
+.estimate-refresh{width:30px!important;height:30px!important;background:linear-gradient(145deg,#f7e7b4,#d5ad4f)!important;color:#18222d!important;border:1px solid #f8e5a6!important;box-shadow:0 3px 10px #0003!important;transition:transform .2s ease,filter .2s ease!important}
+.estimate-refresh:hover{transform:rotate(25deg) scale(1.05);filter:brightness(1.06)}
+body.dark-mode .estimate-box{background:linear-gradient(135deg,#0c1420 0%,#162333 52%,#292316 100%)!important;border-color:#8d7136!important}
+body:not(.dark-mode) .estimate-box{background:linear-gradient(135deg,#fffdf7 0%,#f5edda 100%)!important;box-shadow:0 8px 22px #6b50121a,inset 0 1px #fff!important}
+body:not(.dark-mode) .estimate-box:before{color:#8c6819}
+body:not(.dark-mode) .estimate-item{background:linear-gradient(145deg,#ffffff,#fbf6e9)!important;border-color:#e7d7b1!important;box-shadow:inset 0 1px #fff,0 4px 12px #7e5b1010!important}
+body:not(.dark-mode) .estimate-item span{color:#70634b!important}
+body:not(.dark-mode) .estimate-item strong{color:#76500a!important;text-shadow:none}
+body:not(.dark-mode) .estimate-item:last-child strong{color:#536171!important}
+body:not(.dark-mode) .estimate-refresh{background:linear-gradient(145deg,#f5df9d,#d5ad4f)!important}
+@media(max-width:480px){.estimate-box{padding:12px!important}.estimate-grid{gap:8px!important}.estimate-item{padding:10px!important}.estimate-item strong{font-size:clamp(16px,4.2vw,20px)!important}.estimate-box:before{margin-bottom:9px}}
+
+
+/* Premium TradingView market panel */
+.live-metals-box{position:relative;overflow:hidden;padding:16px;border-radius:20px;border:1px solid #d8e0ea;background:radial-gradient(ellipse at 5% 0%,#fff8e5 0%,transparent 38%),linear-gradient(145deg,#f8fafc,#edf2f8 72%,#f7f9fc);box-shadow:0 10px 28px #1c2d4210,inset 0 1px #ffffff}
+.live-metals-box h2{font-size:18px;letter-spacing:-.25px;margin-bottom:7px}
+.live-metals-box h2:before{height:25px;width:5px;background:linear-gradient(180deg,#f4d26d,#a8750b);box-shadow:0 0 12px #d8aa3b50}
+.live-metals-grid{gap:12px}
+.live-metal-card{position:relative;border-radius:17px;padding:12px;background:linear-gradient(160deg,#fff 0%,#fbfcfe 100%);border:1px solid #dbe2ec;box-shadow:0 7px 18px #1c2d420d,inset 0 1px #fff;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.live-metal-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#f4d26d,#bd8a21,#f8e7a8)}
+.live-metal-card.silver:before{background:linear-gradient(90deg,#e5eaf1,#8b9bab,#f7f9fc)}
+.live-metal-card:hover{transform:translateY(-2px);box-shadow:0 11px 24px #1c2d4217;border-color:#c3cfde}
+.live-metal-title{display:flex;align-items:center;gap:8px;margin-bottom:9px;min-height:34px;color:#243246}
+.live-metal-title .metal-dot{width:28px;height:23px;flex:0 0 28px}
+.metal-name{font-size:14px;line-height:1.25;font-weight:800;letter-spacing:.1px}
+.metal-symbol{display:block;margin-top:3px;font-size:10px;font-weight:650;letter-spacing:1px;color:#718096}
+.live-badge{margin-left:auto;display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;background:#eaf8ef;color:#187744;font-size:9px;font-weight:800;letter-spacing:.6px;white-space:nowrap}
+.live-badge i{display:block;width:6px;height:6px;border-radius:50%;background:#20a45b;box-shadow:0 0 0 3px #20a45b20;animation:marketPulse 1.8s ease-out infinite}
+@keyframes marketPulse{0%{box-shadow:0 0 0 0 #20a45b50}70%{box-shadow:0 0 0 5px #20a45b00}100%{box-shadow:0 0 0 0 #20a45b00}}
+.live-metal-card .tradingview-widget-container{min-width:0;overflow:hidden;border-radius:10px}
+.live-metal-card .tradingview-widget-container__widget{min-height:75px}
+.live-metal-card .tradingview-widget-copyright{display:none!important}
+body.dark-mode .live-metals-box{background:radial-gradient(ellipse at 5% 0%,#3c321c 0%,transparent 42%),linear-gradient(145deg,#172336,#101a29 75%,#152235);border-color:#304056;box-shadow:0 10px 28px #0002}
+body.dark-mode .live-metal-card{background:linear-gradient(160deg,#f9fafc,#eef2f7);border-color:#33445b;box-shadow:0 7px 18px #0002}
+body.dark-mode .live-metal-title{color:#26374a}
+body.dark-mode .live-metals-box .hint{color:#aebbd0}
+@media(max-width:480px){.live-metals-box{padding:13px;border-radius:17px}.live-metals-grid{gap:10px}.live-metal-card{padding:10px;border-radius:14px}.live-metal-title{gap:6px}.live-badge{font-size:8px;padding:4px 6px}}
+
+
+/* Refined two-column folder tiles and weight inputs */
+#gmOthers .gm-folder-list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:11px!important;padding:12px!important}
+#gmOthers .gm-subfolder{border:1px solid #d9c38a;border-radius:17px;background:linear-gradient(145deg,#fffdf6,#f5f0e2);box-shadow:0 5px 14px #182b3a12;transition:box-shadow .25s ease,border-color .25s ease,transform .25s ease;}
+#gmOthers .gm-subfolder:hover{transform:translateY(-2px);box-shadow:0 9px 18px #182b3a1b}
+#gmOthers .gm-subfolder>summary{min-height:104px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:8px;padding:12px 8px;border-radius:16px;background:linear-gradient(145deg,#fffdf8,#eee4c9);font-size:12px;line-height:1.4}
+#gmOthers .gm-sub-icon{width:43px;height:37px;flex:0 0 37px;border-radius:12px;font-size:21px;background:linear-gradient(145deg,#fff0b5,#c99b2c);box-shadow:inset 0 1px #fff9}
+#gmOthers .gm-sub-chevron{position:absolute;right:9px;top:8px;font-size:15px}
+#gmOthers .gm-subfolder>summary{position:relative;padding-top:18px}
+#gmOthers .gm-subfolder[open]{grid-column:1/-1;border-color:#c7a45b;box-shadow:0 8px 20px #b78b2520}
+#gmOthers .gm-subfolder[open]>summary{min-height:62px;flex-direction:row;text-align:left;justify-content:flex-start;padding:12px 34px 12px 12px;background:linear-gradient(110deg,#fff7dc,#f4ead0)}
+#gmOthers .gm-subfolder[open] .gm-sub-icon{width:32px;height:30px;flex-basis:30px;font-size:17px}
+#gmOthers .gm-subfolder[open] .gm-sub-chevron{top:50%;transform:translateY(-50%) rotate(180deg)}
+#gmOthers .gm-subcontent{overflow:hidden;animation:gmFolderOpen .32s cubic-bezier(.2,.8,.2,1) both}
+#gmOthers .gm-subfolder.gm-closing .gm-subcontent{animation:gmFolderClose .22s ease both}
+@keyframes gmFolderClose{from{opacity:1;transform:translateY(0) scaleY(1)}to{opacity:0;transform:translateY(-6px) scaleY(.96)}}
+#gmOthers .gm-subfolder:not([open]) .gm-subcontent{display:none}
+.gm-weight-entry{border:1px solid #e4d3a0;border-radius:13px;padding:11px;margin:9px 0;background:linear-gradient(145deg,#fffdf6,#fff8e7)}
+.gm-weight-entry-title{font-size:13px;font-weight:750;margin-bottom:9px;color:#775500}
+.gm-weight-entry-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.gm-weight-entry-grid .field{min-width:0}.gm-weight-entry-grid label{font-size:12px}.gm-weight-entry-grid input{padding:9px 5px;text-align:center;font-size:14px}
+body.dark-mode .gm-weight-entry{background:linear-gradient(145deg,#282316,#1d1b17);border-color:#63512a}.gm-weight-entry-title{color:#d9bb69}body.dark-mode #gmOthers .gm-subfolder{background:linear-gradient(145deg,#1a2738,#121c2b);border-color:#425064}body.dark-mode #gmOthers .gm-subfolder>summary{background:linear-gradient(145deg,#202d3d,#172333)}body.dark-mode #gmOthers .gm-subfolder[open]>summary{background:linear-gradient(110deg,#3b321e,#242316)}
+@media(max-width:370px){.gm-weight-entry-grid{gap:5px}.gm-weight-entry-grid input{padding:8px 2px;font-size:12px}#gmOthers .gm-folder-list{gap:8px!important;padding:9px!important}#gmOthers .gm-subfolder>summary{min-height:98px;padding-left:5px;padding-right:5px;font-size:11px}}
+
+
+/* Compact homepage folder tiles: same light lavender on all four */
+main{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}
+main>details.card:nth-of-type(n+5), main> :not(details.card){grid-column:1/-1}
+main>details.card:nth-of-type(-n+4){min-width:0;border:1px solid #d9c9f2;border-radius:15px;background:#f0e8fc;box-shadow:0 2px 7px #6b4b9710;overflow:hidden}
+main>details.card:nth-of-type(-n+4)>summary{position:relative;isolation:isolate;overflow:hidden;box-sizing:border-box;min-height:104px;height:104px;aspect-ratio:auto;padding:10px 8px;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:7px;border-radius:14px;background:#f0e8fc;color:#4b3867;font-size:clamp(12px,3.1vw,14px);line-height:1.3}
+main>details.card:nth-of-type(1)>summary,main>details.card:nth-of-type(2)>summary,main>details.card:nth-of-type(3)>summary,main>details.card:nth-of-type(4)>summary{background:#f0e8fc;color:#4b3867}
+main>details.card:nth-of-type(-n+4)>summary:before{content:'▦';flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:#e3d4f8;color:#6c4b96;font-size:19px;box-shadow:none}
+main>details.card:nth-of-type(1)>summary:before{content:'৳'}
+main>details.card:nth-of-type(2)>summary:before{content:'◆'}
+main>details.card:nth-of-type(3)>summary:before{content:'▤'}
+main>details.card:nth-of-type(4)>summary:before{content:'৳'}
+main>details.card:nth-of-type(-n+4)>summary:after{position:absolute;right:6px;top:6px;margin:0;width:20px;height:20px;flex:0 0 20px;background:#e3d4f8;color:#6c4b96;font-size:15px}
+main>details.card:nth-of-type(-n+4)[open]{grid-column:1/-1}
+main>details.card:nth-of-type(-n+4)[open]>summary{height:auto;min-height:58px;flex-direction:row;justify-content:flex-start;text-align:left;padding:11px;gap:10px;border-radius:14px 14px 0 0}
+main>details.card:nth-of-type(-n+4)[open]>summary:before{flex:0 0 32px;width:32px;height:32px;border-radius:9px;font-size:18px}
+main>details.card:nth-of-type(-n+4)[open]>summary:after{position:static;margin-left:auto;width:25px;height:25px;flex:0 0 25px}
+@media(max-width:360px){main{padding:10px;gap:9px}main>details.card:nth-of-type(-n+4)>summary{height:96px;min-height:96px;padding:7px;font-size:11px}main>details.card:nth-of-type(-n+4)>summary:before{flex-basis:30px;width:30px;height:30px}}
+body.dark-mode main>details.card:nth-of-type(-n+4){border-color:#cdb9ee;background:#f0e8fc}
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary{background:#f0e8fc;color:#4b3867}
+
 </style>
 <script>
 // অ্যাপে (Capacitor) CSV সেভ/শেয়ার, ব্রাউজারে সাধারণ ডাউনলোড
@@ -120,12 +276,19 @@ async function saveCsv(name,csv){
  a.download=name;a.click();URL.revokeObjectURL(a.href);
 }
 </script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="সোনা-রুপার হিসাব">
+<meta name="theme-color" content="#172b3a">
+<script>if('serviceWorker' in navigator&&location.protocol==='https:'&&location.hostname!=='localhost'){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </head>
 <body>
-<header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1>সোনা-রুপার হিসাবের খাতা</h1><p id="dhakaClock" class="clock" style="margin-top:8px">ঢাকা সময়: --:--:--</p><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
+<header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1>সোনা-রুপার হিসাবের খাতা</h1><div id="dhakaClock" class="clock-card" role="timer" aria-label="ঢাকা সময়"><div class="clock-top"><span class="live-dot"></span><span class="clock-label">ঢাকা সময়</span><span class="clock-live">LIVE</span></div><div class="clock-time"><span class="cd" id="clkH">--</span><span class="cc">:</span><span class="cd" id="clkM">--</span><span class="cc cs">:</span><span class="cd cds" id="clkS">--</span><span class="clock-ap" id="clkAP">--</span></div><div class="clock-date" id="clkDate">লোড হচ্ছে…</div><div class="clock-bar"><i id="clkBar"></i></div></div><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
 <div id="cryptoOverlay" class="crypto-overlay" role="dialog" aria-modal="true" aria-labelledby="cryptoTitle"><div class="crypto-panel"><div class="crypto-head"><h2 id="cryptoTitle">Cryptofam · Top 50 Crypto Live Prices</h2><div class="actions"><button type="button" class="secondary" id="cryptoRefresh">রিফ্রেশ</button><button type="button" class="danger" id="cryptoClose">বন্ধ</button></div></div><p class="crypto-meta">USD-তে আনুমানিক লাইভ মার্কেট প্রাইস · CoinGecko ডেটা · ইন্টারনেট প্রয়োজন</p><div id="cryptoStatus" class="crypto-loading">লাইভ দাম লোড হচ্ছে…</div><div class="tablewrap"><table class="crypto-table" id="cryptoTable" style="display:none"><thead><tr><th>#</th><th>ক্রিপ্টো</th><th style="text-align:right">দাম (USD)</th><th style="text-align:right">২৪ ঘণ্টা</th></tr></thead><tbody id="cryptoRows"></tbody></table></div></div></div>
 <main>
-<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span>গোল্ড <span style="display:block;font-size:10px;font-weight:500;color:#758397">XAU / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/XAUUSD/" target="_blank" rel="noopener">TradingView · Gold</a></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span>সিলভার <span style="display:block;font-size:10px;font-weight:500;color:#758397">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/XAGUSD/" target="_blank" rel="noopener">TradingView · Silver</a></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
+<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
 <section class="card estimate-box"><div class="estimate-grid"><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="22" height="17"> আনুমানিক সোনার দাম</span><strong id="estimatedGold">লোড হচ্ছে…</strong></div><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="22" height="17"> আনুমানিক রূপার দাম</span><strong id="estimatedSilver">লোড হচ্ছে…</strong></div></div><div class="estimate-refresh-row"><button type="button" id="estimateRefresh" class="estimate-refresh" aria-label="সোনা ও রুপার দাম রিফ্রেশ করুন" title="দাম রিফ্রেশ করুন"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button></div></section></section>
 
 
@@ -203,6 +366,66 @@ async function saveCsv(name,csv){
 <p class="hint">দৈনিক খরচ এই ডিভাইসের ব্রাউজারে সেভ থাকবে।</p>
 </div></details></div></details>
 </main>
+
+<details class="card" id="gmOthers">
+ <summary>Other’s · অতিরিক্ত ফিচার</summary>
+ <div class="folder-content gm-folder-list">
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">⇄</span><span>গ্রাম ⇄ ভরি কনভার্টার</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>গ্রাম ⇄ ভরি কনভার্টার</h3>
+   <div class="field"><label for="gmGramInput">গ্রাম থেকে ভরি</label><input id="gmGramInput" type="number" min="0" step="any" placeholder="গ্রাম লিখুন"></div>
+   <div class="gm-result" id="gmGramResult">গ্রাম লিখলে ভরি-আনা-রতি-পয়েন্ট দেখাবে।</div>
+   <div class="field" style="margin-top:12px"><label for="gmVoriInput">ভরি থেকে গ্রাম</label><input id="gmVoriInput" type="number" min="0" step="any" placeholder="ভরি লিখুন"></div>
+   <div class="gm-result" id="gmVoriResult">ভরি লিখলে গ্রাম দেখাবে।</div>
+   <p class="hint">হিসাবের ভিত্তি: ১ ভরি = ১১.৬৬৪ গ্রাম; ১ ভরি = ১৬ আনা, ১ আনা = ৬ রতি, ১ রতি = ১০ পয়েন্ট।</p>
+  </section></div></details>
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">◈</span><span>ক্যারেট অনুযায়ী খাদ ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>ক্যারেট অনুযায়ী খাদ ক্যালকুলেটর</h3>
+   <div class="field"><label for="gmKarat">ক্যারেট নির্বাচন / লিখুন (০–২৪)</label><input id="gmKarat" type="number" min="0" max="24" step="any" value="22" placeholder="যেমন ২২, ২১, ১৮ বা ২০"></div>
+   <div class="gm-weight-entry"><div class="gm-weight-entry-title">যে পরিমাণ সোনার খাদ হিসাব করবেন</div><div class="gm-weight-entry-grid">
+    <div class="field"><label for="gmKaratVori">ভরি</label><input id="gmKaratVori" type="number" min="0" step="1" value="1" inputmode="numeric" placeholder="০"></div>
+    <div class="field"><label for="gmKaratAna">আনা</label><input id="gmKaratAna" type="number" min="0" max="15" step="1" value="0" inputmode="numeric" placeholder="০"></div>
+    <div class="field"><label for="gmKaratRatti">রত্তি</label><input id="gmKaratRatti" type="number" min="0" max="5" step="1" value="0" inputmode="numeric" placeholder="০"></div>
+    <div class="field"><label for="gmKaratPoint">পয়েন্ট</label><input id="gmKaratPoint" type="number" min="0" max="9" step="1" value="0" inputmode="numeric" placeholder="০"></div>
+   </div><p class="hint">১ ভরি = ১৬ আনা, ১ আনা = ৬ রত্তি, ১ রত্তি = ১০ পয়েন্ট</p></div>
+   <div class="field" style="margin-top:9px"><label for="gmGoldPrice">১ ভরির বিশুদ্ধ (২৪K) সোনার দাম (৳)</label><input id="gmGoldPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="যেমন 150000"></div>
+   <div class="gm-result" id="gmKaratPriceResult" aria-live="polite">দাম লিখলে ক্যারেট অনুযায়ী খাদ বাদে সোনার আনুপাতিক দাম দেখাবে।</div>
+   <div class="gm-result" id="gmKaratResult" aria-live="polite"></div>
+   <p class="hint">২৪ ক্যারেটকে বিশুদ্ধ ধরে গাণিতিক অনুপাতে খাদ ও দাম হিসাব করা হয়।</p>
+  </section></div></details>
+
+  <details class="gm-subfolder" id="gmReceiptFolder"><summary><span class="gm-sub-icon">🧾</span><span>রসিদ তৈরি</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>সোনা ও রূপার ক্রয়-বিক্রয় রসিদ</h3>
+   <p class="hint">দোকানের তথ্য প্রতিটি রসিদের জন্য আলাদাভাবে লিখতে পারবেন। রসিদ তৈরি করে প্রিন্ট করুন অথবা Print dialog থেকে Save as PDF বেছে নিন।</p>
+   <form id="gmReceiptForm">
+    <div class="field"><label for="gmReceiptType">লেনদেনের ধরন</label><select id="gmReceiptType"><option value="sell">বিক্রয় রসিদ (দোকান থেকে বিক্রি)</option><option value="buy">ক্রয় রসিদ (দোকান কিনেছে)</option></select></div>
+    <div class="field"><label for="gmReceiptShop">দোকানের নাম</label><input id="gmReceiptShop" required placeholder="দোকানের নাম লিখুন"></div>
+    <div class="field"><label for="gmReceiptAddress">দোকানের ঠিকানা</label><input id="gmReceiptAddress" placeholder="ঠিকানা"></div>
+    <div class="field"><label for="gmReceiptPhone">দোকানের মোবাইল</label><input id="gmReceiptPhone" type="tel" placeholder="মোবাইল নম্বর"></div>
+    <div class="field"><label for="gmReceiptNo">রসিদ নম্বর</label><input id="gmReceiptNo" placeholder="ফাঁকা রাখলে অটো হবে"></div>
+    <div class="field"><label for="gmReceiptDate">তারিখ</label><input id="gmReceiptDate" type="date" required></div>
+    <div class="field"><label for="gmReceiptCustomer">ক্রেতা/বিক্রেতার নাম</label><input id="gmReceiptCustomer" required placeholder="নাম লিখুন"></div>
+    <div class="field"><label for="gmReceiptCustomerPhone">ক্রেতা/বিক্রেতার মোবাইল</label><input id="gmReceiptCustomerPhone" type="tel" placeholder="মোবাইল নম্বর"></div>
+    <div class="field"><label for="gmReceiptMetal">ধাতু</label><select id="gmReceiptMetal"><option value="gold">সোনা</option><option value="silver">রূপা</option></select></div>
+    <div class="field"><label for="gmReceiptPurity">বিশুদ্ধতা / ক্যারেট</label><input id="gmReceiptPurity" placeholder="যেমন ২২ ক্যারেট বা ৯২.৫%"></div>
+    <div class="gm-weight-entry"><div class="gm-weight-entry-title">ওজন</div><div class="gm-weight-entry-grid">
+     <div class="field"><label for="gmReceiptVori">ভরি</label><input id="gmReceiptVori" type="number" min="0" step="1" value="0"></div>
+     <div class="field"><label for="gmReceiptAna">আনা</label><input id="gmReceiptAna" type="number" min="0" max="15" step="1" value="0"></div>
+     <div class="field"><label for="gmReceiptRoti">রতি</label><input id="gmReceiptRoti" type="number" min="0" max="5" step="1" value="0"></div>
+     <div class="field"><label for="gmReceiptPoint">পয়েন্ট</label><input id="gmReceiptPoint" type="number" min="0" max="9" step="1" value="0"></div>
+    </div><p class="hint">১ ভরি = ১৬ আনা, ১ আনা = ৬ রতি, ১ রতি = ১০ পয়েন্ট</p></div>
+    <div class="field"><label for="gmReceiptRate">প্রতি ভরির দর (৳)</label><input id="gmReceiptRate" type="number" min="0" step="any" value="0" required></div>
+    <div class="field"><label for="gmReceiptMaking">মজুরি / অন্যান্য চার্জ (৳)</label><input id="gmReceiptMaking" type="number" min="0" step="any" value="0"></div>
+    <div class="field"><label for="gmReceiptDiscount">ছাড় (৳)</label><input id="gmReceiptDiscount" type="number" min="0" step="any" value="0"></div>
+    <div class="field"><label for="gmReceiptPaid">পরিশোধিত টাকা (৳)</label><input id="gmReceiptPaid" type="number" min="0" step="any" value="0"></div>
+    <div class="field full"><label for="gmReceiptNote">মন্তব্য / শর্ত</label><textarea id="gmReceiptNote" rows="2" placeholder="প্রয়োজনে লিখুন"></textarea></div>
+    <div class="gm-result" id="gmReceiptCalc">মোট টাকা: ৳০.০০</div>
+    <div class="field full actions"><button class="primary" type="submit">রসিদ তৈরি ও প্রিন্ট</button><button class="secondary" type="reset">ফর্ম পরিষ্কার</button></div>
+   </form>
+   <p class="hint">প্রতিটি রসিদে স্বয়ংক্রিয়ভাবে “Made by Robin” থাকবে। রসিদ তৈরির আগে তথ্য যাচাই করে নিন।</p>
+  </section></div></details>
+ </div>
+</details>
+
 <footer class="contact-footer"><span>যোগাযোগ করুন</span><a href="https://www.facebook.com/vetkimasss" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.792-4.7 4.533-4.7 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.49 0-1.953.93-1.953 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/></svg><span>Robin Ahmed</span></a></footer>
 <script>
 const $=id=>document.getElementById(id);
@@ -219,8 +442,27 @@ function applyTheme(theme){const dark=theme==='dark';document.body.classList.tog
 let savedTheme='light';try{savedTheme=localStorage.getItem(THEME_KEY)||'light'}catch(e){}applyTheme(savedTheme==='dark'?'dark':'light');
 $('themeToggle').addEventListener('click',()=>applyTheme(document.body.classList.contains('dark-mode')?'light':'dark'));
 
-function updateDhakaClock(){const now=new Date();const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dhaka',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).format(now);$('dhakaClock').textContent='ঢাকা সময়: '+parts;}
+(function(){
+const BN='০১২৩৪৫৬৭৮৯',MON=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+const WD={Sunday:'রবিবার',Monday:'সোমবার',Tuesday:'মঙ্গলবার',Wednesday:'বুধবার',Thursday:'বৃহস্পতিবার',Friday:'শুক্রবার',Saturday:'শনিবার'};
+const bn=t=>String(t).replace(/[0-9]/g,d=>BN[d]);
+let fmt=null;try{fmt=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Dhaka',weekday:'long',day:'numeric',month:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true})}catch(e){}
+const el={h:$('clkH'),m:$('clkM'),s:$('clkS'),ap:$('clkAP'),d:$('clkDate'),bar:$('clkBar')};
+const prev={};
+function put(k,v){if(prev[k]===v)return;prev[k]=v;const n=el[k];n.textContent=v;n.classList.remove('tick');void n.offsetWidth;n.classList.add('tick')}
+function updateDhakaClock(){
+ const now=new Date();let p={};
+ if(fmt){fmt.formatToParts(now).forEach(x=>{p[x.type]=x.value})}
+ else{const h=now.getHours();p={hour:String(h%12||12).padStart(2,'0'),minute:String(now.getMinutes()).padStart(2,'0'),second:String(now.getSeconds()).padStart(2,'0'),dayPeriod:h>=12?'PM':'AM',weekday:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()],day:now.getDate(),month:now.getMonth()+1,year:now.getFullYear()}}
+ put('h',bn(p.hour));put('m',bn(p.minute));put('s',bn(p.second));
+ const ap=String(p.dayPeriod||'').toUpperCase();if(prev.ap!==ap){prev.ap=ap;el.ap.textContent=ap}
+ const ds=(WD[p.weekday]||p.weekday)+', '+bn(p.day)+' '+(MON[(+p.month)-1]||'')+' '+bn(p.year);
+ if(prev.d!==ds){prev.d=ds;el.d.textContent=ds}
+ el.bar.style.width=((+p.second+1)/60*100)+'%';
+ if(+p.second===59){el.bar.style.transition='none';requestAnimationFrame(()=>{el.bar.style.width='0%';requestAnimationFrame(()=>{el.bar.style.transition=''})})}
+}
 updateDhakaClock();setInterval(updateDhakaClock,1000);
+})();
 let entries=[];
 try{entries=JSON.parse(localStorage.getItem(KEY)||'[]');if(!Array.isArray(entries))entries=[]}catch(e){entries=[]}
 const today=new Date();$('date').value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
@@ -450,5 +692,183 @@ render();
  });
 })();
 </script>
+
+<script>
+(function(){
+ const $=id=>document.getElementById(id), VORI_GRAM=11.664;
+ const bn=n=>Number(n).toLocaleString('bn-BD',{maximumFractionDigits:4});
+ function weightFromGram(g){let p=Math.round((g/VORI_GRAM)*960);let point=p%10;p=Math.floor(p/10);let r=p%6;p=Math.floor(p/6);let a=p%16;let v=Math.floor(p/16);return `${bn(v)} ভরি ${bn(a)} আনা ${bn(r)} রতি ${bn(point)} পয়েন্ট`}
+ function updateGram(){const n=parseFloat($('gmGramInput').value);$('gmGramResult').textContent=Number.isFinite(n)&&n>=0?`${bn(n)} গ্রাম = ${weightFromGram(n)} (প্রায়)`: 'সঠিক গ্রাম লিখুন।'}
+ function updateVori(){const n=parseFloat($('gmVoriInput').value);$('gmVoriResult').textContent=Number.isFinite(n)&&n>=0?`${bn(n)} ভরি = ${bn(n*VORI_GRAM)} গ্রাম`:'সঠিক ভরি লিখুন।'}
+ function updateKarat(){
+  const k=parseFloat($('gmKarat').value);
+  if(!Number.isFinite(k)||k<0||k>24){$('gmKaratResult').textContent='ক্যারেট ০ থেকে ২৪-এর মধ্যে লিখুন।';$('gmKaratPriceResult').textContent='সঠিক ক্যারেট লিখুন।';return}
+  const food=(24-k)/24*100, pure=k/24*100;
+  const vals=['gmKaratVori','gmKaratAna','gmKaratRatti','gmKaratPoint'].map(id=>{const x=parseInt($(id).value||'0',10);return Number.isFinite(x)&&x>=0?x:0});
+  const totalPoints=vals[0]*960+vals[1]*60+vals[2]*10+vals[3];
+  const foodPoints=totalPoints*(24-k)/24, purePoints=totalPoints*k/24;
+  function fmtWeight(points){points=Math.max(0,Math.round(points));const v=Math.floor(points/960);points%=960;const a=Math.floor(points/60);points%=60;const r=Math.floor(points/10);const pt=points%10;return `${bn(v)} ভরি ${bn(a)} আনা ${bn(r)} রত্তি ${bn(pt)} পয়েন্ট`}
+  $('gmKaratResult').innerHTML=`<div>বিশুদ্ধ সোনা: <strong>${bn(pure)}%</strong></div><div>খাদ: <strong>${bn(food)}%</strong></div><div>আপনার দেওয়া মোট ওজন: <strong>${fmtWeight(totalPoints)}</strong></div><div>এই ওজনে খাদ: <strong>${fmtWeight(foodPoints)}</strong></div><div>খাদ বাদে বিশুদ্ধ সোনা: <strong>${fmtWeight(purePoints)}</strong></div><div>বিশুদ্ধ সোনার আনুমানিক ওজন: <strong>${bn(11.664*(totalPoints/960)*k/24)} গ্রাম</strong></div>`;
+  const price=parseFloat($('gmGoldPrice').value), totalVori=totalPoints/960;
+  $('gmKaratPriceResult').innerHTML=Number.isFinite(price)&&price>=0?`<div>আপনার দেওয়া ওজনের ২৪K সমমূল্য: <strong>৳${bn(price*totalVori)}</strong></div><div>${bn(k)} ক্যারেটে খাদ বাদে আনুপাতিক মূল্য: <strong>৳${bn(price*totalVori*k/24)}</strong></div>`:'দাম লিখলে আপনার দেওয়া ওজনের ক্যারেট অনুযায়ী আনুপাতিক দাম দেখাবে।'
+ }
+ $('gmGramInput').addEventListener('input',updateGram);$('gmVoriInput').addEventListener('input',updateVori);$('gmKarat').addEventListener('input',updateKarat);['gmKaratVori','gmKaratAna','gmKaratRatti','gmKaratPoint','gmGoldPrice'].forEach(id=>$(id).addEventListener('input',updateKarat));updateKarat();
+ const launcher=$('gmOthers');if(launcher&&launcher.parentElement!==document.body)document.body.appendChild(launcher);
+ document.querySelectorAll('#gmOthers .gm-subfolder>summary').forEach(summary=>summary.addEventListener('click',e=>{const folder=summary.parentElement;if(folder.classList.contains('gm-closing')){e.preventDefault();return}if(folder.open){e.preventDefault();folder.classList.add('gm-closing');setTimeout(()=>{folder.open=false;folder.classList.remove('gm-closing')},240)}}));
+})();
+</script>
+
+
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ const form=$('gmReceiptForm');
+ if(!form) return;
+ const today=new Date();
+ const dateInput=$('gmReceiptDate');
+ dateInput.value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+ const n=id=>{const v=parseFloat($(id).value);return Number.isFinite(v)&&v>0?v:0};
+ const bn=v=>Number(v).toLocaleString('bn-BD',{maximumFractionDigits:3});
+ const money=v=>'৳'+Number(v||0).toLocaleString('bn-BD',{minimumFractionDigits:2,maximumFractionDigits:2});
+ function calc(){
+  const units=(((n('gmReceiptVori')*16+n('gmReceiptAna'))*6+n('gmReceiptRoti'))*10+n('gmReceiptPoint'));
+  const weight=units/(16*6*10);
+  const metalAmount=weight*n('gmReceiptRate');
+  const total=Math.max(0,metalAmount+n('gmReceiptMaking')-n('gmReceiptDiscount'));
+  $('gmReceiptCalc').innerHTML='<strong>ওজন:</strong> '+bn(weight)+' ভরি &nbsp; <strong>ধাতুর মূল্য:</strong> '+money(metalAmount)+'<br><strong>সর্বমোট:</strong> '+money(total)+' &nbsp; <strong>বাকি:</strong> '+money(Math.max(0,total-n('gmReceiptPaid')));
+  return {units,weight,metalAmount,total,balance:Math.max(0,total-n('gmReceiptPaid'))};
+ }
+ ['gmReceiptVori','gmReceiptAna','gmReceiptRoti','gmReceiptPoint','gmReceiptRate','gmReceiptMaking','gmReceiptDiscount','gmReceiptPaid'].forEach(id=>$(id).addEventListener('input',calc));
+ calc();
+ form.addEventListener('reset',()=>setTimeout(()=>{dateInput.value=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');calc()},0));
+ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ function weightText(units){
+  let x=Math.round(units),p=x%10;x=Math.floor(x/10);let r=x%6;x=Math.floor(x/6);let a=x%16;let v=Math.floor(x/16);
+  return `${bn(v)} ভরি ${bn(a)} আনা ${bn(r)} রতি ${bn(p)} পয়েন্ট`;
+ }
+
+ const NAT=!!(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform());
+ let ov=null,pf=null,png='',rno='';
+ function gmOv(){
+  if(ov) return ov;
+  const st=document.createElement('style');
+  st.textContent='#gmRcOv{position:fixed;inset:0;z-index:100000;display:none;flex-direction:column;background:#0b1724}#gmRcOv.open{display:flex;animation:gmRcIn .3s ease both}@keyframes gmRcIn{from{opacity:0}to{opacity:1}}.gmrc-bar{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;padding-top:calc(10px + env(safe-area-inset-top,0px));background:#182b4d}.gmrc-bar button{border:0;border-radius:9px;padding:10px 14px;font:inherit;font-weight:650;background:#ffe08a;color:#182b4d}.gmrc-bar button.sec{background:#ffffff22;color:#fff}.gmrc-bar button[disabled]{opacity:.5}.gmrc-body{flex:1;overflow:auto;padding:12px}.gmrc-msg{color:#dbe4eb;text-align:center;margin:18px 0}#gmRcImg{display:none;width:100%;max-width:1136px;margin:0 auto;box-sizing:border-box;}#gmRcImg.big{width:1000px;max-width:none;margin:0;border-radius:12px;box-shadow:0 10px 30px #0008;animation:gmRcImg .9s cubic-bezier(.3,.7,.2,1) both}@keyframes gmRcImg{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}.gmrc-hint{color:#9fb0c4;font-size:12px;text-align:center;margin:10px 0 18px}';
+  document.head.appendChild(st);
+  ov=document.createElement('div');ov.id='gmRcOv';
+  ov.innerHTML='<div class="gmrc-bar"><button type="button" id="gmRcShare" disabled>ছবি শেয়ার / সেভ</button><button type="button" class="sec" id="gmRcZoom">বড় করে দেখুন</button><button type="button" class="sec" id="gmRcPrint">প্রিন্ট / PDF</button><button type="button" class="sec" id="gmRcClose">বন্ধ করুন</button></div><div class="gmrc-body"><p class="gmrc-msg" id="gmRcMsg"></p><img id="gmRcImg" alt="রসিদ"><p class="gmrc-hint" id="gmRcHint" hidden>রসিদটি আড়াআড়ি (ল্যান্ডস্কেপ) ছবি হিসেবে তৈরি হয়েছে।</p></div>';
+  document.body.appendChild(ov);
+  if(NAT) $('gmRcPrint').style.display='none';
+  $('gmRcClose').onclick=()=>{ov.classList.remove('open');document.body.style.overflow=''};
+  $('gmRcPrint').onclick=()=>{try{pf.contentWindow.focus();pf.contentWindow.print()}catch(e){alert('প্রিন্ট করা যায়নি।')}};
+  $('gmRcShare').onclick=shareReceipt;
+  $('gmRcZoom').onclick=()=>{const b=$('gmRcImg').classList.toggle('big');$('gmRcZoom').textContent=b?'ছোট করে দেখুন':'বড় করে দেখুন'};
+  return ov;
+ }
+ function toPng(html){return new Promise((res,rej)=>{
+  if(pf) pf.remove();
+  const W=1136,f=pf=document.createElement('iframe');
+  f.style.cssText='position:fixed;left:-99999px;top:0;width:'+W+'px;height:1px;border:0;visibility:hidden';
+  f.onload=async()=>{try{
+   const d=f.contentDocument;try{await d.fonts.ready}catch(e){}
+   await new Promise(r=>setTimeout(r,200));
+   const H=Math.ceil(d.documentElement.scrollHeight);
+   const css=d.querySelector('style').textContent.replace(/(^|[{};,\s])body\s*\{/g,'$1.gmwrap{').replace(/@page\s*\{[^}]*\}/g,'');
+   const inner=new XMLSerializer().serializeToString(d.querySelector('.receipt'));
+   const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'"><foreignObject x="0" y="0" width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" class="gmwrap"><style>'+css+'</style>'+inner+'</div></foreignObject></svg>';
+   const S=2,c=document.createElement('canvas');c.width=W*S;c.height=H*S;
+   const x=c.getContext('2d');x.fillStyle='#edf2f8';x.fillRect(0,0,c.width,c.height);x.scale(S,S);
+   const img=new Image();
+   img.onload=()=>{try{x.drawImage(img,0,0,W,H);res(c.toDataURL('image/png'))}catch(e){rej(e)}};
+   img.onerror=()=>rej(new Error('ছবি তৈরি হয়নি'));
+   img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+  }catch(e){rej(e)}};
+  f.srcdoc=html;document.body.appendChild(f);
+ })}
+ async function gmShowReceipt(html,no){
+  rno=no;png='';gmOv();
+  $('gmRcImg').style.display='none';$('gmRcHint').hidden=true;$('gmRcShare').disabled=true;
+  $('gmRcMsg').textContent='রসিদ তৈরি হচ্ছে…';$('gmRcMsg').hidden=false;
+  ov.classList.add('open');document.body.style.overflow='hidden';
+  try{
+   png=await toPng(html);
+   const im=$('gmRcImg');im.src=png;im.style.display='block';
+   $('gmRcMsg').hidden=true;$('gmRcHint').hidden=false;$('gmRcShare').disabled=false;
+  }catch(e){$('gmRcMsg').textContent='রসিদের ছবি তৈরি করা যায়নি ('+((e&&e.message)||e)+')। প্রিন্ট / PDF বাটন ব্যবহার করুন।'}
+ }
+ async function shareReceipt(){
+  if(!png) return;
+  const name='roshid-'+String(rno).replace(/[^A-Za-z0-9-]/g,'')+'.png',cap=window.Capacitor;
+  if(NAT){
+   try{const P=cap.Plugins,r=await P.Filesystem.writeFile({path:name,data:png.split(',')[1],directory:'CACHE'});await P.Share.share({title:'রসিদ',url:r.uri,dialogTitle:'রসিদ শেয়ার করুন'})}
+   catch(e){const m=String((e&&e.message)||e).toLowerCase();if(m.indexOf('cancel')<0)alert('শেয়ার করা যায়নি: '+m)}
+   return;
+  }
+  try{const b=await (await fetch(png)).blob(),f=new File([b],name,{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:'রসিদ'});return}}catch(e){if(e&&e.name==='AbortError')return}
+  const a=document.createElement('a');a.href=png;a.download=name;a.click();
+ }
+ form.addEventListener('submit',ev=>{
+  ev.preventDefault();
+  if(!form.reportValidity()) return;
+  const c=calc(),type=$('gmReceiptType').value,metal=$('gmReceiptMetal').value;
+  const now=new Date();
+  const receiptNo=$('gmReceiptNo').value.trim()||('GM-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(now.getTime()).slice(-5));
+  const shop=$('gmReceiptShop').value.trim(),address=$('gmReceiptAddress').value.trim(),phone=$('gmReceiptPhone').value.trim();
+  const party=$('gmReceiptCustomer').value.trim(),partyPhone=$('gmReceiptCustomerPhone').value.trim();
+  const rate=n('gmReceiptRate'),making=n('gmReceiptMaking'),discount=n('gmReceiptDiscount'),paid=n('gmReceiptPaid');
+  const date=$('gmReceiptDate').value;
+  const dateText=date?new Date(date+'T12:00:00').toLocaleDateString('bn-BD',{year:'numeric',month:'long',day:'numeric'}):'';
+  const title=type==='buy'?'সোনা/রূপা ক্রয় রসিদ':'সোনা/রূপা বিক্রয় রসিদ';
+  const metalName=metal==='gold'?'সোনা':'রূপা';
+  const amount=money(c.metalAmount),total=money(c.total),balance=money(c.balance);
+  let receiptFont='"Noto Sans Bengali",sans-serif';
+  try {
+   const chosenFont=localStorage.getItem('gold_silver_font_v1')||'noto';
+   if(chosenFont==='hind') receiptFont='"Hind Siliguri","Noto Sans Bengali",sans-serif';
+   else if(chosenFont==='system') receiptFont='system-ui,-apple-system,sans-serif';
+  } catch(e) {}
+  const docHtml=`<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} - ${esc(receiptNo)}</title><style>
+  *{box-sizing:border-box}
+  body{font-family:${receiptFont};color:#233044;margin:0;padding:18px;background:#edf2f8}
+  .receipt{max-width:1100px;margin:0 auto;border:0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 35px #14213d20;position:relative}
+  .top{position:relative;text-align:left;color:#fff;background:linear-gradient(120deg,#182b4d 0%,#315c91 52%,#9b6bcb 100%);padding:22px 28px 18px;margin:0}
+  .top:after{content:"";position:absolute;width:190px;height:190px;border:28px solid #ffffff18;border-radius:50%;right:-35px;top:-85px}
+  .top h1{font-size:27px;margin:0 0 7px;font-weight:800;position:relative;z-index:1}
+  .top p{margin:3px 0;font-size:13px;color:#f1f5ff;position:relative;z-index:1}
+  .receipt-inner{padding:20px 26px 22px}
+  .type{font-size:21px;font-weight:800;text-align:center;margin:0 auto 15px;color:#263e67;background:linear-gradient(90deg,#e7f0ff,#f2eaff);border:1px solid #d6e1f4;border-radius:12px;padding:10px 14px;max-width:500px}
+  .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;margin-bottom:14px;color:#42516a}
+  .meta span{background:#f5f7fb;border:1px solid #e1e7f0;border-radius:9px;padding:8px 11px}
+  .parties{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+  .party{border:1px solid #dce5f0;border-radius:12px;padding:12px;min-height:72px;font-size:13px;background:#fbfcff}
+  .party b{display:block;margin-bottom:7px;color:#315c91}
+  table{width:100%;border-collapse:separate;border-spacing:0;margin-top:12px;font-size:13px;overflow:hidden;border:1px solid #d9e2ee;border-radius:11px}
+  th,td{border-right:1px solid #d9e2ee;border-bottom:1px solid #d9e2ee;padding:10px;text-align:left}
+  th{background:#263f67;color:#fff;font-weight:700}tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}
+  .totals{width:min(100%,370px);margin:14px 0 0 auto;background:#f7f9fd;border:1px solid #e0e7f1;border-radius:12px;padding:10px 14px}
+  .totals p{display:flex;justify-content:space-between;gap:18px;padding:5px 0;margin:0;border-bottom:1px dashed #d4ddea}
+  .totals p:last-child{border-bottom:0}.totals .grand{font-size:18px;font-weight:800;color:#176b55;border-bottom:1px solid #a8d8c9;padding:8px 0}
+  .note{margin-top:14px;border:1px solid #dce5f0;border-left:4px solid #8b6ac8;border-radius:9px;padding:10px 12px;min-height:42px;font-size:13px;background:#fcfaff}
+  .signatures{display:flex;justify-content:space-between;gap:30px;margin-top:38px}
+  .signatures span{width:40%;border-top:1px solid #7b8798;text-align:center;padding-top:7px;font-size:12px;color:#53627a}
+  .made{text-align:center;margin-top:17px;font-size:12px;font-weight:800;letter-spacing:.5px;color:#6b4ca2}
+  .actions{text-align:center;margin:14px}.actions button{padding:10px 18px;margin:0 5px;border:0;border-radius:9px;background:#263f67;color:#fff;font-size:14px;font-family:${receiptFont}}.actions button:last-child{background:#68758a}
+  @page{size:A4 landscape;margin:9mm}
+  @media print{body{padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.receipt{max-width:none;border-radius:0;box-shadow:none}.top{padding:16px 22px 13px}.top h1{font-size:23px}.receipt-inner{padding:14px 20px 16px}.type{margin-bottom:10px;padding:7px}.parties{margin:8px 0}.party{min-height:58px;padding:9px}.signatures{margin-top:26px}.actions{display:none}@page{size:A4 landscape;margin:8mm}}
+  @media(max-width:600px){body{padding:6px}.receipt{border-radius:12px}.top{padding:18px}.top h1{font-size:22px}.receipt-inner{padding:12px}.parties{grid-template-columns:1fr}.meta{gap:6px}.type{font-size:18px}}
+  </style></head><body><div class="receipt">
+  <header class="top"><h1>${esc(shop)}</h1>${address?`<p>${esc(address)}</p>`:''}${phone?`<p>মোবাইল: ${esc(phone)}</p>`:''}</header>
+  <div class="receipt-inner"><div class="type">${esc(title)}</div>
+  <div class="meta"><span>রসিদ নং: <b>${esc(receiptNo)}</b></span><span>তারিখ: <b>${esc(dateText)}</b></span></div>
+  <div class="parties"><div class="party"><b>${type==='buy'?'বিক্রেতার তথ্য':'ক্রেতার তথ্য'}</b>${esc(party)}${partyPhone?`<br>মোবাইল: ${esc(partyPhone)}`:''}</div><div class="party"><b>লেনদেনের বিবরণ</b>ধাতু: ${esc(metalName)}<br>বিশুদ্ধতা: ${esc($('gmReceiptPurity').value.trim()||'উল্লেখ নেই')}</div></div>
+  <table><thead><tr><th>বিবরণ</th><th>ওজন</th><th>প্রতি ভরির দর</th><th>ধাতুর মূল্য</th></tr></thead><tbody><tr><td>${esc(metalName)} ${esc($('gmReceiptPurity').value.trim())}</td><td>${esc(weightText(c.units))}</td><td>${esc(money(rate))}</td><td>${esc(amount)}</td></tr></tbody></table>
+  <div class="totals"><p><span>ধাতুর মূল্য</span><b>${esc(amount)}</b></p><p><span>মজুরি / অন্যান্য চার্জ</span><b>${esc(money(making))}</b></p><p><span>ছাড়</span><b>− ${esc(money(discount))}</b></p><p class="grand"><span>সর্বমোট</span><b>${esc(total)}</b></p><p><span>পরিশোধিত</span><b>${esc(money(paid))}</b></p><p><span>বাকি</span><b>${esc(balance)}</b></p></div>
+  <div class="note"><b>মন্তব্য / শর্ত:</b><br>${esc($('gmReceiptNote').value.trim()||'—')}</div>
+  <div class="signatures"><span>${type==='buy'?'ক্রেতা / দোকানদার':'ক্রেতার'} স্বাক্ষর</span><span>${type==='buy'?'বিক্রেতার':'দোকানদারের'} স্বাক্ষর</span></div>
+  <div class="made">Made by Robin</div></div></div></body></html>`;
+  gmShowReceipt(docHtml,receiptNo);
+ });
+})();
+</script>
+
 </body>
 </html>
