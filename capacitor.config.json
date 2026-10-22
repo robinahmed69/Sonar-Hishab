@@ -1,6 +1,6 @@
 {
   "appId": "com.sonarupa.hisab",
-  "appName": "সোনা-রুপার হিসাব",
+  "appName": "Gold Manager",
   "webDir": "www",
   "server": { "androidScheme": "https" }
 }
