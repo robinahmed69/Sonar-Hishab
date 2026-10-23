@@ -116,8 +116,11 @@ body.dark-mode .weight-result strong {color:#f1f5f9;}
 .cc.cs{font-size:13px}
 .clock-ap{margin-left:6px;align-self:center;font-size:9px;font-weight:800;letter-spacing:.6px;color:#172b3a;background:linear-gradient(135deg,#ffe08a,#e8b84a);border-radius:5px;padding:2px 5px}
 .clock-date{margin-top:3px;font-size:11px;font-weight:600;color:#e6edf5;letter-spacing:.2px}
-.clock-bar{margin-top:6px;height:2px;max-width:150px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
-.clock-bar i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#f3d58a,#ffe08a);transition:width 1s linear}
+/* Modern 60-second dot + snake timer */
+.clock-bar{position:relative;margin-top:9px;height:4px;width:min(100%,150px);border-radius:999px;background:radial-gradient(circle,rgba(255,255,255,.38) .9px,transparent 1.2px) 0 50%/7px 4px repeat-x,rgba(255,255,255,.09);overflow:hidden;box-shadow:inset 0 1px 2px #0002}
+.clock-bar i{position:relative;display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#b9872f,#f8d879);transition:width .96s linear;box-shadow:0 0 3px #ffe08a55}
+.clock-bar i:after{content:"";position:absolute;right:-1px;top:50%;width:5px;height:5px;transform:translateY(-50%);border-radius:50%;background:#fff5c6;box-shadow:0 0 0 1px #f5cb5b66,0 0 4px 1px #ffe08a77}
+@media(prefers-reduced-motion:reduce){.clock-bar i{transition:none}}
 .cd.tick{animation:digitIn .38s cubic-bezier(.2,.8,.2,1)}
 @keyframes digitIn{from{opacity:0;transform:translateY(-38%) scale(.94)}to{opacity:1;transform:none}}
 @keyframes colonBlink{0%,55%{opacity:.95}56%,100%{opacity:.3}}
@@ -196,6 +199,10 @@ body:not(.dark-mode) .estimate-refresh{background:linear-gradient(145deg,#f5df9d
 .live-metal-card:hover{transform:translateY(-2px);box-shadow:0 11px 24px #1c2d4217;border-color:#c3cfde}
 .live-metal-title{display:flex;align-items:center;gap:8px;margin-bottom:9px;min-height:34px;color:#243246}
 .live-metal-title .metal-dot{width:28px;height:23px;flex:0 0 28px}
+.market-table-link{margin-left:auto;align-self:flex-start;border:0;background:linear-gradient(135deg,#5b5ce2,#7c3aed);color:#fff;border-radius:8px;padding:5px 8px;font-size:10px;font-weight:800;white-space:nowrap;box-shadow:0 3px 9px #5b5ce230;cursor:pointer}.market-table-link:active{transform:scale(.97)}
+.market-data-overlay{position:fixed;inset:0;z-index:10050;background:rgba(7,15,30,.68);display:none;align-items:center;justify-content:center;padding:12px;backdrop-filter:blur(9px)}.market-data-overlay.open{display:flex;animation:marketBackdropIn .22s ease both}.market-data-overlay.closing{animation:marketBackdropOut .2s ease both}.market-data-panel{width:min(680px,100%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,#fff 0%,#f8faff 100%);border:1px solid rgba(226,232,240,.9);border-radius:22px;padding:clamp(13px,3vw,22px);box-shadow:0 28px 90px rgba(0,0,0,.28);color:#172033;transform-origin:center;animation:marketPanelIn .28s cubic-bezier(.2,.8,.2,1) both}.market-data-overlay.closing .market-data-panel{animation:marketPanelOut .18s ease both}@keyframes marketBackdropIn{from{opacity:0}to{opacity:1}}@keyframes marketBackdropOut{from{opacity:1}to{opacity:0}}@keyframes marketPanelIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes marketPanelOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(8px) scale(.98)}}.market-data-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.market-data-head h3{font-size:18px;letter-spacing:-.25px;margin:0;font-weight:850}.market-data-close{border:1px solid #e3e8f0;border-radius:11px;padding:8px 11px;background:#f1f5f9;color:#253044;font-weight:750;transition:transform .18s,background .18s}.market-data-close:active{transform:scale(.96)}.market-data-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.market-data-stat{padding:12px;border-radius:15px;background:linear-gradient(145deg,#f7f9ff,#eef3ff);border:1px solid #e2e8f7;min-width:0;box-shadow:0 2px 6px rgba(31,50,90,.035)}.market-data-stat span{display:block;font-size:11px;line-height:1.45;color:#64748b;font-weight:650}.market-data-stat strong{display:block;margin-top:6px;font-size:clamp(14px,3.5vw,17px);line-height:1.35;overflow-wrap:anywhere;letter-spacing:-.2px}.market-sentiment-neutral{color:#b7791f!important}.market-sentiment-greed{color:#16803d!important}.market-sentiment-fear{color:#dc2626!important}.market-data-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;border:1px solid #e5eaf2;border-radius:14px;overflow:hidden;background:#fff}.market-data-table th,.market-data-table td{padding:11px 9px;border-bottom:1px solid #e8edf4;text-align:right;white-space:nowrap}.market-data-table th:first-child,.market-data-table td:first-child{text-align:left}.market-data-table th{background:#f1f5fb;color:#475569;font-size:11px;text-transform:none;letter-spacing:.1px}.market-data-table tbody tr:last-child td{border-bottom:0}.market-data-table tbody tr:hover td{background:#f8faff}.market-data-note{font-size:11px;line-height:1.5;color:#667085;margin:10px 0 0}body.dark-mode .market-data-panel{background:linear-gradient(180deg,#111c2d,#0f1726);border-color:#29374d;color:#e8eef7}body.dark-mode .market-data-stat{background:linear-gradient(145deg,#1b2940,#172338);border-color:#30415a}body.dark-mode .market-data-table{background:#121c2b;border-color:#30415a}body.dark-mode .market-data-table th{background:#1b2940;color:#e8eef7}body.dark-mode .market-data-table tbody tr:hover td{background:#1a2940}body.dark-mode .market-data-table td{border-color:#30415a}body.dark-mode .market-data-note{color:#aebbd0}@media(max-width:420px){.market-data-panel{padding:12px;border-radius:18px}.market-data-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.market-data-stat{padding:9px;border-radius:12px}.market-data-table th,.market-data-table td{padding:9px 5px;font-size:10px}.market-data-head h3{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.market-data-overlay,.market-data-panel,.market-folder,.market-folder-icon .folder-front{animation:none!important;transition:none!important}}
+.market-folder-tabs{gap:9px!important;align-items:stretch}.market-folder{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e3e8ef!important;border-radius:14px!important;padding:10px 12px!important;background:#f8fafc;color:#526174;font-size:13px;font-weight:750;cursor:pointer;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}.market-folder:hover{transform:translateY(-1px)}.market-folder.active{background:linear-gradient(135deg,#fff9e7,#ffefbd)!important;border-color:#e4b64c!important;color:#76500b;box-shadow:0 5px 16px #b78b2520}.market-folder#marketSilverFolder.active{background:linear-gradient(135deg,#f7fafc,#dfe7f0)!important;border-color:#9aaabd!important;color:#344256;box-shadow:0 3px 10px #64748b20}.market-folder-icon{width:23px;height:23px;flex:0 0 23px;overflow:visible}.market-folder-icon .folder-back{fill:#f3cc63;stroke:#c79a2b;stroke-width:1}.market-folder-icon .folder-front{fill:#ffdf82;stroke:#c79a2b;stroke-width:1;transform-origin:12px 9px;transition:transform .22s ease}.market-folder.active .folder-front{transform:skewY(-7deg) translateY(-1px)}#marketSilverFolder .folder-back{fill:#cbd5e1;stroke:#94a3b8}#marketSilverFolder .folder-front{fill:#e8eef5;stroke:#94a3b8}.market-folder span{white-space:nowrap}.market-folder small{font-size:10px;font-weight:650;opacity:.72;white-space:nowrap}@media(max-width:370px){.market-folder{gap:5px;padding:8px 7px!important;font-size:12px}.market-folder-icon{width:22px;height:22px;flex-basis:22px}.market-folder small{font-size:9px}}
 .metal-name{font-size:14px;line-height:1.25;font-weight:800;letter-spacing:.1px}
 .metal-symbol{display:block;margin-top:3px;font-size:10px;font-weight:650;letter-spacing:1px;color:#718096}
 .live-badge{margin-left:auto;display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;background:#eaf8ef;color:#187744;font-size:9px;font-weight:800;letter-spacing:.6px;white-space:nowrap}
@@ -255,6 +262,11 @@ main>details.card:nth-of-type(-n+4)[open]>summary:after{position:static;margin-l
 body.dark-mode main>details.card:nth-of-type(-n+4){border-color:#cdb9ee;background:#f0e8fc}
 body.dark-mode main>details.card:nth-of-type(-n+4)>summary{background:#f0e8fc;color:#4b3867}
 
+
+
+
+/* Language picker inside Additional Features */
+
 </style>
 <script>
 // অ্যাপে (Capacitor) CSV সেভ/শেয়ার, ব্রাউজারে সাধারণ ডাউনলোড
@@ -287,8 +299,25 @@ async function saveCsv(name,csv){
 <body>
 <header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1>সোনা-রুপার হিসাবের খাতা</h1><div id="dhakaClock" class="clock-card" role="timer" aria-label="ঢাকা সময়"><div class="clock-top"><span class="live-dot"></span><span class="clock-label">ঢাকা সময়</span><span class="clock-live">LIVE</span></div><div class="clock-time"><span class="cd" id="clkH">--</span><span class="cc">:</span><span class="cd" id="clkM">--</span><span class="cc cs">:</span><span class="cd cds" id="clkS">--</span><span class="clock-ap" id="clkAP">--</span></div><div class="clock-date" id="clkDate">লোড হচ্ছে…</div><div class="clock-bar"><i id="clkBar"></i></div></div><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
 <div id="cryptoOverlay" class="crypto-overlay" role="dialog" aria-modal="true" aria-labelledby="cryptoTitle"><div class="crypto-panel"><div class="crypto-head"><h2 id="cryptoTitle">Cryptofam · Top 50 Crypto Live Prices</h2><div class="actions"><button type="button" class="secondary" id="cryptoRefresh">রিফ্রেশ</button><button type="button" class="danger" id="cryptoClose">বন্ধ</button></div></div><p class="crypto-meta">USD-তে আনুমানিক লাইভ মার্কেট প্রাইস · CoinGecko ডেটা · ইন্টারনেট প্রয়োজন</p><div id="cryptoStatus" class="crypto-loading">লাইভ দাম লোড হচ্ছে…</div><div class="tablewrap"><table class="crypto-table" id="cryptoTable" style="display:none"><thead><tr><th>#</th><th>ক্রিপ্টো</th><th style="text-align:right">দাম (USD)</th><th style="text-align:right">২৪ ঘণ্টা</th></tr></thead><tbody id="cryptoRows"></tbody></table></div></div></div>
+<div class="market-data-overlay" id="marketDataOverlay" role="dialog" aria-modal="true" aria-labelledby="marketDataTitle"><div class="market-data-panel"><div class="market-data-head"><h3 id="marketDataTitle">মার্কেট ছক</h3><button type="button" class="market-data-close" id="marketTableClose">বন্ধ ✕</button></div>
+<div class="market-folder-tabs" style="display:flex;gap:10px;margin:10px 0 14px">
+<button type="button" id="marketGoldFolder" class="market-folder active" aria-label="সোনার বাজার দেখুন"><svg class="market-folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><path class="folder-front" d="M3 9h18l-1.4 9.2a2 2 0 0 1-2 1.8H5.4a2 2 0 0 1-2-1.8z"/></svg><span>সোনা</span><small>XAU/USD</small></button>
+<button type="button" id="marketSilverFolder" class="market-folder" aria-label="রূপার বাজার দেখুন"><svg class="market-folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><path class="folder-front" d="M3 9h18l-1.4 9.2a2 2 0 0 1-2 1.8H5.4a2 2 0 0 1-2-1.8z"/></svg><span>রূপা</span><small>XAG/USD</small></button>
+</div>
+<p id="marketDataStatus" class="market-data-note">দামের তথ্য লোড হচ্ছে…</p><div class="market-data-stats"><div class="market-data-stat"><span>বর্তমান RSI (14)</span><strong id="marketRsi">—</strong></div><div class="market-data-stat"><span>আজকের সর্বোচ্চ (লাইভ)</span><strong id="marketDayHigh">—</strong></div><div class="market-data-stat"><span>আজকের সর্বনিম্ন (লাইভ)</span><strong id="marketDayLow">—</strong></div><div class="market-data-stat"><span>বর্তমান পজিশন (RSI-ভিত্তিক)</span><strong id="marketSentiment">—</strong></div></div>
+<div class="market-analysis" style="margin:14px 0;padding:14px;border:1px solid var(--border-color,#444);border-radius:12px">
+<h4 style="margin:0 0 10px">মার্কেট অ্যানালাইসিস · <span id="marketAnalysisSymbol">XAU/USD</span></h4>
+<div class="market-data-stats">
+<div class="market-data-stat"><span>ট্রেন্ড (EMA 20/50)</span><strong id="analysisTrend">—</strong></div>
+<div class="market-data-stat"><span>সাপোর্ট (২০ দিন)</span><strong id="analysisSupport">—</strong></div>
+<div class="market-data-stat"><span>রেজিস্ট্যান্স (২০ দিন)</span><strong id="analysisResistance">—</strong></div>
+<div class="market-data-stat"><span>MACD (12,26,9)</span><strong id="analysisMacd">—</strong></div>
+<div class="market-data-stat"><span>সম্ভাব্য সংকেত</span><strong id="analysisSignal">—</strong></div>
+</div>
+<p class="market-data-note" style="margin:8px 0 0">দৈনিক ঐতিহাসিক ডেটাভিত্তিক টেকনিক্যাল বিশ্লেষণ; এটি নিশ্চিত পূর্বাভাস বা আর্থিক পরামর্শ নয়।</p>
+</div><div style="overflow-x:auto"><table class="market-data-table"><thead><tr><th>মাস</th><th>সর্বোচ্চ দাম</th><th>সর্বনিম্ন দাম</th></tr></thead><tbody id="marketMonthRows"><tr><td colspan="3" style="text-align:center">ডেটা লোড হচ্ছে…</td></tr></tbody></table></div></div></div>
 <main>
-<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
+<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
 <section class="card estimate-box"><div class="estimate-grid"><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="22" height="17"> আনুমানিক সোনার দাম</span><strong id="estimatedGold">লোড হচ্ছে…</strong></div><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="22" height="17"> আনুমানিক রূপার দাম</span><strong id="estimatedSilver">লোড হচ্ছে…</strong></div></div><div class="estimate-refresh-row"><button type="button" id="estimateRefresh" class="estimate-refresh" aria-label="সোনা ও রুপার দাম রিফ্রেশ করুন" title="দাম রিফ্রেশ করুন"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button></div></section></section>
 
 
@@ -423,6 +452,19 @@ async function saveCsv(name,csv){
    </form>
    <p class="hint">প্রতিটি রসিদে স্বয়ংক্রিয়ভাবে “Made by Robin” থাকবে। রসিদ তৈরির আগে তথ্য যাচাই করে নিন।</p>
   </section></div></details>
+
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">⚖</span><span>গড় টনস ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>গড় টনস ক্যালকুলেটর</h3><p class="hint">প্রতিটি সোনার ওজন ভরি, আনা, রতি, পয়েন্টে এবং টনস (%) লিখুন।</p>
+   <div id="gmAvgRows"><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div></div>
+   <div class="actions" style="margin-top:8px"><button class="secondary" id="gmAvgAdd" type="button">+ আরেকটি সোনা যোগ</button><button class="primary" id="gmAvgCalc" type="button">গড় হিসাব</button></div><div class="gm-result" id="gmAvgResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
+  </section></div></details>
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">◈</span><span>ক্যারেট ও টনস কনভার্টার</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>ক্যারেট ও টনস কনভার্টার</h3><div class="field"><label>বর্তমান ওজন</label><div class="gm-weight-fields" data-weight="gm-conv" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-conv-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-conv-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-conv-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-conv-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div>
+   <div class="field"><label for="gmConvCurrent">বর্তমান বিশুদ্ধতা (ক্যারেট)</label><input id="gmConvCurrent" type="number" min="0.01" max="24" step="any" placeholder="যেমন ২০"></div>
+   <div class="field"><label for="gmConvTarget">লক্ষ্য বিশুদ্ধতা (ক্যারেট)</label><input id="gmConvTarget" type="number" min="0.01" max="24" step="any" placeholder="যেমন ২২"></div>
+   <div class="field"><label for="gmConvPure">যোগ করা পাকা সোনার বিশুদ্ধতা (ক্যারেট)</label><input id="gmConvPure" type="number" min="0.01" max="24" step="any" value="24"></div>
+   <button class="primary" id="gmConvCalc" type="button">কনভার্ট হিসাব</button><div class="gm-result" id="gmConvResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div><p class="hint">লক্ষ্য ক্যারেট বর্তমানের বেশি হলে পাকা সোনা যোগের হিসাব; কম হলে খাদ/অ্যালয়ের আনুমানিক হিসাব দেখাবে।</p>
+  </section></div></details>
  </div>
 </details>
 
@@ -458,8 +500,8 @@ function updateDhakaClock(){
  const ap=String(p.dayPeriod||'').toUpperCase();if(prev.ap!==ap){prev.ap=ap;el.ap.textContent=ap}
  const ds=(WD[p.weekday]||p.weekday)+', '+bn(p.day)+' '+(MON[(+p.month)-1]||'')+' '+bn(p.year);
  if(prev.d!==ds){prev.d=ds;el.d.textContent=ds}
- el.bar.style.width=((+p.second+1)/60*100)+'%';
- if(+p.second===59){el.bar.style.transition='none';requestAnimationFrame(()=>{el.bar.style.width='0%';requestAnimationFrame(()=>{el.bar.style.transition=''})})}
+ el.bar.style.width=(+p.second/60*100)+'%';
+ if(+p.second===0){el.bar.style.transition='none';el.bar.style.width='0%';requestAnimationFrame(()=>{el.bar.style.transition=''})}
 }
 updateDhakaClock();setInterval(updateDhakaClock,1000);
 })();
@@ -587,6 +629,145 @@ async function loadEstimatedMetalPrices(){
 }
 document.getElementById('estimateRefresh').addEventListener('click',loadEstimatedMetalPrices);
 loadEstimatedMetalPrices(); setInterval(loadEstimatedMetalPrices,5000);
+
+// গোল্ডের মাসভিত্তিক High/Low, Daily High/Low এবং RSI(14)
+const marketOverlay=$('marketDataOverlay');
+function closeMarketTable(){if(!marketOverlay.classList.contains('open')||marketOverlay.classList.contains('closing'))return;marketOverlay.classList.add('closing');setTimeout(()=>{marketOverlay.classList.remove('open','closing')},190)}
+let activeMarketMetal='xau';
+function selectMarketFolder(metal){activeMarketMetal=metal;$('marketGoldFolder').classList.toggle('active',metal==='xau');$('marketSilverFolder').classList.toggle('active',metal==='xag');$('marketGoldFolder').style.boxShadow=metal==='xau'?'inset 0 0 0 2px #e4b64c':'none';$('marketSilverFolder').style.boxShadow=metal==='xag'?'inset 0 0 0 2px #94a3b8':'none';$('marketDataTitle').textContent=metal==='xau'?'সোনার বাজার ছক · XAU/USD':'রূপার বাজার ছক · XAG/USD';$('marketAnalysisSymbol').textContent=metal.toUpperCase()+'/USD';loadGoldMarketTable(metal)}
+$('marketTableOpen').addEventListener('click',()=>{marketOverlay.classList.remove('closing');marketOverlay.classList.add('open');selectMarketFolder('xau')});
+$('marketGoldFolder').addEventListener('click',()=>selectMarketFolder('xau'));
+$('marketSilverFolder').addEventListener('click',()=>selectMarketFolder('xag'));
+$('marketTableClose').addEventListener('click',closeMarketTable);
+marketOverlay.addEventListener('click',ev=>{if(ev.target===marketOverlay)closeMarketTable()});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape')closeMarketTable()});
+function marketFmt(v){return Number.isFinite(Number(v))?'$'+Number(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):'—'}
+function marketDhakaDate(value){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dhaka',year:'numeric',month:'2-digit',day:'2-digit'}).format(value)}
+function calcRsi(closes,period=14){
+ if(closes.length<=period)return null;
+ let gains=0,losses=0;
+ for(let i=1;i<=period;i++){const d=closes[i]-closes[i-1];if(d>0)gains+=d;else losses-=d}
+ let avgGain=gains/period,avgLoss=losses/period;
+ for(let i=period+1;i<closes.length;i++){const d=closes[i]-closes[i-1];avgGain=(avgGain*(period-1)+Math.max(0,d))/period;avgLoss=(avgLoss*(period-1)+Math.max(0,-d))/period}
+ if(avgGain===0&&avgLoss===0)return 50;
+ if(avgLoss===0)return 100;
+ if(avgGain===0)return 0;
+ return 100-(100/(1+avgGain/avgLoss));
+}
+function calcEMA(values,period){
+ if(values.length<period)return [];
+ const k=2/(period+1),out=[];
+ let ema=values.slice(0,period).reduce((a,b)=>a+b,0)/period;
+ out[period-1]=ema;
+ for(let i=period;i<values.length;i++){ema=values[i]*k+ema*(1-k);out[i]=ema;}
+ return out;
+}
+function calcMACD(values){
+ const e12=calcEMA(values,12),e26=calcEMA(values,26);
+ const line=[];
+ for(let i=0;i<values.length;i++)if(Number.isFinite(e12[i])&&Number.isFinite(e26[i]))line[i]=e12[i]-e26[i];
+ const compact=line.filter(Number.isFinite),signal=calcEMA(compact,9);
+ if(!compact.length||!signal.length)return null;
+ const macd=compact[compact.length-1],sig=signal[signal.length-1];
+ return {macd,signal:sig,hist:macd-sig};
+}
+async function loadGoldMarketTable(metal=activeMarketMetal){
+ const status=$('marketDataStatus'),tbody=$('marketMonthRows');
+ status.textContent='দামের তথ্য যাচাই হচ্ছে…';
+ tbody.innerHTML='<tr><td colspan="3" style="text-align:center">ডেটা লোড হচ্ছে…</td></tr>';
+ try{
+  const historyUrl=metal==='xag'
+   ? 'https://xaus.com/api/v1/chart?symbol=silver&range=5y&interval=1d&fresh='+Date.now()
+   : 'https://xaus.com/api/v1/history?fresh='+Date.now();
+  const [historyResponse,intradayResponse]=await Promise.all([
+   fetch(historyUrl,{cache:'no-store'}),
+   fetch('https://xaus.com/api/v1/intraday?symbol='+metal+'&hours=24&fresh='+Date.now(),{cache:'no-store'})
+  ]);
+  if(!historyResponse.ok)throw new Error('ঐতিহাসিক ডেটা পাওয়া যায়নি ('+historyResponse.status+')');
+  const payload=await historyResponse.json();
+  const points=Array.isArray(payload.points)?payload.points:(Array.isArray(payload.data?.points)?payload.data.points:(Array.isArray(payload.bars)?payload.bars:[]));
+  const data=points.map(x=>{
+    const stamp=Number(x.t??x.timestamp);
+    const date=String(x.d||x.date||(Number.isFinite(stamp)?new Date(stamp<1e12?stamp*1000:stamp).toISOString().slice(0,10):'')).slice(0,10);
+    return {date,high:Number(x.h??x.high),low:Number(x.l??x.low),close:Number(x.c??x.close)};
+   })
+   .filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&Number.isFinite(x.high)&&Number.isFinite(x.low)&&Number.isFinite(x.close)&&x.high>=x.low&&x.close>0)
+   .sort((a,b)=>a.date.localeCompare(b.date));
+  if(data.length<20)throw new Error('যথেষ্ট ঐতিহাসিক ডেটা পাওয়া যায়নি।');
+  const dhakaToday=marketDhakaDate(new Date());
+  // RSI কেবল সম্পূর্ণ হওয়া দৈনিক closing price থেকে হিসাব; আজকের চলমান candle বাদ।
+  const completed=data.filter(x=>x.date<dhakaToday);
+  const rsi=calcRsi(completed.map(x=>x.close));
+  $('marketRsi').textContent=rsi===null?'—':rsi.toFixed(2);
+  const sentiment=$('marketSentiment');
+  if(rsi===null){sentiment.textContent='ডেটা নেই';sentiment.className='';}
+  else if(rsi<=30){sentiment.textContent='Oversold · অতিরিক্ত বিক্রির চাপ';sentiment.className='market-sentiment-fear';}
+  else if(rsi>=70){sentiment.textContent='Overbought · অতিরিক্ত কেনার চাপ';sentiment.className='market-sentiment-greed';}
+  else{sentiment.textContent='Neutral · নিরপেক্ষ';sentiment.className='market-sentiment-neutral';}
+
+  // টেকনিক্যাল অ্যানালাইসিস: সম্পূর্ণ দৈনিক ক্যান্ডেল ব্যবহার করা হয়।
+  const closes=completed.map(x=>x.close), recent=completed.slice(-20);
+  const ema20=calcEMA(closes,20), ema50=calcEMA(closes,50);
+  const last20=ema20.length?ema20[ema20.length-1]:null, last50=ema50.length?ema50[ema50.length-1]:null;
+  const trendEl=$('analysisTrend');
+  if(last20!==null&&last50!==null){
+   trendEl.textContent=last20>last50?'Bullish · ঊর্ধ্বমুখী':last20<last50?'Bearish · নিম্নমুখী':'Sideways · সমতল';
+  }else trendEl.textContent='ডেটা অপর্যাপ্ত';
+  $('analysisSupport').textContent=recent.length?marketFmt(Math.min(...recent.map(x=>x.low))):'—';
+  $('analysisResistance').textContent=recent.length?marketFmt(Math.max(...recent.map(x=>x.high))):'—';
+  const macd=calcMACD(closes), macdEl=$('analysisMacd');
+  if(macd){
+   macdEl.textContent=(macd.hist>=0?'ইতিবাচক ':'নেতিবাচক ')+macd.hist.toFixed(2);
+  }else macdEl.textContent='ডেটা অপর্যাপ্ত';
+  const signalEl=$('analysisSignal');
+  if(rsi===null||!macd||last20===null||last50===null){
+   signalEl.textContent='ডেটা অপর্যাপ্ত';
+  }else{
+   const bullish=last20>last50&&macd.hist>0&&rsi>50&&rsi<70;
+   const bearish=last20<last50&&macd.hist<0&&rsi<50&&rsi>30;
+   signalEl.textContent=bullish?'সম্ভাব্য Bullish':bearish?'সম্ভাব্য Bearish':'মিশ্র সংকেত · অপেক্ষা';
+  }
+
+  // আজকের High/Low দৈনিক ৫-মিনিট অন্তর রেকর্ড করা intraday quote থেকে।
+  let todayPrices=[];
+  if(intradayResponse.ok){
+   const intra=await intradayResponse.json();
+   const pts=Array.isArray(intra.points)?intra.points:[];
+   todayPrices=pts.filter(p=>Number.isFinite(Number(p.t))&&Number.isFinite(Number(p.p))&&marketDhakaDate(new Date(Number(p.t)*1000))===dhakaToday).map(p=>Number(p.p));
+  }
+  // Intraday ডেটা না এলে ঐতিহাসিক API-র আজকের daily candle থেকে fallback।
+  const todayCandle=data.filter(x=>x.date===dhakaToday);
+  const dayHigh=todayPrices.length?Math.max(...todayPrices):(todayCandle.length?Math.max(...todayCandle.map(x=>x.high)):null);
+  const dayLow=todayPrices.length?Math.min(...todayPrices):(todayCandle.length?Math.min(...todayCandle.map(x=>x.low)):null);
+  $('marketDayHigh').textContent=dayHigh!==null?marketFmt(dayHigh):'আজকের ডেটা পাওয়া যায়নি';
+  $('marketDayLow').textContent=dayLow!==null?marketFmt(dayLow):'আজকের ডেটা পাওয়া যায়নি';
+
+  const nowParts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dhaka',year:'numeric',month:'2-digit'}).formatToParts(new Date());
+  const year=Number(nowParts.find(p=>p.type==='year').value),month=Number(nowParts.find(p=>p.type==='month').value);
+  const months=[];
+  for(let i=5;i>=0;i--){
+   const d=new Date(Date.UTC(year,month-1-i,1));
+   const y=d.getUTCFullYear(),m=d.getUTCMonth()+1,key=y+'-'+String(m).padStart(2,'0');
+   months.push({key,label:new Intl.DateTimeFormat('bn-BD',{timeZone:'Asia/Dhaka',month:'long',year:'numeric'}).format(d)});
+  }
+  tbody.innerHTML='';
+  months.forEach(m=>{
+   const arr=data.filter(x=>x.date.slice(0,7)===m.key),tr=document.createElement('tr');
+   const label=document.createElement('td');label.textContent=m.label;tr.appendChild(label);
+   const hi=document.createElement('td');hi.textContent=arr.length?marketFmt(Math.max(...arr.map(x=>x.high))):'ডেটা নেই';tr.appendChild(hi);
+   const lo=document.createElement('td');lo.textContent=arr.length?marketFmt(Math.min(...arr.map(x=>x.low))):'ডেটা নেই';tr.appendChild(lo);
+   tbody.appendChild(tr);
+  });
+  const historyDate=String(payload.updated_at||payload.data_state?.as_of||payload.as_of||'').slice(0,16).replace('T',' ');
+  const sourceLabel=metal==='xag'?'রূপার দৈনিক OHLC ডেটা':'সোনার দৈনিক OHLC ডেটা';
+  status.textContent=sourceLabel+' · '+(historyDate ? 'সর্বশেষ আপডেট: '+historyDate+' UTC' : 'ডেটা লোড: '+new Date().toLocaleString('bn-BD',{timeZone:'Asia/Dhaka'}));
+  marketOverlay.dataset.loaded='1';
+ }catch(err){
+  $('marketRsi').textContent='—';$('marketDayHigh').textContent='—';$('marketDayLow').textContent='—';$('marketSentiment').textContent='ডেটা নেই';$('marketSentiment').className='';['analysisTrend','analysisSupport','analysisResistance','analysisMacd','analysisSignal'].forEach(id=>{const el=$(id);if(el)el.textContent='—'});
+  tbody.innerHTML='<tr><td colspan="3" style="text-align:center">ঐতিহাসিক ডেটা পাওয়া যায়নি</td></tr>';
+  status.textContent='এই মুহূর্তে মার্কেট ডেটা লোড হয়নি। ইন্টারনেট চালু রেখে আবার চেষ্টা করুন। ('+err.message+')';
+ }
+}
 
 // Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর বাজারদর (CoinGecko public API)
 const cryptoOverlay=$('cryptoOverlay');
@@ -746,7 +927,6 @@ render();
   let x=Math.round(units),p=x%10;x=Math.floor(x/10);let r=x%6;x=Math.floor(x/6);let a=x%16;let v=Math.floor(x/16);
   return `${bn(v)} ভরি ${bn(a)} আনা ${bn(r)} রতি ${bn(p)} পয়েন্ট`;
  }
-
  const NAT=!!(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform());
  let ov=null,pf=null,png='',rno='';
  function gmOv(){
@@ -867,6 +1047,19 @@ render();
   <div class="made">Made by Robin</div></div></div></body></html>`;
   gmShowReceipt(docHtml,receiptNo);
  });
+})();
+</script>
+
+
+
+<script>
+(()=>{
+ const el=id=>document.getElementById(id), num=id=>Number(el(id).value), fmt=n=>Number(n).toLocaleString('bn-BD',{maximumFractionDigits:5});
+ const weightValue=(root,cls)=>{const q=k=>Number(root.querySelector('.'+cls+'-'+k)?.value||0);return q('bhori')+q('ana')/16+q('rati')/96+q('point')/960;}; const weightFmt=n=>{let pts=Math.max(0,Math.round(n*960));const v=Math.floor(pts/960);pts%=960;const a=Math.floor(pts/60);pts%=60;const r=Math.floor(pts/10),pt=pts%10;return `${v.toLocaleString('bn-BD')} ভরি ${a.toLocaleString('bn-BD')} আনা ${r.toLocaleString('bn-BD')} রতি ${pt.toLocaleString('bn-BD')} পয়েন্ট`;};
+ const weightMarkup=(cls)=>`<div class="gm-weight-fields" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="${cls}-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="${cls}-ana" type="number" min="0" max="15" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="${cls}-rati" type="number" min="0" max="5" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="${cls}-point" type="number" min="0" max="9" step="1" placeholder="পয়েন্ট"></div></div>`;
+ el('gmAvgAdd').addEventListener('click',()=>{const d=document.createElement('div');d.className='gm-avg-row';d.style.cssText='margin-bottom:12px';d.innerHTML='<div class="field"><label>ওজন</label>'+weightMarkup('gm-avg')+'</div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div>';el('gmAvgRows').appendChild(d);});
+ el('gmAvgCalc').addEventListener('click',()=>{let total=0,pure=0;for(const r of document.querySelectorAll('#gmAvgRows .gm-avg-row')){const w=weightValue(r,'gm-avg'),p=Number(r.querySelector('.gm-avg-purity').value);if(r.querySelector('.gm-avg-purity').value===''||w<0||p<0||p>100){el('gmAvgResult').textContent='প্রতিটি লাইনে ওজন এবং সঠিক ০–১০০% টনস দিন।';return;}total+=w;pure+=w*p/100;}if(total<=0){el('gmAvgResult').textContent='ওজন ও টনস লিখুন।';return;}let pts=Math.round(total*960),v=Math.floor(pts/960);pts%=960;let a=Math.floor(pts/60);pts%=60;let r=Math.floor(pts/10),pt=pts%10;const totalWeight=`${bn(v)} ভরি ${bn(a)} আনা ${bn(r)} রতি ${bn(pt)} পয়েন্ট`;el('gmAvgResult').innerHTML=`মোট ওজন: <strong>${totalWeight}</strong><br>গড় টনস: <strong>${fmt(pure/total*100)}%</strong><br>গড় ক্যারেট: <strong>${fmt(pure/total*24)}K</strong>`;});
+ el('gmConvCalc').addEventListener('click',()=>{const w=weightValue(document.querySelector('[data-weight="gm-conv"]'),'gm-conv'),c=num('gmConvCurrent'),t=num('gmConvTarget'),p=num('gmConvPure');if(!(w>0&&c>0&&c<=24&&t>0&&t<=24&&p>0&&p<=24)){el('gmConvResult').textContent='ওজন ও ক্যারেটের মান সঠিকভাবে দিন (ক্যারেট ০–২৪)।';return;}if(Math.abs(c-t)<1e-9){el('gmConvResult').textContent='বর্তমান সোনা লক্ষ্য ক্যারেটের সমান—কিছু যোগের প্রয়োজন নেই।';return;}let add,kind;if(t>c){if(p<=t){el('gmConvResult').textContent='লক্ষ্য ক্যারেট অর্জনের জন্য যোগ করা পাকা সোনার ক্যারেট লক্ষ্যের চেয়ে বেশি হতে হবে।';return;}add=w*(t-c)/(p-t);kind='পাকা সোনা যোগ করতে হবে';}else{if(p>=t){el('gmConvResult').textContent='খাদ/অ্যালয়ের ক্যারেট লক্ষ্য ক্যারেটের চেয়ে কম হতে হবে।';return;}add=w*(c-t)/(t-p);kind='খাদ/অ্যালয় যোগ করতে হবে';}el('gmConvResult').innerHTML=`<strong>${kind}: ${weightFmt(add)}</strong><br>নতুন মোট ওজন: <strong>${weightFmt(w+add)}</strong><br>লক্ষ্য: <strong>${fmt(t)}K (${fmt(t/24*100)}%)</strong>`;});
 })();
 </script>
 
