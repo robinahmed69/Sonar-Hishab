@@ -211,6 +211,7 @@ body:not(.dark-mode) .estimate-refresh{background:linear-gradient(145deg,#f5df9d
 .live-metal-title .metal-dot{width:28px;height:23px;flex:0 0 28px}
 .market-table-link{margin-left:auto;align-self:flex-start;border:0;background:linear-gradient(135deg,#5b5ce2,#7c3aed);color:#fff;border-radius:8px;padding:5px 8px;font-size:10px;font-weight:800;white-space:nowrap;box-shadow:0 3px 9px #5b5ce230;cursor:pointer}.market-table-link:active{transform:scale(.97)}
 .market-data-overlay{position:fixed;inset:0;z-index:10050;background:rgba(7,15,30,.68);display:none;align-items:center;justify-content:center;padding:12px;}.market-data-overlay.open{display:flex;animation:marketBackdropIn .22s ease both}.market-data-overlay.closing{animation:marketBackdropOut .2s ease both}.market-data-panel{width:min(680px,100%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,#fff 0%,#f8faff 100%);border:1px solid rgba(226,232,240,.9);border-radius:22px;padding:clamp(13px,3vw,22px);box-shadow:0 28px 90px rgba(0,0,0,.28);color:#172033;transform-origin:center;animation:marketPanelIn .28s cubic-bezier(.2,.8,.2,1) both}.market-data-overlay.closing .market-data-panel{animation:marketPanelOut .18s ease both}@keyframes marketBackdropIn{from{opacity:0}to{opacity:1}}@keyframes marketBackdropOut{from{opacity:1}to{opacity:0}}@keyframes marketPanelIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes marketPanelOut{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(8px) scale(.98)}}.market-data-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.market-data-head h3{font-size:18px;letter-spacing:-.25px;margin:0;font-weight:850}.market-data-close{border:1px solid #e3e8f0;border-radius:11px;padding:8px 11px;background:#f1f5f9;color:#253044;font-weight:750;transition:transform .18s,background .18s}.market-data-close:active{transform:scale(.96)}.market-data-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.market-data-stat{padding:12px;border-radius:15px;background:linear-gradient(145deg,#f7f9ff,#eef3ff);border:1px solid #e2e8f7;min-width:0;box-shadow:0 2px 6px rgba(31,50,90,.035)}.market-data-stat span{display:block;font-size:11px;line-height:1.45;color:#64748b;font-weight:650}.market-data-stat strong{display:block;margin-top:6px;font-size:clamp(14px,3.5vw,17px);line-height:1.35;overflow-wrap:anywhere;letter-spacing:-.2px}.market-sentiment-neutral{color:#b7791f!important}.market-sentiment-greed{color:#16803d!important}.market-sentiment-fear{color:#dc2626!important}.market-data-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;border:1px solid #e5eaf2;border-radius:14px;overflow:hidden;background:#fff}.market-data-table th,.market-data-table td{padding:11px 9px;border-bottom:1px solid #e8edf4;text-align:right;white-space:nowrap}.market-data-table th:first-child,.market-data-table td:first-child{text-align:left}.market-data-table th{background:#f1f5fb;color:#475569;font-size:11px;text-transform:none;letter-spacing:.1px}.market-data-table tbody tr:last-child td{border-bottom:0}.market-data-table tbody tr:hover td{background:#f8faff}.market-data-note{font-size:11px;line-height:1.5;color:#667085;margin:10px 0 0}body.dark-mode .market-data-panel{background:linear-gradient(180deg,#111c2d,#0f1726);border-color:#29374d;color:#e8eef7}body.dark-mode .market-data-stat{background:linear-gradient(145deg,#1b2940,#172338);border-color:#30415a}body.dark-mode .market-data-table{background:#121c2b;border-color:#30415a}body.dark-mode .market-data-table th{background:#1b2940;color:#e8eef7}body.dark-mode .market-data-table tbody tr:hover td{background:#1a2940}body.dark-mode .market-data-table td{border-color:#30415a}body.dark-mode .market-data-note{color:#aebbd0}@media(max-width:420px){.market-data-panel{padding:12px;border-radius:18px}.market-data-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.market-data-stat{padding:9px;border-radius:12px}.market-data-table th,.market-data-table td{padding:9px 5px;font-size:10px}.market-data-head h3{font-size:16px}}
+body.dark-mode .historical-close-box{background:#172338!important;border-color:#30415a!important}body.dark-mode #historicalCloseDate{background:#111c2b!important;color:#e8eef7!important;border-color:#40516a!important}body.dark-mode #historicalCloseResult{background:#1b2940!important}body.dark-mode #historicalCloseResultDate,body.dark-mode #historicalCloseResult span{color:#b6c4d8!important}body.dark-mode #historicalClosePrice{color:#8bb8ff!important}
 @media(prefers-reduced-motion:reduce){.market-data-overlay,.market-data-panel,.market-folder,.market-folder-icon .folder-front{animation:none!important;transition:none!important}}
 .market-folder-tabs{gap:9px!important;align-items:stretch}.market-folder{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid #e3e8ef!important;border-radius:14px!important;padding:10px 12px!important;background:#f8fafc;color:#526174;font-size:13px;font-weight:750;cursor:pointer;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}.market-folder:hover{transform:translateY(-1px)}.market-folder.active{background:linear-gradient(135deg,#fff9e7,#ffefbd)!important;border-color:#e4b64c!important;color:#76500b;box-shadow:0 5px 16px #b78b2520}.market-folder#marketSilverFolder.active{background:linear-gradient(135deg,#f7fafc,#dfe7f0)!important;border-color:#9aaabd!important;color:#344256;box-shadow:0 3px 10px #64748b20}.market-folder-icon{width:23px;height:23px;flex:0 0 23px;overflow:visible}.market-folder-icon .folder-back{fill:#f3cc63;stroke:#c79a2b;stroke-width:1}.market-folder-icon .folder-front{fill:#ffdf82;stroke:#c79a2b;stroke-width:1;transform-origin:12px 9px;transition:transform .22s ease}.market-folder.active .folder-front{transform:skewY(-7deg) translateY(-1px)}#marketSilverFolder .folder-back{fill:#cbd5e1;stroke:#94a3b8}#marketSilverFolder .folder-front{fill:#e8eef5;stroke:#94a3b8}.market-folder span{white-space:nowrap}.market-folder small{font-size:10px;font-weight:650;opacity:.72;white-space:nowrap}@media(max-width:370px){.market-folder{gap:5px;padding:8px 7px!important;font-size:12px}.market-folder-icon{width:22px;height:22px;flex-basis:22px}.market-folder small{font-size:9px}}
 .metal-name{font-size:14px;line-height:1.25;font-weight:800;letter-spacing:.1px}
@@ -487,6 +488,15 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 <button type="button" id="marketGoldFolder" class="market-folder active" aria-label="সোনার বাজার দেখুন"><svg class="market-folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><path class="folder-front" d="M3 9h18l-1.4 9.2a2 2 0 0 1-2 1.8H5.4a2 2 0 0 1-2-1.8z"/></svg><span>সোনা</span><small>XAU/USD</small></button>
 <button type="button" id="marketSilverFolder" class="market-folder" aria-label="রূপার বাজার দেখুন"><svg class="market-folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><path class="folder-front" d="M3 9h18l-1.4 9.2a2 2 0 0 1-2 1.8H5.4a2 2 0 0 1-2-1.8z"/></svg><span>রূপা</span><small>XAG/USD</small></button>
 </div>
+<section id="historicalCloseBox" class="historical-close-box" style="margin:12px 0;padding:13px;border:1px solid #dbe4f0;border-radius:14px;background:#f8fbff">
+<h4 style="margin:0 0 9px;font-size:14px">📅 অতীতের ক্লোজিং প্রাইস</h4>
+<div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap">
+<label for="historicalCloseDate" style="display:grid;gap:5px;font-size:11px;font-weight:700;flex:1;min-width:145px">তারিখ নির্বাচন করুন<input id="historicalCloseDate" type="date" style="width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#172033;font:inherit"></label>
+<button type="button" id="historicalCloseSearch" style="padding:10px 13px;border:0;border-radius:9px;background:#2457a7;color:white;font-weight:750">দাম দেখুন</button>
+</div>
+<div id="historicalCloseStatus" role="status" style="margin-top:10px;font-size:12px;color:#64748b">তারিখ বেছে “দাম দেখুন” চাপুন।</div>
+<div id="historicalCloseResult" style="display:none;margin-top:10px;padding:11px;border-radius:10px;background:#eaf1ff"><span id="historicalCloseResultDate" style="display:block;font-size:11px;color:#475569"></span><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px"><div style="padding:9px 6px;border-radius:9px;background:#fff"><span style="display:block;font-size:10px;color:#64748b">সর্বোচ্চ (High)</span><strong id="historicalHighPrice" style="display:block;margin-top:3px;font-size:16px;color:#16803d;overflow-wrap:anywhere">—</strong></div><div style="padding:9px 6px;border-radius:9px;background:#fff"><span style="display:block;font-size:10px;color:#64748b">সর্বনিম্ন (Low)</span><strong id="historicalLowPrice" style="display:block;margin-top:3px;font-size:16px;color:#c2410c;overflow-wrap:anywhere">—</strong></div><div style="padding:9px 6px;border-radius:9px;background:#fff"><span style="display:block;font-size:10px;color:#64748b">ক্লোজিং (Close)</span><strong id="historicalClosePrice" style="display:block;margin-top:3px;font-size:16px;color:#174ea6;overflow-wrap:anywhere">—</strong></div></div><span style="display:block;margin-top:8px;font-size:10px;color:#64748b">USD প্রতি ট্রয় আউন্স · দৈনিক OHLC</span></div>
+</section>
 <p id="marketDataStatus" class="market-data-note">দামের তথ্য লোড হচ্ছে…</p><div class="market-data-stats"><div class="market-data-stat"><span>বর্তমান RSI (14)</span><strong id="marketRsi">—</strong></div><div class="market-data-stat"><span>আজকের সর্বোচ্চ (লাইভ)</span><strong id="marketDayHigh">—</strong></div><div class="market-data-stat"><span>আজকের সর্বনিম্ন (লাইভ)</span><strong id="marketDayLow">—</strong></div><div class="market-data-stat"><span>বর্তমান পজিশন (RSI-ভিত্তিক)</span><strong id="marketSentiment">—</strong></div></div>
 <div class="market-analysis" style="margin:14px 0;padding:14px;border:1px solid var(--border-color,#444);border-radius:12px">
 <h4 style="margin:0 0 10px">মার্কেট অ্যানালাইসিস · <span id="marketAnalysisSymbol">XAU/USD</span></h4>
@@ -498,11 +508,11 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 <div class="market-data-stat"><span>সম্ভাব্য সংকেত</span><strong id="analysisSignal">—</strong></div>
 </div>
 <p class="market-data-note" style="margin:8px 0 0">দৈনিক ঐতিহাসিক ডেটাভিত্তিক টেকনিক্যাল বিশ্লেষণ; এটি নিশ্চিত পূর্বাভাস বা আর্থিক পরামর্শ নয়।</p>
-</div><div style="overflow-x:auto"><table class="market-data-table"><thead><tr><th>মাস</th><th>সর্বোচ্চ দাম</th><th>সর্বনিম্ন দাম</th></tr></thead><tbody id="marketMonthRows"><tr><td colspan="3" style="text-align:center">ডেটা লোড হচ্ছে…</td></tr></tbody></table></div></div></div>
+</div></div></div>
 <div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><div id="shopMsgBox" class="shop-msg" hidden></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
 <button type="button" id="dailyMessageLaunch" class="daily-message-launch" aria-label="আজকের বার্তা খুলুন" title="আজকের বার্তা"><span class="daily-message-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7a2 2 0 0 1-2-2z"/><path d="M5 17.5c0-1.1.9-2 2-2h11M9 8h5M9 11h5"/><path d="M18 7h2v13h-2"/></svg></span><span>আজকের বার্তা</span></button>
 <main>
-<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
+<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><div id="metalsMarketNotice" class="metals-market-notice" style="display:none" role="status"><span class="metals-market-dot"></span><span>মার্কেট বন্ধ আছে, ফিরে আসছি <strong id="metalsMarketCountdown">--:--:--</strong> ঘন্টা পর</span></div><p id="metalsMarketOpenHint" class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
 <section class="card estimate-box"><div class="estimate-grid"><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="22" height="17"> আনুমানিক সোনার দাম</span><strong id="estimatedGold">লোড হচ্ছে…</strong></div><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="22" height="17"> আনুমানিক রূপার দাম</span><strong id="estimatedSilver">লোড হচ্ছে…</strong></div></div><div class="estimate-refresh-row"><button type="button" id="estimateRefresh" class="estimate-refresh" aria-label="সোনা ও রুপার দাম রিফ্রেশ করুন" title="দাম রিফ্রেশ করুন"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button></div></section></section>
 
 
@@ -653,10 +663,25 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
    <button class="primary" id="gmConvCalc" type="button">কনভার্ট হিসাব</button><div class="gm-result" id="gmConvResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div><p class="hint">লক্ষ্য ক্যারেট বর্তমানের বেশি হলে পাকা সোনা যোগের হিসাব; কম হলে খাদ/অ্যালয়ের আনুমানিক হিসাব দেখাবে।</p>
   </section></div></details>
 
-  <details class="gm-subfolder" id="gmBanglaCalendar"><summary><span class="gm-sub-icon">📅</span><span>বাংলা ক্যালেন্ডার ও ছুটি</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
-   <h3>বাংলা মাসের ক্যালেন্ডার</h3>
-   <div class="gm-result" id="gmCalendarToday">বাংলা তারিখ লোড হচ্ছে…</div>
-   <div class="gm-calendar-month" id="gmBanglaMonthGrid" aria-label="বাংলা মাসের ক্যালেন্ডার"></div>
+  <details class="gm-subfolder" id="gmBanglaCalendar"><summary><span class="gm-sub-icon">📈</span><span>Forex Calendar (USD)</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool gm-forex-calendar" id="gmForexCalendar">
+   <style>
+    .gm-forex-calendar{overflow:hidden;background:var(--surface,#fff);color:var(--ink,#202938)}
+    .gm-fx-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 14px;background:#202b36;color:#fff;border-radius:8px 8px 0 0}
+    .gm-fx-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;letter-spacing:.1px}.gm-fx-brand-badge{display:grid;place-items:center;width:31px;height:31px;border-radius:6px;background:#f0c44b;color:#202b36;font-weight:900;font-size:18px}
+    .gm-fx-sub{font-size:11px;color:#c4d0da;margin-top:2px}.gm-fx-usd{font-size:11px;font-weight:800;letter-spacing:.6px;background:#344554;border:1px solid #536474;padding:7px 10px;border-radius:5px;white-space:nowrap}
+    .gm-fx-toolbar{display:flex;align-items:center;gap:0;flex-wrap:wrap;background:#f0f2f4;border:1px solid #d4dbe1;border-top:0;padding:8px;}
+    .gm-fx-toolbar span{font-size:11px;font-weight:700;color:#394653;padding:7px 10px;border-right:1px solid #d4dbe1}.gm-fx-toolbar span:last-child{border-right:0}
+    .gm-fx-legend{display:flex;gap:13px;flex-wrap:wrap;font-size:11px;color:var(--muted,#667085);padding:10px 3px}.gm-fx-dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}.gm-fx-dot.high{background:#d94c4c}.gm-fx-dot.medium{background:#e8b73d}.gm-fx-dot.low{background:#5b9dc9}
+    .gm-fx-frame{border:1px solid #d4dbe1;overflow:hidden;background:#fff;min-height:550px;border-radius:0 0 7px 7px}.gm-fx-frame .tradingview-widget-container,.gm-fx-frame .tradingview-widget-container__widget{width:122%;min-height:670px;zoom:.82}.gm-fx-note{font-size:11px;line-height:1.55;color:var(--muted,#667085);margin:10px 2px 0}
+    .gm-fx-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.gm-fx-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:5px;padding:9px 12px;background:#202b36;color:#fff;font-size:12px;font-weight:700}.gm-fx-actions a.secondary{background:var(--surface,#f3f6f9);color:var(--ink,#253449);border:1px solid var(--border,#d4dbe1)}
+    body.dark-mode .gm-fx-toolbar{background:#1c2936;border-color:#344555}body.dark-mode .gm-fx-toolbar span{color:#e6edf4;border-color:#344555}body.dark-mode .gm-fx-frame{background:#fff}body.dark-mode .gm-fx-usd{background:#263746}
+   </style>
+   <div class="gm-fx-top"><div class="gm-fx-brand"><span class="gm-fx-brand-badge">$</span><div><div>FOREX CALENDAR</div><div class="gm-fx-sub">Economic events that move the US Dollar</div></div></div><span class="gm-fx-usd">🇺🇸 USD ONLY</span></div>
+   <div class="gm-fx-toolbar"><span>📅 Economic events</span><span>🔴 High impact</span><span>🟡 Medium impact</span><span>Actual · Forecast · Previous</span></div>
+   <div class="gm-fx-legend"><span><i class="gm-fx-dot high"></i>High impact</span><span><i class="gm-fx-dot medium"></i>Medium impact</span><span>Times and releases follow the calendar feed</span></div>
+   <div class="gm-fx-frame"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>{"colorTheme":"light","isTransparent":false,"width":"100%","height":"670","displayMode":"regular","locale":"en","importanceFilter":"0,1","countryFilter":"us"}</script></div></div>
+   <div class="gm-fx-actions"><a href="https://www.forexfactory.com/calendar" target="_blank" rel="noopener">Open Forex Factory Calendar ↗</a><a class="secondary" href="https://www.tradingview.com/economic-calendar/" target="_blank" rel="noopener">Open TradingView Calendar ↗</a></div>
+   <p class="gm-fx-note">USD-কে প্রভাবিত করতে পারে এমন যুক্তরাষ্ট্রের অর্থনৈতিক ইভেন্ট। লাইভ ডেটার জন্য ইন্টারনেট প্রয়োজন। Actual/Forecast/Previous সব ইভেন্টে সবসময় নাও থাকতে পারে। এই প্যানেলের ডেটা TradingView থেকে আসে; Forex Factory-এর নিজস্ব ক্যালেন্ডার দেখতে উপরের লিংক ব্যবহার করুন।</p>
   </section></div></details>
 
   <details class="gm-subfolder" id="gmWeatherTravel"><summary><span class="gm-sub-icon">🌦️</span><span>আবহাওয়া ও ভ্রমণ সহায়ক</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><div class="gm-inner-list">
@@ -875,7 +900,7 @@ loadEstimatedMetalPrices(); setInterval(loadEstimatedMetalPrices,5000);
 const marketOverlay=$('marketDataOverlay');
 function closeMarketTable(){if(!marketOverlay.classList.contains('open')||marketOverlay.classList.contains('closing'))return;marketOverlay.classList.add('closing');setTimeout(()=>{marketOverlay.classList.remove('open','closing')},190)}
 let activeMarketMetal='xau';
-function selectMarketFolder(metal){activeMarketMetal=metal;$('marketGoldFolder').classList.toggle('active',metal==='xau');$('marketSilverFolder').classList.toggle('active',metal==='xag');$('marketGoldFolder').style.boxShadow=metal==='xau'?'inset 0 0 0 2px #e4b64c':'none';$('marketSilverFolder').style.boxShadow=metal==='xag'?'inset 0 0 0 2px #94a3b8':'none';$('marketDataTitle').textContent=metal==='xau'?'সোনার বাজার ছক · XAU/USD':'রূপার বাজার ছক · XAG/USD';$('marketAnalysisSymbol').textContent=metal.toUpperCase()+'/USD';loadGoldMarketTable(metal)}
+function selectMarketFolder(metal){activeMarketMetal=metal;$('marketGoldFolder').classList.toggle('active',metal==='xau');$('marketSilverFolder').classList.toggle('active',metal==='xag');$('marketGoldFolder').style.boxShadow=metal==='xau'?'inset 0 0 0 2px #e4b64c':'none';$('marketSilverFolder').style.boxShadow=metal==='xag'?'inset 0 0 0 2px #94a3b8':'none';$('marketDataTitle').textContent=metal==='xau'?'সোনার বাজার ছক · XAU/USD':'রূপার বাজার ছক · XAG/USD';$('marketAnalysisSymbol').textContent=metal.toUpperCase()+'/USD';$('historicalCloseBox').querySelector('h4').textContent=metal==='xag'?'📅 রূপার অতীতের ক্লোজিং প্রাইস':'📅 সোনার অতীতের ক্লোজিং প্রাইস';$('historicalCloseStatus').textContent='তারিখ বেছে “দাম দেখুন” চাপুন।';$('historicalCloseResult').style.display='none';loadGoldMarketTable(metal)}
 $('marketTableOpen').addEventListener('click',()=>{marketOverlay.classList.remove('closing');marketOverlay.classList.add('open');selectMarketFolder('xau')});
 $('marketGoldFolder').addEventListener('click',()=>selectMarketFolder('xau'));
 $('marketSilverFolder').addEventListener('click',()=>selectMarketFolder('xag'));
@@ -912,10 +937,57 @@ function calcMACD(values){
  const macd=compact[compact.length-1],sig=signal[signal.length-1];
  return {macd,signal:sig,hist:macd-sig};
 }
+// Historical daily closing price (XAU/USD) using the same market-history data source.
+let historicalCloseCache=null, historicalClosePromise=null;
+function historicalDateLocal(d){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dhaka',year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}
+function initHistoricalCloseDate(){
+ const input=$('historicalCloseDate'); if(!input)return;
+ const today=historicalDateLocal(new Date());
+ const earliest=new Date(); earliest.setDate(earliest.getDate()-365);
+ input.max=today; input.min=historicalDateLocal(earliest);
+ if(!input.value)input.value=today;
+}
+async function getHistoricalCloseData(metal=activeMarketMetal){
+ const cacheKey=metal==='xag'?'silver':'gold';
+ if(historicalCloseCache&&historicalCloseCache[cacheKey])return historicalCloseCache[cacheKey];
+ if(historicalClosePromise&&historicalClosePromise[cacheKey])return historicalClosePromise[cacheKey];
+ if(!historicalCloseCache)historicalCloseCache={};
+ if(!historicalClosePromise)historicalClosePromise={};
+ historicalClosePromise[cacheKey]=(async()=>{
+  const url=metal==='xag'?'https://xaus.com/api/v1/chart?symbol=silver&range=5y&interval=1d&fresh='+Date.now():'https://xaus.com/api/v1/history?fresh='+Date.now();
+  const r=await fetch(url,{cache:'no-store'});
+  if(!r.ok)throw new Error('ঐতিহাসিক ডেটা পাওয়া যায়নি ('+r.status+')');
+  const payload=await r.json();
+  const points=Array.isArray(payload.points)?payload.points:(Array.isArray(payload.data?.points)?payload.data.points:(Array.isArray(payload.bars)?payload.bars:[]));
+  const rows=points.map(x=>{const stamp=Number(x.t??x.timestamp);const date=String(x.d||x.date||(Number.isFinite(stamp)?new Date(stamp<1e12?stamp*1000:stamp).toISOString().slice(0,10):'')).slice(0,10);return {date,high:Number(x.h??x.high),low:Number(x.l??x.low),close:Number(x.c??x.close)};}).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&Number.isFinite(x.close)&&x.close>0).sort((a,b)=>a.date.localeCompare(b.date));
+  if(!rows.length)throw new Error('ক্লোজিং প্রাইসের ডেটা পাওয়া যায়নি।');
+  historicalCloseCache[cacheKey]=rows;return rows;
+ })();
+ try{return await historicalClosePromise[cacheKey];}finally{delete historicalClosePromise[cacheKey];}
+}
+async function showHistoricalClose(){
+ const input=$('historicalCloseDate'),status=$('historicalCloseStatus'),result=$('historicalCloseResult');
+ const metal=activeMarketMetal;
+ const date=input.value;
+ if(!date){status.textContent='আগে একটি তারিখ নির্বাচন করুন।';return;}
+ if(date>historicalDateLocal(new Date())){status.textContent='ভবিষ্যতের তারিখ নির্বাচন করা যাবে না।';result.style.display='none';return;}
+ status.textContent='ক্লোজিং প্রাইস খোঁজা হচ্ছে…';result.style.display='none';$('historicalCloseSearch').disabled=true;
+ try{
+  const rows=await getHistoricalCloseData(metal);const found=rows.find(x=>x.date===date);
+  if(!found){status.textContent='এই তারিখের ক্লোজিং প্রাইস ডেটাসেটে নেই। অন্য তারিখ নির্বাচন করুন।';return;}
+  $('historicalCloseResultDate').textContent=new Date(date+'T12:00:00').toLocaleDateString('bn-BD',{year:'numeric',month:'long',day:'numeric',timeZone:'Asia/Dhaka'});
+  if(!Number.isFinite(found.high)||!Number.isFinite(found.low)||found.high<=0||found.low<=0){status.textContent='এই তারিখের সর্বোচ্চ/সর্বনিম্ন দামের ডেটা পাওয়া যায়নি; নির্ভরযোগ্য OHLC ডেটা ছাড়া দেখানো হবে না।';return;}
+  $('historicalHighPrice').textContent=marketFmt(found.high);$('historicalLowPrice').textContent=marketFmt(found.low);$('historicalClosePrice').textContent=marketFmt(found.close);result.style.display='block';status.textContent='ডেটা পাওয়া গেছে।';
+  $('historicalCloseResult').querySelector('span:last-child').textContent=(metal==='xag'?'রূপা':'সোনা')+' · USD প্রতি ট্রয় আউন্স · দৈনিক High / Low / Close';
+ }catch(e){status.textContent='এখন ঐতিহাসিক ডেটা লোড করা যাচ্ছে না। ইন্টারনেট সংযোগ দিয়ে আবার চেষ্টা করুন।';}
+ finally{$('historicalCloseSearch').disabled=false;}
+}
+$('historicalCloseSearch').addEventListener('click',showHistoricalClose);
+initHistoricalCloseDate();
+
 async function loadGoldMarketTable(metal=activeMarketMetal){
- const status=$('marketDataStatus'),tbody=$('marketMonthRows');
+ const status=$('marketDataStatus');
  status.textContent='দামের তথ্য যাচাই হচ্ছে…';
- tbody.innerHTML='<tr><td colspan="3" style="text-align:center">ডেটা লোড হচ্ছে…</td></tr>';
  try{
   const historyUrl=metal==='xag'
    ? 'https://xaus.com/api/v1/chart?symbol=silver&range=5y&interval=1d&fresh='+Date.now()
@@ -983,29 +1055,12 @@ async function loadGoldMarketTable(metal=activeMarketMetal){
   $('marketDayHigh').textContent=dayHigh!==null?marketFmt(dayHigh):'আজকের ডেটা পাওয়া যায়নি';
   $('marketDayLow').textContent=dayLow!==null?marketFmt(dayLow):'আজকের ডেটা পাওয়া যায়নি';
 
-  const nowParts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Dhaka',year:'numeric',month:'2-digit'}).formatToParts(new Date());
-  const year=Number(nowParts.find(p=>p.type==='year').value),month=Number(nowParts.find(p=>p.type==='month').value);
-  const months=[];
-  for(let i=5;i>=0;i--){
-   const d=new Date(Date.UTC(year,month-1-i,1));
-   const y=d.getUTCFullYear(),m=d.getUTCMonth()+1,key=y+'-'+String(m).padStart(2,'0');
-   months.push({key,label:new Intl.DateTimeFormat('bn-BD',{timeZone:'Asia/Dhaka',month:'long',year:'numeric'}).format(d)});
-  }
-  tbody.innerHTML='';
-  months.forEach(m=>{
-   const arr=data.filter(x=>x.date.slice(0,7)===m.key),tr=document.createElement('tr');
-   const label=document.createElement('td');label.textContent=m.label;tr.appendChild(label);
-   const hi=document.createElement('td');hi.textContent=arr.length?marketFmt(Math.max(...arr.map(x=>x.high))):'ডেটা নেই';tr.appendChild(hi);
-   const lo=document.createElement('td');lo.textContent=arr.length?marketFmt(Math.min(...arr.map(x=>x.low))):'ডেটা নেই';tr.appendChild(lo);
-   tbody.appendChild(tr);
-  });
   const historyDate=String(payload.updated_at||payload.data_state?.as_of||payload.as_of||'').slice(0,16).replace('T',' ');
   const sourceLabel=metal==='xag'?'রূপার দৈনিক OHLC ডেটা':'সোনার দৈনিক OHLC ডেটা';
   status.textContent=sourceLabel+' · '+(historyDate ? 'সর্বশেষ আপডেট: '+historyDate+' UTC' : 'ডেটা লোড: '+new Date().toLocaleString('bn-BD',{timeZone:'Asia/Dhaka'}));
   marketOverlay.dataset.loaded='1';
  }catch(err){
   $('marketRsi').textContent='—';$('marketDayHigh').textContent='—';$('marketDayLow').textContent='—';$('marketSentiment').textContent='ডেটা নেই';$('marketSentiment').className='';['analysisTrend','analysisSupport','analysisResistance','analysisMacd','analysisSignal'].forEach(id=>{const el=$(id);if(el)el.textContent='—'});
-  tbody.innerHTML='<tr><td colspan="3" style="text-align:center">ঐতিহাসিক ডেটা পাওয়া যায়নি</td></tr>';
   status.textContent='এই মুহূর্তে মার্কেট ডেটা লোড হয়নি। ইন্টারনেট চালু রেখে আবার চেষ্টা করুন। ('+err.message+')';
  }
 }
@@ -1468,7 +1523,7 @@ body.dark-mode .gm-tv-spotcard{background:#202532;color:#f4f5fa;border-color:#41
    grid.innerHTML=html;
   }catch(e){box.textContent='বাংলা ক্যালেন্ডার দেখানো যাচ্ছে না।';grid.innerHTML='';}
  }
- renderBanglaCalendar();
+ // Bangla calendar replaced by the USD Forex Calendar widget.
  const districts={
  'ঢাকা':['ঢাকা','ফরিদপুর','গাজীপুর','গোপালগঞ্জ','কিশোরগঞ্জ','মাদারীপুর','মানিকগঞ্জ','মুন্সীগঞ্জ','নারায়ণগঞ্জ','নরসিংদী','রাজবাড়ী','শরীয়তপুর','টাঙ্গাইল'],
  'চট্টগ্রাম':['চট্টগ্রাম','কক্সবাজার','কুমিল্লা','ব্রাহ্মণবাড়িয়া','চাঁদপুর','ফেনী','লক্ষ্মীপুর','নোয়াখালী','খাগড়াছড়ি','রাঙ্গামাটি','বান্দরবান'],
@@ -1808,5 +1863,27 @@ body.dark-mode header #dhakaClock .sand-timer .sand-stream { stroke:currentColor
  }).catch(()=>{});
 })();
 </script>
+<style>
+.metals-market-notice{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:9px 11px;border:1px solid #f2b8b8;border-radius:9px;background:#fff5f5;color:#b42323;font-size:11px;font-weight:750;line-height:1.5}
+.metals-market-dot{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#e32636;box-shadow:0 0 0 4px #e3263620;animation:metalsMarketPulse 1.4s infinite}
+.metals-market-notice strong{font-variant-numeric:tabular-nums;white-space:nowrap}
+@keyframes metalsMarketPulse{50%{box-shadow:0 0 0 7px #e3263608;opacity:.65}}
+body.dark-mode .metals-market-notice{background:#301c22;border-color:#71333a;color:#ffb8b8}
+</style>
+<script>
+(function(){
+  const notice=document.getElementById('metalsMarketNotice');
+  const counter=document.getElementById('metalsMarketCountdown');
+  const openHint=document.getElementById('metalsMarketOpenHint');
+  if(!notice||!counter||!openHint)return;
+  const fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+  function parts(date){const o={};fmt.formatToParts(date).forEach(p=>o[p.type]=p.value);return o;}
+  function isOpen(date){const p=parts(date),h=Number(p.hour),m=Number(p.minute),t=h*60+m;return p.weekday==='Sun'?t>=1080:p.weekday==='Sat'?false:p.weekday==='Fri'?t<1020:(t<1020||t>=1080);}
+  function nextOpen(now){let d=new Date(now);d.setSeconds(0,0);d.setMinutes(d.getMinutes()+1);for(let i=0;i<8*24*60;i++,d.setMinutes(d.getMinutes()+1)){if(isOpen(d))return d;}return d;}
+  function update(){const now=new Date();if(isOpen(now)){notice.style.display='none';openHint.style.display='';return;}notice.style.display='flex';openHint.style.display='none';const target=nextOpen(now);let sec=Math.max(0,Math.floor((target-now)/1000));const hours=Math.floor(sec/3600);sec%=3600;const mins=Math.floor(sec/60);sec%=60;counter.textContent=String(hours).padStart(2,'0')+':'+String(mins).padStart(2,'0')+':'+String(sec).padStart(2,'0');}
+  update();setInterval(update,1000);
+})();
+</script>
+
 </body>
 </html>
