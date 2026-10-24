@@ -321,6 +321,17 @@ body.dark-mode .gm-tv-ok{color:#7de2a6}body.dark-mode .gm-tv-no{color:#f6b04c}
 #gmOthers .gm-inner-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;align-items:start;padding:8px 0 2px}
 #gmOthers .gm-inner-list .gm-subfolder:not([open])>summary .gm-sub-icon{width:43px;height:37px;flex-basis:37px;font-size:21px}
 #gmOthers .gm-inner-list .gm-subfolder:not([open])>summary .gm-sub-chevron{top:8px;transform:none}
+
+.shop-msg{margin:10px 0 2px;padding:10px 12px;border-radius:12px;border:1px solid #e3c776;background:linear-gradient(135deg,#fff8e1,#fff1c6);color:#3b2f0b}
+.shop-msg h3{margin:0 0 4px;font-size:13px}
+.shop-msg-item{padding:7px 0;border-top:1px dashed #d9bf6b;font-size:13px;line-height:1.65;white-space:pre-line}
+.shop-msg-item:first-of-type{border-top:0}
+.shop-msg-date{display:block;margin-top:2px;font-size:11px;opacity:.7}
+body.dark-mode .shop-msg{background:linear-gradient(135deg,#3b321e,#2a2415);border-color:#6b5a2a;color:#f3e6bd}
+body.dark-mode .shop-msg-item{border-top-color:#6b5a2a}
+.daily-message-launch.has-new::after{content:'';position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:#ef4444;border:2px solid #fff;animation:smPulse 1.8s ease-out infinite}
+@keyframes smPulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%,100%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
+@media(prefers-reduced-motion:reduce){.daily-message-launch.has-new::after{animation:none}}
 </style>
 <script>
 // অ্যাপে (Capacitor) CSV সেভ/শেয়ার, ব্রাউজারে সাধারণ ডাউনলোড
@@ -488,7 +499,7 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 </div>
 <p class="market-data-note" style="margin:8px 0 0">দৈনিক ঐতিহাসিক ডেটাভিত্তিক টেকনিক্যাল বিশ্লেষণ; এটি নিশ্চিত পূর্বাভাস বা আর্থিক পরামর্শ নয়।</p>
 </div><div style="overflow-x:auto"><table class="market-data-table"><thead><tr><th>মাস</th><th>সর্বোচ্চ দাম</th><th>সর্বনিম্ন দাম</th></tr></thead><tbody id="marketMonthRows"><tr><td colspan="3" style="text-align:center">ডেটা লোড হচ্ছে…</td></tr></tbody></table></div></div></div>
-<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
+<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><div id="shopMsgBox" class="shop-msg" hidden></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
 <button type="button" id="dailyMessageLaunch" class="daily-message-launch" aria-label="আজকের বার্তা খুলুন" title="আজকের বার্তা"><span class="daily-message-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7a2 2 0 0 1-2-2z"/><path d="M5 17.5c0-1.1.9-2 2-2h11M9 8h5M9 11h5"/><path d="M18 7h2v13h-2"/></svg></span><span>আজকের বার্তা</span></button>
 <main>
 <section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><p class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
@@ -1758,5 +1769,44 @@ body.dark-mode header #dhakaClock .sand-timer .sand-bottom { fill:currentColor !
 body.dark-mode header #dhakaClock .sand-timer .sand-stream { stroke:currentColor !important; }
 </style>
 
+<script>
+// আজকের বার্তা: দোকানের নিজস্ব বার্তা (Google Sheet-এর "বার্তা" সারি থেকে, নতুন APK ছাড়াই বদলায়)
+(function(){
+ const URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vRESXXq_nBkbKY0f97NAmSKjm8pLirVHSfXd6ByanYvK5bLKE9df83LRQmFmYZIfWaXjrV6K3jH2O62/pub?gid=0&single=true&output=csv',CK='shopMsgCache1',SK='shopMsgSeen1';
+ const box=document.getElementById('shopMsgBox'),btn=document.getElementById('dailyMessageLaunch');
+ if(!box)return;
+ let sig='';
+ function parseCsv(t){
+  const rows=[];let row=[],cur='',q=false;
+  for(let i=0;i<t.length;i++){const c=t[i];
+   if(q){if(c==='"'){if(t[i+1]==='"'){cur+='"';i++}else q=false}else cur+=c}
+   else if(c==='"')q=true;
+   else if(c===','){row.push(cur);cur=''}
+   else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;row.push(cur);cur='';rows.push(row);row=[]}
+   else cur+=c}
+  if(cur!==''||row.length){row.push(cur);rows.push(row)}
+  return rows}
+ const nk=x=>String(x).normalize('NFC').replace(/[\u200b-\u200d\ufeff\s:：]/g,'').toLowerCase();
+ const isMsg=k=>{k=nk(k);return k.indexOf('বার্তা')===0||(k.indexOf('বার')===0&&k.indexOf('তা')>0&&k.length<=8)||k.indexOf('message')===0||k.indexOf('msg')===0};
+ function pick(rows){return rows.filter(r=>r.length>=2&&isMsg(r[0])&&String(r[1]).trim()).slice(0,10).map(r=>({t:String(r[1]).trim(),d:String(r[2]||'').trim()}))}
+ function show(list){
+  box.textContent='';
+  if(!list.length){box.hidden=true;sig='';return}
+  const h=document.createElement('h3');h.textContent='📢 দোকানের বার্তা';box.appendChild(h);
+  list.forEach(m=>{const d=document.createElement('div');d.className='shop-msg-item';d.textContent=m.t;
+   if(m.d){const x=document.createElement('span');x.className='shop-msg-date';x.textContent=m.d;d.appendChild(x)}
+   box.appendChild(d)});
+  box.hidden=false;
+  sig=list.map(m=>m.t).join('|');
+  let seen='';try{seen=localStorage.getItem(SK)||''}catch(e){}
+  if(btn&&sig!==seen)btn.classList.add('has-new');
+ }
+ if(btn)btn.addEventListener('click',()=>{try{localStorage.setItem(SK,sig)}catch(e){}btn.classList.remove('has-new')});
+ try{const c=localStorage.getItem(CK);if(c)show(JSON.parse(c))}catch(e){}
+ fetch(URL+'&t='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{
+  const list=pick(parseCsv(t));show(list);try{localStorage.setItem(CK,JSON.stringify(list))}catch(e){}
+ }).catch(()=>{});
+})();
+</script>
 </body>
 </html>
