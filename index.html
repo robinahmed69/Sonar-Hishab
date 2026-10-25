@@ -515,7 +515,7 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 </div>
 <p class="market-data-note" style="margin:8px 0 0">দৈনিক ঐতিহাসিক ডেটাভিত্তিক টেকনিক্যাল বিশ্লেষণ; এটি নিশ্চিত পূর্বাভাস বা আর্থিক পরামর্শ নয়।</p>
 </div></div></div>
-<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><div id="shopMsgBox" class="shop-msg" hidden></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
+<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="appUpdateBtn" class="secondary" aria-label="অ্যাপ আপডেট করুন" title="অ্যাপ আপডেট করুন"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></button><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><style>.app-update-msg:empty{display:none}</style><p id="appUpdateMsg" class="hint app-update-msg" aria-live="polite" style="margin:8px 0 0;font-size:12px"></p><div id="shopMsgBox" class="shop-msg" hidden></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
 <button type="button" id="dailyMessageLaunch" class="daily-message-launch" aria-label="আজকের বার্তা খুলুন" title="আজকের বার্তা"><span class="daily-message-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7a2 2 0 0 1-2-2z"/><path d="M5 17.5c0-1.1.9-2 2-2h11M9 8h5M9 11h5"/><path d="M18 7h2v13h-2"/></svg></span><span>আজকের বার্তা</span></button>
 <main>
 <section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><div id="metalsMarketNotice" class="metals-market-notice" style="display:none" role="status"><span class="metals-market-dot"></span><span>মার্কেট বন্ধ আছে, ফিরে আসছি <strong id="metalsMarketCountdown">--:--:--</strong> ঘন্টা পর</span></div><p id="metalsMarketOpenHint" class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
@@ -567,7 +567,7 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 <section class="card"><h2>লেনদেনের তালিকা</h2>
 <div class="field" style="margin-bottom:12px"><label for="filter">ধাতু অনুযায়ী দেখুন</label><select id="filter"><option value="all">সব হিসাব</option><option value="gold">শুধু সোনা</option><option value="silver">শুধু রুপা</option></select></div>
 <div class="tablewrap"><table><thead><tr><th>তারিখ</th><th>ধাতু</th><th>ধরন</th><th>ওজন</th><th>বিশুদ্ধতা</th><th>টাকা</th><th>বিবরণ</th><th>মুছুন</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty">এখনো কোনো হিসাব যোগ করা হয়নি।</div></div>
-<div class="actions" style="margin-top:13px"><button class="secondary" id="exportBtn" type="button">CSV ব্যাকআপ ডাউনলোড</button><button class="danger" id="clearBtn" type="button">সব হিসাব মুছুন</button></div>
+<div class="actions" style="margin-top:13px"><button class="secondary" id="exportBtn" type="button">CSV ব্যাকআপ ডাউনলোড</button><button class="secondary" id="jsonBackupBtn" type="button">JSON ব্যাকআপ নিন</button><button class="secondary" id="jsonRestoreBtn" type="button">ব্যাকআপ থেকে ফেরত আনুন</button><input type="file" id="jsonRestoreFile" accept=".json,application/json" style="display:none"><button class="danger" id="clearBtn" type="button">সব হিসাব মুছুন</button></div>
 </section>
 </div></details>
 
@@ -656,6 +656,20 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
    <p class="hint">প্রতিটি রসিদে স্বয়ংক্রিয়ভাবে “Made by Robin” থাকবে। রসিদ তৈরির আগে তথ্য যাচাই করে নিন।</p>
   </section></div></details>
 
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">৳</span><span>সোনার ওজন অনুযায়ী দাম</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
+   <h3>সোনার ওজন অনুযায়ী দাম</h3><p class="hint">সোনার ওজন ও প্রতি ভরির দর দিলে মোট দাম বের হবে।</p>
+   <div class="gm-weight-entry"><div class="gm-weight-entry-title">ওজন</div><div class="gm-weight-entry-grid">
+    <div class="field"><label for="gpwVori">ভরি</label><input id="gpwVori" type="number" min="0" step="1" value="0"></div>
+    <div class="field"><label for="gpwAna">আনা</label><input id="gpwAna" type="number" min="0" max="15" step="1" value="0"></div>
+    <div class="field"><label for="gpwRoti">রতি</label><input id="gpwRoti" type="number" min="0" max="5" step="1" value="0"></div>
+    <div class="field"><label for="gpwPoint">পয়েন্ট</label><input id="gpwPoint" type="number" min="0" max="9" step="1" value="0"></div>
+   </div><p class="hint">১ ভরি = ১৬ আনা, ১ আনা = ৬ রতি, ১ রতি = ১০ পয়েন্ট</p></div>
+   <div class="field"><label for="gpwRateType">দরের উৎস</label><select id="gpwRateType"><option value="">নিজে লিখব</option><option value="rate_paka">আজকের বাজার: পাকা সোনা</option><option value="rate_k24">আজকের বাজার: ২৪ ক্যারেট</option><option value="rate_k22">আজকের বাজার: ২২ ক্যারেট</option><option value="rate_k21">আজকের বাজার: ২১ ক্যারেট</option><option value="rate_k18">আজকের বাজার: ১৮ ক্যারেট</option></select></div>
+   <div class="field"><label for="gpwRate">প্রতি ভরির দর (৳)</label><input id="gpwRate" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label for="gpwExtra">মজুরি / অন্যান্য চার্জ (৳, মোট)</label><input id="gpwExtra" type="number" min="0" step="any" value="0"></div>
+   <div class="actions" style="margin-top:8px"><button class="primary" id="gpwCalc" type="button">দাম বের করুন</button><button class="secondary" id="gpwReset" type="button">রিসেট</button></div>
+   <div class="gm-result" id="gpwResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
+  </section></div></details>
   <details class="gm-subfolder"><summary><span class="gm-sub-icon">⚖</span><span>গড় টনস ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
    <h3>গড় টনস ক্যালকুলেটর</h3><p class="hint">প্রতিটি সোনার ওজন ভরি, আনা, রতি, পয়েন্টে এবং টনস (%) লিখুন।</p>
    <div id="gmAvgRows"><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div></div>
@@ -1924,7 +1938,7 @@ async function loadAdminSettings() {
     }
 
     if (settings.notice) {
-      alert(settings.notice);
+      try{const nk='notice_seen_v1',nv=String(settings.notice);if(localStorage.getItem(nk)!==nv){localStorage.setItem(nk,nv);alert(nv)}}catch(e){alert(settings.notice)}
     }
   } catch (error) {
     console.error("Firebase error:", error);
@@ -1963,6 +1977,148 @@ loadAdminSettings();
    await P.register();
   }catch(e){console.error('Push init error',e)}
  })();
+})();
+</script>
+<script>
+// পূর্ণ JSON ব্যাকআপ ও রিস্টোর: সোনা-রুপার হিসাব, দৈনিক খরচ, ক্রিপ্টো ডেটা
+(function(){
+ const BACKUP_KEYS={
+  ledger:'gold_silver_ledger_v1',
+  expenses:'daily_expenses_v1',
+  cryptoWatch:'cryptofamWatchlistV1',
+  cryptoHoldings:'cryptofamHoldingsV1',
+  cryptoAlerts:'cryptofamAlertsV1'
+ };
+ const APP_TAG='gold-manager-backup';
+ function readArr(k){try{const v=JSON.parse(localStorage.getItem(k)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}}
+ function dateStr(){const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
+ async function saveJson(name,text){
+  const cap=window.Capacitor;
+  if(cap&&cap.isNativePlatform&&cap.isNativePlatform()){
+   try{
+    const P=cap.Plugins;
+    const r=await P.Filesystem.writeFile({path:name,data:text,directory:'CACHE',encoding:'utf8'});
+    await P.Share.share({title:name,url:r.uri,dialogTitle:'ব্যাকআপ ফাইল সেভ/শেয়ার করুন'});
+   }catch(e){
+    const m=String((e&&e.message)||e).toLowerCase();
+    if(m.indexOf('cancel')<0)alert('ব্যাকআপ সেভ করা যায়নি: '+m);
+   }
+   return;
+  }
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([text],{type:'application/json;charset=utf-8'}));
+  a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+ }
+ document.getElementById('jsonBackupBtn').addEventListener('click',()=>{
+  const data={};
+  Object.keys(BACKUP_KEYS).forEach(n=>{data[n]=readArr(BACKUP_KEYS[n])});
+  const payload={app:APP_TAG,version:1,createdAt:new Date().toISOString(),data:data};
+  const total=data.ledger.length+data.expenses.length;
+  if(total===0&&!confirm('এখনো কোনো হিসাব বা খরচ নেই। তবুও খালি ব্যাকআপ নেবেন?'))return;
+  saveJson('hisab-backup-'+dateStr()+'.json',JSON.stringify(payload,null,1));
+ });
+ const fileInput=document.getElementById('jsonRestoreFile');
+ document.getElementById('jsonRestoreBtn').addEventListener('click',()=>{fileInput.value='';fileInput.click()});
+ fileInput.addEventListener('change',()=>{
+  const f=fileInput.files&&fileInput.files[0];
+  if(!f)return;
+  const rd=new FileReader();
+  rd.onerror=()=>alert('ফাইলটি পড়া যায়নি।');
+  rd.onload=()=>{
+   let obj;
+   try{obj=JSON.parse(String(rd.result||''))}catch(e){alert('এটি সঠিক ব্যাকআপ ফাইল নয়।');return}
+   if(!obj||obj.app!==APP_TAG||!obj.data||typeof obj.data!=='object'||!Array.isArray(obj.data.ledger)||!Array.isArray(obj.data.expenses)){
+    alert('এটি এই অ্যাপের ব্যাকআপ ফাইল নয়। ফাইলটি পরিবর্তন করা হয়নি।');return;
+   }
+   const d=obj.data;
+   const msg='ব্যাকআপে আছে: '+d.ledger.length+'টি হিসাব ও '+d.expenses.length+'টি দৈনিক খরচ।\n\nবর্তমান সব হিসাব মুছে এই ব্যাকআপ বসানো হবে। চালিয়ে যাবেন?';
+   if(!confirm(msg))return;
+   try{
+    Object.keys(BACKUP_KEYS).forEach(n=>{
+     const arr=Array.isArray(d[n])?d[n]:[];
+     localStorage.setItem(BACKUP_KEYS[n],JSON.stringify(arr));
+    });
+   }catch(e){alert('ডিভাইসে সেভ করা যায়নি। স্টোরেজ পরীক্ষা করুন।');return}
+   alert('ব্যাকআপ ফেরত আনা হয়েছে।');
+   location.reload();
+  };
+  rd.readAsText(f,'utf-8');
+ });
+})();
+</script>
+<script>
+// সোনার ওজন অনুযায়ী দাম বের করার ফিচার
+(function(){
+ const $=id=>document.getElementById(id);
+ if(!$('gpwCalc'))return;
+ const BN='০১২৩৪৫৬৭৮৯';
+ const toNum=s=>{const x=String(s||'').replace(/[০-৯]/g,d=>BN.indexOf(d)).replace(/[^0-9.]/g,'');return x?Number(x):0};
+ const fmt=(n,d)=>Number(n).toLocaleString('bn-BD',{minimumFractionDigits:d,maximumFractionDigits:d});
+ const GRAM_PER_VORI=11.664;
+ const val=id=>Number($(id).value||0);
+ $('gpwRateType').addEventListener('change',()=>{
+  const id=$('gpwRateType').value;
+  if(!id)return;
+  const el=document.getElementById(id);
+  const r=el?toNum(el.textContent):0;
+  if(r>0)$('gpwRate').value=r;
+  else $('gpwResult').textContent='আজকের বাজারদর এখনো লোড হয়নি। নিজে দর লিখুন।';
+ });
+ $('gpwCalc').addEventListener('click',()=>{
+  const out=$('gpwResult');
+  const v=val('gpwVori'),a=val('gpwAna'),r=val('gpwRoti'),p=val('gpwPoint');
+  const rate=val('gpwRate'),extra=val('gpwExtra');
+  if([v,a,r,p,rate,extra].some(x=>!isFinite(x)||x<0)){out.textContent='ঋণাত্মক বা ভুল সংখ্যা দেওয়া যাবে না।';return}
+  if(a>15||r>5||p>9){out.textContent='আনা ০–১৫, রতি ০–৫ এবং পয়েন্ট ০–৯-এর মধ্যে দিন।';return}
+  const units=((v*16+a)*6+r)*10+p;
+  if(units===0){out.textContent='সোনার ওজন দিন।';return}
+  if(rate<=0){out.textContent='প্রতি ভরির দর দিন।';return}
+  const vori=units/960;
+  const gold=vori*rate;
+  const total=gold+extra;
+  out.innerHTML='ওজন: <strong>'+fmt(v,0)+' ভরি '+fmt(a,0)+' আনা '+fmt(r,0)+' রতি '+fmt(p,0)+' পয়েন্ট</strong>'
+   +'<br>ভরি হিসাবে: '+fmt(vori,4)+' ভরি ('+fmt(vori*GRAM_PER_VORI,3)+' গ্রাম)'
+   +'<br>সোনার দাম: ৳'+fmt(gold,2)
+   +(extra>0?'<br>মজুরি / চার্জ: ৳'+fmt(extra,2):'')
+   +'<br><strong>মোট দাম: ৳'+fmt(total,2)+'</strong>';
+ });
+ $('gpwReset').addEventListener('click',()=>{
+  ['gpwVori','gpwAna','gpwRoti','gpwPoint','gpwRate','gpwExtra'].forEach(id=>{$(id).value='0'});
+  $('gpwRateType').value='';
+  $('gpwResult').textContent='ফলাফল এখানে দেখাবে।';
+ });
+})();
+</script>
+<script>
+// অ্যাপ আপডেট: GitHub Releases-এ নতুন সংস্করণ থাকলে APK ডাউনলোড শুরু করে
+(function(){
+ const BUILD='__APP_BUILD__';
+ const REPO='robinahmed69/Sonar-Hishab';
+ const APK_URL='https://github.com/'+REPO+'/releases/latest/download/sona-rupa-hisab.apk';
+ const btn=document.getElementById('appUpdateBtn'),msg=document.getElementById('appUpdateMsg');
+ if(!btn||!msg)return;
+ const cur=parseInt(BUILD,10);
+ btn.addEventListener('click',async()=>{
+  if(!isFinite(cur)){msg.textContent='এই ফাইলে আপডেট চেক চালু নেই (শুধু GitHub-এর বিল্ড করা অ্যাপে কাজ করে)।';return}
+  btn.disabled=true;msg.textContent='নতুন সংস্করণ খোঁজা হচ্ছে…';
+  try{
+   const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),15000);
+   const r=await fetch('https://api.github.com/repos/'+REPO+'/releases/latest',{headers:{'Accept':'application/vnd.github+json'},signal:ctl.signal,cache:'no-store'});
+   clearTimeout(t);
+   if(!r.ok)throw new Error('HTTP '+r.status);
+   const j=await r.json();
+   const latest=parseInt(String(j.tag_name||'').replace(/\D/g,''),10);
+   if(!isFinite(latest))throw new Error('সংস্করণ নম্বর পাওয়া যায়নি');
+   if(latest<=cur){msg.textContent='আপনি সর্বশেষ সংস্করণেই আছেন।';return}
+   msg.textContent='নতুন সংস্করণ পাওয়া গেছে।';
+   if(confirm('নতুন সংস্করণ পাওয়া গেছে। এখনই ডাউনলোড করবেন?\n\nআপডেটের আগে "JSON ব্যাকআপ নিন" চেপে ব্যাকআপ রাখা ভালো।\nডাউনলোড শেষে ডাউনলোড নোটিফিকেশনে ট্যাপ করে Install চাপুন।')){
+    msg.textContent='ডাউনলোড শুরু হচ্ছে… শেষ হলে ফাইলে ট্যাপ করে Install চাপুন।';
+    window.location.href=APK_URL;
+   }
+  }catch(e){
+   msg.textContent='আপডেট চেক করা যায়নি। ইন্টারনেট পরীক্ষা করে আবার চেষ্টা করুন।';
+  }finally{btn.disabled=false}
+ });
 })();
 </script>
 </body>
