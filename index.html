@@ -1885,5 +1885,46 @@ body.dark-mode .metals-market-notice{background:#301c22;border-color:#71333a;col
 })();
 </script>
 
+<script type="module">
+import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDoc } from
+  "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "তোমার_API_KEY",
+  authDomain: "gold-manager-admin.firebaseapp.com",
+  projectId: "gold-manager-admin",
+  storageBucket: "তোমার_STORAGE_BUCKET",
+  messagingSenderId: "580754003899",
+  appId: "তোমার_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadAdminSettings() {
+  try {
+    const snap = await getDoc(doc(db, "settings", "app"));
+    if (!snap.exists()) return;
+
+    const settings = snap.data();
+
+    if (settings.maintenanceMode === true) {
+      document.body.innerHTML =
+        "<h2 style='text-align:center'>অ্যাপটি বর্তমানে রক্ষণাবেক্ষণে আছে।</h2>";
+      return;
+    }
+
+    if (settings.notice) {
+      alert(settings.notice);
+    }
+  } catch (error) {
+    console.error("Firebase error:", error);
+  }
+}
+
+loadAdminSettings();
+</script>
 </body>
 </html>
