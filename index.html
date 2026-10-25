@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html.gm-pre-dark{background:#000}</style>
+<script>try{if(localStorage.getItem('sonaRupaTheme')==='dark')document.documentElement.classList.add('gm-pre-dark')}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -365,7 +367,7 @@ async function saveCsv(name,csv){
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="সোনা-রুপার হিসাব">
-<meta name="theme-color" content="#172b3a">
+<meta name="theme-color" content="#45198a">
 <script>if('serviceWorker' in navigator&&location.protocol==='https:'&&location.hostname!=='localhost'){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 <style id="gm-premium-glass-ui">
 /* === Gold Manager Premium Glass UI: global, responsive, functionality-preserving === */
@@ -485,9 +487,169 @@ body.dark-mode header .theme-toggle,body.dark-mode header .tool-icon{color:#f3ea
 header #dhakaClock .clock-date-row{margin-top:28px!important}
 @media(max-width:480px){#dhakaClock .clock-date-row,header #dhakaClock .clock-date-row{margin-top:28px!important}}
 </style>
+<style id="header-custom-45198a">
+header h1{display:flex!important;align-items:center!important;gap:3px!important}
+header h1 .title-globe{width:15px;height:15px;flex:0 0 15px}
+body:not(.dark-mode) header{background:#45198a!important;color:#fff!important}
+body:not(.dark-mode) header h1,body:not(.dark-mode) header>p,body:not(.dark-mode) header .author-link{color:#fff!important}
+body:not(.dark-mode) header .crypto-launch{background:#ffffff1f!important;color:#fff!important}
+body:not(.dark-mode) header .crypto-launch span{color:#f3d58a!important}
+body:not(.dark-mode) header .theme-toggle,body:not(.dark-mode) header .tool-icon{color:#fff!important;border-color:#ffffff80!important;background:#ffffff30!important}
+body:not(.dark-mode) header #dhakaClock .clock-top,body:not(.dark-mode) header #dhakaClock .clock-label,body:not(.dark-mode) header #dhakaClock .clock-date,body:not(.dark-mode) header #dhakaClock .clock-date-row,body:not(.dark-mode) header #dhakaClock .sand-timer{color:#fff!important;text-shadow:none!important}
+body.dark-mode header{background:#0b1a33!important;color:#fff!important}
+body.dark-mode header h1,body.dark-mode header>p,body.dark-mode header .author-link{color:#fff!important}
+body.dark-mode header .crypto-launch{background:#ffffff1a!important;color:#fff!important}
+body.dark-mode header .crypto-launch span{color:#f3d58a!important}
+body.dark-mode header .theme-toggle,body.dark-mode header .tool-icon{border-color:#ffffff55!important}
+</style>
+<style id="header-left-align">
+header{text-align:left!important}
+header h1,header>p,header #dhakaClock,header #dhakaClock .clock-top,header #dhakaClock .clock-time,header #dhakaClock .clock-date-row,header #dhakaClock .clock-date{margin-left:0!important;padding-left:0!important;text-align:left!important;justify-content:flex-start!important}
+header #dhakaClock.clock-card{padding:0!important;margin-left:0!important;margin-right:auto!important;align-items:flex-start!important}
+header #dhakaClock .clock-date-row{max-width:none!important}
+header>p{margin-left:0!important}
+</style>
+<style id="dark-folder-purple">
+body.dark-mode main>details.card:nth-of-type(-n+4),body.dark-mode main>details.card.precious-calc-card{background:#2a1c46!important;border-color:#4f3a7c!important;box-shadow:0 3px 10px rgba(0,0,0,.25)!important}
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary,body.dark-mode main>details.card.precious-calc-card>summary{background:#2a1c46!important;color:#f1e9ff!important;border-color:#4f3a7c!important}
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary:before,body.dark-mode main>details.card.precious-calc-card>summary:before{background:#42306b!important;color:#d9c7ff!important}
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary:after,body.dark-mode main>details.card.precious-calc-card>summary:after{background:#42306b!important;color:#d9c7ff!important}
+</style>
 </head>
+<style id="dark-mode-true-black-early">
+/* ===== ডার্ক মোড: পুরো অ্যাপ কালো + পড়ার উপযোগী টেক্সট =====
+   সব নিয়ম body.dark-mode এর ভেতরে, তাই লাইট মোডে কোনো পরিবর্তন হয় না। */
+html:has(body.dark-mode){background:#000!important;color-scheme:dark}
+body.dark-mode,body.dark-mode[data-palette]{
+  --bg:#000;--card:#0c0c0f;--ink:#f1f3f6;--muted:#b0b8c5;--line:#2a2d34;
+  --surface:#0c0c0f;--card-bg:#0c0c0f;--border-color:#2a2d34;--text-color:#f1f3f6;
+  color-scheme:dark}
+body.dark-mode{background:#000!important;color:var(--ink)}
+
+/* হেডার */
+body.dark-mode header{background:#000!important;border-bottom:1px solid #24262c}
+
+/* কার্ড ও ফোল্ডার */
+body.dark-mode main>details.card,body.dark-mode main>.card,body.dark-mode .card,
+body.dark-mode .gm-tool,body.dark-mode .gm-weight-entry,body.dark-mode .daily-news-item,
+body.dark-mode .crypto-stats>div,body.dark-mode .crypto-alert,body.dark-mode .market-data-stat,
+body.dark-mode .gm-result,body.dark-mode .metric,
+body.dark-mode main>details.card:nth-of-type(-n+4),body.dark-mode main>details.card.precious-calc-card{
+  background:#0c0c0f!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode main>details.card:nth-of-type(-n+4),body.dark-mode main>details.card.precious-calc-card{border-color:#3a2b5c!important}
+body.dark-mode details.card>summary,body.dark-mode main>details.card>summary,
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary,
+body.dark-mode main>details.card.precious-calc-card>summary,
+body.dark-mode main>details.card:nth-of-type(1)>summary,body.dark-mode main>details.card:nth-of-type(2)>summary,
+body.dark-mode main>details.card:nth-of-type(3)>summary,body.dark-mode main>details.card:nth-of-type(4)>summary{
+  background:#0c0c0f!important;color:#f1f3f6!important;border-color:#2a2d34!important}
+body.dark-mode details.card:not(#gmOthers)>summary::before{background:#1b1b22;color:#d6c4ff}
+body.dark-mode details.card>summary::after{background:#1b1b22;color:#b0b8c5}
+body.dark-mode .folder-content,body.dark-mode .subfolder-content,body.dark-mode .precious-calc-content,
+body.dark-mode .gm-subcontent,body.dark-mode #gmOthers .gm-subcontent,
+body.dark-mode details.subfolder:has(#weightInputs) .subfolder-content{
+  background:#08080a!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode .subfolder,body.dark-mode .subfolder>summary,body.dark-mode #gmOthers[open],
+body.dark-mode #gmOthers .gm-subfolder,body.dark-mode #gmOthers .gm-subfolder>summary,
+body.dark-mode #gmOthers .gm-subfolder[open]>summary{
+  background:#0c0c0f!important;color:var(--ink)!important;border-color:#2a2d34!important}
+body.dark-mode #gmOthers .gm-sub-icon{color:#1f2a38!important}
+
+/* ভেতরের বক্স */
+body.dark-mode .calc-intro,body.dark-mode .calc-display-field,body.dark-mode .weight-input-group,
+body.dark-mode #weightInputs .weight-input-group,body.dark-mode .weight-result>div,
+body.dark-mode .weight-result>div+div,body.dark-mode .unit-category,body.dark-mode .unit-convert-box,
+body.dark-mode .daily-message-summary,body.dark-mode .daily-news-summary,body.dark-mode .gm-tv-spotcard{
+  background:#101014!important;border-color:#2a2d34!important;color:var(--ink)!important}
+body.dark-mode .calc-intro h3{color:#f2d58b!important}
+body.dark-mode .calc-intro p,body.dark-mode .calc-kicker,body.dark-mode .calc-display-field label{color:var(--muted)!important}
+body.dark-mode .weight-input-group h3,body.dark-mode #weightInputs label{color:#e8ebf0!important}
+body.dark-mode .weight-result strong{color:#f5d27a!important}
+body.dark-mode .gm-result strong{color:#f5d27a!important}
+body.dark-mode .gm-tv-spotimg{background:#1c1a2a!important}
+body.dark-mode .gm-tv-spotdistance{color:var(--muted)!important}
+
+/* লাইভ গোল্ড/সিলভার ও TradingView (ভেতরের উইজেট উল্টে ডার্ক করা হয়েছে) */
+body.dark-mode .live-metals-box{background:#050507!important;border-color:#2a2d34!important;box-shadow:none!important}
+body.dark-mode .live-metal-card{background:#000!important;border-color:#2a2d34!important;box-shadow:none!important}
+body.dark-mode .live-metal-title{color:#e8ebf0!important}
+body.dark-mode .live-metals-box .hint,body.dark-mode .live-metal-card .tradingview-widget-copyright,
+body.dark-mode .live-metal-card .tradingview-widget-copyright a{color:var(--muted)!important}
+body.dark-mode .live-metal-card iframe,body.dark-mode .gm-fx-frame iframe{filter:invert(1) hue-rotate(180deg)}
+body.dark-mode .gm-forex-calendar,body.dark-mode .gm-fx-frame{background:#000!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode .gm-fx-toolbar{background:#14151a!important;border-color:#2a2d34!important}
+body.dark-mode .gm-fx-toolbar span{color:#e6edf4!important;border-color:#2a2d34!important}
+body.dark-mode .gm-fx-brand-badge,body.dark-mode .gm-fx-actions a.secondary{background:#1c1e24!important;color:#e6edf4!important}
+
+/* আনুমানিক দাম */
+body.dark-mode .estimate-box{background:#0a0905!important;border-color:#5a4a22!important;box-shadow:none!important}
+body.dark-mode .estimate-box:before{color:#d9bb69!important}
+body.dark-mode .estimate-item{background:#12100a!important;border-color:#4a3d1c!important;box-shadow:none!important}
+body.dark-mode .estimate-item span{color:#b9b09a!important}
+body.dark-mode .estimate-item strong{color:#f5d27a!important;text-shadow:none!important}
+body.dark-mode .estimate-item:last-child strong{color:#d5dce6!important}
+body.dark-mode .estimate-change.up{color:#4ade80!important}
+body.dark-mode .estimate-change.down{color:#ff7b7b!important}
+body.dark-mode .estimate-refresh{background:#2a2415!important;color:#f5d27a!important;border-color:#63512a!important}
+
+/* পপআপ ও প্যানেল */
+body.dark-mode .crypto-overlay,body.dark-mode .unit-modal,body.dark-mode .daily-message-overlay,
+body.dark-mode .market-data-overlay{background:rgba(0,0,0,.78)!important}
+body.dark-mode .crypto-panel,body.dark-mode .crypto-head,body.dark-mode .unit-panel,
+body.dark-mode .daily-message-panel,body.dark-mode .font-pop,body.dark-mode .theme-pop,
+body.dark-mode .market-data-panel{
+  background:#0c0c0f!important;color:var(--ink)!important;border-color:#2a2d34!important}
+body.dark-mode .crypto-change-up,body.dark-mode .market-sentiment-greed{color:#4ade80!important}
+body.dark-mode .crypto-change-down,body.dark-mode .market-sentiment-fear{color:#ff7b7b!important}
+body.dark-mode .crypto-tab:not(.active),body.dark-mode .crypto-mini-btn{background:#1c1e24!important;color:#c3cad6!important}
+body.dark-mode .market-data-close{background:#1c1e24!important;color:#e8ebf0!important}
+body.dark-mode .market-data-stat span,body.dark-mode .market-data-note{color:var(--muted)!important}
+body.dark-mode .market-data-table{background:#0c0c0f!important;color:var(--ink)!important}
+body.dark-mode .market-data-table th{background:#14151a!important;color:var(--muted)!important}
+body.dark-mode .market-data-table tbody tr:hover td{background:#14151a!important}
+body.dark-mode .market-folder{background:#101014!important;color:#c3cad6!important;border-color:#2a2d34!important}
+body.dark-mode .market-folder.active{background:#2a2415!important;color:#f5d27a!important;border-color:#8d7136!important}
+body.dark-mode .market-folder#marketSilverFolder.active{background:#1c2430!important;color:#dfe7f0!important;border-color:#6b7a8e!important}
+body.dark-mode .live-badge{background:#12301f!important;color:#7de2a6!important}
+
+/* ইউনিট কনভার্টার */
+body.dark-mode .unit-category{color:#d9c7ff!important}
+body.dark-mode .unit-convert-box>label,body.dark-mode .unit-selects label{color:#b9a6d9!important}
+body.dark-mode .unit-close,body.dark-mode .unit-swap,body.dark-mode .unit-refresh{background:#241a3a!important;color:#d9c7ff!important}
+body.dark-mode .unit-launch{color:#c4a7ff}
+body.dark-mode .unit-launch-icon i{border-color:#c4a7ff}
+body.dark-mode .unit-launch:hover,body.dark-mode .unit-launch:focus-visible{background:#241a3a}
+
+/* ইনপুট, টেবিল, বাটন */
+body.dark-mode input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=button]):not([type=submit]):not([type=file]),
+body.dark-mode select,body.dark-mode textarea,body.dark-mode #weightInputs input,body.dark-mode #weightOperation,
+body.dark-mode .unit-convert-box input,body.dark-mode .unit-convert-box select,
+body.dark-mode .calc-display,body.dark-mode .precious-calc-card .calc-display{
+  background:#141418!important;color:#f1f3f6!important;border-color:#3a3d44!important}
+body.dark-mode ::placeholder{color:#8a93a0!important;opacity:1}
+body.dark-mode option{background:#141418;color:#f1f3f6}
+body.dark-mode th{background:#14151a!important;color:var(--muted)!important}
+body.dark-mode td,body.dark-mode th{border-color:#2a2d34!important}
+body.dark-mode .tablewrap,body.dark-mode .table-wrapper{background:#050507!important;border-color:#2a2d34!important}
+body.dark-mode .secondary{background:#1c1e24;color:#e8ebf0}
+body.dark-mode .danger{background:#2a1517;color:#ff9a94}
+body.dark-mode #addWeightBtn{background:#12301f!important;color:#7de2a6!important}
+body.dark-mode #removeWeightBtn{background:#3a2227!important;color:#ffb8b2!important}
+
+/* ইনলাইন স্টাইলে থাকা সাদা/হালকা অংশ */
+body.dark-mode [style*="background:#fff"],body.dark-mode [style*="background: #fff"]{background:#141418!important;color:#f1f3f6!important;border-color:#3a3d44!important}
+body.dark-mode [style*="background:#f8fbff"],body.dark-mode [style*="background:#eaf1ff"]{background:#101820!important;color:#f1f3f6!important;border-color:#2a3a52!important}
+body.dark-mode [style*="color:#172033"]{color:#f1f3f6!important}
+body.dark-mode [style*="color:#174ea6"]{color:#8ab4ff!important}
+body.dark-mode [style*="color:#16803d"]{color:#4ade80!important}
+
+body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#71333a!important;color:#ffb8b8!important}
+/* ইউনিট কনভার্টার পপআপ সবার উপরে (লাইট ও ডার্ক দুই মোডেই) */
+.unit-modal{z-index:100010!important}
+</style>
 <body>
-<header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><div id="themePop" class="theme-pop" aria-label="থিম নির্বাচন"><strong>Theme / রং নির্বাচন</strong><div class="theme-swatches"><button type="button" data-theme="default" aria-label="ডিফল্ট নীল" title="ডিফল্ট নীল"><i style="background:linear-gradient(135deg,#f3f6fa,#2457a7)"></i>নীল</button><button type="button" data-theme="purple" aria-label="পার্পল" title="পার্পল"><i style="background:linear-gradient(135deg,#f4efff,#7c3aed)"></i>পার্পল</button><button type="button" data-theme="green" aria-label="সবুজ" title="সবুজ"><i style="background:linear-gradient(135deg,#eaf8ef,#16804a)"></i>সবুজ</button><button type="button" data-theme="blue" aria-label="আকাশি নীল" title="আকাশি নীল"><i style="background:linear-gradient(135deg,#e8f6ff,#0284c7)"></i>আকাশি</button><button type="button" data-theme="rose" aria-label="রোজ" title="রোজ"><i style="background:linear-gradient(135deg,#fff0f4,#e11d48)"></i>রোজ</button><button type="button" data-theme="teal" aria-label="টিল" title="টিল"><i style="background:linear-gradient(135deg,#e6fffb,#0f9488)"></i>টিল</button><button type="button" data-theme="amber" aria-label="অ্যাম্বার" title="অ্যাম্বার"><i style="background:linear-gradient(135deg,#fff8e6,#b7791f)"></i>গোল্ড</button></div><p>হোমপেজসহ পুরো অ্যাপের ব্যাকগ্রাউন্ড বদলাবে</p></div><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1>সোনা-রুপার হিসাবের খাতা</h1><div id="dhakaClock" class="clock-card" role="timer" aria-label="ঢাকা সময়"><div class="clock-top"><svg class="sand-timer" viewBox="0 0 24 24" aria-label="সময় চলছে" role="img"><path d="M6 3h12M6 21h12M7 4c0 4 5 5 5 8s-5 4-5 8M17 4c0 4-5 5-5 8s5 4 5 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="sand-top" d="M8.5 5.2h7L12 9.2z" fill="currentColor"/><path class="sand-bottom" d="M8.5 18.8h7L12 14.8z" fill="currentColor"/><path class="sand-stream" d="M12 10.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span class="clock-label">ঢাকা সময়</span><span class="clock-live">LIVE</span></div><div class="clock-time"><span class="cd" id="clkH">--</span><span class="cc">:</span><span class="cd" id="clkM">--</span><span class="cc cs">:</span><span class="cd cds" id="clkS">--</span><span class="clock-ap" id="clkAP">--</span></div><div class="clock-date-row"><div class="clock-date" id="clkDate">লোড হচ্ছে…</div></div></div><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
+<script>try{var _b=document.body;if(localStorage.getItem('sonaRupaTheme')==='dark')_b.classList.add('dark-mode');var _p=localStorage.getItem('sonaRupaPalette');if(['purple','green','blue','rose','teal','amber'].indexOf(_p)>-1)_b.dataset.palette=_p}catch(e){}</script>
+<header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><div id="themePop" class="theme-pop" aria-label="থিম নির্বাচন"><strong>Theme / রং নির্বাচন</strong><div class="theme-swatches"><button type="button" data-theme="default" aria-label="ডিফল্ট নীল" title="ডিফল্ট নীল"><i style="background:linear-gradient(135deg,#f3f6fa,#2457a7)"></i>নীল</button><button type="button" data-theme="purple" aria-label="পার্পল" title="পার্পল"><i style="background:linear-gradient(135deg,#f4efff,#7c3aed)"></i>পার্পল</button><button type="button" data-theme="green" aria-label="সবুজ" title="সবুজ"><i style="background:linear-gradient(135deg,#eaf8ef,#16804a)"></i>সবুজ</button><button type="button" data-theme="blue" aria-label="আকাশি নীল" title="আকাশি নীল"><i style="background:linear-gradient(135deg,#e8f6ff,#0284c7)"></i>আকাশি</button><button type="button" data-theme="rose" aria-label="রোজ" title="রোজ"><i style="background:linear-gradient(135deg,#fff0f4,#e11d48)"></i>রোজ</button><button type="button" data-theme="teal" aria-label="টিল" title="টিল"><i style="background:linear-gradient(135deg,#e6fffb,#0f9488)"></i>টিল</button><button type="button" data-theme="amber" aria-label="অ্যাম্বার" title="অ্যাম্বার"><i style="background:linear-gradient(135deg,#fff8e6,#b7791f)"></i>গোল্ড</button></div><p>হোমপেজসহ পুরো অ্যাপের ব্যাকগ্রাউন্ড বদলাবে</p></div><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1><svg class="title-globe" width="15" height="15" style="width:15px;height:15px;flex:0 0 15px;margin:0" viewBox="1.4 1.4 21.2 21.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5c2.6 2.7 4 6 4 9.5s-1.4 6.800-4 9.500c-2.600-2.700-4-6-4-9.500s1.400-6.800 4-9.500z"/></svg>Gold Manager</h1><div id="dhakaClock" class="clock-card" role="timer" aria-label="ঢাকা সময়"><div class="clock-top"><svg class="sand-timer" viewBox="0 0 24 24" aria-label="সময় চলছে" role="img"><path d="M6 3h12M6 21h12M7 4c0 4 5 5 5 8s-5 4-5 8M17 4c0 4-5 5-5 8s5 4 5 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="sand-top" d="M8.5 5.2h7L12 9.2z" fill="currentColor"/><path class="sand-bottom" d="M8.5 18.8h7L12 14.8z" fill="currentColor"/><path class="sand-stream" d="M12 10.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span class="clock-label">ঢাকা সময়</span><span class="clock-live">LIVE</span></div><div class="clock-time"><span class="cd" id="clkH">--</span><span class="cc">:</span><span class="cd" id="clkM">--</span><span class="cc cs">:</span><span class="cd cds" id="clkS">--</span><span class="clock-ap" id="clkAP">--</span></div><div class="clock-date-row"><div class="clock-date" id="clkDate">লোড হচ্ছে…</div></div></div><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
 <div id="cryptoOverlay" class="crypto-overlay" role="dialog" aria-modal="true" aria-labelledby="cryptoTitle"><div class="crypto-panel"><div class="crypto-head"><h2 id="cryptoTitle">₿ Cryptofam</h2><div class="actions"><button type="button" class="secondary" id="cryptoRefresh">↻</button><button type="button" class="danger" id="cryptoClose">✕</button></div></div><p class="crypto-meta">লাইভ ক্রিপ্টো মার্কেট · USD · CoinGecko</p><div class="crypto-tabs" role="tablist"><button class="crypto-tab active" data-ctab="market">মার্কেট</button><button class="crypto-tab" data-ctab="chart">চার্ট</button><button class="crypto-tab" data-ctab="portfolio">পোর্টফোলিও</button><button class="crypto-tab" data-ctab="watch">ওয়াচলিস্ট</button><button class="crypto-tab" data-ctab="alerts">অ্যালার্ট</button></div><section class="crypto-view active" id="cryptoView-market"><div class="crypto-stats"><div><span>কয়েন</span><strong id="cryptoCount">—</strong></div><div><span>সর্বোচ্চ ২৪ঘ</span><strong id="cryptoGlobalHigh">—</strong></div><div><span>সর্বনিম্ন ২৪ঘ</span><strong id="cryptoGlobalLow">—</strong></div></div><input id="cryptoSearch" class="crypto-search" placeholder="কয়েন খুঁজুন: BTC, Bitcoin…" aria-label="ক্রিপ্টো খুঁজুন"><div id="cryptoStatus" class="crypto-loading">লাইভ দাম লোড হচ্ছে…</div><div class="tablewrap"><table class="crypto-table" id="cryptoTable" style="display:none"><thead><tr><th>#</th><th>ক্রিপ্টো</th><th style="text-align:right">দাম</th><th style="text-align:right">২৪ঘ %</th><th>☆</th></tr></thead><tbody id="cryptoRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-chart"><div class="crypto-form-row"><label>কয়েন<select id="cryptoChartCoin"></select></label><label>সময়<select id="cryptoChartDays"><option value="1">২৪ ঘণ্টা</option><option value="7" selected>৭ দিন</option><option value="30">৩০ দিন</option></select></label></div><div id="cryptoChartSummary" class="crypto-stats"></div><div id="cryptoChartStatus" class="crypto-loading">চার্ট লোড করতে কয়েন নির্বাচন করুন।</div><div id="cryptoChart" class="crypto-chart"></div></section><section class="crypto-view" id="cryptoView-portfolio"><p class="crypto-meta">নিজের কেনা কয়েনের পরিমাণ ও ক্রয়মূল্য লিখুন। তথ্য এই ডিভাইসে সংরক্ষিত থাকবে।</p><form id="cryptoHoldingForm" class="crypto-form"><label>কয়েন<select id="cryptoHoldingCoin" required></select></label><label>পরিমাণ<input id="cryptoHoldingAmount" type="number" min="0.00000001" step="any" required placeholder="যেমন 0.02"></label><label>প্রতি কয়েন ক্রয়মূল্য (USD)<input id="cryptoHoldingCost" type="number" min="0" step="any" required placeholder="যেমন 62000"></label><button class="primary" type="submit">হোল্ডিং যোগ করুন</button></form><div id="cryptoPortfolioSummary" class="crypto-stats"></div><div class="tablewrap"><table class="crypto-table"><thead><tr><th>কয়েন</th><th>বিনিয়োগ</th><th>বর্তমান মূল্য</th><th>লাভ/ক্ষতি</th><th></th></tr></thead><tbody id="cryptoPortfolioRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-watch"><p class="crypto-meta">☆ চাপ দিয়ে কয়েন ওয়াচলিস্টে যোগ বা বাদ দিন।</p><div class="tablewrap"><table class="crypto-table"><thead><tr><th>কয়েন</th><th>দাম</th><th>২৪ঘ %</th><th></th></tr></thead><tbody id="cryptoWatchRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-alerts"><p class="crypto-meta">নির্দিষ্ট দামে পৌঁছালে অ্যাপ খোলা থাকা অবস্থায় রিফ্রেশে সতর্কতা দেখাবে।</p><form id="cryptoAlertForm" class="crypto-form"><label>কয়েন<select id="cryptoAlertCoin" required></select></label><label>শর্ত<select id="cryptoAlertDirection"><option value="above">দাম সমান বা বেশি হলে</option><option value="below">দাম সমান বা কম হলে</option></select></label><label>টার্গেট দাম (USD)<input id="cryptoAlertPrice" type="number" min="0.00000001" step="any" required placeholder="টার্গেট দাম"></label><button class="primary" type="submit">অ্যালার্ট তৈরি</button></form><div id="cryptoAlertsList"></div></section></div></div>
 <div class="market-data-overlay" id="marketDataOverlay" role="dialog" aria-modal="true" aria-labelledby="marketDataTitle"><div class="market-data-panel"><div class="market-data-head"><h3 id="marketDataTitle">মার্কেট ছক</h3><button type="button" class="market-data-close" id="marketTableClose">বন্ধ ✕</button></div>
 <div class="market-folder-tabs" style="display:flex;gap:10px;margin:10px 0 14px">
@@ -571,17 +733,22 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 </section>
 </div></details>
 
-<details class="card precious-calc-card"><summary>গাণিতিক ক্যালকুলেটর</summary><div class="folder-content precious-calc-content">
-<div class="calc-intro"><span class="calc-kicker">PRECISION TOOLS</span><h3>গাণিতিক ক্যালকুলেটর</h3><p>দ্রুত ও নির্ভুল গাণিতিক হিসাব করুন</p></div>
-<div class="unit-launch-row"><button type="button" id="unitConverterOpen" class="unit-launch" aria-label="ইউনিট কনভার্টার খুলুন" title="ইউনিট কনভার্টার"><span class="unit-launch-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><strong>Unit Converter</strong><small>মুদ্রা, দৈর্ঘ্য, ক্ষেত্রফল, ওজনসহ ১০টি কনভার্টার</small></span><span class="unit-launch-arrow">›</span></button></div>
-<div class="unit-modal" id="unitConverterModal" aria-hidden="true" style="display:none"><div class="unit-panel" role="dialog" aria-modal="true" aria-labelledby="unitTitle"><div class="unit-head"><div><span class="unit-kicker">SMART TOOLS</span><h3 id="unitTitle">ইউনিট কনভার্টার</h3></div><button type="button" id="unitConverterClose" class="unit-close" aria-label="বন্ধ করুন">×</button></div><div class="unit-categories" id="unitCategories"></div><div class="unit-convert-box"><label for="unitInput">পরিমাণ</label><input id="unitInput" type="number" value="1" step="any"><div class="unit-selects"><div><label for="unitFrom">যে একক থেকে</label><select id="unitFrom"></select></div><button type="button" id="unitSwap" class="unit-swap" aria-label="একক অদলবদল">⇄</button><div><label for="unitTo">যে এককে</label><select id="unitTo"></select></div></div><div class="unit-result"><span>রূপান্তরের ফলাফল</span><strong id="unitOutput">—</strong><small id="unitNote">পরিমাণ পরিবর্তন করলে ফলাফল আপডেট হবে</small></div><button type="button" id="unitRefreshCurrency" class="unit-refresh">মুদ্রার রেট আপডেট</button></div></div></div><div class="field calc-display-field"><label for="calcDisplay">হিসাবের পর্দা</label><input id="calcDisplay" class="calc-display" type="text" value="0" readonly aria-label="ক্যালকুলেটরের ফলাফল"></div>
-<div class="calc-grid" id="calcButtons">
-<button type="button" data-calc="clear" class="danger">C</button><button type="button" data-calc="back">⌫</button><button type="button" data-calc="%">%</button><button type="button" data-calc="/">÷</button>
-<button type="button" data-calc="7">7</button><button type="button" data-calc="8">8</button><button type="button" data-calc="9">9</button><button type="button" data-calc="*">×</button>
-<button type="button" data-calc="4">4</button><button type="button" data-calc="5">5</button><button type="button" data-calc="6">6</button><button type="button" data-calc="-">−</button>
-<button type="button" data-calc="1">1</button><button type="button" data-calc="2">2</button><button type="button" data-calc="3">3</button><button type="button" data-calc="+">+</button>
-<button type="button" data-calc="sign">±</button><button type="button" data-calc="0">0</button><button type="button" data-calc=".">.</button><button type="button" data-calc="equals" class="calc-equals">=</button>
-</div></div></details>
+<details class="card gpw-home-card"><summary>সোনার দাম ক্যালকুলেটর</summary><div class="folder-content">
+<section class="gm-tool">
+   <h3>সোনার দাম ক্যালকুলেটর</h3><p class="hint">সোনার ওজন ও প্রতি ভরির দর দিলে মোট দাম বের হবে।</p>
+   <div class="gm-weight-entry"><div class="gm-weight-entry-title">ওজন</div><div class="gm-weight-entry-grid">
+    <div class="field"><label for="gpwVori">ভরি</label><input id="gpwVori" type="number" min="0" step="1" value="0"></div>
+    <div class="field"><label for="gpwAna">আনা</label><input id="gpwAna" type="number" min="0" max="15" step="1" value="0"></div>
+    <div class="field"><label for="gpwRoti">রতি</label><input id="gpwRoti" type="number" min="0" max="5" step="1" value="0"></div>
+    <div class="field"><label for="gpwPoint">পয়েন্ট</label><input id="gpwPoint" type="number" min="0" max="9" step="1" value="0"></div>
+   </div><p class="hint">১ ভরি = ১৬ আনা, ১ আনা = ৬ রতি, ১ রতি = ১০ পয়েন্ট</p></div>
+   <div class="field"><label for="gpwRateType">দরের উৎস</label><select id="gpwRateType"><option value="">নিজে লিখব</option><option value="rate_paka">আজকের বাজার: পাকা সোনা</option><option value="rate_k24">আজকের বাজার: ২৪ ক্যারেট</option><option value="rate_k22">আজকের বাজার: ২২ ক্যারেট</option><option value="rate_k21">আজকের বাজার: ২১ ক্যারেট</option><option value="rate_k18">আজকের বাজার: ১৮ ক্যারেট</option></select></div>
+   <div class="field"><label for="gpwRate">প্রতি ভরির দর (৳)</label><input id="gpwRate" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label for="gpwExtra">মজুরি / অন্যান্য চার্জ (৳, মোট)</label><input id="gpwExtra" type="number" min="0" step="any" value="0"></div>
+   <div class="actions" style="margin-top:8px"><button class="primary" id="gpwCalc" type="button">দাম বের করুন</button><button class="secondary" id="gpwReset" type="button">রিসেট</button></div>
+   <div class="gm-result" id="gpwResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
+  </section>
+</div></details>
 
 <details class="card"><summary>দৈনন্দিন খরচার হিসাব</summary><div class="folder-content">
 <details class="subfolder"><summary>দৈনিক খরচার হিসাব রাখুন</summary><div class="subfolder-content">
@@ -656,20 +823,17 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
    <p class="hint">প্রতিটি রসিদে স্বয়ংক্রিয়ভাবে “Made by Robin” থাকবে। রসিদ তৈরির আগে তথ্য যাচাই করে নিন।</p>
   </section></div></details>
 
-  <details class="gm-subfolder"><summary><span class="gm-sub-icon">৳</span><span>সোনার ওজন অনুযায়ী দাম</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
-   <h3>সোনার ওজন অনুযায়ী দাম</h3><p class="hint">সোনার ওজন ও প্রতি ভরির দর দিলে মোট দাম বের হবে।</p>
-   <div class="gm-weight-entry"><div class="gm-weight-entry-title">ওজন</div><div class="gm-weight-entry-grid">
-    <div class="field"><label for="gpwVori">ভরি</label><input id="gpwVori" type="number" min="0" step="1" value="0"></div>
-    <div class="field"><label for="gpwAna">আনা</label><input id="gpwAna" type="number" min="0" max="15" step="1" value="0"></div>
-    <div class="field"><label for="gpwRoti">রতি</label><input id="gpwRoti" type="number" min="0" max="5" step="1" value="0"></div>
-    <div class="field"><label for="gpwPoint">পয়েন্ট</label><input id="gpwPoint" type="number" min="0" max="9" step="1" value="0"></div>
-   </div><p class="hint">১ ভরি = ১৬ আনা, ১ আনা = ৬ রতি, ১ রতি = ১০ পয়েন্ট</p></div>
-   <div class="field"><label for="gpwRateType">দরের উৎস</label><select id="gpwRateType"><option value="">নিজে লিখব</option><option value="rate_paka">আজকের বাজার: পাকা সোনা</option><option value="rate_k24">আজকের বাজার: ২৪ ক্যারেট</option><option value="rate_k22">আজকের বাজার: ২২ ক্যারেট</option><option value="rate_k21">আজকের বাজার: ২১ ক্যারেট</option><option value="rate_k18">আজকের বাজার: ১৮ ক্যারেট</option></select></div>
-   <div class="field"><label for="gpwRate">প্রতি ভরির দর (৳)</label><input id="gpwRate" type="number" min="0" step="any" value="0"></div>
-   <div class="field"><label for="gpwExtra">মজুরি / অন্যান্য চার্জ (৳, মোট)</label><input id="gpwExtra" type="number" min="0" step="any" value="0"></div>
-   <div class="actions" style="margin-top:8px"><button class="primary" id="gpwCalc" type="button">দাম বের করুন</button><button class="secondary" id="gpwReset" type="button">রিসেট</button></div>
-   <div class="gm-result" id="gpwResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
-  </section></div></details>
+  <details class="gm-subfolder"><summary><span class="gm-sub-icon">∑</span><span>গাণিতিক ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><div class="precious-calc-card precious-calc-content" style="padding:4px 0 0;background:none">
+<div class="calc-intro"><span class="calc-kicker">PRECISION TOOLS</span><h3>গাণিতিক ক্যালকুলেটর</h3><p>দ্রুত ও নির্ভুল গাণিতিক হিসাব করুন</p></div>
+<div class="unit-launch-row"><button type="button" id="unitConverterOpen" class="unit-launch" aria-label="ইউনিট কনভার্টার খুলুন" title="ইউনিট কনভার্টার"><span class="unit-launch-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><strong>Unit Converter</strong><small>মুদ্রা, দৈর্ঘ্য, ক্ষেত্রফল, ওজনসহ ১০টি কনভার্টার</small></span><span class="unit-launch-arrow">›</span></button></div>
+<div class="unit-modal" id="unitConverterModal" aria-hidden="true" style="display:none"><div class="unit-panel" role="dialog" aria-modal="true" aria-labelledby="unitTitle"><div class="unit-head"><div><span class="unit-kicker">SMART TOOLS</span><h3 id="unitTitle">ইউনিট কনভার্টার</h3></div><button type="button" id="unitConverterClose" class="unit-close" aria-label="বন্ধ করুন">×</button></div><div class="unit-categories" id="unitCategories"></div><div class="unit-convert-box"><label for="unitInput">পরিমাণ</label><input id="unitInput" type="number" value="1" step="any"><div class="unit-selects"><div><label for="unitFrom">যে একক থেকে</label><select id="unitFrom"></select></div><button type="button" id="unitSwap" class="unit-swap" aria-label="একক অদলবদল">⇄</button><div><label for="unitTo">যে এককে</label><select id="unitTo"></select></div></div><div class="unit-result"><span>রূপান্তরের ফলাফল</span><strong id="unitOutput">—</strong><small id="unitNote">পরিমাণ পরিবর্তন করলে ফলাফল আপডেট হবে</small></div><button type="button" id="unitRefreshCurrency" class="unit-refresh">মুদ্রার রেট আপডেট</button></div></div></div><div class="field calc-display-field"><label for="calcDisplay">হিসাবের পর্দা</label><input id="calcDisplay" class="calc-display" type="text" value="0" readonly aria-label="ক্যালকুলেটরের ফলাফল"></div>
+<div class="calc-grid" id="calcButtons">
+<button type="button" data-calc="clear" class="danger">C</button><button type="button" data-calc="back">⌫</button><button type="button" data-calc="%">%</button><button type="button" data-calc="/">÷</button>
+<button type="button" data-calc="7">7</button><button type="button" data-calc="8">8</button><button type="button" data-calc="9">9</button><button type="button" data-calc="*">×</button>
+<button type="button" data-calc="4">4</button><button type="button" data-calc="5">5</button><button type="button" data-calc="6">6</button><button type="button" data-calc="-">−</button>
+<button type="button" data-calc="1">1</button><button type="button" data-calc="2">2</button><button type="button" data-calc="3">3</button><button type="button" data-calc="+">+</button>
+<button type="button" data-calc="sign">±</button><button type="button" data-calc="0">0</button><button type="button" data-calc=".">.</button><button type="button" data-calc="equals" class="calc-equals">=</button>
+</div></div></div></details>
   <details class="gm-subfolder"><summary><span class="gm-sub-icon">⚖</span><span>গড় টনস ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
    <h3>গড় টনস ক্যালকুলেটর</h3><p class="hint">প্রতিটি সোনার ওজন ভরি, আনা, রতি, পয়েন্টে এবং টনস (%) লিখুন।</p>
    <div id="gmAvgRows"><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div></div>
@@ -739,7 +903,7 @@ fontSelect.addEventListener('change',()=>applyFont(fontSelect.value));
 $('fontToggle').addEventListener('click',()=>{$('fontPop').classList.toggle('open')});
 document.addEventListener('click',ev=>{if(!$('fontPop').contains(ev.target)&&!$('fontToggle').contains(ev.target))$('fontPop').classList.remove('open')});
 const THEME_KEY='sonaRupaTheme', PALETTE_KEY='sonaRupaPalette';
-function applyTheme(theme){const dark=theme==='dark';document.body.classList.toggle('dark-mode',dark);const icon=$('themeIcon');icon.innerHTML=dark?'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>':'<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/>';const label=dark?'লাইট মোড চালু করুন':'ডার্ক মোড চালু করুন';$('themeToggle').setAttribute('aria-label',label);$('themeToggle').title=label;try{localStorage.setItem(THEME_KEY,theme)}catch(e){}}
+function applyTheme(theme){const dark=theme==='dark';document.body.classList.toggle('dark-mode',dark);document.documentElement.classList.toggle('gm-pre-dark',dark);const icon=$('themeIcon');icon.innerHTML=dark?'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>':'<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/>';const label=dark?'লাইট মোড চালু করুন':'ডার্ক মোড চালু করুন';$('themeToggle').setAttribute('aria-label',label);$('themeToggle').title=label;try{localStorage.setItem(THEME_KEY,theme)}catch(e){}}
 function applyPalette(palette){const allowed=['default','purple','green','blue','rose','teal','amber'];palette=allowed.includes(palette)?palette:'default';document.body.dataset.palette=palette;document.querySelectorAll('.theme-swatches button').forEach(b=>b.classList.toggle('active',b.dataset.theme===palette));try{localStorage.setItem(PALETTE_KEY,palette)}catch(e){}}
 let savedTheme='light',savedPalette='default';try{savedTheme=localStorage.getItem(THEME_KEY)||'light';savedPalette=localStorage.getItem(PALETTE_KEY)||'default'}catch(e){}applyTheme(savedTheme==='dark'?'dark':'light');applyPalette(savedPalette);
 $('themeToggle').addEventListener('click',()=>{applyTheme(document.body.classList.contains('dark-mode')?'light':'dark');$('themePop').classList.toggle('open')});
@@ -2047,7 +2211,7 @@ loadAdminSettings();
 })();
 </script>
 <script>
-// সোনার ওজন অনুযায়ী দাম বের করার ফিচার
+// সোনার দাম ক্যালকুলেটর বের করার ফিচার
 (function(){
  const $=id=>document.getElementById(id);
  if(!$('gpwCalc'))return;
@@ -2121,5 +2285,136 @@ loadAdminSettings();
  });
 })();
 </script>
+<style id="dark-mode-true-black">
+/* ===== ডার্ক মোড: পুরো অ্যাপ কালো + পড়ার উপযোগী টেক্সট =====
+   সব নিয়ম body.dark-mode এর ভেতরে, তাই লাইট মোডে কোনো পরিবর্তন হয় না। */
+html:has(body.dark-mode){background:#000!important;color-scheme:dark}
+body.dark-mode,body.dark-mode[data-palette]{
+  --bg:#000;--card:#0c0c0f;--ink:#f1f3f6;--muted:#b0b8c5;--line:#2a2d34;
+  --surface:#0c0c0f;--card-bg:#0c0c0f;--border-color:#2a2d34;--text-color:#f1f3f6;
+  color-scheme:dark}
+body.dark-mode{background:#000!important;color:var(--ink)}
+
+/* হেডার */
+body.dark-mode header{background:#000!important;border-bottom:1px solid #24262c}
+
+/* কার্ড ও ফোল্ডার */
+body.dark-mode main>details.card,body.dark-mode main>.card,body.dark-mode .card,
+body.dark-mode .gm-tool,body.dark-mode .gm-weight-entry,body.dark-mode .daily-news-item,
+body.dark-mode .crypto-stats>div,body.dark-mode .crypto-alert,body.dark-mode .market-data-stat,
+body.dark-mode .gm-result,body.dark-mode .metric,
+body.dark-mode main>details.card:nth-of-type(-n+4),body.dark-mode main>details.card.precious-calc-card{
+  background:#0c0c0f!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode main>details.card:nth-of-type(-n+4),body.dark-mode main>details.card.precious-calc-card{border-color:#3a2b5c!important}
+body.dark-mode details.card>summary,body.dark-mode main>details.card>summary,
+body.dark-mode main>details.card:nth-of-type(-n+4)>summary,
+body.dark-mode main>details.card.precious-calc-card>summary,
+body.dark-mode main>details.card:nth-of-type(1)>summary,body.dark-mode main>details.card:nth-of-type(2)>summary,
+body.dark-mode main>details.card:nth-of-type(3)>summary,body.dark-mode main>details.card:nth-of-type(4)>summary{
+  background:#0c0c0f!important;color:#f1f3f6!important;border-color:#2a2d34!important}
+body.dark-mode details.card:not(#gmOthers)>summary::before{background:#1b1b22;color:#d6c4ff}
+body.dark-mode details.card>summary::after{background:#1b1b22;color:#b0b8c5}
+body.dark-mode .folder-content,body.dark-mode .subfolder-content,body.dark-mode .precious-calc-content,
+body.dark-mode .gm-subcontent,body.dark-mode #gmOthers .gm-subcontent,
+body.dark-mode details.subfolder:has(#weightInputs) .subfolder-content{
+  background:#08080a!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode .subfolder,body.dark-mode .subfolder>summary,body.dark-mode #gmOthers[open],
+body.dark-mode #gmOthers .gm-subfolder,body.dark-mode #gmOthers .gm-subfolder>summary,
+body.dark-mode #gmOthers .gm-subfolder[open]>summary{
+  background:#0c0c0f!important;color:var(--ink)!important;border-color:#2a2d34!important}
+body.dark-mode #gmOthers .gm-sub-icon{color:#1f2a38!important}
+
+/* ভেতরের বক্স */
+body.dark-mode .calc-intro,body.dark-mode .calc-display-field,body.dark-mode .weight-input-group,
+body.dark-mode #weightInputs .weight-input-group,body.dark-mode .weight-result>div,
+body.dark-mode .weight-result>div+div,body.dark-mode .unit-category,body.dark-mode .unit-convert-box,
+body.dark-mode .daily-message-summary,body.dark-mode .daily-news-summary,body.dark-mode .gm-tv-spotcard{
+  background:#101014!important;border-color:#2a2d34!important;color:var(--ink)!important}
+body.dark-mode .calc-intro h3{color:#f2d58b!important}
+body.dark-mode .calc-intro p,body.dark-mode .calc-kicker,body.dark-mode .calc-display-field label{color:var(--muted)!important}
+body.dark-mode .weight-input-group h3,body.dark-mode #weightInputs label{color:#e8ebf0!important}
+body.dark-mode .weight-result strong{color:#f5d27a!important}
+body.dark-mode .gm-result strong{color:#f5d27a!important}
+body.dark-mode .gm-tv-spotimg{background:#1c1a2a!important}
+body.dark-mode .gm-tv-spotdistance{color:var(--muted)!important}
+
+/* লাইভ গোল্ড/সিলভার ও TradingView (ভেতরের উইজেট উল্টে ডার্ক করা হয়েছে) */
+body.dark-mode .live-metals-box{background:#050507!important;border-color:#2a2d34!important;box-shadow:none!important}
+body.dark-mode .live-metal-card{background:#000!important;border-color:#2a2d34!important;box-shadow:none!important}
+body.dark-mode .live-metal-title{color:#e8ebf0!important}
+body.dark-mode .live-metals-box .hint,body.dark-mode .live-metal-card .tradingview-widget-copyright,
+body.dark-mode .live-metal-card .tradingview-widget-copyright a{color:var(--muted)!important}
+body.dark-mode .live-metal-card iframe,body.dark-mode .gm-fx-frame iframe{filter:invert(1) hue-rotate(180deg)}
+body.dark-mode .gm-forex-calendar,body.dark-mode .gm-fx-frame{background:#000!important;border-color:#2a2d34!important;color:var(--ink)}
+body.dark-mode .gm-fx-toolbar{background:#14151a!important;border-color:#2a2d34!important}
+body.dark-mode .gm-fx-toolbar span{color:#e6edf4!important;border-color:#2a2d34!important}
+body.dark-mode .gm-fx-brand-badge,body.dark-mode .gm-fx-actions a.secondary{background:#1c1e24!important;color:#e6edf4!important}
+
+/* আনুমানিক দাম */
+body.dark-mode .estimate-box{background:#0a0905!important;border-color:#5a4a22!important;box-shadow:none!important}
+body.dark-mode .estimate-box:before{color:#d9bb69!important}
+body.dark-mode .estimate-item{background:#12100a!important;border-color:#4a3d1c!important;box-shadow:none!important}
+body.dark-mode .estimate-item span{color:#b9b09a!important}
+body.dark-mode .estimate-item strong{color:#f5d27a!important;text-shadow:none!important}
+body.dark-mode .estimate-item:last-child strong{color:#d5dce6!important}
+body.dark-mode .estimate-change.up{color:#4ade80!important}
+body.dark-mode .estimate-change.down{color:#ff7b7b!important}
+body.dark-mode .estimate-refresh{background:#2a2415!important;color:#f5d27a!important;border-color:#63512a!important}
+
+/* পপআপ ও প্যানেল */
+body.dark-mode .crypto-overlay,body.dark-mode .unit-modal,body.dark-mode .daily-message-overlay,
+body.dark-mode .market-data-overlay{background:rgba(0,0,0,.78)!important}
+body.dark-mode .crypto-panel,body.dark-mode .crypto-head,body.dark-mode .unit-panel,
+body.dark-mode .daily-message-panel,body.dark-mode .font-pop,body.dark-mode .theme-pop,
+body.dark-mode .market-data-panel{
+  background:#0c0c0f!important;color:var(--ink)!important;border-color:#2a2d34!important}
+body.dark-mode .crypto-change-up,body.dark-mode .market-sentiment-greed{color:#4ade80!important}
+body.dark-mode .crypto-change-down,body.dark-mode .market-sentiment-fear{color:#ff7b7b!important}
+body.dark-mode .crypto-tab:not(.active),body.dark-mode .crypto-mini-btn{background:#1c1e24!important;color:#c3cad6!important}
+body.dark-mode .market-data-close{background:#1c1e24!important;color:#e8ebf0!important}
+body.dark-mode .market-data-stat span,body.dark-mode .market-data-note{color:var(--muted)!important}
+body.dark-mode .market-data-table{background:#0c0c0f!important;color:var(--ink)!important}
+body.dark-mode .market-data-table th{background:#14151a!important;color:var(--muted)!important}
+body.dark-mode .market-data-table tbody tr:hover td{background:#14151a!important}
+body.dark-mode .market-folder{background:#101014!important;color:#c3cad6!important;border-color:#2a2d34!important}
+body.dark-mode .market-folder.active{background:#2a2415!important;color:#f5d27a!important;border-color:#8d7136!important}
+body.dark-mode .market-folder#marketSilverFolder.active{background:#1c2430!important;color:#dfe7f0!important;border-color:#6b7a8e!important}
+body.dark-mode .live-badge{background:#12301f!important;color:#7de2a6!important}
+
+/* ইউনিট কনভার্টার */
+body.dark-mode .unit-category{color:#d9c7ff!important}
+body.dark-mode .unit-convert-box>label,body.dark-mode .unit-selects label{color:#b9a6d9!important}
+body.dark-mode .unit-close,body.dark-mode .unit-swap,body.dark-mode .unit-refresh{background:#241a3a!important;color:#d9c7ff!important}
+body.dark-mode .unit-launch{color:#c4a7ff}
+body.dark-mode .unit-launch-icon i{border-color:#c4a7ff}
+body.dark-mode .unit-launch:hover,body.dark-mode .unit-launch:focus-visible{background:#241a3a}
+
+/* ইনপুট, টেবিল, বাটন */
+body.dark-mode input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=button]):not([type=submit]):not([type=file]),
+body.dark-mode select,body.dark-mode textarea,body.dark-mode #weightInputs input,body.dark-mode #weightOperation,
+body.dark-mode .unit-convert-box input,body.dark-mode .unit-convert-box select,
+body.dark-mode .calc-display,body.dark-mode .precious-calc-card .calc-display{
+  background:#141418!important;color:#f1f3f6!important;border-color:#3a3d44!important}
+body.dark-mode ::placeholder{color:#8a93a0!important;opacity:1}
+body.dark-mode option{background:#141418;color:#f1f3f6}
+body.dark-mode th{background:#14151a!important;color:var(--muted)!important}
+body.dark-mode td,body.dark-mode th{border-color:#2a2d34!important}
+body.dark-mode .tablewrap,body.dark-mode .table-wrapper{background:#050507!important;border-color:#2a2d34!important}
+body.dark-mode .secondary{background:#1c1e24;color:#e8ebf0}
+body.dark-mode .danger{background:#2a1517;color:#ff9a94}
+body.dark-mode #addWeightBtn{background:#12301f!important;color:#7de2a6!important}
+body.dark-mode #removeWeightBtn{background:#3a2227!important;color:#ffb8b2!important}
+
+/* ইনলাইন স্টাইলে থাকা সাদা/হালকা অংশ */
+body.dark-mode [style*="background:#fff"],body.dark-mode [style*="background: #fff"]{background:#141418!important;color:#f1f3f6!important;border-color:#3a3d44!important}
+body.dark-mode [style*="background:#f8fbff"],body.dark-mode [style*="background:#eaf1ff"]{background:#101820!important;color:#f1f3f6!important;border-color:#2a3a52!important}
+body.dark-mode [style*="color:#172033"]{color:#f1f3f6!important}
+body.dark-mode [style*="color:#174ea6"]{color:#8ab4ff!important}
+body.dark-mode [style*="color:#16803d"]{color:#4ade80!important}
+
+body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#71333a!important;color:#ffb8b8!important}
+/* ইউনিট কনভার্টার পপআপ সবার উপরে (লাইট ও ডার্ক দুই মোডেই) */
+.unit-modal{z-index:100010!important}
+</style>
 </body>
 </html>
