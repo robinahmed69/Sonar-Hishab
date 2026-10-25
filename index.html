@@ -118,10 +118,10 @@ body.dark-mode .weight-result strong {color:#f1f5f9;}
 .clock-date{margin-top:3px;font-size:11px;font-weight:600;color:#e6edf5;letter-spacing:.2px}
 /* Tiny animated sand timer replaces the dotted time bar */
 .clock-date-row{display:flex;align-items:center;justify-content:space-between;gap:8px;max-width:230px}
-.sand-timer{width:18px;height:18px;flex:0 0 18px;color:#ffe08a;opacity:.95;animation:sandTurn 6s ease-in-out infinite;transform-origin:center}
-.sand-top{animation:sandEmpty 6s linear infinite;transform-origin:12px 7px}
-.sand-bottom{animation:sandFill 6s linear infinite;transform-origin:12px 17px}
-.sand-stream{animation:sandFlow 1.2s linear infinite}
+.sand-timer{width:18px;height:18px;flex:0 0 18px;color:#ffe08a;opacity:.95;animation:sandTurn 4s ease-in-out infinite;transform-origin:center}
+.sand-top{animation:sandEmpty 4s linear infinite;transform-origin:12px 7px}
+.sand-bottom{animation:sandFill 4s linear infinite;transform-origin:12px 17px}
+.sand-stream{animation:sandFlow .8s linear infinite}
 @keyframes sandTurn{0%,42%{transform:rotate(0)}50%,92%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
 @keyframes sandEmpty{0%{opacity:1}45%,100%{opacity:.12}}
 @keyframes sandFill{0%,45%{opacity:.12}90%,100%{opacity:1}}
