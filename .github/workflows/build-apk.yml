@@ -5,6 +5,9 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,6 +28,7 @@ jobs:
           if [ -f index.html ]; then
             mkdir -p www
             cp index.html www/index.html
+            sed -i "s/__APP_BUILD__/${{ github.run_number }}/g" www/index.html
           fi
 
       - name: Install dependencies
@@ -105,6 +109,20 @@ jobs:
           sed -i 's#<item name="windowNoTitle">true</item>#<item name="windowNoTitle">true</item>\n        <item name="android:windowFullscreen">true</item>#' android/app/src/main/res/values/styles.xml
           grep -n "windowFullscreen" android/app/src/main/res/values/styles.xml || echo "styles.xml এ windowFullscreen বসেনি"
 
+      - name: Fixed signing key and version code
+        env:
+          KEYSTORE_B64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -n "$KEYSTORE_B64" ]; then
+            mkdir -p ~/.android
+            echo "$KEYSTORE_B64" | base64 -d > ~/.android/debug.keystore
+            echo "স্থায়ী সাইনিং কী বসেছে"
+          else
+            echo "KEYSTORE_BASE64 secret নেই: প্রতিবার আলাদা কী ব্যবহার হবে, তাই আপডেট ইন্সটল নাও হতে পারে"
+          fi
+          sed -i "s/versionCode 1/versionCode ${{ github.run_number }}/" android/app/build.gradle
+          grep -n "versionCode" android/app/build.gradle || echo "versionCode বদলানো যায়নি"
+
       - name: Sync web files
         run: npx cap sync android
 
@@ -114,8 +132,19 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleDebug
 
+      - name: Rename APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk sona-rupa-hisab.apk
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: sona-rupa-hisab-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: sona-rupa-hisab.apk
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
+          files: sona-rupa-hisab.apk
+          make_latest: true
