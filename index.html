@@ -333,6 +333,12 @@ body.dark-mode .shop-msg-item{border-top-color:#6b5a2a}
 .daily-message-launch.has-new::after{content:'';position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:#ef4444;border:2px solid #fff;animation:smPulse 1.8s ease-out infinite}
 @keyframes smPulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.55)}70%,100%{box-shadow:0 0 0 8px rgba(239,68,68,0)}}
 @media(prefers-reduced-motion:reduce){.daily-message-launch.has-new::after{animation:none}}
+
+.push-banner{position:fixed;left:12px;right:12px;top:calc(12px + env(safe-area-inset-top,0px));z-index:100001;max-width:520px;margin:0 auto;padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,#172b3a,#24435c);color:#fff;box-shadow:0 12px 30px #0006;border:1px solid #f3d58a66;transform:translateY(-140%);transition:transform .45s cubic-bezier(.2,.9,.25,1)}
+.push-banner.show{transform:none}
+.push-banner b{display:block;color:#ffe08a;font-size:14px;margin-bottom:2px}
+.push-banner span{font-size:13px;line-height:1.55;white-space:pre-line}
+@media(prefers-reduced-motion:reduce){.push-banner{transition:none}}
 </style>
 <script>
 // অ্যাপে (Capacitor) CSV সেভ/শেয়ার, ব্রাউজারে সাধারণ ডাউনলোড
@@ -1913,7 +1919,7 @@ async function loadAdminSettings() {
 
     if (settings.maintenanceMode === true) {
       document.body.innerHTML =
-        "<h2 style='text-align:center'>অ্যাপটি বর্তমানে রক্ষণাবেক্ষণে আছে।</h2>";
+        "<div style='min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center'><h2 style='margin:0;font-size:22px;line-height:1.6'>অ্যাপটি বর্তমানে রক্ষণাবেক্ষণে আছে।</h2></div>";
       return;
     }
 
@@ -1926,6 +1932,38 @@ async function loadAdminSettings() {
 }
 
 loadAdminSettings();
+</script>
+<script>
+// পুশ নোটিফিকেশন (শুধু Android অ্যাপে; Firebase Cloud Messaging)
+(function(){
+ const cap=window.Capacitor;
+ if(!(cap&&cap.isNativePlatform&&cap.isNativePlatform()))return;
+ const P=cap.Plugins&&cap.Plugins.PushNotifications;
+ if(!P)return;
+ let bar=null,timer=0;
+ function banner(title,body){
+  if(!bar){bar=document.createElement('div');bar.className='push-banner';bar.addEventListener('click',()=>bar.classList.remove('show'));document.body.appendChild(bar)}
+  bar.textContent='';
+  const b=document.createElement('b');b.textContent=title||'নতুন বার্তা';bar.appendChild(b);
+  if(body){const sp=document.createElement('span');sp.textContent=body;bar.appendChild(sp)}
+  requestAnimationFrame(()=>bar.classList.add('show'));
+  clearTimeout(timer);timer=setTimeout(()=>bar.classList.remove('show'),9000);
+ }
+ try{
+  P.addListener('registration',t=>{try{localStorage.setItem('fcmToken',t.value)}catch(e){}});
+  P.addListener('registrationError',e=>console.error('FCM registration error',e));
+  P.addListener('pushNotificationReceived',n=>banner(n.title,n.body));
+  P.addListener('pushNotificationActionPerformed',a=>{const n=a.notification||{};banner(n.title,n.body)});
+ }catch(e){console.error(e)}
+ (async function(){
+  try{
+   let perm=await P.checkPermissions();
+   if(perm.receive==='prompt'||perm.receive==='prompt-with-rationale')perm=await P.requestPermissions();
+   if(perm.receive!=='granted')return;
+   await P.register();
+  }catch(e){console.error('Push init error',e)}
+ })();
+})();
 </script>
 </body>
 </html>
