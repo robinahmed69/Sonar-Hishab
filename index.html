@@ -515,6 +515,32 @@ body.dark-mode main>details.card:nth-of-type(-n+4)>summary,body.dark-mode main>d
 body.dark-mode main>details.card:nth-of-type(-n+4)>summary:before,body.dark-mode main>details.card.precious-calc-card>summary:before{background:#42306b!important;color:#d9c7ff!important}
 body.dark-mode main>details.card:nth-of-type(-n+4)>summary:after,body.dark-mode main>details.card.precious-calc-card>summary:after{background:#42306b!important;color:#d9c7ff!important}
 </style>
+<style id="gm-bottom-nav-css">
+#gmBottomNav{position:fixed;left:0;right:0;bottom:0;margin:0 auto;max-width:480px;z-index:60;display:flex;justify-content:space-around;align-items:stretch;gap:2px;padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #e0e0e8;box-shadow:0 -4px 18px rgba(0,0,0,.08)}
+#gmBottomNav button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 2px;background:none;border:0;border-radius:12px;color:#6b6b7a;font-family:'Hind Siliguri',sans-serif;font-size:11px;font-weight:600;line-height:1.15;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s,color .2s,transform .15s}
+#gmBottomNav button .gn-ic{font-size:22px;line-height:1}
+#gmBottomNav button .gn-lb{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gmBottomNav button:active{transform:scale(.95)}
+#gmBottomNav button.active{color:#a67c00;background:rgba(212,175,55,.16)}
+body.dark-mode #gmBottomNav{background:#1a1a22;border-top-color:#2e2e3a;box-shadow:0 -4px 18px rgba(0,0,0,.45)}
+body.dark-mode #gmBottomNav button{color:#9a9aa8}
+body.dark-mode #gmBottomNav button.active{color:#D4AF37;background:rgba(212,175,55,.14)}
+html body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))!important}
+html body #gmOthers,html body #gmOthers[open]{bottom:calc(78px + env(safe-area-inset-bottom,0px))!important}
+html body .daily-message-launch{bottom:calc(86px + env(safe-area-inset-bottom,0px))!important}
+body.gm-kb-open #gmBottomNav{display:none}
+html body #cryptoLaunch,html body header .crypto-launch{display:none!important}
+html body main>details.gm-sheet-card{display:none!important}
+html body main>details.gm-sheet-card .gm-sheet-close{display:none}
+html body main>details.gm-sheet-card.gm-sheet-open{display:block!important;position:fixed!important;left:0;right:0;top:0;bottom:calc(70px + env(safe-area-inset-bottom,0px));max-width:480px;margin:0 auto!important;overflow-y:auto;-webkit-overflow-scrolling:touch;z-index:55;border-radius:0!important;border:0!important;box-shadow:none!important;padding:10px 12px 24px!important;background:#f4f4f7!important}
+html body.dark-mode main>details.gm-sheet-card.gm-sheet-open{background:#0f0f13!important}
+html body main>details.gm-sheet-card.gm-sheet-open>summary{display:none!important}
+html body main>details.gm-sheet-card.gm-sheet-open .gm-sheet-close{display:block;position:sticky;top:0;z-index:2;margin:0 0 10px auto;padding:7px 14px;border:1px solid #e0e0e8;border-radius:20px;background:#fff;color:#a67c00;font-family:'Hind Siliguri',sans-serif;font-size:13px;font-weight:700;cursor:pointer}
+html body.dark-mode main>details.gm-sheet-card.gm-sheet-open .gm-sheet-close{background:#1a1a22;border-color:#2e2e3a;color:#D4AF37}
+body.gm-sheet-lock{overflow:hidden!important}
+html body.gm-sheet-lock #gmOthers,html body.gm-sheet-lock .daily-message-launch{display:none!important}
+@media print{#gmBottomNav{display:none!important}}
+</style>
 </head>
 <style id="dark-mode-true-black-early">
 /* ===== ডার্ক মোড: পুরো অ্যাপ কালো + পড়ার উপযোগী টেক্সট =====
@@ -684,7 +710,8 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <section class="card estimate-box"><div class="estimate-grid"><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="22" height="17"> আনুমানিক সোনার দাম</span><strong id="estimatedGold">লোড হচ্ছে…</strong></div><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="22" height="17"> আনুমানিক রূপার দাম</span><strong id="estimatedSilver">লোড হচ্ছে…</strong></div></div><div class="estimate-refresh-row"><button type="button" id="estimateRefresh" class="estimate-refresh" aria-label="সোনা ও রুপার দাম রিফ্রেশ করুন" title="দাম রিফ্রেশ করুন"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button></div></section></section>
 
 
-<details class="card" id="goldrRatesCard"><summary>আজকের সোনার বাজার জানুন</summary><div class="folder-content">
+<details class="card gm-sheet-card" id="goldrRatesCard"><summary>আজকের সোনার বাজার জানুন</summary><div class="folder-content">
+<button type="button" class="gm-sheet-close" aria-label="বন্ধ করুন">✕ বন্ধ করুন</button>
 <div class="tablewrap"><table><thead><tr><th>বিবরণ</th><th>মূল্য (টাকা)</th></tr></thead><tbody>
 <tr><td>পাকা সোনা</td><td id="rate_paka">২,০৪,৯০০</td></tr>
 <tr><td>২২ ক্যারেট</td><td id="rate_k22">১,৮৭,৮২৫</td></tr>
@@ -695,7 +722,8 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <p class="hint" id="ratesUpdated" style="margin-top:8px"></p>
 </div></details>
 
-<details class="card"><summary>সোনা রূপার ক্যালকুলেটর</summary><div class="folder-content">
+<details class="card gm-sheet-card"><summary>সোনা রূপার ক্যালকুলেটর</summary><div class="folder-content">
+<button type="button" class="gm-sheet-close" aria-label="বন্ধ করুন">✕ বন্ধ করুন</button>
 <details class="subfolder"><summary>সোনার ওজন যোগ-বিয়োগ</summary><div class="subfolder-content">
 <p class="hint" style="margin-top:0">প্রথমে দুটি ওজন থাকবে। প্রয়োজন অনুযায়ী “আরও ওজন যোগ করুন” চাপ দিয়ে সর্বোচ্চ ১০টি ওজন ব্যবহার করুন। যোগ করলে সব ওজন যোগ হবে; বিয়োগ করলে প্রথম ওজন থেকে বাকি ওজনগুলো একে একে বাদ যাবে। ফলাফল ভরি-আনা-রতি-পয়েন্ট ও গ্রাম—দুইভাবেই দেখাবে। ১ ভরি = ১১.৬৬৪ গ্রাম।</p>
 <div id="weightInputs" class="weight-calc-grid"></div>
@@ -704,6 +732,14 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <div class="actions" style="margin-top:12px"><button class="primary" type="button" id="weightCalculate">হিসাব করুন</button><button class="secondary" type="button" id="weightReset">রিসেট</button></div>
 <div class="weight-result" aria-live="polite"><div><span>ফলাফল (ভরি হিসাবে)</span><strong id="weightResultVori">০ ভরি ০ আনা ০ রতি ০ পয়েন্ট</strong></div><div><span>ফলাফল (গ্রাম হিসাবে)</span><strong id="weightResultGram">০.০০০ গ্রাম</strong></div></div>
 </div></details>
+<details class="subfolder" id="gmAvgFolder"><summary>গড় ক্যালকুলেটর</summary><div class="subfolder-content">
+<section class="gm-tool">
+   <h3>গড় ক্যালকুলেটর</h3><p class="hint">প্রতিটি সোনার ওজন ভরি, আনা, রতি, পয়েন্টে এবং টনস (%) লিখুন।</p>
+   <div id="gmAvgRows"><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div></div>
+   <div class="actions" style="margin-top:8px"><button class="secondary" id="gmAvgAdd" type="button">+ আরেকটি সোনা যোগ</button><button class="primary" id="gmAvgCalc" type="button">গড় হিসাব</button></div><div class="gm-result" id="gmAvgResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
+  </section>
+</div></details>
+
 <section class="card"><h2>হিসাবের সারাংশ</h2><div class="summary">
 <div class="metric"><span>সোনার নেট ওজন</span><strong id="goldTotal">০ ভরি</strong></div>
 <div class="metric"><span>রুপার নেট ওজন</span><strong id="silverTotal">০ ভরি</strong></div>
@@ -733,7 +769,8 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 </section>
 </div></details>
 
-<details class="card gpw-home-card"><summary>সোনার দাম ক্যালকুলেটর</summary><div class="folder-content">
+<details class="card gpw-home-card gm-sheet-card"><summary>সোনার দাম ক্যালকুলেটর</summary><div class="folder-content">
+<button type="button" class="gm-sheet-close" aria-label="বন্ধ করুন">✕ বন্ধ করুন</button>
 <section class="gm-tool">
    <h3>সোনার দাম ক্যালকুলেটর</h3><p class="hint">সোনার ওজন ও প্রতি ভরির দর দিলে মোট দাম বের হবে।</p>
    <div class="gm-weight-entry"><div class="gm-weight-entry-title">ওজন</div><div class="gm-weight-entry-grid">
@@ -750,8 +787,14 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
   </section>
 </div></details>
 
-<details class="card"><summary>দৈনন্দিন খরচার হিসাব</summary><div class="folder-content">
-<details class="subfolder"><summary>দৈনিক খরচার হিসাব রাখুন</summary><div class="subfolder-content">
+
+</main>
+
+<details class="card" id="gmOthers">
+ <summary>Other’s · অতিরিক্ত ফিচার</summary>
+ <div class="folder-content gm-folder-list">
+  <details class="gm-subfolder" id="gmExpenseFolder"><summary><span class="gm-sub-icon">📒</span><span>দৈনন্দিন খরচার হিসাব</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent">
+<details class="subfolder" open><summary>দৈনিক খরচার হিসাব রাখুন</summary><div class="subfolder-content">
 <div class="expense-summary"><div class="metric"><span>আজকের খরচ</span><strong id="todayExpense">৳০.০০</strong></div><div class="metric"><span>সর্বমোট খরচ</span><strong id="allExpense">৳০.০০</strong></div></div>
 <form id="expenseForm">
 <div class="field"><label for="expenseDate">তারিখ</label><input id="expenseDate" type="date" required></div>
@@ -763,12 +806,8 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>তারিখ</th><th>খরচের ধরন</th><th>টাকা</th><th>বিবরণ</th><th>মুছুন</th></tr></thead><tbody id="expenseRows"></tbody></table><div id="expenseEmpty" class="empty">এখনো কোনো দৈনিক খরচ যোগ করা হয়নি।</div></div>
 <div class="actions" style="margin-top:13px"><button class="secondary" id="expenseExport" type="button">খরচের CSV ডাউনলোড</button><button class="danger" id="expenseClear" type="button">সব খরচ মুছুন</button></div>
 <p class="hint">দৈনিক খরচ এই ডিভাইসের ব্রাউজারে সেভ থাকবে।</p>
-</div></details></div></details>
-</main>
-
-<details class="card" id="gmOthers">
- <summary>Other’s · অতিরিক্ত ফিচার</summary>
- <div class="folder-content gm-folder-list">
+</div></details>
+</div></details>
   <details class="gm-subfolder"><summary><span class="gm-sub-icon">⇄</span><span>গ্রাম ⇄ ভরি কনভার্টার</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
    <h3>গ্রাম ⇄ ভরি কনভার্টার</h3>
    <div class="field"><label for="gmGramInput">গ্রাম থেকে ভরি</label><input id="gmGramInput" type="number" min="0" step="any" placeholder="গ্রাম লিখুন"></div>
@@ -834,11 +873,7 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <button type="button" data-calc="1">1</button><button type="button" data-calc="2">2</button><button type="button" data-calc="3">3</button><button type="button" data-calc="+">+</button>
 <button type="button" data-calc="sign">±</button><button type="button" data-calc="0">0</button><button type="button" data-calc=".">.</button><button type="button" data-calc="equals" class="calc-equals">=</button>
 </div></div></div></details>
-  <details class="gm-subfolder"><summary><span class="gm-sub-icon">⚖</span><span>গড় টনস ক্যালকুলেটর</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
-   <h3>গড় টনস ক্যালকুলেটর</h3><p class="hint">প্রতিটি সোনার ওজন ভরি, আনা, রতি, পয়েন্টে এবং টনস (%) লিখুন।</p>
-   <div id="gmAvgRows"><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div><div class="gm-avg-row" style="margin-bottom:12px"><div class="field"><label>ওজন</label><div class="gm-weight-fields" data-weight="gm-avg" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-avg-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-avg-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-avg-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-avg-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div><div class="field"><label>টনস (%)</label><input class="gm-avg-purity" type="number" min="0" max="100" step="any" placeholder="যেমন ৯৯.৫"></div></div></div>
-   <div class="actions" style="margin-top:8px"><button class="secondary" id="gmAvgAdd" type="button">+ আরেকটি সোনা যোগ</button><button class="primary" id="gmAvgCalc" type="button">গড় হিসাব</button></div><div class="gm-result" id="gmAvgResult" aria-live="polite">ফলাফল এখানে দেখাবে।</div>
-  </section></div></details>
+  
   <details class="gm-subfolder"><summary><span class="gm-sub-icon">◈</span><span>ক্যারেট ও টনস কনভার্টার</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
    <h3>ক্যারেট ও টনস কনভার্টার</h3><div class="field"><label>বর্তমান ওজন</label><div class="gm-weight-fields" data-weight="gm-conv" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><div class="field"><label>ভরি</label><input class="gm-conv-bhori" type="number" min="0" step="1" placeholder="ভরি"></div><div class="field"><label>আনা</label><input class="gm-conv-ana" type="number" min="0" step="1" placeholder="আনা"></div><div class="field"><label>রতি</label><input class="gm-conv-rati" type="number" min="0" step="1" placeholder="রতি"></div><div class="field"><label>পয়েন্ট</label><input class="gm-conv-point" type="number" min="0" step="1" placeholder="পয়েন্ট"></div></div></div>
    <div class="field"><label for="gmConvCurrent">বর্তমান বিশুদ্ধতা (ক্যারেট)</label><input id="gmConvCurrent" type="number" min="0.01" max="24" step="any" placeholder="যেমন ২০"></div>
@@ -2416,5 +2451,41 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 /* ইউনিট কনভার্টার পপআপ সবার উপরে (লাইট ও ডার্ক দুই মোডেই) */
 .unit-modal{z-index:100010!important}
 </style>
+<nav id="gmBottomNav" aria-label="দ্রুত মেনু">
+<button type="button" data-t="market" aria-label="আজকের সোনার বাজার"><span class="gn-ic">💰</span><span class="gn-lb">বাজার</span></button>
+<button type="button" data-t="calc" aria-label="সোনা রূপার ক্যালকুলেটর"><span class="gn-ic">🧮</span><span class="gn-lb">ক্যালকুলেটর</span></button>
+<button type="button" data-t="gpw" aria-label="সোনার দাম ক্যালকুলেটর"><span class="gn-ic">⚖️</span><span class="gn-lb">সোনার দাম</span></button>
+<button type="button" data-t="exp" aria-label="দৈনন্দিন খরচার হিসাব"><span class="gn-ic">📒</span><span class="gn-lb">খরচ</span></button>
+<button type="button" data-t="crypto" aria-label="ক্রিপ্টো লাইভ দাম"><span class="gn-ic">₿</span><span class="gn-lb">ক্রিপ্টো</span></button>
+</nav>
+<script id="gm-bottom-nav-js">
+(function(){try{
+var nav=document.getElementById('gmBottomNav');if(!nav)return;
+function byText(t){var l=document.querySelectorAll('main>details.card');for(var i=0;i<l.length;i++){var s=l[i].querySelector(':scope>summary');if(s&&s.textContent.replace(/\s+/g,' ').indexOf(t)>-1)return l[i];}return null;}
+var map={market:function(){return document.getElementById('goldrRatesCard')},gpw:function(){return document.querySelector('main>details.gpw-home-card')},calc:function(){return byText('সোনা রূপার ক্যালকুলেটর')}};
+var btns=nav.querySelectorAll('button');
+function setActive(k){for(var i=0;i<btns.length;i++)btns[i].classList.toggle('active',btns[i].getAttribute('data-t')===k);}
+function anySheet(){return document.querySelector('main>details.gm-sheet-open');}
+function closeSheets(){var l=document.querySelectorAll('main>details.gm-sheet-open');for(var i=0;i<l.length;i++)l[i].classList.remove('gm-sheet-open');document.body.classList.remove('gm-sheet-lock');}
+function openSheet(k){var g=map[k]();if(!g)return;closeSheets();g.open=true;g.classList.add('gm-sheet-open');document.body.classList.add('gm-sheet-lock');g.scrollTop=0;setActive(k);}
+nav.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=b.getAttribute('data-t');
+if(k==='crypto'){var c=document.getElementById('cryptoLaunch');if(c)c.click();return;}
+if(k==='market'||k==='gpw'||k==='calc'){var g=map[k]();if(g&&g.classList.contains('gm-sheet-open')){closeSheets();upd();}else openSheet(k);return;}
+var wasOpen=!!anySheet();closeSheets();
+if(k==='exp'){var o=document.getElementById('gmOthers');if(o&&!o.open){var os=o.querySelector(':scope>summary');if(os)os.click();else o.open=true;}
+var f=document.getElementById('gmExpenseFolder');setActive('exp');
+setTimeout(function(){if(f&&!f.open){var fs=f.querySelector(':scope>summary');if(fs)fs.click();else f.open=true;}
+setTimeout(function(){if(f)f.scrollIntoView({behavior:'smooth',block:'start'});},120);},150);return;}
+});
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.gm-sheet-close')){closeSheets();upd();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&anySheet()){closeSheets();upd();}});
+var tick=false;
+function upd(){tick=false;if(anySheet())return;setActive(null);}
+window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+document.addEventListener('focusin',function(e){if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))document.body.classList.add('gm-kb-open');});
+document.addEventListener('focusout',function(){document.body.classList.remove('gm-kb-open');});
+upd();
+}catch(err){}})();
+</script>
 </body>
 </html>
