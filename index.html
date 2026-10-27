@@ -2739,7 +2739,7 @@ if(box)box.addEventListener('click',function(e){var b=e.target.closest('button')
 function v(id){var el=$(id);return el?clean(el.value):''}
 if(a==='enable'){var n=v('gmSecNew'),n2=v('gmSecNew2');if(n.length<4||n.length>6){setMsg('PIN ৪ থেকে ৬ সংখ্যার হতে হবে।');return}if(n!==n2){setMsg('দুটো PIN মেলেনি।');return}
 var qa=readQ();if(qa.err){setMsg(qa.err);return}setQ(qa.q,qa.a);var salt=newSalt();p('gmPinSalt',salt);p('gmPinHash',hashPin(n,salt));p('gmPinHours',$('gmSecHours').value);p('gmPinLast',String(Date.now()));del('gmPinFail');renderSec();setMsg('PIN চালু হয়েছে। ভুলে গেলে লক স্ক্রিনের “PIN ভুলে গেছেন?” থেকে সিকিউরিটি প্রশ্নের উত্তর দিয়ে রিসেট করতে পারবেন।',true);return}
-if(a==='lock'){lock();return}
+if(a==='lock'){p('gmPinLast','0');lock();return}
 var cur=v('gmSecCur');
 if(a==='setq'){if(!check(v('gmSecCurQ'))){setMsg('বর্তমান PIN ভুল।');return}var qa2=readQ();if(qa2.err){setMsg(qa2.err);return}setQ(qa2.q,qa2.a);del('gmQFail');renderSec();setMsg('সিকিউরিটি প্রশ্ন সেভ হয়েছে।',true);return}
 if(a==='change'){if(!check(cur)){setMsg('বর্তমান PIN ভুল।');return}var m=v('gmSecNew'),m2=v('gmSecNew2');if(m.length<4||m.length>6){setMsg('নতুন PIN ৪ থেকে ৬ সংখ্যার হতে হবে।');return}if(m!==m2){setMsg('নতুন দুটো PIN মেলেনি।');return}
