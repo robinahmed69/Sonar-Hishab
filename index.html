@@ -544,6 +544,64 @@ html body.dark-mode main>details.gm-sheet-card.gm-sheet-open .gm-sheet-close{bac
 body.gm-sheet-lock{overflow:hidden!important}
 @media print{#gmBottomNav{display:none!important}}
 </style>
+<style id="gm-hist-css">
+.gm-hist-box{margin-top:14px;padding:12px;border:1px solid var(--line,#e0e0e8);border-radius:14px;background:var(--card,#fff)}
+.gm-hist-box h3{margin:0 0 10px;font-size:15px;color:#a67c00}
+body.dark-mode .gm-hist-box h3{color:#D4AF37}
+.gm-hist-row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
+.gm-hist-range{display:flex;gap:4px}
+.gm-hist-range button{padding:6px 10px;border:1px solid var(--line,#e0e0e8);border-radius:20px;background:transparent;color:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.gm-hist-range button.on{background:rgba(212,175,55,.2);border-color:#D4AF37;color:#a67c00}
+body.dark-mode .gm-hist-range button.on{color:#D4AF37}
+.gm-hist-chart svg{display:block;width:100%;height:auto}
+.gm-hist-stat{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;font-size:12px}
+.gm-chg{flex:1 1 90px;min-width:0;padding:6px 8px;border:1px solid var(--line,#e0e0e8);border-radius:10px;text-align:center;line-height:1.4}
+.gm-chg b{display:block;font-size:11px;opacity:.75;font-weight:600}
+.gm-chg span{font-size:12px;font-weight:700}
+.gm-chg .up{color:#1f9d55}.gm-chg .down{color:#d6342a}
+body.dark-mode .gm-chg .up{color:#2ecc71}body.dark-mode .gm-chg .down{color:#ff6b61}
+.gm-hist-note{margin:8px 0 0;font-size:11px;opacity:.7;line-height:1.5}
+.gm-hist-empty{padding:18px 8px;text-align:center;font-size:13px;opacity:.8}
+.gm-alert-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gm-alert-form input,.gm-alert-form select{width:100%;box-sizing:border-box}
+.gm-alert-form button{grid-column:1/-1;padding:10px;border:0;border-radius:10px;background:linear-gradient(135deg,#D4AF37,#FFD700);color:#1a1a22;font-weight:700;font-size:14px;cursor:pointer}
+.gm-alert-list{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.gm-alert-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line,#e0e0e8);border-radius:10px;font-size:13px}
+.gm-alert-item span{flex:1}
+.gm-alert-item.done{opacity:.65}
+.gm-alert-item button{padding:5px 9px;border:1px solid var(--line,#e0e0e8);border-radius:8px;background:transparent;color:inherit;font-size:12px;cursor:pointer}
+.gm-toast{position:fixed;left:50%;top:14px;transform:translate(-50%,-140%);max-width:min(92vw,440px);z-index:200000;padding:12px 16px;border-radius:14px;background:#1a1a22;color:#fff;border:1px solid #D4AF37;box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:14px;line-height:1.5;transition:transform .35s ease}
+.gm-toast.show{transform:translate(-50%,0)}
+</style>
+<script id="gm-lock-early">(function(){try{var L=localStorage,h=parseInt(L.getItem('gmPinHours'),10)||72,l=parseInt(L.getItem('gmPinLast'),10);if(L.getItem('gmPinHash')&&(!(l>0)||Date.now()<l||Date.now()-l>=h*36e5))document.documentElement.classList.add('gm-locked')}catch(e){}})();</script>
+<style id="gm-lock-css">
+#gmLock{display:none;position:fixed;inset:0;z-index:2000000;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 50% 0,#2a2412,#0f0f13 60%);color:#f5f5f7;font-family:'Hind Siliguri',sans-serif}
+html.gm-locked #gmLock{display:flex}
+html.gm-locked,html.gm-locked body{overflow:hidden!important}
+.gm-lock-card{width:100%;max-width:340px;text-align:center}
+.gm-lock-ic{font-size:44px;line-height:1}
+.gm-lock-card h2{margin:8px 0 4px;font-size:22px;color:#D4AF37}
+.gm-lock-card p{margin:0 0 16px;font-size:14px;color:#c9c9d3}
+#gmLockPin{width:100%;box-sizing:border-box;padding:14px;border-radius:12px;border:1px solid #3a3a48;background:#1a1a22;color:#fff;font-size:26px;letter-spacing:10px;text-align:center;outline:0}
+#gmLockPin:focus{border-color:#D4AF37}
+#gmLockBtn{width:100%;margin-top:12px;padding:13px;border:0;border-radius:12px;background:linear-gradient(135deg,#D4AF37,#FFD700);color:#1a1a22;font-size:16px;font-weight:700;cursor:pointer}
+.gm-lock-err{min-height:22px;margin-top:10px;font-size:13px;color:#ff8a80}
+.gm-sec-row{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.gm-sec-row input,.gm-sec-row select{width:100%;box-sizing:border-box}
+.gm-lock-link{display:block;margin:14px auto 0;background:none!important;border:0!important;box-shadow:none!important;color:#D4AF37;font-size:14px;text-decoration:underline;cursor:pointer;padding:6px;font-family:inherit}
+#gmReset p{margin:0 0 12px;font-size:14px;color:#c9c9d3;line-height:1.5}
+.gm-lock-q{margin:0 0 12px;padding:10px 12px;border-radius:12px;background:#1a1a22;border:1px solid #3a3a48;color:#f5f5f7;font-size:15px;font-weight:700}
+#gmReset input{width:100%;box-sizing:border-box;padding:12px;margin-bottom:10px;border-radius:12px;border:1px solid #3a3a48;background:#1a1a22;color:#fff;font-size:16px;text-align:center;outline:0;font-family:inherit}
+#gmReset input:focus{border-color:#D4AF37}
+#gmResetBtn{width:100%;margin-top:2px;padding:13px;border:0;border-radius:12px;background:linear-gradient(135deg,#D4AF37,#FFD700);color:#1a1a22;font-size:16px;font-weight:700;cursor:pointer}
+.gm-sec-row button{padding:10px;border:0;border-radius:10px;background:linear-gradient(135deg,#D4AF37,#FFD700);color:#1a1a22;font-weight:700;font-size:14px;cursor:pointer}
+.gm-sec-row button.ghost{background:transparent;border:1px solid var(--line,#c9c9d3);color:inherit}
+.gm-sec-row button.danger{background:#d6342a;color:#fff}
+.gm-sec-msg{margin-top:8px;font-size:13px;min-height:18px}
+.gm-sec-msg.err{color:#d6342a}.gm-sec-msg.ok{color:#1f9d55}
+body.dark-mode .gm-sec-msg.err{color:#ff8a80}body.dark-mode .gm-sec-msg.ok{color:#2ecc71}
+.gm-sec-state{font-size:13px;line-height:1.6}
+</style>
 </head>
 <style id="dark-mode-true-black-early">
 /* ===== ডার্ক মোড: পুরো অ্যাপ কালো + পড়ার উপযোগী টেক্সট =====
@@ -677,6 +735,8 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 .unit-modal{z-index:100010!important}
 </style>
 <body>
+<div id="gmLock" role="dialog" aria-modal="true" aria-label="PIN লক"><div class="gm-lock-card"><div class="gm-lock-ic">🔒</div><h2>Gold Manager</h2><div id="gmLockMain"><p id="gmLockMsg">অ্যাপ খুলতে আপনার PIN দিন</p><div id="gmDots" class="gm-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><input id="gmLockPin" class="gm-hidden-pin" type="password" inputmode="none" readonly tabindex="-1" autocomplete="off" maxlength="6" aria-label="PIN"><div id="gmPad" class="gm-pad" role="group" aria-label="নম্বর প্যাড"><button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button><button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button><button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button><span></span><button type="button" data-k="0">0</button><button type="button" data-k="b" class="gm-back" aria-label="মুছুন">⌫</button></div><button type="button" id="gmLockBtn">খুলুন</button><div id="gmLockErr" class="gm-lock-err"></div><button type="button" id="gmForgot" class="gm-lock-link">PIN ভুলে গেছেন?</button></div><div id="gmReset" style="display:none"><p id="gmResetInfo"></p><div id="gmResetQ" class="gm-lock-q"></div><div id="gmResetForm"><input id="gmResetA" type="text" autocomplete="off" placeholder="আপনার উত্তর" aria-label="উত্তর"><input id="gmResetP1" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="নতুন PIN (৪–৬ সংখ্যা)" aria-label="নতুন PIN"><input id="gmResetP2" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="নতুন PIN আবার লিখুন" aria-label="নতুন PIN আবার"><button type="button" id="gmResetBtn">নতুন PIN সেট করুন</button></div><div id="gmResetErr" class="gm-lock-err"></div><button type="button" id="gmResetBack" class="gm-lock-link">← PIN দিয়ে খুলুন</button></div></div></div>
+
 <script>try{var _b=document.body;if(localStorage.getItem('sonaRupaTheme')==='dark')_b.classList.add('dark-mode');var _p=localStorage.getItem('sonaRupaPalette');if(['purple','green','blue','rose','teal','amber'].indexOf(_p)>-1)_b.dataset.palette=_p}catch(e){}</script>
 <header><div class="header-tools"><button type="button" id="themeToggle" class="theme-toggle" aria-label="ডার্ক মোড চালু করুন" title="ডার্ক / লাইট মোড"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg></button><div id="themePop" class="theme-pop" aria-label="থিম নির্বাচন"><strong>Theme / রং নির্বাচন</strong><div class="theme-swatches"><button type="button" data-theme="default" aria-label="ডিফল্ট নীল" title="ডিফল্ট নীল"><i style="background:linear-gradient(135deg,#f3f6fa,#2457a7)"></i>নীল</button><button type="button" data-theme="purple" aria-label="পার্পল" title="পার্পল"><i style="background:linear-gradient(135deg,#f4efff,#7c3aed)"></i>পার্পল</button><button type="button" data-theme="green" aria-label="সবুজ" title="সবুজ"><i style="background:linear-gradient(135deg,#eaf8ef,#16804a)"></i>সবুজ</button><button type="button" data-theme="blue" aria-label="আকাশি নীল" title="আকাশি নীল"><i style="background:linear-gradient(135deg,#e8f6ff,#0284c7)"></i>আকাশি</button><button type="button" data-theme="rose" aria-label="রোজ" title="রোজ"><i style="background:linear-gradient(135deg,#fff0f4,#e11d48)"></i>রোজ</button><button type="button" data-theme="teal" aria-label="টিল" title="টিল"><i style="background:linear-gradient(135deg,#e6fffb,#0f9488)"></i>টিল</button><button type="button" data-theme="amber" aria-label="অ্যাম্বার" title="অ্যাম্বার"><i style="background:linear-gradient(135deg,#fff8e6,#b7791f)"></i>গোল্ড</button></div><p>হোমপেজসহ পুরো অ্যাপের ব্যাকগ্রাউন্ড বদলাবে</p></div><button type="button" id="fontToggle" class="tool-icon" aria-label="ফন্ট নির্বাচন" title="ফন্ট নির্বাচন">Aa</button><div id="fontPop" class="font-pop"><label for="fontSelect">বাংলা ফন্ট নির্বাচন</label><select id="fontSelect"><option value="noto">Noto Sans Bengali</option><option value="hind">Hind Siliguri</option><option value="system">ডিভাইসের ডিফল্ট ফন্ট</option></select><p class="hint">ফন্ট ডাউনলোডে ইন্টারনেট লাগতে পারে।</p></div><button type="button" id="cryptoLaunch" class="crypto-launch" aria-label="Cryptofam: শীর্ষ ৫০ ক্রিপ্টোর লাইভ দাম" title="Top 50 Crypto Live Price"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="cryptoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76a"/><stop offset="1" stop-color="#f49b25"/></linearGradient></defs><path d="M20 2 35 10.5 35 28 20 37 5 28 5 10.5Z" fill="url(#cryptoGrad)"/><path d="M23.7 11.2c4.1.4 5.6 2.7 4.6 5.5-.5 1.4-1.5 2.2-3 2.6 2.3.8 3.2 2.6 2.4 4.9-1 3-3.7 4-7.7 3.9l-.3 3h-3l.3-3-2.5-.2-.3 3h-2.8l.3-3-2.3-.2.4-3.2 2.2.2 1.5-13.1-2.3-.2.4-3.1 2.4.2.3-2.8h2.8l-.3 2.8 2.4.2.3-2.8h2.8l-.3 3.1Zm-5.2 2.7-.5 4.1 3.2.3c1.8.1 2.9-.4 3.1-1.8.2-1.5-.8-2.2-2.7-2.4Zm-.9 7-.5 4.5 3.6.3c2 .2 3.1-.4 3.3-1.9.2-1.6-.8-2.5-2.9-2.7Z" fill="#173047" transform="translate(1 0) scale(.9)"/></svg><span>Cryptofam</span></button></div><h1><svg class="title-globe" width="15" height="15" style="width:15px;height:15px;flex:0 0 15px;margin:0" viewBox="1.4 1.4 21.2 21.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5c2.6 2.7 4 6 4 9.5s-1.4 6.800-4 9.500c-2.600-2.700-4-6-4-9.500s1.400-6.800 4-9.500z"/></svg>Gold Manager</h1><div id="dhakaClock" class="clock-card" role="timer" aria-label="ঢাকা সময়"><div class="clock-top"><svg class="sand-timer" viewBox="0 0 24 24" aria-label="সময় চলছে" role="img"><path d="M6 3h12M6 21h12M7 4c0 4 5 5 5 8s-5 4-5 8M17 4c0 4-5 5-5 8s5 4 5 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="sand-top" d="M8.5 5.2h7L12 9.2z" fill="currentColor"/><path class="sand-bottom" d="M8.5 18.8h7L12 14.8z" fill="currentColor"/><path class="sand-stream" d="M12 10.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span class="clock-label">ঢাকা সময়</span><span class="clock-live">LIVE</span></div><div class="clock-time"><span class="cd" id="clkH">--</span><span class="cc">:</span><span class="cd" id="clkM">--</span><span class="cc cs">:</span><span class="cd cds" id="clkS">--</span><span class="clock-ap" id="clkAP">--</span></div><div class="clock-date-row"><div class="clock-date" id="clkDate">লোড হচ্ছে…</div></div></div><p style="margin-top:8px;font-size:12px;color:#f3d58a">Apps টি বানিয়েছেন: <a class="author-link" href="https://wa.me/8801887153472" target="_blank" rel="noopener noreferrer">Robin Ahmed</a></p></header>
 <div id="cryptoOverlay" class="crypto-overlay" role="dialog" aria-modal="true" aria-labelledby="cryptoTitle"><div class="crypto-panel"><div class="crypto-head"><h2 id="cryptoTitle">₿ Cryptofam</h2><div class="actions"><button type="button" class="secondary" id="cryptoRefresh">↻</button><button type="button" class="danger" id="cryptoClose">✕</button></div></div><p class="crypto-meta">লাইভ ক্রিপ্টো মার্কেট · USD · CoinGecko</p><div class="crypto-tabs" role="tablist"><button class="crypto-tab active" data-ctab="market">মার্কেট</button><button class="crypto-tab" data-ctab="chart">চার্ট</button><button class="crypto-tab" data-ctab="portfolio">পোর্টফোলিও</button><button class="crypto-tab" data-ctab="watch">ওয়াচলিস্ট</button><button class="crypto-tab" data-ctab="alerts">অ্যালার্ট</button></div><section class="crypto-view active" id="cryptoView-market"><div class="crypto-stats"><div><span>কয়েন</span><strong id="cryptoCount">—</strong></div><div><span>সর্বোচ্চ ২৪ঘ</span><strong id="cryptoGlobalHigh">—</strong></div><div><span>সর্বনিম্ন ২৪ঘ</span><strong id="cryptoGlobalLow">—</strong></div></div><input id="cryptoSearch" class="crypto-search" placeholder="কয়েন খুঁজুন: BTC, Bitcoin…" aria-label="ক্রিপ্টো খুঁজুন"><div id="cryptoStatus" class="crypto-loading">লাইভ দাম লোড হচ্ছে…</div><div class="tablewrap"><table class="crypto-table" id="cryptoTable" style="display:none"><thead><tr><th>#</th><th>ক্রিপ্টো</th><th style="text-align:right">দাম</th><th style="text-align:right">২৪ঘ %</th><th>☆</th></tr></thead><tbody id="cryptoRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-chart"><div class="crypto-form-row"><label>কয়েন<select id="cryptoChartCoin"></select></label><label>সময়<select id="cryptoChartDays"><option value="1">২৪ ঘণ্টা</option><option value="7" selected>৭ দিন</option><option value="30">৩০ দিন</option></select></label></div><div id="cryptoChartSummary" class="crypto-stats"></div><div id="cryptoChartStatus" class="crypto-loading">চার্ট লোড করতে কয়েন নির্বাচন করুন।</div><div id="cryptoChart" class="crypto-chart"></div></section><section class="crypto-view" id="cryptoView-portfolio"><p class="crypto-meta">নিজের কেনা কয়েনের পরিমাণ ও ক্রয়মূল্য লিখুন। তথ্য এই ডিভাইসে সংরক্ষিত থাকবে।</p><form id="cryptoHoldingForm" class="crypto-form"><label>কয়েন<select id="cryptoHoldingCoin" required></select></label><label>পরিমাণ<input id="cryptoHoldingAmount" type="number" min="0.00000001" step="any" required placeholder="যেমন 0.02"></label><label>প্রতি কয়েন ক্রয়মূল্য (USD)<input id="cryptoHoldingCost" type="number" min="0" step="any" required placeholder="যেমন 62000"></label><button class="primary" type="submit">হোল্ডিং যোগ করুন</button></form><div id="cryptoPortfolioSummary" class="crypto-stats"></div><div class="tablewrap"><table class="crypto-table"><thead><tr><th>কয়েন</th><th>বিনিয়োগ</th><th>বর্তমান মূল্য</th><th>লাভ/ক্ষতি</th><th></th></tr></thead><tbody id="cryptoPortfolioRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-watch"><p class="crypto-meta">☆ চাপ দিয়ে কয়েন ওয়াচলিস্টে যোগ বা বাদ দিন।</p><div class="tablewrap"><table class="crypto-table"><thead><tr><th>কয়েন</th><th>দাম</th><th>২৪ঘ %</th><th></th></tr></thead><tbody id="cryptoWatchRows"></tbody></table></div></section><section class="crypto-view" id="cryptoView-alerts"><p class="crypto-meta">নির্দিষ্ট দামে পৌঁছালে অ্যাপ খোলা থাকা অবস্থায় রিফ্রেশে সতর্কতা দেখাবে।</p><form id="cryptoAlertForm" class="crypto-form"><label>কয়েন<select id="cryptoAlertCoin" required></select></label><label>শর্ত<select id="cryptoAlertDirection"><option value="above">দাম সমান বা বেশি হলে</option><option value="below">দাম সমান বা কম হলে</option></select></label><label>টার্গেট দাম (USD)<input id="cryptoAlertPrice" type="number" min="0.00000001" step="any" required placeholder="টার্গেট দাম"></label><button class="primary" type="submit">অ্যালার্ট তৈরি</button></form><div id="cryptoAlertsList"></div></section></div></div>
@@ -706,7 +766,7 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 </div>
 <p class="market-data-note" style="margin:8px 0 0">দৈনিক ঐতিহাসিক ডেটাভিত্তিক টেকনিক্যাল বিশ্লেষণ; এটি নিশ্চিত পূর্বাভাস বা আর্থিক পরামর্শ নয়।</p>
 </div></div></div>
-<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="appUpdateBtn" class="secondary" aria-label="অ্যাপ আপডেট করুন" title="অ্যাপ আপডেট করুন"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></button><button type="button" id="dailyMessageRefresh" class="secondary" aria-label="খবর রিফ্রেশ করুন" title="রিফ্রেশ">↻</button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><style>.app-update-msg:empty{display:none}</style><p id="appUpdateMsg" class="hint app-update-msg" aria-live="polite" style="margin:8px 0 0;font-size:12px"></p><div id="shopMsgBox" class="shop-msg" hidden></div><p id="dailyNewsSummary" class="daily-news-summary">Google News থেকে আজকের আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…</p><div id="dailyNewsList" class="daily-news-list" aria-live="polite"><p class="hint">খবর লোড হচ্ছে…</p></div><p id="dailyNewsStatus" class="daily-news-status">খবর Google News RSS থেকে আনার চেষ্টা করা হচ্ছে।</p></section></div>
+<div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageSec" class="secondary" aria-label="নিরাপত্তা (PIN লক)" title="নিরাপত্তা (PIN লক)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button><button type="button" id="appUpdateBtn" class="secondary" aria-label="অ্যাপ আপডেট করুন" title="অ্যাপ আপডেট করুন"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><div id="gmSecPanel" hidden><div class="gm-sec-title">🔒 নিরাপত্তা (PIN লক)</div><div id="gmSecBox"></div></div><style>.app-update-msg:empty{display:none}</style><p id="appUpdateMsg" class="hint app-update-msg" aria-live="polite" style="margin:8px 0 0;font-size:12px"></p><div id="shopMsgBox" class="shop-msg" hidden></div></section></div>
 
 <main>
 <section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><div id="metalsMarketNotice" class="metals-market-notice" style="display:none" role="status"><span class="metals-market-dot"></span><span>মার্কেট বন্ধ আছে, ফিরে আসছি <strong id="metalsMarketCountdown">--:--:--</strong> ঘন্টা পর</span></div><p id="metalsMarketOpenHint" class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
@@ -723,6 +783,26 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <tr><td>২৪ ক্যারেট</td><td id="rate_k24">২,০৬,৩০০</td></tr>
 </tbody></table></div>
 <p class="hint" id="ratesUpdated" style="margin-top:8px"></p>
+
+<div class="gm-hist-box" id="gmHistBox">
+ <h3>📈 দামের ইতিহাস</h3>
+ <div class="gm-hist-row"><select id="gmHistKarat" aria-label="দাম বাছাই"><option value="xau">🌍 আন্তর্জাতিক সোনা (XAU/USD)</option><option value="xag">🌍 আন্তর্জাতিক রূপা (XAG/USD)</option><option value="k22">🇧🇩 ২২ ক্যারেট</option><option value="paka">🇧🇩 পাকা সোনা</option><option value="k21">🇧🇩 ২১ ক্যারেট</option><option value="k18">🇧🇩 ১৮ ক্যারেট</option><option value="k24">🇧🇩 ২৪ ক্যারেট</option></select>
+ <div class="gm-hist-range" id="gmHistRange"><button type="button" data-n="7">৭ দিন</button><button type="button" data-n="15">১৫ দিন</button><button type="button" data-n="30" class="on">৩০ দিন</button></div></div>
+ <div id="gmHistChart" class="gm-hist-chart"></div>
+ <div id="gmHistStat" class="gm-hist-stat"></div>
+ <p class="gm-hist-note" id="gmHistNote"></p>
+</div>
+<div class="gm-hist-box" id="gmAlertBox">
+ <h3>🔔 দামের অ্যালার্ট</h3>
+ <div class="gm-alert-form">
+  <select id="gmAlertKarat" aria-label="ক্যারেট"><option value="k22">২২ ক্যারেট</option><option value="paka">পাকা সোনা</option><option value="k21">২১ ক্যারেট</option><option value="k18">১৮ ক্যারেট</option><option value="k24">২৪ ক্যারেট</option><option value="xau">🌍 আন্তর্জাতিক সোনা (XAU/USD)</option></select>
+  <select id="gmAlertDir" aria-label="শর্ত"><option value="up">এর ওপরে উঠলে</option><option value="down">এর নিচে নামলে</option></select>
+  <input id="gmAlertPrice" type="number" inputmode="decimal" step="any" min="0" placeholder="দাম (টাকা / ডলার)" aria-label="দাম">
+  <button type="button" id="gmAlertAdd">অ্যালার্ট সেট করুন</button>
+ </div>
+ <div id="gmAlertList" class="gm-alert-list"></div>
+ <p class="gm-hist-note">অ্যাপ খোলা থাকলে বা খুললে নতুন রেট এসে শর্ত মিললেই জানানো হবে। আন্তর্জাতিক সোনার দাম (ডলারে, প্রতি ট্রয় আউন্স) অ্যাপ খোলা অবস্থায় প্রতি ১ মিনিটে যাচাই হয়। অ্যাপ বন্ধ থাকলে নোটিফিকেশন আসবে না।</p>
+</div>
 </div></details>
 
 <details class="card gm-sheet-card"><summary>সোনা রূপার ক্যালকুলেটর</summary><div class="folder-content">
@@ -1319,48 +1399,12 @@ async function loadCryptoPrices(){const status=$('cryptoStatus'),table=$('crypto
 
 render();
 
-// আজকের বার্তা: Google News RSS — converter-first এবং সীমিত fallback
+// আজকের বার্তা: খোলা/বন্ধ করা
 (function(){
  const $=id=>document.getElementById(id),overlay=$('dailyMessageOverlay');if(!overlay)return;
  const bnDate=()=>new Intl.DateTimeFormat('bn-BD',{timeZone:'Asia/Dhaka',weekday:'long',year:'numeric',month:'long',day:'numeric'}).format(new Date());
- const query='gold price OR gold market OR bullion OR XAU USD';
- const rss='https://news.google.com/rss/search?q='+encodeURIComponent(query)+'&hl=en-US&gl=US&ceid=US:en';
- const escHtml=s=>String(s||'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/&#x27;/gi,"'").replace(/\s+/g,' ').trim();
- function parseXml(raw){
-  const xml=new DOMParser().parseFromString(raw,'text/xml');
-  if(xml.querySelector('parsererror'))throw Error('RSS XML সঠিক নয়');
-  const nodes=[...xml.querySelectorAll('item')];
-  return nodes.map(n=>({title:escHtml(n.querySelector('title')?.textContent),description:escHtml(n.querySelector('description')?.textContent),pubDate:n.querySelector('pubDate')?.textContent?.trim()||''})).filter(x=>x.title);
- }
- function parseJson(d){
-  if(!d||!Array.isArray(d.items))throw Error('RSS converter থেকে সঠিক ডেটা আসেনি');
-  return d.items.map(n=>({title:escHtml(n.title),description:escHtml(n.description||n.content),pubDate:n.pubDate||n.published||''})).filter(x=>x.title);
- }
- async function timedFetch(url,ms=12000){const c=new AbortController(),timer=setTimeout(()=>c.abort(),ms);try{const r=await fetch(url,{cache:'no-store',signal:c.signal,credentials:'omit'});if(!r.ok)throw Error('HTTP '+r.status);return await r.text()}finally{clearTimeout(timer)}}
- async function fetchFeed(){
-  const attempts=[
-   async()=>{const raw=await timedFetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(rss));const d=JSON.parse(raw);if(d.status==='error')throw Error(d.message||'RSS converter error');return parseJson(d)},
-   async()=>parseXml(await timedFetch('https://api.allorigins.win/raw?url='+encodeURIComponent(rss))),
-   async()=>parseXml(await timedFetch('https://corsproxy.io/?url='+encodeURIComponent(rss))),
-   async()=>parseXml(await timedFetch('https://proxy.cors.dev/'+rss))
-  ];
-  let last;for(const attempt of attempts){try{const items=await attempt();if(items.length)return items;throw Error('কোনো খবর পাওয়া যায়নি')}catch(e){last=e}}
-  throw last||Error('Google News RSS সংযোগ ব্যর্থ');
- }
- function render(items){
-  const box=$('dailyNewsList');box.replaceChildren();const unique=[],seen=new Set();
-  for(const item of items){const key=item.title.toLowerCase();if(!seen.has(key)){seen.add(key);unique.push(item)}if(unique.length>=5)break}
-  if(!unique.length)throw Error('প্রাসঙ্গিক খবর পাওয়া যায়নি');
-  unique.forEach((item,i)=>{const card=document.createElement('article');card.className='daily-news-item';const title=document.createElement('strong');title.textContent=(i+1)+'. '+item.title;card.appendChild(title);if(item.description){const p=document.createElement('p');p.textContent=item.description.slice(0,220);card.appendChild(p)}if(item.pubDate){const p=document.createElement('p'),d=new Date(item.pubDate);if(!isNaN(d)){p.textContent='প্রকাশিত: '+new Intl.DateTimeFormat('bn-BD',{timeZone:'Asia/Dhaka',dateStyle:'medium',timeStyle:'short'}).format(d)+' · ঢাকা সময়';card.appendChild(p)}}box.appendChild(card)});
-  $('dailyNewsSummary').textContent='Google News RSS থেকে পাওয়া আন্তর্জাতিক স্বর্ণবাজারের সর্বশেষ '+unique.length+'টি খবর।';
- }
- let loading=false;
- async function refresh(){if(loading)return;loading=true;$('dailyMessageDate').textContent=bnDate();$('dailyNewsSummary').textContent='Google News থেকে আন্তর্জাতিক স্বর্ণবাজারের খবর আনা হচ্ছে…';$('dailyNewsList').innerHTML='<p class="hint">খবর লোড হচ্ছে…</p>';$('dailyNewsStatus').textContent='সংযোগ পরীক্ষা করা হচ্ছে…';
-  try{const items=await fetchFeed();items.sort((a,b)=>(Date.parse(b.pubDate)||0)-(Date.parse(a.pubDate)||0));render(items);$('dailyNewsStatus').textContent='সর্বশেষ রিফ্রেশ: '+new Intl.DateTimeFormat('bn-BD',{timeZone:'Asia/Dhaka',hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date())+' · ঢাকা সময়';
-  }catch(e){$('dailyNewsSummary').textContent='এখন Google News থেকে খবর আনা সম্ভব হয়নি।';$('dailyNewsList').innerHTML='<p class="hint">Google News বা সংযোগ সেবা সাময়িকভাবে সাড়া দিচ্ছে না। ইন্টারনেট চালু রেখে কিছুক্ষণ পর ↻ চাপুন। পুরোনো বা বানানো খবর দেখানো হবে না।</p>';$('dailyNewsStatus').textContent='ত্রুটি: '+(e&&e.message?e.message:'সংযোগ ব্যর্থ');}finally{loading=false}
- }
- function open(){overlay.classList.add('open');refresh()}function close(){overlay.classList.remove('open')}
- $('dailyMessageLaunch').addEventListener('click',open);$('dailyMessageClose').addEventListener('click',close);$('dailyMessageRefresh').addEventListener('click',refresh);overlay.addEventListener('click',e=>{if(e.target===overlay)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+ function open(){overlay.classList.add('open');$('dailyMessageDate').textContent=bnDate()}function close(){overlay.classList.remove('open')}
+ $('dailyMessageLaunch').addEventListener('click',open);$('dailyMessageClose').addEventListener('click',close);overlay.addEventListener('click',e=>{if(e.target===overlay)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 })();
 </script>
 <script>
@@ -2494,5 +2538,266 @@ place();document.addEventListener('DOMContentLoaded',place);window.addEventListe
 upd();
 }catch(err){}})();
 </script>
+<script id="gm-hist-js">
+(function(){try{
+var HK='gmRateHistory',AK='gmPriceAlerts',RK='sonaRatesCache3',bn='০১২৩৪৫৬৭৮৯';
+var NAMES={paka:'পাকা সোনা',k22:'২২ ক্যারেট',k21:'২১ ক্যারেট',k18:'১৮ ক্যারেট',k24:'২৪ ক্যারেট'},ANAMES={paka:'পাকা সোনা',k22:'২২ ক্যারেট',k21:'২১ ক্যারেট',k18:'১৮ ক্যারেট',k24:'২৪ ক্যারেট',xau:'আন্তর্জাতিক সোনা'};
+function toEn(t){return String(t).replace(/[০-৯]/g,function(d){return bn.indexOf(d)})}
+function toBn(t){return String(t).replace(/[0-9]/g,function(d){return bn[d]})}
+function num(v){var n=parseInt(toEn(v).replace(/[^0-9]/g,''),10);return isNaN(n)?null:n}
+function fmt(n){var e=String(Math.round(n)),l=e.slice(-3),r=e.slice(0,-3);if(r)r=r.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',';return toBn(r+l)}
+function rd(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
+function wr(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function dkey(){var d=new Date(),m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(x<10?'0':'')+x}
+function shortDate(k){var p=k.split('-');return toBn(parseInt(p[2],10)+'/'+parseInt(p[1],10))}
+var toast,tt;
+function say(msg){if(!toast){toast=document.createElement('div');toast.className='gm-toast';toast.addEventListener('click',function(){toast.classList.remove('show')});document.body.appendChild(toast)}
+toast.textContent=msg;requestAnimationFrame(function(){toast.classList.add('show')});clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},9000);}
+function $(id){return document.getElementById(id)}
+/* history */
+function record(o){var h=rd(HK,[]),day=dkey(),rec={d:day},any=false;
+for(var k in NAMES){var n=o[k]?num(o[k]):null;if(n){rec[k]=n;any=true}}
+if(!any)return;
+if(h.length&&h[h.length-1].d===day){for(var k2 in rec)h[h.length-1][k2]=rec[k2]}else h.push(rec);
+if(h.length>400)h=h.slice(h.length-400);wr(HK,h);}
+var range=30,intl={};
+function minus(d,n){var t=new Date(d+'T00:00:00Z');t.setUTCDate(t.getUTCDate()-n);return t.toISOString().slice(0,10)}
+function getIntl(sym){if(intl[sym])return intl[sym];
+var url=sym==='xag'?'https://xaus.com/api/v1/chart?symbol=silver&range=5y&interval=1d&fresh=':'https://xaus.com/api/v1/history?fresh=';
+intl[sym]=fetch(url+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(function(p){
+var pts=Array.isArray(p.points)?p.points:(p.data&&Array.isArray(p.data.points)?p.data.points:(Array.isArray(p.bars)?p.bars:[]));
+var rows=pts.map(function(x){var st=Number(x.t!=null?x.t:x.timestamp);var d=String(x.d||x.date||(isFinite(st)?new Date(st<1e12?st*1000:st).toISOString().slice(0,10):'')).slice(0,10);return {d:d,v:Number(x.c!=null?x.c:x.close)}}).filter(function(x){return /^\d{4}-\d{2}-\d{2}$/.test(x.d)&&isFinite(x.v)&&x.v>0}).sort(function(a,b){return a.d<b.d?-1:1});
+if(!rows.length)throw new Error('no data');return rows}).catch(function(e){delete intl[sym];throw e});
+return intl[sym];}
+function usd(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function render(series,isUsd){var box=$('gmHistChart'),st=$('gmHistStat'),nt=$('gmHistNote');
+var money=function(n){return isUsd?'$'+usd(n):'৳'+fmt(n)};
+nt.textContent=isUsd?'আন্তর্জাতিক দাম: দৈনিক ক্লোজিং, USD প্রতি ট্রয় আউন্স। এটা TradingView-এর সরাসরি ডেটা নয়, অ্যাপের মার্কেট ডেটা উৎস থেকে নেওয়া, তাই TradingView-এর দামের সাথে সামান্য ফারাক হতে পারে।':'বাংলাদেশের রেট: অ্যাপে রেট আপডেট হওয়া প্রতিটি দিনের শেষ রেট জমা হয়ে এখানে দেখায়। আজ থেকে জমা শুরু, যেদিন অ্যাপ খোলা হয়নি সেদিনের রেট থাকবে না।';
+if(series.length<2){box.innerHTML='<div class="gm-hist-empty">'+(series.length?'আজকের রেট জমা হয়েছে: <b>'+money(series[0].v)+'</b><br>লাইন চার্ট ও পরিবর্তন দেখতে ২ দিনের রেট দরকার।':'এখনো রেট জমা হয়নি। রেট আপডেট হলে এখানে দেখা যাবে।')+'</div>';st.innerHTML='';return}
+var last=series[series.length-1];
+var chips=[7,15,30].map(function(n){var lim=minus(last.d,n),ref=null;for(var i=series.length-1;i>=0;i--){if(series[i].d<=lim){ref=series[i];break}}
+if(!ref)return '<div class="gm-chg"><b>'+toBn(n)+' দিন</b><span>—</span></div>';
+var diff=last.v-ref.v,pct=diff/ref.v*100,cls=diff>0?'up':diff<0?'down':'';
+return '<div class="gm-chg"><b>'+toBn(n)+' দিন</b><span class="'+cls+'">'+(diff>0?'▲ ':diff<0?'▼ ':'')+toBn(Math.abs(pct).toFixed(2))+'%</span><div style="font-size:11px;opacity:.8">'+(diff>0?'+':diff<0?'−':'')+money(Math.abs(diff))+'</div></div>'}).join('');
+st.innerHTML=chips;
+var cut=minus(last.d,range),h=series.filter(function(r){return r.d>=cut});if(h.length<2)h=series.slice(-2);
+var W=320,H=150,pl=8,pr=8,pt=12,pb=22,vs=h.map(function(r){return r.v}),mn=Math.min.apply(null,vs),mx=Math.max.apply(null,vs);if(mn===mx){mn-=1;mx+=1}
+var x=function(i){return pl+(W-pl-pr)*i/(h.length-1)},y=function(v){return pt+(H-pt-pb)*(1-(v-mn)/(mx-mn))};
+var pts=h.map(function(r,i){return x(i).toFixed(1)+','+y(r.v).toFixed(1)}).join(' ');
+var area='M'+x(0).toFixed(1)+','+(H-pb)+' L'+pts.replace(/ /g,' L')+' L'+x(h.length-1).toFixed(1)+','+(H-pb)+' Z';
+var dots=h.length<=31?h.map(function(r,i){return '<circle cx="'+x(i).toFixed(1)+'" cy="'+y(r.v).toFixed(1)+'" r="2.4" fill="#D4AF37"/>'}).join(''):'';
+box.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="দামের চার্ট"><line x1="'+pl+'" y1="'+(H-pb)+'" x2="'+(W-pr)+'" y2="'+(H-pb)+'" stroke="currentColor" stroke-opacity=".2"/><path d="'+area+'" fill="#D4AF37" fill-opacity=".14"/><polyline points="'+pts+'" fill="none" stroke="#D4AF37" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>'+dots+'<text x="'+pl+'" y="'+(H-6)+'" font-size="10" fill="currentColor" fill-opacity=".7">'+shortDate(h[0].d)+'</text><text x="'+(W-pr)+'" y="'+(H-6)+'" font-size="10" text-anchor="end" fill="currentColor" fill-opacity=".7">'+shortDate(h[h.length-1].d)+'</text><text x="'+(W-pr)+'" y="9" font-size="10" text-anchor="end" fill="currentColor" fill-opacity=".8">'+money(last.v)+'</text></svg>';}
+var seq=0;
+function draw(){var box=$('gmHistChart');if(!box)return;var k=$('gmHistKarat').value,my=++seq;
+if(k==='xau'||k==='xag'){box.innerHTML='<div class="gm-hist-empty">দামের ইতিহাস লোড হচ্ছে…</div>';$('gmHistStat').innerHTML='';
+getIntl(k==='xag'?'xag':'xau').then(function(rows){if(my===seq)render(rows,true)}).catch(function(){if(my===seq){box.innerHTML='<div class="gm-hist-empty">এখন আন্তর্জাতিক দামের ইতিহাস লোড করা যাচ্ছে না। ইন্টারনেট সংযোগ দিয়ে আবার চেষ্টা করুন।</div>';$('gmHistStat').innerHTML=''}});return}
+var h=rd(HK,[]).filter(function(r){return r[k]}).map(function(r){return {d:r.d,v:r[k]}});render(h,false);}
+/* alerts */
+function list(){var box=$('gmAlertList');if(!box)return;var a=rd(AK,[]);box.innerHTML='';
+if(!a.length){box.innerHTML='<div class="gm-hist-empty" style="padding:6px">কোনো অ্যালার্ট নেই।</div>';return}
+a.forEach(function(it){var row=document.createElement('div');row.className='gm-alert-item'+(it.done?' done':'');
+var t=document.createElement('span');t.textContent=(it.done?'✅ ':'🔔 ')+ANAMES[it.k]+' · '+(it.k==='xau'?'$'+usd(it.price):'৳'+fmt(it.price))+(it.dir==='up'?' এর ওপরে':' এর নিচে')+(it.done?' (পৌঁছেছে)':'');row.appendChild(t);
+if(it.done){var r=document.createElement('button');r.type='button';r.textContent='আবার চালু';r.onclick=function(){it.done=false;wr(AK,a);list()};row.appendChild(r)}
+var d=document.createElement('button');d.type='button';d.textContent='মুছুন';d.onclick=function(){wr(AK,a.filter(function(x){return x.id!==it.id}));list()};row.appendChild(d);box.appendChild(row)})}
+function check(o){var a=rd(AK,[]),ch=false;
+a.forEach(function(it){if(it.done||!o[it.k])return;var n=num(o[it.k]);if(!n)return;
+if((it.dir==='up'&&n>=it.price)||(it.dir==='down'&&n<=it.price)){it.done=true;ch=true;say('🔔 '+NAMES[it.k]+' এখন ৳'+fmt(n)+' — আপনার অ্যালার্ট ৳'+fmt(it.price)+(it.dir==='up'?' এর ওপরে':' এর নিচে')+' পৌঁছেছে।')}});
+if(ch){wr(AK,a);list()}}
+function checkXau(){var a=rd(AK,[]).filter(function(i){return !i.done&&i.k==='xau'});if(!a.length)return;
+fetch('https://api.gold-api.com/price/XAU',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(p){var n=Number(p.price);if(!isFinite(n)||n<=0)return;
+var all=rd(AK,[]),ch=false;all.forEach(function(it){if(it.done||it.k!=='xau')return;
+if((it.dir==='up'&&n>=it.price)||(it.dir==='down'&&n<=it.price)){it.done=true;ch=true;say('🔔 আন্তর্জাতিক সোনা এখন $'+usd(n)+' — আপনার অ্যালার্ট $'+usd(it.price)+(it.dir==='up'?' এর ওপরে':' এর নিচে')+' পৌঁছেছে।')}});
+if(ch){wr(AK,all);list()}}).catch(function(){})}
+function onRates(o){try{record(o);draw();check(o)}catch(e){}}
+var orig=Storage.prototype.setItem;
+Storage.prototype.setItem=function(k,v){orig.apply(this,arguments);try{if(this===window.localStorage&&k===RK)onRates(JSON.parse(v))}catch(e){}};
+function init(){
+var sel=$('gmHistKarat');if(sel)sel.addEventListener('change',draw);
+var rg=$('gmHistRange');if(rg)rg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;range=parseInt(b.getAttribute('data-n'),10);[].forEach.call(rg.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b)});draw()});
+var add=$('gmAlertAdd');if(add)add.addEventListener('click',function(){var kk=$('gmAlertKarat').value,raw=toEn($('gmAlertPrice').value).replace(/,/g,''),p=kk==='xau'?parseFloat(raw):num(raw);if(!p||!isFinite(p)||p<=0){say('দাম লিখুন।');return}
+var a=rd(AK,[]);a.push({id:Date.now(),k:kk,dir:$('gmAlertDir').value,price:p,done:false});wr(AK,a);$('gmAlertPrice').value='';list();say('অ্যালার্ট সেট হয়েছে।');if(kk==='xau')checkXau()});
+draw();list();checkXau();setInterval(checkXau,60000);}
+init();
+}catch(err){}})();
+</script>
+<style id="gm-lock-css2">
+#gmLock{display:flex!important;align-items:stretch!important;justify-content:center!important;overflow-y:auto;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease,visibility 0s linear .35s;background:radial-gradient(circle at 50% -8%,#6a43c9 0,#33206b 34%,#150e2c 68%,#0b0816 100%)!important}
+html.gm-locked #gmLock{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .2s ease}
+.gm-lock-card{margin:auto;padding:24px 20px 18px;border-radius:26px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.28);box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.08)}
+.gm-lock-ic{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 4px;border-radius:50%;font-size:30px;background:radial-gradient(circle at 35% 30%,#ffe9a0,#d4af37 60%,#9a7414);box-shadow:0 0 0 6px rgba(212,175,55,.14),0 0 28px rgba(212,175,55,.35)}
+.gm-lock-card h2{margin:10px 0 4px;letter-spacing:.4px}
+.gm-dots{display:flex;justify-content:center;gap:13px;margin:6px 0 20px}
+.gm-dots span{width:14px;height:14px;border-radius:50%;border:2px solid rgba(212,175,55,.65);box-sizing:border-box;transition:background .15s,transform .15s,box-shadow .15s}
+.gm-dots span.on{background:linear-gradient(145deg,#ffe58a,#d4af37);border-color:#ffe58a;transform:scale(1.12);box-shadow:0 0 10px rgba(255,215,0,.6)}
+.gm-dots.shake{animation:gmShake .4s ease}
+@keyframes gmShake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+#gmLockPin.gm-hidden-pin{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;padding:0;border:0;overflow:hidden}
+.gm-pad{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;justify-items:center;margin:0 auto 6px;max-width:260px}
+.gm-pad button{width:68px;height:68px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:#fff;font-size:26px;font-weight:600;font-family:inherit;cursor:pointer;padding:0;display:grid;place-items:center;-webkit-tap-highlight-color:transparent;transition:transform .1s,background .15s,border-color .15s}
+.gm-pad button:active{transform:scale(.9);background:rgba(212,175,55,.35);border-color:#D4AF37}
+.gm-pad .gm-back{font-size:22px;background:transparent;border-color:transparent;color:#ffe08a}
+#gmLockBtn{margin-top:10px;box-shadow:0 6px 18px rgba(212,175,55,.3)}
+#gmLockBtn:active{transform:scale(.98)}
+.gm-lock-err{min-height:20px}
+.gm-lock-link{color:#e6c866;opacity:.9}
+#gmReset input,.gm-lock-q{background:rgba(255,255,255,.07)!important;border-color:rgba(212,175,55,.3)!important}
+@media(max-height:700px){.gm-pad{gap:9px}.gm-pad button{width:58px;height:58px;font-size:23px}.gm-lock-ic{width:52px;height:52px;font-size:25px}.gm-dots{margin-bottom:14px}.gm-lock-card{padding:16px 16px 12px}}
+@media(prefers-reduced-motion:reduce){#gmLock,.gm-dots span,.gm-pad button{transition:none!important}.gm-dots.shake{animation:none}}
+</style>
+<script id="gm-lock-js">
+(function(){try{
+var bn='০১২৩৪৫৬৭৮৯',L=localStorage;
+function toEn(t){return String(t).replace(/[০-৯]/g,function(d){return bn.indexOf(d)})}
+function toBn(t){return String(t).replace(/[0-9]/g,function(d){return bn[d]})}
+function $(id){return document.getElementById(id)}
+function g(k){try{return L.getItem(k)}catch(e){return null}}
+function p(k,v){try{L.setItem(k,v)}catch(e){}}
+function del(k){try{L.removeItem(k)}catch(e){}}
+var sha256=function sha256(ascii){function rr(v,a){return(v>>>a)|(v<<(32-a))}var mp=Math.pow,mw=mp(2,32),i,j,res='',words=[],bl=ascii.length*8,hash=sha256.h=sha256.h||[],k=sha256.k=sha256.k||[],pc=k.length,ic={};
+for(var c=2;pc<64;c++){if(!ic[c]){for(i=0;i<313;i+=c)ic[i]=c;hash[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0}}
+ascii+='\x80';while(ascii.length%64-56)ascii+='\x00';
+for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return;words[i>>2]|=j<<((3-i)%4)*8}
+words[words.length]=((bl/mw)|0);words[words.length]=bl;
+for(j=0;j<words.length;){var w=words.slice(j,j+=16),old=hash;hash=hash.slice(0,8);
+for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=hash[0],e=hash[4];
+var t1=hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+var t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));
+hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0}
+for(i=0;i<8;i++)hash[i]=(hash[i]+old[i])|0}
+for(i=0;i<8;i++){for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;res+=((b<16)?0:'')+b.toString(16)}}return res};
+function hashPin(pin,salt){var h=sha256(salt+':'+pin);for(var i=0;i<1500;i++)h=sha256(h+salt);return h}
+function newSalt(){var a='';try{var u=new Uint8Array(12);crypto.getRandomValues(u);for(var i=0;i<u.length;i++)a+=('0'+u[i].toString(16)).slice(-2)}catch(e){for(var j=0;j<24;j++)a+=Math.floor(Math.random()*16).toString(16)}return a}
+function hours(){return parseInt(g('gmPinHours'),10)||72}
+function enabled(){return !!g('gmPinHash')}
+function expired(){var l=parseInt(g('gmPinLast'),10);return !(l>0)||Date.now()<l||Date.now()-l>=hours()*36e5}
+function check(pin){return hashPin(pin,g('gmPinSalt')||'')===g('gmPinHash')}
+function clean(v){return toEn(v).replace(/[^0-9]/g,'')}
+var root=document.documentElement;
+function lock(){if(!enabled())return;showReset(false);root.classList.add('gm-locked');var i=$('gmLockPin');if(i){i.value=''}$('gmLockErr').textContent='';setTimeout(function(){try{i&&i.focus()}catch(e){}},50)}
+function unlockUI(){showReset(false);root.classList.remove('gm-locked');p('gmPinLast',String(Date.now()));del('gmPinFail');var i=$('gmLockPin');if(i)i.value='';renderSec()}
+function failInfo(){try{return JSON.parse(g('gmPinFail'))||{n:0,until:0}}catch(e){return {n:0,until:0}}}
+var cd=null;
+function tryUnlock(){var err=$('gmLockErr'),f=failInfo(),now=Date.now();
+if(f.until>now){err.textContent='অনেকবার ভুল হয়েছে। '+toBn(Math.ceil((f.until-now)/1000))+' সেকেন্ড পর চেষ্টা করুন।';return}
+var pin=clean($('gmLockPin').value);if(pin.length<4){err.textContent='৪ থেকে ৬ সংখ্যার PIN দিন।';return}
+if(check(pin)){unlockUI();return}
+f.n=(f.n||0)+1;if(f.n%5===0){var m=Math.min(30*60,60*Math.pow(2,Math.floor(f.n/5)-1));f.until=now+m*1000;err.textContent='৫ বার ভুল হয়েছে। '+toBn(m)+' সেকেন্ড অপেক্ষা করুন।'}else err.textContent='PIN ভুল। আবার চেষ্টা করুন।';
+p('gmPinFail',JSON.stringify(f));$('gmLockPin').value=''}
+var lb=$('gmLockBtn');if(lb)lb.addEventListener('click',tryUnlock);
+var li=$('gmLockPin');if(li)li.addEventListener('keydown',function(e){if(e.key==='Enter')tryUnlock()});
+/* security question reset */
+var QS=['আপনার প্রথম স্কুলের নাম কী?','আপনার মায়ের ডাকনাম কী?','আপনার শৈশবের প্রিয় বন্ধুর নাম কী?','আপনার জন্মস্থান কোন গ্রাম/শহর?','আপনার প্রথম মোবাইল ফোনের ব্র্যান্ড কী?'];
+function utf8(s){try{return unescape(encodeURIComponent(s))}catch(e){return s}}
+function normA(t){return toEn(String(t)).toLowerCase().replace(/\s+/g,' ').trim()}
+function hashA(a,salt){return hashPin(utf8(normA(a)),salt)}
+function qOn(){return !!(g('gmPinQ')&&g('gmPinQHash'))}
+function checkA(a){return hashA(a,g('gmPinQSalt')||'')===g('gmPinQHash')}
+function setQ(q,a){var s=newSalt();p('gmPinQ',q);p('gmPinQSalt',s);p('gmPinQHash',hashA(a,s))}
+function qfail(){try{return JSON.parse(g('gmQFail'))||{n:0,until:0}}catch(e){return {n:0,until:0}}}
+function showReset(on){var m=$('gmLockMain'),r=$('gmReset');if(!m||!r)return;m.style.display=on?'none':'block';r.style.display=on?'block':'none';if(!on)return;
+var has=qOn();$('gmResetInfo').textContent=has?'সিকিউরিটি প্রশ্নের সঠিক উত্তর দিয়ে নতুন PIN সেট করুন।':'কোনো সিকিউরিটি প্রশ্ন সেট করা নেই, তাই PIN রিসেট করা যাচ্ছে না। অ্যাপ আনইনস্টল করে আবার ইনস্টল করতে হবে (ফোনের লোকাল ডেটা মুছে যাবে)।';
+$('gmResetQ').textContent=has?g('gmPinQ'):'';$('gmResetQ').style.display=has?'block':'none';$('gmResetForm').style.display=has?'block':'none';$('gmResetErr').textContent='';
+['gmResetA','gmResetP1','gmResetP2'].forEach(function(id){$(id).value=''})}
+function doReset(){var err=$('gmResetErr'),f=qfail(),now=Date.now();
+if(f.until>now){err.textContent='অনেকবার ভুল হয়েছে। '+toBn(Math.ceil((f.until-now)/1000))+' সেকেন্ড পর চেষ্টা করুন।';return}
+var a=$('gmResetA').value,n=clean($('gmResetP1').value),n2=clean($('gmResetP2').value);
+if(normA(a).length<1){err.textContent='প্রশ্নের উত্তর লিখুন।';return}
+if(n.length<4||n.length>6){err.textContent='নতুন PIN ৪ থেকে ৬ সংখ্যার হতে হবে।';return}
+if(n!==n2){err.textContent='দুটো PIN মেলেনি।';return}
+if(!checkA(a)){f.n=(f.n||0)+1;if(f.n%5===0){var m=Math.min(30*60,60*Math.pow(2,Math.floor(f.n/5)-1));f.until=now+m*1000;err.textContent='৫ বার ভুল হয়েছে। '+toBn(m)+' সেকেন্ড অপেক্ষা করুন।'}else err.textContent='উত্তর মেলেনি। আবার চেষ্টা করুন।';p('gmQFail',JSON.stringify(f));return}
+var s=newSalt();p('gmPinSalt',s);p('gmPinHash',hashPin(n,s));del('gmQFail');unlockUI()}
+var fgb=$('gmForgot');if(fgb)fgb.addEventListener('click',function(){showReset(true)});
+var rbb=$('gmResetBack');if(rbb)rbb.addEventListener('click',function(){showReset(false);setTimeout(function(){try{li&&li.focus()}catch(e){}},50)});
+var rsb=$('gmResetBtn');if(rsb)rsb.addEventListener('click',doReset);
+var rp2=$('gmResetP2');if(rp2)rp2.addEventListener('keydown',function(e){if(e.key==='Enter')doReset()});
+/* auto lock when interval passes while app is open/resumed */
+function watch(){if(enabled()&&expired())lock()}
+setInterval(watch,30000);document.addEventListener('visibilitychange',function(){if(!document.hidden)watch()});window.addEventListener('focus',watch);
+if(enabled()&&expired()){root.classList.add('gm-locked');setTimeout(function(){try{li&&li.focus()}catch(e){}},200)}
+/* settings UI */
+var box=$('gmSecBox');
+function hoursSel(id,cur){var o='';[12,24,48,72].forEach(function(h){o+='<option value="'+h+'"'+(h===cur?' selected':'')+'>'+toBn(h)+' ঘণ্টা পর পর</option>'});return '<select id="'+id+'" aria-label="কত ঘণ্টা পর PIN চাইবে">'+o+'</select>'}
+function qFields(){var o='<option value="">— সিকিউরিটি প্রশ্ন বেছে নিন —</option>';QS.forEach(function(q){o+='<option value="'+q+'">'+q+'</option>'});o+='<option value="__custom">নিজের প্রশ্ন লিখব</option>';return '<select id="gmSecQ" aria-label="সিকিউরিটি প্রশ্ন">'+o+'</select><input id="gmSecQc" type="text" maxlength="80" placeholder="আপনার প্রশ্ন লিখুন" autocomplete="off" style="display:none"><input id="gmSecA" type="text" maxlength="60" placeholder="প্রশ্নের উত্তর" autocomplete="off">'}
+function readQ(){var s=$('gmSecQ'),q=s?s.value:'';if(q==='__custom'){var c=$('gmSecQc');q=c?c.value:''}var a=$('gmSecA');a=a?a.value:'';q=q.replace(/\s+/g,' ').trim();if(q.length<4)return {err:'একটা সিকিউরিটি প্রশ্ন বেছে নিন বা নিজে লিখুন।'};if(normA(a).length<2)return {err:'প্রশ্নের উত্তর কমপক্ষে ২ অক্ষরের দিন।'};return {q:q,a:a}}
+function setMsg(t,ok){var m=$('gmSecMsg');if(m){m.textContent=t;m.className='gm-sec-msg '+(ok?'ok':'err')}}
+function nextText(){var l=parseInt(g('gmPinLast'),10);if(!(l>0))return '';var d=new Date(l+hours()*36e5);return toBn(d.toLocaleString('bn-BD',{dateStyle:'medium',timeStyle:'short'}))}
+function pw(id,ph){return '<input id="'+id+'" type="password" inputmode="numeric" maxlength="6" placeholder="'+ph+'" autocomplete="off">'}
+function renderSec(){if(!box)return;
+if(!enabled()){box.innerHTML='<div class="gs-hero off"><div class="gs-ic">🔓</div><div><div class="gs-t">PIN লক এখন বন্ধ</div><div class="gs-s">চালু করলে নির্দিষ্ট সময় পর পর অ্যাপ খুলতে PIN চাইবে।</div></div></div>'
++'<div class="gs-card"><div class="gs-h">১. নতুন PIN বানান</div><div class="gs-s">৪ থেকে ৬ সংখ্যার PIN</div>'+pw('gmSecNew','নতুন PIN (৪–৬ সংখ্যা)')+pw('gmSecNew2','PIN আবার লিখুন')+'</div>'
++'<div class="gs-card"><div class="gs-h">২. কত ঘণ্টা পর পর PIN চাইবে</div>'+hoursSel('gmSecHours',72)+'</div>'
++'<div class="gs-card"><div class="gs-h">৩. PIN ভুলে গেলে রিসেটের প্রশ্ন</div><div class="gs-s">শুধু আপনি জানেন এমন উত্তর দিন</div>'+qFields()+'</div>'
++'<button type="button" class="gs-primary" data-a="enable">🔒 PIN চালু করুন</button><div id="gmSecMsg" class="gm-sec-msg"></div>';return}
+box.innerHTML='<div class="gs-hero on"><div class="gs-ic">🔒</div><div><div class="gs-t">PIN লক চালু <span class="gs-pill">সক্রিয়</span></div><div class="gs-s">পরের বার PIN চাইবে: <b>'+nextText()+'</b></div></div></div>'
++'<div class="gs-card"><div class="gs-h">কত ঘণ্টা পর পর PIN চাইবে</div>'+hoursSel('gmSecHours',hours())+'<button type="button" class="gs-ghost" data-a="lock">এখনই লক করুন</button></div>'
++'<details class="gs-card"><summary>PIN বদলান</summary><div class="gs-body">'+pw('gmSecCur','বর্তমান PIN')+pw('gmSecNew','নতুন PIN (৪–৬ সংখ্যা)')+pw('gmSecNew2','নতুন PIN আবার লিখুন')+'<button type="button" class="gs-primary" data-a="change">PIN বদলান</button></div></details>'
++'<details class="gs-card"'+(qOn()?'':' open')+'><summary>রিসেটের প্রশ্ন <span class="gs-pill'+(qOn()?'':' warn')+'">'+(qOn()?'সেট আছে':'সেট নেই')+'</span></summary><div class="gs-body">'+pw('gmSecCurQ','বর্তমান PIN')+qFields()+'<button type="button" class="gs-primary" data-a="setq">'+(qOn()?'প্রশ্ন বদলান':'প্রশ্ন সেট করুন')+'</button></div></details>'
++'<details class="gs-card gs-danger"><summary>PIN বন্ধ করুন</summary><div class="gs-body">'+pw('gmSecCurD','বর্তমান PIN')+'<button type="button" class="gs-del" data-a="disable">PIN লক বন্ধ করুন</button></div></details>'
++'<div id="gmSecMsg" class="gm-sec-msg"></div>'}
+if(box)box.addEventListener('change',function(e){if(e.target.id==='gmSecQ'){var c=$('gmSecQc');if(c)c.style.display=e.target.value==='__custom'?'block':'none';return}if(e.target.id==='gmSecHours'&&enabled()){p('gmPinHours',e.target.value);renderSec();setMsg('সময় বদলানো হয়েছে।',true)}});
+if(box)box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-a');
+function v(id){var el=$(id);return el?clean(el.value):''}
+if(a==='enable'){var n=v('gmSecNew'),n2=v('gmSecNew2');if(n.length<4||n.length>6){setMsg('PIN ৪ থেকে ৬ সংখ্যার হতে হবে।');return}if(n!==n2){setMsg('দুটো PIN মেলেনি।');return}
+var qa=readQ();if(qa.err){setMsg(qa.err);return}setQ(qa.q,qa.a);var salt=newSalt();p('gmPinSalt',salt);p('gmPinHash',hashPin(n,salt));p('gmPinHours',$('gmSecHours').value);p('gmPinLast',String(Date.now()));del('gmPinFail');renderSec();setMsg('PIN চালু হয়েছে। ভুলে গেলে লক স্ক্রিনের “PIN ভুলে গেছেন?” থেকে সিকিউরিটি প্রশ্নের উত্তর দিয়ে রিসেট করতে পারবেন।',true);return}
+if(a==='lock'){lock();return}
+var cur=v('gmSecCur');
+if(a==='setq'){if(!check(v('gmSecCurQ'))){setMsg('বর্তমান PIN ভুল।');return}var qa2=readQ();if(qa2.err){setMsg(qa2.err);return}setQ(qa2.q,qa2.a);del('gmQFail');renderSec();setMsg('সিকিউরিটি প্রশ্ন সেভ হয়েছে।',true);return}
+if(a==='change'){if(!check(cur)){setMsg('বর্তমান PIN ভুল।');return}var m=v('gmSecNew'),m2=v('gmSecNew2');if(m.length<4||m.length>6){setMsg('নতুন PIN ৪ থেকে ৬ সংখ্যার হতে হবে।');return}if(m!==m2){setMsg('নতুন দুটো PIN মেলেনি।');return}
+var s2=newSalt();p('gmPinSalt',s2);p('gmPinHash',hashPin(m,s2));p('gmPinLast',String(Date.now()));del('gmPinFail');renderSec();setMsg('PIN বদলানো হয়েছে।',true);return}
+if(a==='disable'){if(!check(v('gmSecCurD'))){setMsg('বর্তমান PIN ভুল।');return}['gmPinHash','gmPinSalt','gmPinHours','gmPinLast','gmPinFail','gmPinQ','gmPinQSalt','gmPinQHash','gmQFail'].forEach(del);renderSec();setMsg('PIN লক বন্ধ করা হয়েছে।',true)}});
+renderSec();
+window.__gmSha256=sha256;
+}catch(err){}})();
+</script>
+<script id="gm-lock-ui">
+(function(){try{
+var $=function(i){return document.getElementById(i)},inp=$('gmLockPin'),dots=$('gmDots'),pad=$('gmPad'),btn=$('gmLockBtn'),err=$('gmLockErr'),main=$('gmLockMain'),root=document.documentElement;
+if(!inp||!dots||!pad||!btn)return;
+var d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+function sync(){var n=d.get.call(inp).length,s=dots.children;for(var i=0;i<s.length;i++)s[i].className=i<n?'on':''}
+Object.defineProperty(inp,'value',{configurable:true,get:function(){return d.get.call(inp)},set:function(v){d.set.call(inp,v);sync()}});
+function add(c){var v=inp.value;if(v.length<6){err.textContent='';inp.value=v+c}}
+function back(){err.textContent='';inp.value=inp.value.slice(0,-1)}
+pad.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var k=b.getAttribute('data-k');if(k==='b')back();else if(k)add(k)});
+document.addEventListener('keydown',function(e){if(!root.classList.contains('gm-locked')||(main&&main.style.display==='none'))return;
+if(/^[0-9]$/.test(e.key)){add(e.key);e.preventDefault()}else if(e.key==='Backspace'){back();e.preventDefault()}else if(e.key==='Enter'&&e.target===document.body){btn.click();e.preventDefault()}});
+btn.addEventListener('click',function(){if(root.classList.contains('gm-locked')&&err.textContent){dots.classList.remove('shake');void dots.offsetWidth;dots.classList.add('shake')}});
+sync();
+}catch(e){}})();
+</script>
+
+<script id="gm-sec-shortcut">(function(){var b=document.getElementById("dailyMessageSec"),p=document.getElementById("gmSecPanel");if(!b||!p)return;b.addEventListener("click",function(){p.hidden=!p.hidden;if(!p.hidden){try{p.scrollIntoView({block:"nearest",behavior:"smooth"})}catch(e){}}})})();</script>
+<style id="gm-actions-fit">.daily-message-head>div:first-child{min-width:0}.daily-message-head .actions{display:flex!important;flex-wrap:nowrap!important;gap:5px!important;flex:0 0 auto;width:auto!important;margin:0!important}.daily-message-head .actions button{width:32px;height:32px;min-width:0;padding:0!important;display:grid;place-items:center;flex:0 0 32px;font-size:15px;line-height:1}.daily-message-head .actions button svg{width:15px;height:15px}#gmSecPanel{margin-top:10px;padding:10px;border:1px solid var(--line);border-radius:12px}#gmSecPanel[hidden]{display:none}.gm-sec-title{font-weight:700;font-size:14px;margin-bottom:2px}</style>
+<style id="gm-sec-css2">
+#gmSecPanel{margin-top:12px;padding:0;border:0}
+.gm-sec-title{display:none}
+#gmSecBox{display:flex;flex-direction:column;gap:10px}
+.gs-hero{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;color:#fff;background:linear-gradient(135deg,#7f1111,#d32f2f 58%,#ef5350);box-shadow:0 3px 10px rgba(183,28,28,.28)}
+.gs-hero.off{background:linear-gradient(135deg,#3b3a4a,#5a5870)}
+.gs-ic{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;font-size:16px;background:radial-gradient(circle at 35% 30%,#ffe9a0,#d4af37 62%,#9a7414);box-shadow:0 0 0 3px rgba(255,255,255,.14)}
+.gs-t{font-size:14px;font-weight:700;line-height:1.3}
+.gs-s{font-size:12px;line-height:1.4;opacity:.82}
+.gs-hero .gs-s{opacity:.92}
+.gs-pill{display:inline-block;margin-left:6px;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:700;background:#1f9d5533;color:#1f9d55;vertical-align:middle}
+.gs-hero .gs-pill{background:rgba(255,255,255,.22);color:#fff}
+.gs-pill.warn{background:#d9892b2e;color:#c9741a}
+.gs-card{padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
+.gs-card .gs-h{font-size:14px;font-weight:700;margin-bottom:4px}
+.gs-card input,.gs-card select{display:block;width:100%;box-sizing:border-box;margin-top:8px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:15px;font-family:inherit}
+.gs-card input:focus,.gs-card select:focus{outline:0;border-color:#b8902a;box-shadow:0 0 0 3px rgba(184,144,42,.2)}
+.gs-card summary{display:flex;align-items:center;justify-content:space-between;gap:8px;list-style:none;cursor:pointer;font-size:14px;font-weight:700}
+.gs-card summary::-webkit-details-marker{display:none}
+.gs-card summary::after{content:"⌄";font-size:18px;opacity:.7;transition:transform .2s}
+.gs-card[open] summary::after{transform:rotate(180deg)}
+.gs-body{padding-top:2px}
+.gs-primary,.gs-ghost,.gs-del{display:block;width:100%;margin-top:10px;padding:12px;border-radius:12px;font-size:15px;font-weight:700;font-family:inherit;cursor:pointer}
+.gs-primary{border:0;color:#1a1a22;background:linear-gradient(135deg,#D4AF37,#FFD700);box-shadow:0 4px 14px rgba(212,175,55,.32)}
+.gs-ghost{border:1px solid var(--line);background:transparent;color:inherit}
+.gs-del{border:1px solid #d6342a;background:transparent;color:#d6342a}
+.gs-primary:active,.gs-ghost:active,.gs-del:active{transform:scale(.98)}
+.gs-danger summary{color:#d6342a}
+#gmSecBox .gm-sec-msg{margin:0;padding:0 2px}
+</style>
+<style id="home-date-bigger">body header #dhakaClock .clock-date{font-size:10.5px!important;font-weight:700!important;line-height:1.4!important;white-space:nowrap!important}</style>
 </body>
 </html>
