@@ -783,8 +783,13 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <tr><td>২৪ ক্যারেট</td><td id="rate_k24">২,০৬,৩০০</td></tr>
 </tbody></table></div>
 <p class="hint" id="ratesUpdated" style="margin-top:8px"></p>
+<div class="tablewrap" id="silverRatesWrap" style="margin-top:12px"><table><thead><tr><th>🥈 রূপা</th><th>মূল্য (টাকা)</th></tr></thead><tbody id="silverRows">
+<tr><td colspan="2" style="text-align:center">—</td></tr>
+</tbody></table></div>
+<p class="hint" id="silverUpdated" style="margin-top:8px"></p>
 
-<div class="gm-hist-box" id="gmHistBox">
+<div class="gm-mk-tools" id="gmMkTools"><button type="button" data-p="gmHistBox" aria-label="দামের ইতিহাস" aria-expanded="false"><span class="mk-ic">📈</span><span class="mk-lb">দামের ইতিহাস</span></button><button type="button" data-p="gmAlertBox" aria-label="দামের অ্যালার্ট" aria-expanded="false"><span class="mk-ic">🔔</span><span class="mk-lb">দামের অ্যালার্ট</span></button></div>
+<div class="gm-hist-box gm-tuck" id="gmHistBox">
  <h3>📈 দামের ইতিহাস</h3>
  <div class="gm-hist-row"><select id="gmHistKarat" aria-label="দাম বাছাই"><option value="xau">🌍 আন্তর্জাতিক সোনা (XAU/USD)</option><option value="xag">🌍 আন্তর্জাতিক রূপা (XAG/USD)</option><option value="k22">🇧🇩 ২২ ক্যারেট</option><option value="paka">🇧🇩 পাকা সোনা</option><option value="k21">🇧🇩 ২১ ক্যারেট</option><option value="k18">🇧🇩 ১৮ ক্যারেট</option><option value="k24">🇧🇩 ২৪ ক্যারেট</option></select>
  <div class="gm-hist-range" id="gmHistRange"><button type="button" data-n="7">৭ দিন</button><button type="button" data-n="15">১৫ দিন</button><button type="button" data-n="30" class="on">৩০ দিন</button></div></div>
@@ -792,7 +797,7 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
  <div id="gmHistStat" class="gm-hist-stat"></div>
  <p class="gm-hist-note" id="gmHistNote"></p>
 </div>
-<div class="gm-hist-box" id="gmAlertBox">
+<div class="gm-hist-box gm-tuck" id="gmAlertBox">
  <h3>🔔 দামের অ্যালার্ট</h3>
  <div class="gm-alert-form">
   <select id="gmAlertKarat" aria-label="ক্যারেট"><option value="k22">২২ ক্যারেট</option><option value="paka">পাকা সোনা</option><option value="k21">২১ ক্যারেট</option><option value="k18">১৮ ক্যারেট</option><option value="k24">২৪ ক্যারেট</option><option value="xau">🌍 আন্তর্জাতিক সোনা (XAU/USD)</option></select>
@@ -1458,7 +1463,7 @@ render();
   return o;
  }
  function today(){
-  try{return new Date().toLocaleDateString('bn-BD',{day:'numeric',month:'long',year:'numeric'})}catch(e){return ''}
+  try{return new Date().toLocaleString('bn-BD',{day:'numeric',month:'long',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})}catch(e){return ''}
  }
  function show(o,offline){
   if(!o)return;
@@ -2799,5 +2804,53 @@ sync();
 #gmSecBox .gm-sec-msg{margin:0;padding:0 2px}
 </style>
 <style id="home-date-bigger">body header #dhakaClock .clock-date{font-size:10.5px!important;font-weight:700!important;line-height:1.4!important;white-space:nowrap!important}</style>
+<style id="gm-mk-tools-css">
+.gm-mk-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 4px}
+.gm-mk-tools button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .1s,border-color .15s,box-shadow .15s}
+.gm-mk-tools .mk-ic{font-size:22px;line-height:1}
+.gm-mk-tools .mk-lb{font-size:12.5px;font-weight:700}
+.gm-mk-tools button:active{transform:scale(.97)}
+.gm-mk-tools button.on{border-color:#b8902a;box-shadow:0 0 0 3px rgba(184,144,42,.22)}
+.gm-hist-box.gm-tuck{display:none}
+.gm-hist-box.gm-tuck.open{display:block}
+</style>
+<script id="gm-mk-tools-js">(function(){var w=document.getElementById("gmMkTools");if(!w)return;
+w.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var id=b.getAttribute("data-p"),t=document.getElementById(id);if(!t)return;var open=!t.classList.contains("open");
+[].forEach.call(w.querySelectorAll("button"),function(x){var p=document.getElementById(x.getAttribute("data-p")),on=(x===b)&&open;if(p)p.classList.toggle("open",on);x.classList.toggle("on",on);x.setAttribute("aria-expanded",on?"true":"false")});
+if(open){try{t.scrollIntoView({block:"nearest",behavior:"smooth"})}catch(er){}}})})();</script>
+<script id="gm-silver-js">
+// আজকের রূপার বাজার: একই Google Sheet থেকে। সোনার সারি আর বার্তা বাদে, যে সারির দ্বিতীয় ঘরে দাম (সংখ্যা বা ২৯৫০/২৯৬০ ধরনের) আছে সেটাই রূপার ছকে আসে
+(function(){try{
+var URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vRESXXq_nBkbKY0f97NAmSKjm8pLirVHSfXd6ByanYvK5bLKE9df83LRQmFmYZIfWaXjrV6K3jH2O62/pub?gid=0&single=true&output=csv';
+var KEY='sonaSilverCache2',bn='০১২৩৪৫৬৭৮৯';
+function toEn(t){return String(t).replace(/[০-৯]/g,function(d){return bn.indexOf(d)})}
+function toBn(t){return String(t).replace(/[0-9]/g,function(d){return bn[d]})}
+function fmt1(v){var e=toEn(v).replace(/[,\s]/g,'');if(/^[0-9]+(\.[0-9]+)?$/.test(e)){var p=e.split('.'),x=p[0],l=x.slice(-3),r=x.slice(0,-3);if(r)r=r.replace(/\B(?=(\d{2})+(?!\d))/g,',')+',';return toBn(r+l+(p[1]?'.'+p[1]:''))}return String(v).trim()}
+function fmt(v){v=String(v).trim();return v.indexOf('/')>-1?toBn(toEn(v).replace(/\s+/g,'')):fmt1(v)}
+function isGoldOrOther(name){var n=toEn(name).replace(/\s+/g,' ').trim().toLowerCase();
+return !n||n==='pakasona'||n.indexOf('পাকা')===0||/^k?(18|21|22|24)/.test(n)||n==='updated'||n.indexOf('তারিখ')===0||n.indexOf('বার্তা')===0||n.indexOf('নাম')===0||n.indexOf('message')===0}
+function isPrice(v){return /^[0-9][0-9,.\s\/\-]*$/.test(toEn(v).trim())}
+function parseCsv(t){var rows=[],row=[],cur='',q=false;
+for(var i=0;i<t.length;i++){var c=t[i];
+if(q){if(c==='"'){if(t[i+1]==='"'){cur+='"';i++}else q=false}else cur+=c}
+else if(c==='"')q=true;else if(c===','){row.push(cur);cur=''}
+else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;row.push(cur);cur='';rows.push(row);row=[]}else cur+=c}
+if(cur!==''||row.length){row.push(cur);rows.push(row)}
+var out=[];rows.forEach(function(r){if(r.length<2)return;var n=String(r[0]).trim(),v=String(r[1]).trim();if(isGoldOrOther(n)||!v||!isPrice(v))return;out.push([n,v])});return out}
+function today(){try{return new Date().toLocaleString('bn-BD',{day:'numeric',month:'long',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})}catch(e){return ''}}
+function show(o,offline){var tb=document.getElementById('silverRows'),u=document.getElementById('silverUpdated');
+if(tb){tb.innerHTML='';o.rows.forEach(function(r){var tr=document.createElement('tr'),a=document.createElement('td'),b=document.createElement('td');a.textContent=r[0];b.textContent=fmt(r[1]);tr.appendChild(a);tr.appendChild(b);tb.appendChild(tr)})}
+if(u)u.textContent='রূপার রেট সর্বশেষ চেক: '+(o._fetched||'—')+(offline?' (ইন্টারনেট নেই, আগের রেট দেখাচ্ছে)':'')}
+try{var c=localStorage.getItem(KEY);if(c){var oc=JSON.parse(c);if(oc&&oc.rows&&oc.rows.length)show(oc,false)}}catch(e){}
+function load(u){return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.text()})}
+load(URL+'&t='+Date.now()).catch(function(){return load(URL)}).then(function(t){
+var rows=parseCsv(t),u=document.getElementById('silverUpdated');
+if(!rows.length){if(u&&!/রেট সর্বশেষ চেক/.test(u.textContent))u.textContent='শিটে রূপার রেট এখনো পাওয়া যায়নি।';return}
+var o={rows:rows,_fetched:today()};show(o,false);try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}
+}).catch(function(err){var u=document.getElementById('silverUpdated');
+try{var c=localStorage.getItem(KEY);if(c){var oc=JSON.parse(c);if(oc&&oc.rows&&oc.rows.length){show(oc,true);return}}}catch(e){}
+if(u)u.textContent='রূপার রেট আনা যায়নি ('+((err&&err.message)||'নেটওয়ার্ক এরর')+')'});
+}catch(e){}})();
+</script>
 </body>
 </html>
