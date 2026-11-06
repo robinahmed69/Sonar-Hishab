@@ -863,7 +863,7 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <div id="dailyMessageOverlay" class="daily-message-overlay" role="dialog" aria-modal="true" aria-labelledby="dailyMessageTitle"><section class="daily-message-panel"><div class="daily-message-head"><div><h2 id="dailyMessageTitle">✦ আজকের বার্তা</h2><p id="dailyMessageDate" class="daily-message-date">আন্তর্জাতিক স্বর্ণবাজারের দৈনিক খবর</p></div><div class="actions"><button type="button" id="dailyMessageSec" class="secondary" aria-label="নিরাপত্তা (PIN লক)" title="নিরাপত্তা (PIN লক)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button><button type="button" id="appUpdateBtn" class="secondary" aria-label="অ্যাপ আপডেট করুন" title="অ্যাপ আপডেট করুন"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg></button><button type="button" id="dailyMessageClose" class="danger" aria-label="বন্ধ করুন">✕</button></div></div><div id="gmSecPanel" hidden><div class="gm-sec-title">🔒 নিরাপত্তা (PIN লক)</div><div id="gmSecBox"></div></div><style>.app-update-msg:empty{display:none}</style><p id="appUpdateMsg" class="hint app-update-msg" aria-live="polite" style="margin:8px 0 0;font-size:12px"></p><div id="shopMsgBox" class="shop-msg" hidden></div></section></div>
 
 <main>
-<section class="card"><div class="live-metals-box"><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><div id="metalsMarketNotice" class="metals-market-notice" style="display:none" role="status"><span class="metals-market-dot"></span><span>মার্কেট বন্ধ আছে, ফিরে আসছি <strong id="metalsMarketCountdown">--:--:--</strong> ঘন্টা পর</span></div><p id="metalsMarketOpenHint" class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAUUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{"symbol":"OANDA:XAGUSD","width":"100%","colorTheme":"light","isTransparent":false,"locale":"en"}</script></div></div></div></div></section>
+<section class="card"><div class="live-metals-box"><button type="button" id="gmLiveRefresh" class="gm-live-refresh" aria-label="লাইভ প্রাইস রিফ্রেশ করুন" title="রিফ্রেশ"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg></button><h2>লাইভ গোল্ড ও সিলভার প্রাইস</h2><div id="metalsMarketNotice" class="metals-market-notice" style="display:none" role="status"><span class="metals-market-dot"></span><span>মার্কেট বন্ধ আছে, ফিরে আসছি <strong id="metalsMarketCountdown">--:--:--</strong> ঘন্টা পর</span></div><p id="metalsMarketOpenHint" class="hint" style="margin-top:0;margin-bottom:13px">আন্তর্জাতিক স্পট মার্কেট · USD প্রতি ট্রয় আউন্স · BAJUS-এর খুচরা/গহনার দাম নয়</p><div class="live-metals-grid"><div class="live-metal-card gold"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="30" height="24"><span class="metal-name">গোল্ড <span class="metal-symbol">XAU / USD</span></span><button type="button" id="marketTableOpen" class="market-table-link">ছক দেখুন</button></div><div class="tradingview-widget-container gm-tv-live" data-symbol="OANDA:XAUUSD"><div class="tradingview-widget-container__widget"></div></div><div class="gm-live-quote" data-metal="XAU"><span class="gm-q-label">ব্যাকআপ দাম:</span><span class="gm-q-price">--</span><span class="gm-q-time">লোড হচ্ছে…</span></div></div><div class="live-metal-card silver"><div class="live-metal-title"><img class="metal-dot" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="30" height="24"><span class="metal-name">সিলভার <span class="metal-symbol">XAG / USD</span></span></div><div class="tradingview-widget-container gm-tv-live" data-symbol="OANDA:XAGUSD"><div class="tradingview-widget-container__widget"></div></div><div class="gm-live-quote" data-metal="XAG"><span class="gm-q-label">ব্যাকআপ দাম:</span><span class="gm-q-price">--</span><span class="gm-q-time">লোড হচ্ছে…</span></div></div></div></div></section>
 <section class="card estimate-box"><div class="estimate-grid"><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACVklEQVR42u2avVEDMRBGpZmLCejBVdCDU/dAQAM4NA04cA9O6YEq3IMDGjgCOCM897MnrVa7y/dlMLYl3lutJHMhIAiCIAiCIAiCIAiCIAiCIAiCIAiCIF4TtU2ov5762+Qen6O38dQKuIH4/Pj95cNTFTApdInxVAsYBX8fJjCksYRFRNXgGcBMVnul8dQLIFd8wYoogi4sImpsNX9CFMEOXUhEVAd+ZFMkv78W+IoiokrwSytj6rXUz1MkIqoGzyFNuYhoBrxTEdEceGciYjXwjfqxNRHRPPjSDbvGHH8++/31JWzfjrMCOjfgp46xU6CHnzlFJOCp6dyAn5MxJWLs4lew4taAJwmYha8Z/JyIkUrdvh1Fqj2/BaXVYwn8xN9SBI0JPFnA5bwPIYSw2R3kr/wVNsUWbaZ8BVgVwQSeG3qWAFMiDIDPFqBahCHwxQLUiWDYXCXBswloLoKpalvAZxUgLqJBuzAhoLoIJ+CrC2AX4Qy8mIBiEU7BiwtYLcI5+GYCFkX8E/DNBUyJ8ASe8i1rp2Wyl/P+W4Ij8JT/CXcBaQIeAhJgJW0vbTM5zwXNCkifuRx6NcDnV3vWChgG8CBCE/jVLciyCI3gs/cASyIGaLknrNL+XnUT1iwiBa+p2qucgjSJsASe/RjaWsTwCGB/PfWb3YE8vkSbEb0HpCIkJNxXLbUQWlS76EWs9h1iCeC9CG3gb/OUGIQqYrM7LB4VcwEOc9ACXvSrCI79obRytYEXFVAiQlvLMC1gjQjv4EX3AGp/ttAyXGdMBIIgCIJ4zRcJfeK2FM7K0QAAAABJRU5ErkJggg==" alt="Gold" width="22" height="17"> আনুমানিক সোনার দাম</span><strong id="estimatedGold">লোড হচ্ছে…</strong></div><div class="estimate-item"><span><img class="estimate-metal-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABICAYAAAAJZ/BjAAACaklEQVR42u2awZHCMAxF7R2YoRlKoAFqoAg62KGDLWJroAFKoBlmOJhTGG82ThxbliXx/xFCnLwnK06IcwiCIAiCIAiCIAiCIAiCIAiCIAiCIIjVeGkHFEII74Pz3lsbb5yNNPCP5//PqMHE0DnGEz0DpsCPs9vSVGjOWJTjiRaQC6MWTKraW40nXkBuxdfMiBro3CK8xFYTJ1cENXQuEV4a+Hi71Oep37cC31KElwh+aWakts3dnyQRXjJ4CmnSRXgt4K2K8NrAWxPhW4Hv1Y+1ifgqAR9CCI/n9Enstn9PkmtlEo81HENqWft4pr+nAr/bOvf980v3LEhaxc+JSBXD1HaUM2LYVw74bAFawM/JSImgmAHxPtaAzxIwB18y+DkRU5V6OZ9Yqr24BcXVowl86lxqoFGBzxZwvd2dc84dD3v2W37q1UgptNo2Q3IR1iiCCjw19CIBmkRoAF8sQLIITeCrBUgTQXFx5QRPJqC3CKqq7QGfVAC3iB7tQoWA1iKsgG8ugFqENfBsAmpFWAXPLmCtCOvguwlYEvEp4LsLSImwBD7nKauYl3Ovt7s7HvamwOf8J7xxSBfwEBABq2l7cZspeS9oVkD8zuXQqwG+vNqLZsAwgAURksCvbkGaRUgEX3wN0CRigFa6wqrt700vwpJFxOAlVXuTVZAkEZrAky9De4u4nE/vVdvxsM8en6PNsN4HxCI4JIyrNrcQelQ7641Y63uIJYBjEdLAs9wJt2hLawHGxzC0KUkrNZZHERQiaitXGnhWATUipLUM1QLWiLAO/s1CwkGML5SfAF5kpkQgCIIgiNW8AGJt7U36wdBtAAAAAElFTkSuQmCC" alt="Silver" width="22" height="17"> আনুমানিক রূপার দাম</span><strong id="estimatedSilver">লোড হচ্ছে…</strong></div></div><div class="estimate-refresh-row"><button type="button" id="estimateRefresh" class="estimate-refresh" aria-label="সোনা ও রুপার দাম রিফ্রেশ করুন" title="দাম রিফ্রেশ করুন"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button></div></section></section>
 
 
@@ -2207,6 +2207,23 @@ body.dark-mode header #dhakaClock .sand-timer .sand-stream { stroke:currentColor
 .metals-market-notice strong{font-variant-numeric:tabular-nums;white-space:nowrap}
 @keyframes metalsMarketPulse{50%{box-shadow:0 0 0 7px #e3263608;opacity:.65}}
 body.dark-mode .metals-market-notice{background:#301c22;border-color:#71333a;color:#ffb8b8}
+.live-metals-box h2{padding-right:42px}
+.gm-live-refresh{position:absolute;top:12px;right:12px;z-index:3;width:30px;height:30px;padding:0;border-radius:50%;border:1px solid #d8e0ea;background:#fff;color:#475569;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px #1c2d4214;-webkit-tap-highlight-color:transparent}
+.gm-live-refresh:active{transform:scale(.92)}
+.gm-live-refresh:disabled{cursor:default}
+.gm-live-refresh.spinning svg{animation:gmLiveSpin .8s linear infinite}
+@keyframes gmLiveSpin{to{transform:rotate(360deg)}}
+.gm-live-quote{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 7px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.gm-q-label{font-size:11px;color:var(--muted)}
+.gm-q-price{font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);transition:color .4s}
+.gm-live-quote.up .gm-q-price{color:#16803d}
+.gm-live-quote.down .gm-q-price{color:#c62828}
+body.dark-mode .gm-live-quote.up .gm-q-price{color:#4ade80}
+body.dark-mode .gm-live-quote.down .gm-q-price{color:#ff7b7b}
+.gm-q-time{font-size:11px;color:var(--muted)}
+.gm-live-quote.err .gm-q-time{color:#b45309}
+.gm-live-msg{font-size:12px;line-height:1.5;color:var(--muted);text-align:center;padding:10px 6px}
+body.dark-mode .gm-live-refresh{background:#14151a;border-color:#2a2d34;color:#e6edf4;box-shadow:none}
 </style>
 <script>
 (function(){
@@ -2223,6 +2240,115 @@ body.dark-mode .metals-market-notice{background:#301c22;border-color:#71333a;col
 })();
 </script>
 
+<script id="gm-live-price-js">
+(function(){
+  /* ---------- TradingView উইজেট ---------- */
+  var SRC='https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js';
+  var boxes=[].slice.call(document.querySelectorAll('.gm-tv-live'));
+  var btn=document.getElementById('gmLiveRefresh');
+  var token=0,hiddenAt=0,spinTimer=null,MAX_TRY=4;
+
+  function cfg(sym){return {symbol:sym,width:'100%',colorTheme:'light',isTransparent:false,locale:'en'};}
+  function showMsg(box){box.innerHTML='<div class="gm-live-msg">TradingView লোড হয়নি। উপরের রিফ্রেশ আইকনে চাপ দিন।</div>';}
+
+  function build(box,attempt,tk){
+    if(tk!==token)return;
+    if(navigator.onLine===false){showMsg(box);return;}
+    box.innerHTML='<div class="tradingview-widget-container__widget"></div>';
+    var sc=document.createElement('script');
+    sc.type='text/javascript';sc.async=true;sc.src=SRC;
+    sc.innerHTML=JSON.stringify(cfg(box.getAttribute('data-symbol')));
+    var done=false;
+    function retry(){
+      if(done||tk!==token)return;done=true;
+      if(attempt+1>=MAX_TRY){showMsg(box);return;}
+      setTimeout(function(){build(box,attempt+1,tk);},1500*(attempt+1));
+    }
+    sc.onerror=retry;
+    box.appendChild(sc);
+    setTimeout(function(){
+      if(done||tk!==token)return;
+      if(box.querySelector('iframe')){done=true;return;}
+      retry();
+    },10000);
+  }
+
+  function loadWidgets(){
+    token++;var tk=token;
+    boxes.forEach(function(box,i){setTimeout(function(){build(box,0,tk);},i*700);});
+  }
+
+  /* ---------- ব্যাকআপ দাম (gold-api.com) ---------- */
+  var cards=[].slice.call(document.querySelectorAll('.gm-live-quote'));
+  var INTERVAL=10000,busy=false,backoffUntil=0,last={};
+
+  function fmtPrice(m,n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:m==='XAG'?3:2});}
+  function fmtTime(d){try{return d.toLocaleTimeString('bn-BD',{hour:'2-digit',minute:'2-digit',second:'2-digit'});}catch(e){return d.toLocaleTimeString();}}
+
+  function fetchJson(url){
+    var c=window.AbortController?new AbortController():null;
+    var t=setTimeout(function(){if(c)c.abort();},9000);
+    return fetch(url,{cache:'no-store',signal:c?c.signal:undefined}).then(function(r){
+      clearTimeout(t);
+      if(r.status===429){backoffUntil=Date.now()+60000;throw new Error('429');}
+      if(!r.ok)throw new Error('http '+r.status);
+      return r.json();
+    },function(e){clearTimeout(t);throw e;});
+  }
+
+  function getOne(card){
+    var m=card.getAttribute('data-metal');
+    var tm=card.querySelector('.gm-q-time');
+    return fetchJson('https://api.gold-api.com/price/'+m).then(function(d){
+      var p=Number(d&&d.price);
+      if(!isFinite(p)||p<=0)throw new Error('bad data');
+      card.querySelector('.gm-q-price').textContent=fmtPrice(m,p);
+      var prev=last[m];
+      card.classList.remove('up','down','err');
+      if(prev!=null&&p!==prev)card.classList.add(p>prev?'up':'down');
+      last[m]=p;
+      var dt=d.updatedAt?new Date(d.updatedAt):null;
+      if(!dt||isNaN(dt.getTime()))dt=new Date();
+      tm.textContent='আপডেট: '+fmtTime(dt);
+    }).catch(function(){
+      card.classList.add('err');
+      tm.textContent=last[m]!=null?'আপডেট হয়নি':'লোড হয়নি';
+    });
+  }
+
+  function loadPrices(manual){
+    if(busy)return;
+    if(!manual&&Date.now()<backoffUntil)return;
+    busy=true;
+    function done(){busy=false;}
+    Promise.all(cards.map(getOne)).then(done,done);
+  }
+
+  /* ---------- রিফ্রেশ ও অটো-রিকভারি ---------- */
+  function refreshAll(){
+    if(btn){
+      btn.classList.add('spinning');btn.disabled=true;
+      clearTimeout(spinTimer);
+      spinTimer=setTimeout(function(){btn.classList.remove('spinning');btn.disabled=false;},2500);
+    }
+    loadWidgets();loadPrices(true);
+  }
+  if(btn)btn.addEventListener('click',refreshAll);
+  window.addEventListener('online',function(){loadWidgets();loadPrices(true);});
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden){hiddenAt=Date.now();return;}
+    if(hiddenAt&&Date.now()-hiddenAt>60000)loadWidgets();
+    if(!hiddenAt||Date.now()-hiddenAt>10000)loadPrices(false);
+    hiddenAt=0;
+  });
+  window.addEventListener('pageshow',function(e){if(e.persisted)loadWidgets();});
+  setInterval(function(){if(!document.hidden)loadPrices(false);},INTERVAL);
+
+  loadPrices(true);
+  function start(){setTimeout(loadWidgets,300);}
+  if(document.readyState==='complete')start();else window.addEventListener('load',start);
+})();
+</script>
 <script type="module">
 import { initializeApp } from
   "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
