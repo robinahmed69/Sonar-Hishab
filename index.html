@@ -5,17 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>html.gm-pre-dark{background:#000}</style>
 <script>try{if(localStorage.getItem('sonaRupaTheme')==='dark')document.documentElement.classList.add('gm-pre-dark')}catch(e){}</script>
+<style id="gm-critical-navy-first-paint">
+html,body{background:#f4f7fc}
+body{background:linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px)!important}
+header{background:linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%)!important;color:#fff!important}
+body.dark-mode{background:linear-gradient(180deg,#101c3a 0,#080f20 360px,var(--bg) 720px)!important}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Gold Manager</title>
 <style>
 :root{--bg:#f3f6fa;--card:#fff;--ink:#18212f;--muted:#657184;--line:#e2e6ec;--gold:#9a6a00;--blue:#2457a7;--red:#b42318;color-scheme:light}body.dark-mode{--bg:#0b1220;--card:#121c2b;--ink:#e8eef7;--muted:#a3b0c2;--line:#29374a;--gold:#f4c45d;--blue:#477fe0;--red:#ff7777;color-scheme:dark}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
 body.font-hind{font-family:"Hind Siliguri",sans-serif}
 body.font-noto{font-family:"Noto Sans Bengali",sans-serif}
 body.font-system{font-family:system-ui,-apple-system,sans-serif}
-header{background:#172b3a;color:#fff;padding:20px 16px 16px;position:relative;padding-right:68px}header h1{font-size:17px;margin:0 0 5px}header p{margin:0;color:#dbe4eb;font-size:13px}
+header{background:linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%);color:#fff;padding:20px 16px 16px;position:relative;padding-right:68px}header h1{font-size:17px;margin:0 0 5px}header p{margin:0;color:#dbe4eb;font-size:13px}
 .header-tools{position:absolute;right:12px;top:12px;display:flex;flex-direction:column;align-items:center;gap:7px}.crypto-launch{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 3px;background:#172b3a;color:#fff;border:0;border-radius:8px;width:58px;box-sizing:border-box;position:relative;z-index:2}.crypto-launch svg{width:32px;height:32px;filter:drop-shadow(0 1px 2px #0004)}.crypto-launch span{font-size:10px;line-height:1.1;font-weight:700;color:#f3d58a}.crypto-launch:active{transform:scale(.96)}.crypto-overlay{display:none;position:fixed;inset:0;background:#0b1724a8;z-index:1000;padding:14px;align-items:center;justify-content:center}.crypto-overlay.open{display:flex}.crypto-panel{width:min(620px,100%);max-height:88vh;overflow:auto;background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 18px 60px #0005;padding:14px}.crypto-head{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:-14px;background:#fff;padding:2px 0 10px;z-index:1}.crypto-head h2{font-size:16px;margin:0}.crypto-head .actions{gap:6px}.crypto-head button{font-size:12px;padding:7px 9px}.crypto-meta{font-size:12px;color:var(--muted);margin:0 0 8px}.crypto-table{font-size:12px;white-space:normal}.crypto-table th,.crypto-table td{padding:6px 5px}.crypto-table td:nth-child(2){min-width:115px}.crypto-price{font-variant-numeric:tabular-nums;text-align:right}.crypto-change-up{color:#16803d}.crypto-change-down{color:#c62828}.crypto-loading{text-align:center;padding:24px;color:var(--muted);font-size:13px}.tool-icon{width:42px;height:23px;border-radius:999px;padding:2px;background:#ffffff30;color:#fff;border:1px solid #ffffff70;font-size:12px;display:flex;align-items:center;justify-content:flex-start;box-sizing:border-box;transition:background .2s ease}.font-pop{top:36px}.font-pop{display:none;position:absolute;right:0;top:44px;width:220px;background:#fff;color:var(--ink);padding:12px;border-radius:12px;box-shadow:0 8px 28px #0003;z-index:20}.font-pop.open{display:block}.font-pop label{display:block;margin-bottom:7px}.font-pop select{padding:8px}.clock{font-size:14px;font-weight:700;color:#ffe08a;font-variant-numeric:tabular-nums;white-space:normal;line-height:1.6;letter-spacing:.2px}.author-link{color:#f3d58a;text-decoration:none;font-weight:600}.author-link:active,.author-link:hover{text-decoration:underline}.contact-footer{padding:16px 12px 22px;text-align:center;color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:5px}.contact-footer a{display:inline-flex;align-items:center;gap:6px;color:#1877f2;text-decoration:none;font-size:12px;font-weight:650}.contact-footer a svg{width:15px;height:15px;flex:none}.contact-footer a:hover{text-decoration:underline}
 main{max-width:900px;margin:0 auto;padding:14px;display:grid;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 2px 8px #172b3a08}
 h2{font-size:17px;margin:0 0 12px}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{border:1px solid var(--line);border-radius:10px;padding:11px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:17px;margin-top:4px;overflow-wrap:anywhere}
@@ -372,11 +378,11 @@ async function saveCsv(name,csv){
 <style id="gm-premium-glass-ui">
 /* === Gold Manager Premium Glass UI: global, responsive, functionality-preserving === */
 :root{--gm-glass-bg:rgba(255,255,255,.64);--gm-glass-border:rgba(255,255,255,.72);--gm-glass-shadow:0 10px 30px rgba(36,53,82,.09);}
-body{background:radial-gradient(ellipse at 8% 0%,rgba(180,205,255,.25),transparent 42%),radial-gradient(ellipse at 95% 15%,rgba(231,205,255,.22),transparent 38%),var(--bg);background-attachment:fixed}
+body{background:linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px);background-attachment:scroll}
 header,.app-header,.topbar,.header-card,.clock-card{}
 main>details.card,main>.card, .card, .gm-tool, .gm-weight-entry, .daily-news-item, .crypto-stats>div, .crypto-alert, .market-data-stat, .unit-convert-box, .unit-category, .gm-result{background:var(--gm-glass-bg);border-color:rgba(140,160,190,.25);box-shadow:var(--gm-glass-shadow);transition:background .24s ease,border-color .24s ease,box-shadow .24s ease,transform .24s cubic-bezier(.2,.8,.2,1)}
-main>details.card:nth-of-type(-n+4){background:rgba(240,232,252,.68);border-color:rgba(217,201,242,.72);}
-main>details.card:nth-of-type(-n+4)>summary{background:rgba(240,232,252,.55);}
+main>details.card:nth-of-type(-n+4){background:rgba(232,240,250,.82);border-color:rgba(194,210,230,.78);}
+main>details.card:nth-of-type(-n+4)>summary{background:rgba(236,243,251,.72);}
 main>details.card>summary{transition:background .22s ease,filter .22s ease}
 main>details.card[open], .card:focus-within{border-color:rgba(148,163,184,.5)}
 button,.btn,input,select,textarea,.tool-icon,.crypto-launch,.daily-message-launch,.unit-launch{transition:transform .18s ease,box-shadow .22s ease,background .22s ease,border-color .22s ease,filter .22s ease}
@@ -393,7 +399,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(92,130,20
 #gmOthers .gm-subfolder,#gmOthers .gm-subfolder>summary{}
 @keyframes gmGlassBackdropIn{from{opacity:0}to{opacity:1}}
 @keyframes gmGlassPanelIn{from{opacity:0;transform:translateY(12px) scale(.975);}to{opacity:1;transform:translateY(0) scale(1);}}
-body.dark-mode{background:radial-gradient(ellipse at 8% 0%,rgba(49,85,145,.22),transparent 42%),radial-gradient(ellipse at 95% 15%,rgba(104,63,140,.18),transparent 38%),var(--bg);background-attachment:fixed}
+body.dark-mode{background:linear-gradient(180deg,#101c3a 0,#080f20 360px,var(--bg) 720px);background-attachment:scroll}
 body.dark-mode main>details.card,body.dark-mode main>.card,body.dark-mode .card,body.dark-mode .gm-tool,body.dark-mode .gm-weight-entry,body.dark-mode .daily-news-item,body.dark-mode .crypto-stats>div,body.dark-mode .crypto-alert,body.dark-mode .market-data-stat,body.dark-mode .unit-convert-box,body.dark-mode .unit-category,body.dark-mode .gm-result{background:rgba(20,31,49,.72);border-color:rgba(148,163,184,.2);box-shadow:0 10px 28px rgba(0,0,0,.16)}
 body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:rgba(17,28,44,.8);border-color:rgba(148,163,184,.28);color:var(--ink)}
 body.dark-mode .crypto-panel,body.dark-mode .unit-panel,body.dark-mode .daily-message-panel,body.dark-mode .font-pop,body.dark-mode .market-data-panel{background:rgba(16,27,44,.86);border-color:rgba(180,195,220,.18);color:var(--ink)}
@@ -414,7 +420,7 @@ input,select,textarea,.tablewrap,.table-wrapper,#gmOthers[open],#gmOthers .gm-su
 main>details.card,main>.card,.card,.gm-tool,.gm-weight-entry,.daily-news-item,
 .crypto-stats>div,.crypto-alert,.market-data-stat,.unit-convert-box,.unit-category,.gm-result{
  background:rgba(255,255,255,.92);box-shadow:0 3px 10px rgba(36,53,82,.06);transition:border-color .12s ease!important}
-main>details.card:nth-of-type(-n+4),main>details.card:nth-of-type(-n+4)>summary{background:rgba(240,232,252,.94)!important}
+main>details.card:nth-of-type(-n+4),main>details.card:nth-of-type(-n+4)>summary{background:rgba(232,240,250,.94)!important}
 body.dark-mode main>details.card,body.dark-mode main>.card,body.dark-mode .card,body.dark-mode .gm-tool,body.dark-mode .gm-weight-entry,body.dark-mode .daily-news-item,body.dark-mode .crypto-stats>div,body.dark-mode .crypto-alert,body.dark-mode .market-data-stat,body.dark-mode .unit-convert-box,body.dark-mode .unit-category,body.dark-mode .gm-result{background:var(--card)!important;box-shadow:0 3px 10px rgba(0,0,0,.12)!important}
 input,select,textarea{background:var(--card)!important;transition:border-color .12s ease!important}
 button,.btn,input,select,textarea,.tool-icon,.crypto-launch,.daily-message-launch,.unit-launch,
@@ -452,21 +458,21 @@ button:not(:disabled):active,.btn:active,.tool-icon:active,.crypto-launch:active
 
 <style id="header-lavender-compact-overrides">
 /* Compact lavender homepage header */
-header{background:linear-gradient(135deg,#eee6ff 0%,#e3d5ff 55%,#d9c5fb 100%)!important;color:#4b3478!important;padding:10px 12px 9px!important;padding-right:66px!important}
+header{background:linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%)!important;color:#fff!important;padding:10px 12px 9px!important;padding-right:66px!important}
 header h1{font-size:14px!important;line-height:1.25!important;margin:0 0 3px!important;letter-spacing:0!important}
 header #dhakaClock{margin-top:2px!important}
 header #dhakaClock .clock-top{font-size:8px!important}
 header #dhakaClock .clock-date{font-size:8px!important}
-header>p{font-size:10px!important;line-height:1.25!important;margin-top:4px!important;color:#69518f!important}
-header .author-link{font-size:10px!important;color:#62428e!important}
+header>p{font-size:10px!important;line-height:1.25!important;margin-top:4px!important;color:#fff!important}
+header .author-link{font-size:10px!important;color:#fff!important}
 header .header-tools{top:8px!important;right:8px!important;gap:5px!important}
-header .crypto-launch{background:#d4c0f4!important;color:#4b3478!important;width:52px!important;padding:3px!important}
-header .crypto-launch span{font-size:9px!important;color:#5c4386!important}
+header .crypto-launch{background:#ffffff1f!important;color:#fff!important;width:52px!important;padding:3px!important}
+header .crypto-launch span{font-size:9px!important;color:#f3d58a!important}
 header .crypto-launch svg{width:27px!important;height:27px!important}
-header .theme-toggle,header .tool-icon{color:#5a4382!important;border-color:#bca6e5!important;background:#ffffff70!important}
-body.dark-mode header{background:linear-gradient(135deg,#302448 0%,#3b2b59 55%,#473267 100%)!important;color:#f3eaff!important}
-body.dark-mode header>p,body.dark-mode header .author-link{color:#e0d0ff!important}
-body.dark-mode header .theme-toggle,body.dark-mode header .tool-icon{color:#f3eaff!important;background:#ffffff18!important;border-color:#806aa7!important}
+header .theme-toggle,header .tool-icon{color:#fff!important;border-color:#ffffff80!important;background:#ffffff30!important}
+body.dark-mode header{background:#000!important;color:#fff!important}
+body.dark-mode header>p,body.dark-mode header .author-link{color:#fff!important}
+body.dark-mode header .theme-toggle,body.dark-mode header .tool-icon{color:#fff!important;background:#ffffff18!important;border-color:#ffffff55!important}
 </style>
 
 <style id="dhaka-clock-black-text-fix">
@@ -490,7 +496,7 @@ header #dhakaClock .clock-date-row{margin-top:28px!important}
 <style id="header-custom-45198a">
 header h1{display:flex!important;align-items:center!important;gap:3px!important}
 header h1 .title-globe{width:15px;height:15px;flex:0 0 15px}
-body:not(.dark-mode) header{background:#45198a!important;color:#fff!important}
+body:not(.dark-mode) header{background:linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%)!important;color:#fff!important}
 body:not(.dark-mode) header h1,body:not(.dark-mode) header>p,body:not(.dark-mode) header .author-link{color:#fff!important}
 body:not(.dark-mode) header .crypto-launch{background:#ffffff1f!important;color:#fff!important}
 body:not(.dark-mode) header .crypto-launch span{color:#f3d58a!important}
@@ -695,6 +701,80 @@ body.dark-mode #gmLock .lk-orbit-node{background: #18181b;}
 #gmLock #gmResetBtn{width:100%;margin-top:2px;padding:13px;border:0;border-radius:var(--radius-input);background:var(--accent);color:#fff;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer}
 #gmLock .gm-lock-err{min-height:20px;margin:2px 0 6px;font-size:.8rem;color:var(--error)}
 #gmLock #gmResetBack{display:block;margin:6px auto 0}
+</style>
+
+<style id="gm-business-management-css">
+#gmOthers .gm-biz-folder{grid-column:1/-1!important;border-color:#d7c18a!important;background:var(--card)!important}
+#gmOthers .gm-biz-folder>summary{min-height:58px!important;flex-direction:row!important;justify-content:flex-start!important;text-align:left!important;padding:10px 12px!important;background:linear-gradient(110deg,#fff8e3,#f4ecd5)!important;color:#463817!important}
+#gmOthers .gm-biz-folder>summary .gm-sub-icon{width:34px!important;height:34px!important;flex:0 0 34px!important;font-size:18px!important}
+#gmOthers .gm-biz-folder>summary .gm-sub-chevron{position:static!important;margin-left:auto!important}
+#gmOthers .gm-biz-folder[open]>summary{border-radius:12px 12px 0 0!important}
+.gm-biz-intro{font-size:11px;color:var(--muted);padding:2px 2px 9px;line-height:1.5}
+.gm-biz-tool{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden;margin:0 0 8px}
+.gm-biz-tool:last-child{margin-bottom:0}
+.gm-biz-tool>summary{list-style:none;display:flex;align-items:center;gap:9px;min-height:46px;padding:10px 11px;cursor:pointer;background:var(--card);color:var(--ink);font-size:12px}
+.gm-biz-tool>summary::-webkit-details-marker{display:none}
+.gm-biz-tool>summary>span{width:27px;height:27px;display:grid;place-items:center;flex:0 0 27px;border-radius:8px;background:#f4ecd5;color:#8b6818;font-size:15px}
+.gm-biz-tool>summary>b{font-size:12px;font-weight:800}
+.gm-biz-tool>summary>small{margin-left:auto;color:var(--muted);font-size:10px;white-space:nowrap}
+.gm-biz-tool[open]>summary{border-bottom:1px solid var(--line)}
+.gm-biz-body{padding:10px;content-visibility:auto;contain-intrinsic-size:auto 340px}
+.gm-biz-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gm-biz-form .field{gap:4px}.gm-biz-form label{font-size:11px}.gm-biz-form input,.gm-biz-form select{font-size:13px;padding:8px;border-radius:9px;min-height:36px}
+.gm-biz-form .full{grid-column:1/-1}.gm-biz-form button{font-size:12px;padding:9px 11px}
+.gm-biz-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 0 10px}
+.gm-biz-stats>div{min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:9px}
+.gm-biz-stats>div.wide{grid-column:1/-1}
+.gm-biz-stats small{display:block;color:var(--muted);font-size:10px}
+.gm-biz-stats strong{display:block;margin-top:4px;color:var(--gold);font-size:14px;overflow-wrap:anywhere}
+.gm-biz-subtitle{font-size:12px;margin:12px 0 6px;color:var(--ink)}
+.gm-biz-table-wrap{overflow-x:auto;max-width:100%;border:1px solid var(--line);border-radius:9px;margin-top:8px}
+.gm-biz-table-wrap table{font-size:11px;min-width:100%;white-space:nowrap}
+.gm-biz-table-wrap th,.gm-biz-table-wrap td{padding:7px 6px}
+.gm-biz-table-wrap button{padding:5px 7px;font-size:10px}
+.gm-biz-empty{text-align:center;color:var(--muted);padding:13px!important;font-size:11px}
+.gm-biz-result{margin-top:10px;padding:11px;border:1px solid #e8d7a8;background:#fff9e9;border-radius:10px;color:#493b1b;font-size:12px;line-height:1.7}
+.gm-biz-result strong{font-size:16px}.gm-biz-result.loss{border-color:#efc4c4;background:#fff1f1;color:#9e3030}
+body.dark-mode .gm-biz-folder>summary{background:linear-gradient(110deg,#302a1c,#292538)!important;color:var(--ink)!important}
+body.dark-mode .gm-biz-tool>summary>span{background:#3a3121;color:#f2d17c}
+body.dark-mode .gm-biz-result{background:#30291f;border-color:#62512d;color:#f7e5bd}
+body.dark-mode .gm-biz-result.loss{background:#3a2026;border-color:#713844;color:#ffb8bf}
+@media(max-width:360px){.gm-biz-tool>summary{gap:6px;padding:9px}.gm-biz-tool>summary>b{font-size:11px}.gm-biz-tool>summary>small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.gm-biz-tool,.gm-biz-tool>summary{transition:none!important}}
+</style>
+
+<style id="gm-sheet-scroll-webview-fix">
+/* Full-width overlay with normal vertical scrolling for Android WebView. */
+html, body { overscroll-behavior-y: none; }
+html body main>details.gm-sheet-card.gm-sheet-open {
+  display: block !important;
+  position: fixed !important;
+  left: 0 !important; right: 0 !important; top: 0 !important;
+  bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important;
+  width: 100% !important; max-width: none !important;
+  min-width: 0 !important; box-sizing: border-box !important;
+  margin: 0 !important; padding: 10px 12px 28px !important;
+  overflow-x: hidden !important; overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior-y: contain !important;
+  touch-action: pan-y !important;
+  z-index: 55 !important; border-radius: 0 !important;
+  border: 0 !important; box-shadow: none !important;
+  background: #f4f4f7 !important;
+}
+html body.dark-mode main>details.gm-sheet-card.gm-sheet-open { background: #0f0f13 !important; }
+html body main>details.gm-sheet-card.gm-sheet-open > summary { display: none !important; }
+html body main>details.gm-sheet-card.gm-sheet-open > .folder-content {
+  display: block !important; width: 100% !important; max-width: none !important;
+  min-width: 0 !important; height: auto !important; max-height: none !important;
+  box-sizing: border-box !important; overflow: visible !important;
+  padding: 0 0 24px !important;
+}
+html body main>details.gm-sheet-card.gm-sheet-open .gm-sheet-close {
+  display: block !important; position: sticky !important; top: 0 !important;
+  z-index: 5 !important; margin: 0 0 10px auto !important;
+}
+html body.gm-sheet-lock { overflow: hidden !important; height: 100% !important; touch-action: auto !important; }
 </style>
 </head>
 <style id="dark-mode-true-black-early">
@@ -976,6 +1056,60 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 <details class="card" id="gmOthers">
  <summary>Other’s · অতিরিক্ত ফিচার</summary>
  <div class="folder-content gm-folder-list">
+  <details class="gm-subfolder gm-biz-folder" id="gmBusinessFolder"><summary><span class="gm-sub-icon">▣</span><span>Business Management</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><div class="gm-biz-intro">ব্যবসার স্টক, ক্রেতা-বিক্রেতা, লাভ-ক্ষতি ও দৈনিক নগদ হিসাব</div>
+   <details class="gm-biz-tool"><summary><span>▤</span><b>Gold Inventory Manager</b><small>স্টক হিসাব</small></summary><div class="gm-biz-body">
+    <div class="gm-biz-stats"><div><small>সোনার স্টক</small><strong id="bizGoldStock">০ ভরি</strong></div><div><small>রুপার স্টক</small><strong id="bizSilverStock">০ ভরি</strong></div></div>
+    <form id="bizInventoryForm" class="gm-biz-form">
+     <div class="field"><label for="bizInvMetal">ধাতু</label><select id="bizInvMetal"><option value="gold">সোনা</option><option value="silver">রুপা</option></select></div>
+     <div class="field"><label for="bizInvAction">স্টক</label><select id="bizInvAction"><option value="in">স্টক যোগ</option><option value="out">স্টক বের</option></select></div>
+     <div class="field"><label for="bizInvPurityType">বিশুদ্ধতার ধরন</label><select id="bizInvPurityType"><option value="karat">ক্যারেট</option><option value="tons">টনস (%)</option></select></div>
+     <div class="field"><label for="bizInvPurity">বিশুদ্ধতা</label><input id="bizInvPurity" type="number" min="0.01" step="any" value="22" required></div>
+     <div class="field"><label for="bizInvV">ভরি</label><input id="bizInvV" type="number" min="0" step="1" value="0"></div>
+     <div class="field"><label for="bizInvA">আনা</label><input id="bizInvA" type="number" min="0" max="15" step="1" value="0"></div>
+     <div class="field"><label for="bizInvR">রতি</label><input id="bizInvR" type="number" min="0" max="5" step="1" value="0"></div>
+     <div class="field"><label for="bizInvP">পয়েন্ট</label><input id="bizInvP" type="number" min="0" max="9" step="1" value="0"></div>
+     <div class="field full"><label for="bizInvNote">বিবরণ (ঐচ্ছিক)</label><input id="bizInvNote" maxlength="100" placeholder="যেমন: নতুন মাল / অর্ডার"></div>
+     <div class="actions full"><button class="primary" type="submit">স্টক সংরক্ষণ</button><button class="secondary" type="reset">রিসেট</button></div>
+    </form><div class="gm-biz-table-wrap"><table><thead><tr><th>ধাতু / বিশুদ্ধতা</th><th>বর্তমান স্টক</th></tr></thead><tbody id="bizInvBalanceRows"></tbody></table></div>
+    <h4 class="gm-biz-subtitle">সর্বশেষ স্টক লেনদেন</h4><div class="gm-biz-table-wrap"><table><thead><tr><th>তারিখ</th><th>বিবরণ</th><th>ওজন</th><th></th></tr></thead><tbody id="bizInvHistoryRows"></tbody></table></div><p class="hint">স্টক যোগ/বেরের প্রতিটি রেকর্ড এই ডিভাইসে সংরক্ষিত হবে।</p>
+   </div></details>
+   <details class="gm-biz-tool"><summary><span>♙</span><b>Customer & Supplier Ledger</b><small>পাওনা-দেনা</small></summary><div class="gm-biz-body">
+    <div class="gm-biz-stats"><div><small>ক্রেতার কাছে পাওনা</small><strong id="bizReceivable">৳০</strong></div><div><small>সরবরাহকারীকে দেনা</small><strong id="bizPayable">৳০</strong></div></div>
+    <form id="bizLedgerForm" class="gm-biz-form">
+     <div class="field"><label for="bizLedType">হিসাবের ধরন</label><select id="bizLedType"><option value="customer">ক্রেতা</option><option value="supplier">সরবরাহকারী</option></select></div>
+     <div class="field"><label for="bizLedAction">লেনদেন</label><select id="bizLedAction"><option value="add">বাকি / দেনা যোগ</option><option value="pay">পরিশোধ / আদায়</option></select></div>
+     <div class="field full"><label for="bizLedName">নাম</label><input id="bizLedName" maxlength="60" required placeholder="ক্রেতা বা সরবরাহকারীর নাম"></div>
+     <div class="field"><label for="bizLedPhone">মোবাইল (ঐচ্ছিক)</label><input id="bizLedPhone" type="tel" maxlength="20" placeholder="মোবাইল নম্বর"></div>
+     <div class="field"><label for="bizLedAmount">টাকার পরিমাণ (৳)</label><input id="bizLedAmount" type="number" min="0.01" step="0.01" required placeholder="০.০০"></div>
+     <div class="field full"><label for="bizLedNote">বিবরণ</label><input id="bizLedNote" maxlength="100" placeholder="লেনদেনের কারণ"></div>
+     <div class="actions full"><button class="primary" type="submit">লেনদেন সংরক্ষণ</button><button class="secondary" type="reset">রিসেট</button></div>
+    </form><h4 class="gm-biz-subtitle">ব্যক্তিভিত্তিক ব্যালেন্স</h4><div class="gm-biz-table-wrap"><table><thead><tr><th>নাম</th><th>ধরন</th><th>ব্যালেন্স</th></tr></thead><tbody id="bizLedBalanceRows"></tbody></table></div>
+    <h4 class="gm-biz-subtitle">সর্বশেষ লেনদেন</h4><div class="gm-biz-table-wrap"><table><thead><tr><th>তারিখ</th><th>নাম</th><th>বিবরণ</th><th>টাকা</th><th></th></tr></thead><tbody id="bizLedHistoryRows"></tbody></table></div>
+   </div></details>
+   <details class="gm-biz-tool"><summary><span>৳</span><b>Profit & Loss Calculator</b><small>লাভ-ক্ষতি</small></summary><div class="gm-biz-body">
+    <form id="bizProfitForm" class="gm-biz-form">
+     <div class="field"><label for="bizProfitV">ভরি</label><input id="bizProfitV" type="number" min="0" step="1" value="1"></div>
+     <div class="field"><label for="bizProfitA">আনা</label><input id="bizProfitA" type="number" min="0" max="15" step="1" value="0"></div>
+     <div class="field"><label for="bizProfitR">রতি</label><input id="bizProfitR" type="number" min="0" max="5" step="1" value="0"></div>
+     <div class="field"><label for="bizProfitP">পয়েন্ট</label><input id="bizProfitP" type="number" min="0" max="9" step="1" value="0"></div>
+     <div class="field"><label for="bizBuyRate">ক্রয়দর / ভরি (৳)</label><input id="bizBuyRate" type="number" min="0" step="any" required></div>
+     <div class="field"><label for="bizSellRate">বিক্রয়দর / ভরি (৳)</label><input id="bizSellRate" type="number" min="0" step="any" required></div>
+     <div class="field"><label for="bizProfitCost">মজুরি ও অন্যান্য খরচ (৳)</label><input id="bizProfitCost" type="number" min="0" step="any" value="0"></div>
+     <div class="field"><label for="bizProfitExtra">অতিরিক্ত আয় (৳)</label><input id="bizProfitExtra" type="number" min="0" step="any" value="0"></div>
+     <div class="actions full"><button class="primary" type="submit">লাভ-ক্ষতি হিসাব</button><button class="secondary" type="reset">রিসেট</button></div>
+    </form><div id="bizProfitResult" class="gm-biz-result" aria-live="polite">ওজন ও ক্রয়-বিক্রয় দর দিলে ফলাফল দেখাবে।</div><p class="hint">এটি আনুমানিক হিসাব; কর, কমিশন বা অন্যান্য খরচ আলাদাভাবে যোগ করুন।</p>
+   </div></details>
+   <details class="gm-biz-tool"><summary><span>▣</span><b>Daily Cashbook</b><small>দৈনিক নগদ</small></summary><div class="gm-biz-body">
+    <div class="gm-biz-stats"><div><small>মোট জমা</small><strong id="bizCashIn">৳০</strong></div><div><small>মোট খরচ</small><strong id="bizCashOut">৳০</strong></div><div class="wide"><small>বর্তমান নগদ ব্যালেন্স</small><strong id="bizCashBalance">৳০</strong></div></div>
+    <form id="bizCashForm" class="gm-biz-form">
+     <div class="field"><label for="bizCashType">ধরন</label><select id="bizCashType"><option value="in">জমা / আয়</option><option value="out">খরচ / প্রদান</option></select></div>
+     <div class="field"><label for="bizCashDate">তারিখ</label><input id="bizCashDate" type="date" required></div>
+     <div class="field"><label for="bizCashAmount">টাকার পরিমাণ (৳)</label><input id="bizCashAmount" type="number" min="0.01" step="0.01" required></div>
+     <div class="field"><label for="bizCashNote">বিবরণ</label><input id="bizCashNote" maxlength="100" required placeholder="কী বাবদ জমা / খরচ"></div>
+     <div class="actions full"><button class="primary" type="submit">ক্যাশবুক সংরক্ষণ</button><button class="secondary" type="reset">রিসেট</button></div>
+    </form><h4 class="gm-biz-subtitle">সর্বশেষ নগদ লেনদেন</h4><div class="gm-biz-table-wrap"><table><thead><tr><th>তারিখ</th><th>বিবরণ</th><th>ধরন</th><th>টাকা</th><th></th></tr></thead><tbody id="bizCashRows"></tbody></table></div>
+   </div></details>
+  </div></details>
   <details class="gm-subfolder"><summary><span class="gm-sub-icon">⇄</span><span>গ্রাম ⇄ ভরি কনভার্টার</span><span class="gm-sub-chevron">⌄</span></summary><div class="gm-subcontent"><section class="gm-tool">
    <h3>গ্রাম ⇄ ভরি কনভার্টার</h3>
    <div class="field"><label for="gmGramInput">গ্রাম থেকে ভরি</label><input id="gmGramInput" type="number" min="0" step="any" placeholder="গ্রাম লিখুন"></div>
@@ -1736,12 +1870,12 @@ main>details.card,.card,.gm-tool,.gm-weight-entry,button,.btn,input,select,texta
 </style>
 <style id="header-clock-contrast-fix">
 /* Header clock contrast and spacing fix */
-header #dhakaClock .clock-top{color:#49316f!important;opacity:1!important;font-weight:800!important}
-header #dhakaClock .clock-label{color:#49316f!important;opacity:1!important;text-shadow:0 1px 0 #ffffff80!important}
+header #dhakaClock .clock-top{color:#ffffff!important;opacity:1!important;font-weight:800!important}
+header #dhakaClock .clock-label{color:#ffffff!important;opacity:1!important;text-shadow:0 1px 0 #ffffff80!important}
 header #dhakaClock .sand-timer{color:#8a5a00!important;opacity:1!important}
 header #dhakaClock .clock-live{color:#176b45!important;background:#d8f5e5!important;border:1px solid #8ed4ad!important}
 header #dhakaClock .clock-date-row{margin-top:9px!important}
-header #dhakaClock .clock-date{color:#49316f!important;opacity:1!important;text-shadow:0 1px 0 #ffffff80!important;margin-top:0!important;font-weight:700!important}
+header #dhakaClock .clock-date{color:#ffffff!important;opacity:1!important;text-shadow:0 1px 0 #ffffff80!important;margin-top:0!important;font-weight:700!important}
 @media(max-width:480px){header #dhakaClock .clock-date-row{margin-top:10px!important}header #dhakaClock .clock-top{font-size:9px!important}}
 </style>
 
@@ -1803,6 +1937,90 @@ body.dark-mode header #dhakaClock .sand-timer .sand-stream { stroke:currentColor
 body.dark-mode .gm-tv-spotcard{background:#202532;color:#f4f5fa;border-color:#41495a}body.dark-mode .gm-tv-spotimg{background:#302b45;color:#eee8ff}
 @media(max-width:420px){.gm-tv-spotcards{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.gm-tv-spotcard{gap:5px;padding:3px}.gm-tv-spotcards[data-spots="district"] .gm-tv-spotimg{width:45px;height:45px;min-width:45px;flex-basis:45px}.gm-tv-spotcards[data-spots="detail"] .gm-tv-spotimg{width:39px;height:39px;min-width:39px;flex-basis:39px}.gm-tv-spotname{font-size:10px}.gm-tv-spotdistance{font-size:8px}}
 </style>
+
+
+
+
+<style id="gm-others-icon-shape-fix">
+/* Fix: remove stacked card/shadow shapes behind the Other's launcher icon */
+html body #gmOthers,
+html body #gmOthers:not([open]) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+}
+html body #gmOthers:not([open]) > summary {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  padding: 0 !important;
+}
+html body #gmOthers:not([open]) > summary::before {
+  content: "✦" !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  flex: 0 0 36px !important;
+  box-sizing: border-box !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  background: linear-gradient(145deg,#fff1bb,#d8aa3d) !important;
+  color: #293849 !important;
+  box-shadow: none !important;
+}
+html body #gmOthers:not([open]) > summary::after {
+  display: none !important;
+  content: none !important;
+}
+</style>
+
+
+<style id="gm-deep-navy-header-final">
+/* Ensure the home header's navy color overrides older, more-specific purple rules */
+html body:not(.dark-mode) header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+  color: #fff !important;
+}
+html body.dark-mode header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+  color: #fff !important;
+}
+html body:not(.dark-mode) header h1,
+html body:not(.dark-mode) header > p,
+html body:not(.dark-mode) header .author-link,
+html body.dark-mode header h1,
+html body.dark-mode header > p,
+html body.dark-mode header .author-link {
+  color: #fff !important;
+}
+</style>
+
+
+<style id="gm-remove-purple-home-glow">
+/* Remove all purple ambient gradients from the home background. */
+html, body { background-color: #f4f7fc; }
+html body:not(.dark-mode) {
+  background-image: linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px) !important;
+  background-attachment: scroll !important;
+}
+html body.dark-mode {
+  background-color: #080f20 !important;
+  background-image: linear-gradient(180deg,#101c3a 0,#080f20 360px,var(--bg) 720px) !important;
+  background-attachment: scroll !important;
+}
+html body > header,
+html body header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+}
+</style>
+
+
+
+
 
 </body></html>`;
   gmShowReceipt(docHtml,receiptNo);
@@ -2431,7 +2649,10 @@ loadAdminSettings();
   expenses:'daily_expenses_v1',
   cryptoWatch:'cryptofamWatchlistV1',
   cryptoHoldings:'cryptofamHoldingsV1',
-  cryptoAlerts:'cryptofamAlertsV1'
+  cryptoAlerts:'cryptofamAlertsV1',
+  bizInventory:'gmBizInventoryV1',
+  bizLedger:'gmBizLedgerV1',
+  bizCashbook:'gmBizCashbookV1'
  };
  const APP_TAG='gold-manager-backup';
  function readArr(k){try{const v=JSON.parse(localStorage.getItem(k)||'[]');return Array.isArray(v)?v:[]}catch(e){return []}}
@@ -3110,5 +3331,211 @@ var A=window.Capacitor&&window.Capacitor.Plugins&&window.Capacitor.Plugins.App;
 if(A&&A.addListener){A.addListener('backButton',function(){if(isOpen())closeTop();else if(A.exitApp)A.exitApp()})}
 }catch(e){}})();
 </script>
+
+<style id="sonar-premium-ui-refresh">
+:root{--bg:#f4f7fc;--card:#fff;--ink:#25213a;--muted:#68758a;--line:#e1e8f0;--gold:#a97912;--blue:#7652c8;--red:#c34250;color-scheme:light}
+body.dark-mode{--bg:#080f20;--card:#111b2a;--ink:#f4efff;--muted:#b9b0ca;--line:#393149;--gold:#f2c66d;--blue:#b59af5;--red:#ff8791;color-scheme:dark}
+html,body{min-height:100%;background:var(--bg)}
+body{color:var(--ink);background:linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px);font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+body.dark-mode{background:linear-gradient(180deg,#101c3a 0,#080f20 360px,var(--bg) 720px)}
+*,*::before,*::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+header{padding:22px 82px 19px 18px!important;min-height:148px;color:#fff!important;background:linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%)!important;border:0!important;border-radius:0 0 25px 25px;box-shadow:0 9px 24px #17255424}
+header h1{font-size:20px!important;font-weight:800;letter-spacing:-.35px;margin:0 0 7px!important}
+header p{color:#eee6ff!important;font-size:12px!important}
+header #dhakaClock{margin-top:9px}header .clock{color:#ffe5a3!important;font-size:15px!important;font-weight:800}
+.header-tools{right:12px!important;top:13px!important;gap:8px!important}
+.theme-toggle,.tool-icon{width:40px!important;height:24px!important;border:1px solid #ffffff70!important;background:#ffffff20!important;border-radius:20px!important}
+.crypto-launch{background:#ffffff17!important;border:1px solid #ffffff28!important;border-radius:13px!important}
+.crypto-launch svg{width:29px!important;height:29px!important}.crypto-launch span{color:#ffe3a0!important}
+main{max-width:820px!important;padding:14px 13px 24px!important;gap:12px!important}
+.card{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:18px!important;padding:15px!important;box-shadow:0 5px 18px rgba(54,35,87,.055)!important}
+main>section.card:first-child{padding:15px!important}
+h2{font-size:16px!important;font-weight:800!important;letter-spacing:-.15px}
+.hint,.market-data-note{color:var(--muted)!important}
+.live-metals-box>h2{display:flex;align-items:center;gap:8px}
+.live-metals-box>h2:before{content:"";width:4px;height:18px;border-radius:5px;background:#c69b43;display:inline-block}
+.live-metals-grid{gap:10px!important}
+.live-metal-card{background:#faf8ff!important;border:1px solid #e9e0f5!important;border-radius:15px!important;padding:11px!important;overflow:hidden}
+body.dark-mode .live-metal-card{background:#241e33!important;border-color:#403650!important}
+.live-metal-title{gap:7px!important;align-items:center!important}
+.metal-name{font-weight:800!important;color:var(--ink)!important}.metal-symbol{color:var(--muted)!important;font-size:10px!important}
+.market-table-link{background:#eee7fb!important;color:#6846ad!important;border:1px solid #dfd2f3!important;border-radius:9px!important;padding:7px 10px!important;font-size:11px!important}
+body.dark-mode .market-table-link{background:#34294a!important;color:#d8c7ff!important;border-color:#514267!important}
+.gm-live-quote{border-top:1px solid var(--line)!important;margin-top:8px!important;padding-top:8px!important}
+.gm-q-label,.gm-q-time{color:var(--muted)!important}.gm-q-price{font-weight:800!important;color:var(--ink)!important}
+.metals-market-notice{border:1px solid #f0c8cb!important;background:#fff1f2!important;color:#a62f3b!important;border-radius:11px!important;padding:9px 11px!important;font-weight:700!important}
+body.dark-mode .metals-market-notice{background:#3a2029!important;border-color:#713844!important;color:#ffb5bb!important}
+.estimate-box{padding:12px!important}.estimate-grid{gap:9px!important}
+.estimate-item{background:linear-gradient(145deg,#fffaf0,#fff)!important;border:1px solid #f0e2bf!important;border-radius:14px!important;padding:12px!important}
+body.dark-mode .estimate-item{background:#30291e!important;border-color:#5c4b2b!important}
+.estimate-item span{color:var(--muted)!important;font-size:11px!important;font-weight:650}
+.estimate-item strong{font-size:17px!important;font-weight:850!important;color:var(--gold)!important}
+.estimate-refresh{border-radius:10px!important;background:#f0e9fb!important;color:#6846ad!important}
+details.card.gm-sheet-card{border:1px solid var(--line)!important;border-radius:17px!important;overflow:hidden!important;background:var(--card)!important;box-shadow:0 5px 18px rgba(54,35,87,.055)!important}
+details.card.gm-sheet-card>summary{min-height:67px!important;padding:13px 14px!important;background:var(--card)!important;color:var(--ink)!important;font-size:14px!important;font-weight:800!important;gap:11px!important}
+details.card.gm-sheet-card>summary::before{flex:0 0 39px!important;width:39px!important;height:39px!important;border-radius:13px!important;background:#f0e9fc!important;color:#7652c8!important;font-size:19px!important}
+details.card.gm-sheet-card:nth-of-type(1)>summary::before{background:#fff3d8!important;color:#a97912!important}
+details.card.gm-sheet-card:nth-of-type(2)>summary::before{background:#eee8fb!important;color:#7652c8!important}
+details.card.gm-sheet-card>summary::after{background:#f1edf7!important;color:#786e8b!important;width:27px!important;height:27px!important}
+body.dark-mode details.card.gm-sheet-card>summary::before{background:#342947!important;color:#d0baff!important}
+body.dark-mode details.card.gm-sheet-card>summary::after{background:#30283d!important;color:#d1c7e0!important}
+.folder-content{background:var(--card)!important;border-top:1px solid var(--line)!important;padding:13px!important}
+.subfolder{border:1px solid var(--line)!important;border-radius:13px!important;overflow:hidden!important}
+.subfolder>summary{background:#f8f5fd!important;color:var(--ink)!important;padding:13px!important;font-size:13px!important}
+body.dark-mode .subfolder>summary{background:#262033!important}
+.subfolder-content{background:var(--card)!important;border-top:1px solid var(--line)!important;padding:12px!important}
+input,select,textarea{border:1px solid #ddd4eb!important;border-radius:11px!important;background:#fff!important;color:#29243a!important;padding:11px!important;outline:none;box-shadow:none!important}
+body.dark-mode input,body.dark-mode select,body.dark-mode textarea{background:#211b2e!important;color:var(--ink)!important;border-color:#4b405d!important}
+input:focus,select:focus,textarea:focus{border-color:#9877d4!important;box-shadow:0 0 0 3px #9877d426!important}
+label{font-size:12px!important;color:var(--ink)!important;font-weight:750!important}
+button{transition:transform .14s ease,background .14s ease,border-color .14s ease!important}
+button:active{transform:scale(.975)}
+button.primary,.primary,.calc-grid .calc-equals{background:linear-gradient(135deg,#7652c8,#6240ae)!important;color:#fff!important;border-radius:11px!important;box-shadow:0 4px 10px #7652c82b!important}
+button.secondary,.secondary{background:#f0ebf8!important;color:#5e4a83!important;border:1px solid #e3d9f0!important;border-radius:11px!important}
+body.dark-mode button.secondary,body.dark-mode .secondary{background:#30283e!important;color:#e0d5f4!important;border-color:#4a3d5d!important}
+button.danger,.danger{border-radius:11px!important}.actions{gap:8px!important}
+.metric,.weight-input-group,.gm-weight-entry,.gm-result,.weight-result>div{border-radius:13px!important;border-color:var(--line)!important}
+.metric{background:#faf8fd!important}body.dark-mode .metric{background:#241e31!important}
+.metric strong{color:var(--gold)!important;font-weight:850!important}
+.weight-result>div,.gm-result{background:#fff9eb!important;border:1px solid #f0dfb7!important;color:#4b3a19!important}
+body.dark-mode .weight-result>div,body.dark-mode .gm-result{background:#30291f!important;border-color:#5a4b32!important;color:#f7e5bd!important}
+table{font-size:12px!important}th{background:#f4f0fa!important;color:#6e6480!important;font-weight:800!important}
+td,th{border-bottom:1px solid var(--line)!important;padding:10px 8px!important}
+body.dark-mode th{background:#2b2438!important;color:#c9bddc!important}
+.calc-display{border:1px solid var(--line)!important;border-radius:13px!important;background:#f8f5fc!important}
+body.dark-mode .calc-display{background:#211b2e!important}
+.gm-mk-tools button{border-radius:13px!important;background:#faf8fd!important;border-color:var(--line)!important}
+body.dark-mode .gm-mk-tools button{background:#241e31!important}
+.gm-mk-tools button.on{border-color:#a487d4!important;box-shadow:0 0 0 3px #a487d426!important}
+.contact-footer{color:var(--muted)!important}
+.daily-message-panel,.crypto-panel,.font-pop,.theme-pop{background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:17px!important;box-shadow:0 16px 42px #130d2230!important}
+.daily-message-head{background:var(--card)!important}
+@media(max-width:390px){header{min-height:140px;padding-left:15px!important}header h1{font-size:18px!important}main{padding:11px 10px 22px!important;gap:10px!important}.card{padding:12px!important}.live-metal-card{padding:9px!important}details.card.gm-sheet-card>summary{padding:11px!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+
+<script id="gm-business-management-js">
+(function(){
+'use strict';
+var KEYS={inv:'gmBizInventoryV1',ledger:'gmBizLedgerV1',cash:'gmBizCashbookV1'};
+function $(id){return document.getElementById(id)}
+function read(k){try{var a=JSON.parse(localStorage.getItem(k)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
+function write(k,a){try{localStorage.setItem(k,JSON.stringify(a));return true}catch(e){alert('ডিভাইসে ডেটা সংরক্ষণ করা যায়নি। স্টোরেজ খালি করুন।');return false}}
+function n(id){var x=Number($(id)&&$(id).value||0);return isFinite(x)?x:0}
+function bn(v,d){return Number(v||0).toLocaleString('bn-BD',{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
+function money(v){return '৳'+bn(v,2)}
+function units(v,a,r,p){return (((v*16+a)*6+r)*10+p)}
+function weight(u){u=Math.round(Math.abs(u));var p=u%10;u=Math.floor(u/10);var r=u%6;u=Math.floor(u/6);var a=u%16;var v=Math.floor(u/16);return bn(v)+' ভরি '+bn(a)+' আনা '+bn(r)+' রতি '+bn(p)+' পয়েন্ট'}
+function dateNow(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function el(tag,txt){var x=document.createElement(tag);if(txt!==undefined)x.textContent=txt;return x}
+function cell(tr,txt){tr.appendChild(el('td',txt))}
+function empty(tbody,cols,msg){var tr=el('tr');var td=el('td',msg||'এখনো কোনো তথ্য নেই');td.colSpan=cols;td.className='gm-biz-empty';tr.appendChild(td);tbody.appendChild(tr)}
+function removeBtn(kind,id){var b=el('button','মুছুন');b.type='button';b.className='danger';b.setAttribute('data-biz-delete',kind);b.setAttribute('data-id',id);return b}
+function validWeight(prefix){var v=n(prefix+'V'),a=n(prefix+'A'),r=n(prefix+'R'),p=n(prefix+'P');if(![v,a,r,p].every(Number.isInteger)||v<0||a<0||a>15||r<0||r>5||p<0||p>9)throw new Error('ওজনের মান সঠিকভাবে দিন: আনা ০–১৫, রতি ০–৫, পয়েন্ট ০–৯।');return units(v,a,r,p)}
+function getInv(){return read(KEYS.inv)}function getLed(){return read(KEYS.ledger)}function getCash(){return read(KEYS.cash)}
+
+function renderInventory(){var a=getInv(),bal={},g=0,si=0; a.forEach(function(x){var key=x.metal+'|'+x.purityType+'|'+x.purity;if(!bal[key])bal[key]={metal:x.metal,purityType:x.purityType,purity:x.purity,u:0};bal[key].u+=(x.action==='in'?1:-1)*x.u});Object.keys(bal).forEach(function(k){if(bal[k].metal==='gold')g+=bal[k].u;else si+=bal[k].u});$('bizGoldStock').textContent=weight(g);$('bizSilverStock').textContent=weight(si);
+ var bt=$('bizInvBalanceRows');bt.textContent='';var keys=Object.keys(bal).filter(function(k){return bal[k].u!==0}).sort();if(!keys.length)empty(bt,2);keys.forEach(function(k){var x=bal[k],tr=el('tr');cell(tr,x.metal==='gold'?'সোনা':'রুপা');cell(tr,(x.purityType==='karat'?bn(x.purity,2)+'K':bn(x.purity,2)+'% টনস')+' · '+weight(x.u));bt.appendChild(tr)});
+ var ht=$('bizInvHistoryRows');ht.textContent='';a.slice().reverse().slice(0,15).forEach(function(x){var tr=el('tr');cell(tr,x.date);cell(tr,(x.metal==='gold'?'সোনা':'রুপা')+' · '+(x.action==='in'?'যোগ':'বের')+' · '+(x.note||'—'));cell(tr,weight(x.u));var td=el('td');td.appendChild(removeBtn('inv',x.id));tr.appendChild(td);ht.appendChild(tr)});if(!ht.children.length)empty(ht,4);
+}
+$('bizInventoryForm').addEventListener('submit',function(e){e.preventDefault();try{var u=validWeight('bizInv'),metal=$('bizInvMetal').value,action=$('bizInvAction').value,pType=$('bizInvPurityType').value,purity=n('bizInvPurity');if(u<=0)throw new Error('ওজন লিখুন।');if(purity<=0||(pType==='karat'&&purity>24)||(pType==='tons'&&purity>100))throw new Error('বিশুদ্ধতার মান সঠিক নয়।');var a=getInv();if(action==='out'){var have=a.filter(function(x){return x.metal===metal&&x.purityType===pType&&Number(x.purity)===purity}).reduce(function(s,x){return s+(x.action==='in'?x.u:-x.u)},0);if(u>have)throw new Error('এই বিশুদ্ধতার পর্যাপ্ত স্টক নেই। বর্তমান স্টক: '+weight(have));}a.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:dateNow(),metal:metal,action:action,purityType:pType,purity:purity,u:u,note:$('bizInvNote').value.trim()});if(write(KEYS.inv,a)){this.reset();$('bizInvPurity').value='22';renderInventory()}}catch(err){alert(err.message)}});
+
+function ledgerBalances(){var a=getLed(),m={};a.forEach(function(x){var k=x.type+'|'+x.name;if(!m[k])m[k]={type:x.type,name:x.name,phone:x.phone||'',balance:0};m[k].balance+=(x.action==='add'?1:-1)*x.amount});return m}
+function renderLedger(){var a=getLed(),m=ledgerBalances(),receivable=0,payable=0;Object.keys(m).forEach(function(k){if(m[k].type==='customer')receivable+=m[k].balance;else payable+=m[k].balance});$('bizReceivable').textContent=money(receivable);$('bizPayable').textContent=money(payable);var bt=$('bizLedBalanceRows');bt.textContent='';Object.keys(m).sort().forEach(function(k){var x=m[k];if(!x.balance)return;var tr=el('tr');cell(tr,x.name);cell(tr,x.type==='customer'?'ক্রেতা':'সরবরাহকারী');cell(tr,money(x.balance));bt.appendChild(tr)});if(!bt.children.length)empty(bt,3);
+ var ht=$('bizLedHistoryRows');ht.textContent='';a.slice().reverse().slice(0,20).forEach(function(x){var tr=el('tr');cell(tr,x.date);cell(tr,x.name);cell(tr,(x.action==='add'?'বাকি যোগ':'পরিশোধ/আদায়')+(x.note?' · '+x.note:''));cell(tr,money(x.amount));var td=el('td');td.appendChild(removeBtn('ledger',x.id));tr.appendChild(td);ht.appendChild(tr)});if(!ht.children.length)empty(ht,5)}
+$('bizLedgerForm').addEventListener('submit',function(e){e.preventDefault();var type=$('bizLedType').value,action=$('bizLedAction').value,name=$('bizLedName').value.trim(),amount=n('bizLedAmount');if(!name||amount<=0){alert('নাম ও সঠিক টাকার পরিমাণ দিন।');return}var a=getLed();if(action==='pay'){var bal=a.filter(function(x){return x.type===type&&x.name.toLowerCase()===name.toLowerCase()}).reduce(function(s,x){return s+(x.action==='add'?1:-1)*x.amount},0);if(amount>bal){alert('এই নামে বকেয়া ব্যালেন্সের চেয়ে বেশি পরিশোধ/আদায় করা যাবে না। বর্তমান ব্যালেন্স: '+money(bal));return}}a.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:dateNow(),type:type,action:action,name:name,phone:$('bizLedPhone').value.trim(),amount:amount,note:$('bizLedNote').value.trim()});if(write(KEYS.ledger,a)){this.reset();renderLedger()}});
+
+$('bizProfitForm').addEventListener('submit',function(e){e.preventDefault();var out=$('bizProfitResult');try{var u=validWeight('bizProfit');if(u<=0)throw new Error('ওজন লিখুন।');var v=u/960,buy=n('bizBuyRate')*v,sell=n('bizSellRate')*v,cost=n('bizProfitCost'),extra=n('bizProfitExtra'),profit=sell+extra-buy-cost;if(n('bizBuyRate')<=0||n('bizSellRate')<=0)throw new Error('ক্রয়দর ও বিক্রয়দর লিখুন।');out.className='gm-biz-result'+(profit<0?' loss':'');out.textContent='মোট ওজন: '+weight(u)+' ('+bn(v*11.664,3)+' গ্রাম)';var lines=[['ক্রয়মূল্য',money(buy)],['বিক্রয়মূল্য',money(sell)],['মজুরি / অন্যান্য খরচ',money(cost)],['অতিরিক্ত আয়',money(extra)]];lines.forEach(function(x){var d=el('div');d.textContent=x[0]+': '+x[1];out.appendChild(d)});var strong=el('strong',(profit>=0?'আনুমানিক লাভ: ':'আনুমানিক ক্ষতি: ')+money(Math.abs(profit)));out.appendChild(strong)}catch(err){out.className='gm-biz-result loss';out.textContent=err.message}});
+
+function renderCash(){var a=getCash(),inc=a.filter(function(x){return x.type==='in'}).reduce(function(s,x){return s+x.amount},0),out=a.filter(function(x){return x.type==='out'}).reduce(function(s,x){return s+x.amount},0);$('bizCashIn').textContent=money(inc);$('bizCashOut').textContent=money(out);$('bizCashBalance').textContent=money(inc-out);var tb=$('bizCashRows');tb.textContent='';a.slice().reverse().slice(0,25).forEach(function(x){var tr=el('tr');cell(tr,x.date);cell(tr,x.note);cell(tr,x.type==='in'?'জমা':'খরচ');cell(tr,(x.type==='in'?'+':'−')+money(x.amount));var td=el('td');td.appendChild(removeBtn('cash',x.id));tr.appendChild(td);tb.appendChild(tr)});if(!tb.children.length)empty(tb,5)}
+$('bizCashDate').value=dateNow();$('bizCashForm').addEventListener('submit',function(e){e.preventDefault();var amount=n('bizCashAmount'),note=$('bizCashNote').value.trim();if(amount<=0||!note){alert('সঠিক টাকার পরিমাণ ও বিবরণ দিন।');return}var a=getCash();a.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:$('bizCashDate').value||dateNow(),type:$('bizCashType').value,amount:amount,note:note});if(write(KEYS.cash,a)){this.reset();$('bizCashDate').value=dateNow();renderCash()}});
+
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-biz-delete]');if(!b)return;var kind=b.getAttribute('data-biz-delete'),id=b.getAttribute('data-id'),key=KEYS[kind];if(!key)return;var current=read(key),target=current.find(function(x){return x.id===id});if(!target)return;if(kind==='inv'&&target.action==='in'){var remain=current.filter(function(x){return x.id!==id&&x.metal===target.metal&&x.purityType===target.purityType&&Number(x.purity)===Number(target.purity)}).reduce(function(sum,x){return sum+(x.action==='in'?x.u:-x.u)},0);if(remain<0){alert('এই স্টক যোগের রেকর্ডটি এখন মোছা যাবে না। আগে সংশ্লিষ্ট স্টক বেরের রেকর্ড মুছুন।');return}}if(kind==='ledger'&&target.action==='add'){var due=current.filter(function(x){return x.id!==id&&x.type===target.type&&x.name.toLowerCase()===target.name.toLowerCase()}).reduce(function(sum,x){return sum+(x.action==='add'?1:-1)*x.amount},0);if(due<0){alert('এই বাকি যোগের রেকর্ডটি এখন মোছা যাবে না। আগে সংশ্লিষ্ট পরিশোধ/আদায়ের রেকর্ড মুছুন।');return}}if(!confirm('এই রেকর্ডটি মুছে ফেলবেন?'))return;var a=current.filter(function(x){return x.id!==id});if(write(key,a)){if(kind==='inv')renderInventory();else if(kind==='ledger')renderLedger();else renderCash()}});
+// Lazy rendering keeps the extra business module quiet until its folder is opened.
+var folder=$('gmBusinessFolder');if(folder){folder.addEventListener('toggle',function(){if(folder.open){renderInventory();renderLedger();renderCash()}})}
+})();
+</script>
+
+<style id="gm-others-icon-shape-fix">
+/* Fix: remove stacked card/shadow shapes behind the Other's launcher icon */
+html body #gmOthers,
+html body #gmOthers:not([open]) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+}
+html body #gmOthers:not([open]) > summary {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  padding: 0 !important;
+}
+html body #gmOthers:not([open]) > summary::before {
+  content: "✦" !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  flex: 0 0 36px !important;
+  box-sizing: border-box !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  background: linear-gradient(145deg,#fff1bb,#d8aa3d) !important;
+  color: #293849 !important;
+  box-shadow: none !important;
+}
+html body #gmOthers:not([open]) > summary::after {
+  display: none !important;
+  content: none !important;
+}
+</style>
+
+
+<style id="gm-deep-navy-header-final">
+/* Ensure the home header's navy color overrides older, more-specific purple rules */
+html body:not(.dark-mode) header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+  color: #fff !important;
+}
+html body.dark-mode header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+  color: #fff !important;
+}
+html body:not(.dark-mode) header h1,
+html body:not(.dark-mode) header > p,
+html body:not(.dark-mode) header .author-link,
+html body.dark-mode header h1,
+html body.dark-mode header > p,
+html body.dark-mode header .author-link {
+  color: #fff !important;
+}
+</style>
+
+
+<style id="gm-remove-purple-home-glow">
+/* Remove all purple ambient gradients from the home background. */
+html, body { background-color: #f4f7fc; }
+html body:not(.dark-mode) {
+  background-image: linear-gradient(180deg,#e8effb 0,#f4f7fc 310px,var(--bg) 650px) !important;
+  background-attachment: scroll !important;
+}
+html body.dark-mode {
+  background-color: #080f20 !important;
+  background-image: linear-gradient(180deg,#101c3a 0,#080f20 360px,var(--bg) 720px) !important;
+  background-attachment: scroll !important;
+}
+html body > header,
+html body header {
+  background: linear-gradient(135deg,#101c3a 0%,#172554 58%,#243b70 100%) !important;
+}
+</style>
+
+
+
+
+
 </body>
 </html>
