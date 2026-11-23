@@ -3,6 +3,14 @@ name: Build APK
 on:
   push:
     branches: [main, master]
+    paths:
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'capacitor.config.json'
+      - 'icon.png'
+      - 'google-services.json'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
@@ -25,12 +33,10 @@ jobs:
 
       - name: Prepare web folder
         run: |
-          if [ -f index.html ]; then
-            mkdir -p www
-            cp index.html www/index.html
-            sed -i "s/__APP_BUILD__/${{ github.run_number }}/g" www/index.html
-            echo "বিল্ড নম্বর: ${{ github.run_number }}"
-          fi
+          mkdir -p www
+          cp index.html www/index.html
+          sed -i "s/__APP_BUILD__/${{ github.run_number }}/g" www/index.html
+          echo "বিল্ড নম্বর: ${{ github.run_number }}"
 
       - name: Install dependencies
         run: npm install
@@ -44,7 +50,7 @@ jobs:
             cp google-services.json android/app/google-services.json
             echo "google-services.json যোগ হয়েছে"
           else
-            echo "google-services.json পাওয়া যায়নি, পুশ নোটিফিকেশন কাজ করবে না"
+            echo "Firebase config পাওয়া যায়নি"
           fi
 
       - name: Generate app icon
@@ -55,60 +61,92 @@ jobs:
             npx --yes @capacitor/assets generate --android
           fi
 
-      - name: Fullscreen mode
+      - name: Configure status bar
         run: |
           cat > android/app/src/main/java/com/sonarupa/hisab/MainActivity.java <<'JAVA'
           package com.sonarupa.hisab;
 
+          import android.graphics.Color;
+          import android.graphics.drawable.ColorDrawable;
           import android.os.Build;
           import android.os.Bundle;
-          import android.view.WindowManager;
           import androidx.core.view.WindowCompat;
           import androidx.core.view.WindowInsetsCompat;
           import androidx.core.view.WindowInsetsControllerCompat;
           import com.getcapacitor.BridgeActivity;
 
           public class MainActivity extends BridgeActivity {
+            private static final int NAVY = Color.rgb(16, 28, 58);
+
             @Override
             public void onCreate(Bundle savedInstanceState) {
               super.onCreate(savedInstanceState);
-              getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+              configureBars();
+
               if (Build.VERSION.SDK_INT >= 28) {
-                WindowManager.LayoutParams lp = getWindow().getAttributes();
-                lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+                android.view.WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.layoutInDisplayCutoutMode =
+                    android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
                 getWindow().setAttributes(lp);
               }
-              hideSystemBars();
             }
 
             @Override
             public void onResume() {
               super.onResume();
-              hideSystemBars();
+              configureBars();
             }
 
-            @Override
-            public void onWindowFocusChanged(boolean hasFocus) {
-              super.onWindowFocusChanged(hasFocus);
-              if (hasFocus) {
-                hideSystemBars();
+            private void configureBars() {
+              getWindow().clearFlags(
+                  android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+              getWindow().setStatusBarColor(NAVY);
+              getWindow().setBackgroundDrawable(new ColorDrawable(NAVY));
+
+              WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
+
+              if (Build.VERSION.SDK_INT >= 29) {
+                getWindow().setStatusBarContrastEnforced(false);
               }
-            }
 
-            private void hideSystemBars() {
-              getWindow().getDecorView().post(new Runnable() {
-                @Override
-                public void run() {
-                  WindowInsetsControllerCompat c = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-                  c.setSystemBarsBehavior(WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-                  c.hide(WindowInsetsCompat.Type.systemBars());
-                }
-              });
+              WindowInsetsControllerCompat controller =
+                  WindowCompat.getInsetsController(
+                      getWindow(), getWindow().getDecorView());
+
+              controller.setAppearanceLightStatusBars(false);
+              controller.hide(WindowInsetsCompat.Type.navigationBars());
             }
           }
           JAVA
-          sed -i 's#<item name="windowNoTitle">true</item>#<item name="windowNoTitle">true</item>\n        <item name="android:windowFullscreen">true</item>#' android/app/src/main/res/values/styles.xml
-          grep -n "windowFullscreen" android/app/src/main/res/values/styles.xml || echo "styles.xml এ windowFullscreen বসেনি"
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path("android/app/src/main/res/values/styles.xml")
+          s = p.read_text()
+
+          s = re.sub(
+              r'\s*<item name="android:windowFullscreen">true</item>',
+              '',
+              s
+          )
+
+          additions = {
+              "android:statusBarColor": "#101c3a",
+              "android:windowLightStatusBar": "false",
+              "android:windowFullscreen": "false",
+          }
+
+          for name, value in additions.items():
+              tag = f'<item name="{name}">{value}</item>'
+              if f'name="{name}"' not in s:
+                  s = s.replace("</style>", f"    {tag}\n    </style>", 1)
+
+          p.write_text(s)
+          print("Status bar theme configured")
+          PY
 
       - name: Sync web files
         run: npx cap sync android
@@ -126,20 +164,31 @@ jobs:
           APK=android/app/build/outputs/apk/debug/app-debug.apk
           OUT=sona-rupa-hisab.apk
           cp "$APK" "$OUT"
+
           if [ -n "$KEYSTORE_B64" ]; then
             echo "$KEYSTORE_B64" | base64 -d > goldmanager.p12
             BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+
             "$BT/zipalign" -f -p 4 "$APK" aligned.apk
-            if "$BT/apksigner" sign --ks goldmanager.p12 --ks-type PKCS12 --ks-pass pass:goldmanager --key-pass pass:goldmanager --ks-key-alias goldmanager --out "$OUT" aligned.apk; then
+
+            if "$BT/apksigner" sign \
+              --ks goldmanager.p12 \
+              --ks-type PKCS12 \
+              --ks-pass pass:goldmanager \
+              --key-pass pass:goldmanager \
+              --ks-key-alias goldmanager \
+              --out "$OUT" aligned.apk; then
               echo "স্থায়ী কী দিয়ে সাইন হয়েছে"
             else
-              echo "সাইন ব্যর্থ হয়েছে, ডিবাগ কী দিয়েই APK রাখা হলো"
+              echo "সাইন ব্যর্থ, ডিবাগ APK রাখা হলো"
               cp "$APK" "$OUT"
             fi
+
             rm -f goldmanager.p12
           else
-            echo "KEYSTORE_B64 সিক্রেট পাওয়া যায়নি, ডিবাগ কী দিয়ে APK রাখা হলো (আপডেট ওপরে ইনস্টল নাও হতে পারে)"
+            echo "ডিবাগ কী দিয়ে APK তৈরি হয়েছে"
           fi
+
           ls -l "$OUT"
 
       - name: Publish release
