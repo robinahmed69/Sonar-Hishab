@@ -2999,34 +2999,82 @@ loadAdminSettings();
 })();
 </script>
 <script>
-// অ্যাপ আপডেট: GitHub Releases-এ নতুন সংস্করণ থাকলে APK ডাউনলোড শুরু করে
+// অ্যাপ আপডেট: GitHub Releases API-তে fallback ও স্পষ্ট error handling
 (function(){
  const BUILD='__APP_BUILD__';
  const REPO='robinahmed69/Sonar-Hishab';
- const APK_URL='https://github.com/'+REPO+'/releases/latest/download/sona-rupa-hisab.apk';
+ const APK_NAME='sona-rupa-hisab.apk';
+ const APK_URL='https://github.com/'+REPO+'/releases/latest/download/'+APK_NAME;
  const btn=document.getElementById('appUpdateBtn'),msg=document.getElementById('appUpdateMsg');
  if(!btn||!msg)return;
- const cur=parseInt(BUILD,10);
- btn.addEventListener('click',async()=>{
-  if(!isFinite(cur)){msg.textContent='এই ফাইলে আপডেট চেক চালু নেই (শুধু GitHub-এর বিল্ড করা অ্যাপে কাজ করে)।';return}
-  btn.disabled=true;msg.textContent='নতুন সংস্করণ খোঁজা হচ্ছে…';
+ const cur=Number.parseInt(BUILD,10);
+ async function getJson(url){
+  const ctl=new AbortController();
+  const timer=setTimeout(()=>ctl.abort(),12000);
   try{
-   const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),15000);
-   const r=await fetch('https://api.github.com/repos/'+REPO+'/releases/latest',{headers:{'Accept':'application/vnd.github+json'},signal:ctl.signal,cache:'no-store'});
-   clearTimeout(t);
-   if(!r.ok)throw new Error('HTTP '+r.status);
-   const j=await r.json();
-   const latest=parseInt(String(j.tag_name||'').replace(/\D/g,''),10);
-   if(!isFinite(latest))throw new Error('সংস্করণ নম্বর পাওয়া যায়নি');
-   if(latest<=cur){msg.textContent='আপনি সর্বশেষ সংস্করণেই আছেন।';return}
-   msg.textContent='নতুন সংস্করণ পাওয়া গেছে।';
-   if(confirm('নতুন সংস্করণ পাওয়া গেছে। এখনই ডাউনলোড করবেন?\n\nআপডেটের আগে "JSON ব্যাকআপ নিন" চেপে ব্যাকআপ রাখা ভালো।\nডাউনলোড শেষে ডাউনলোড নোটিফিকেশনে ট্যাপ করে Install চাপুন।')){
+   const response=await fetch(url+(url.includes('?')?'&':'?')+'_='+Date.now(),{
+    method:'GET',
+    headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
+    cache:'no-store',
+    signal:ctl.signal
+   });
+   if(!response.ok){
+    const err=new Error('HTTP '+response.status);
+    err.status=response.status;
+    throw err;
+   }
+   return await response.json();
+  }finally{clearTimeout(timer)}
+ }
+ function explainError(e){
+  if(e&&e.name==='AbortError')return 'GitHub সার্ভার থেকে উত্তর পেতে দেরি হচ্ছে। কিছুক্ষণ পর আবার চেষ্টা করুন।';
+  if(e&&e.status===404)return 'GitHub-এ কোনো প্রকাশিত আপডেট Release পাওয়া যায়নি।';
+  if(e&&e.status===403)return 'GitHub API সাময়িকভাবে সীমা অতিক্রম করেছে। ১ মিনিট পর চেষ্টা করুন।';
+  if(e&&e.status===429)return 'GitHub-এ অনুরোধ বেশি হয়েছে। কিছুক্ষণ পর আবার চেষ্টা করুন।';
+  if(e&&e.status)return 'GitHub সার্ভার ত্রুটি (HTTP '+e.status+')। পরে আবার চেষ্টা করুন।';
+  if(e instanceof TypeError)return 'GitHub-এর সঙ্গে সংযোগ হচ্ছে না। ইন্টারনেট বা VPN পরীক্ষা করে আবার চেষ্টা করুন।';
+  return 'আপডেট তথ্য পড়া যায়নি। আবার চেষ্টা করুন।';
+ }
+ btn.addEventListener('click',async()=>{
+  if(!Number.isFinite(cur)){
+   msg.textContent='এই অ্যাপের বিল্ড নম্বর পাওয়া যায়নি। GitHub থেকে তৈরি APK ইনস্টল করুন।';
+   return;
+  }
+  btn.disabled=true;
+  msg.textContent='নতুন সংস্করণ খোঁজা হচ্ছে…';
+  try{
+   let release;
+   try{
+    release=await getJson('https://api.github.com/repos/'+REPO+'/releases/latest');
+   }catch(firstError){
+    // Latest endpoint ব্যর্থ হলে প্রকাশিত release তালিকা থেকে সর্বশেষটি নেওয়া হবে।
+    const list=await getJson('https://api.github.com/repos/'+REPO+'/releases?per_page=1');
+    if(!Array.isArray(list)||!list.length)throw firstError;
+    release=list.find(x=>!x.draft&&!x.prerelease)||list[0];
+   }
+   const tag=String(release.tag_name||'');
+   const latest=Number.parseInt(tag.replace(/[^0-9]/g,''),10);
+   if(!Number.isFinite(latest))throw new Error('INVALID_VERSION');
+   const assets=Array.isArray(release.assets)?release.assets:[];
+   const apk=assets.find(a=>String(a.name||'').toLowerCase()===APK_NAME);
+   if(!apk){
+    msg.textContent='নতুন Release পাওয়া গেছে, কিন্তু APK ফাইলটি পাওয়া যায়নি। GitHub Release-এর Assets পরীক্ষা করুন।';
+    return;
+   }
+   if(latest<=cur){
+    msg.textContent='আপনি সর্বশেষ সংস্করণেই আছেন (v'+latest+')।';
+    return;
+   }
+   msg.textContent='নতুন সংস্করণ পাওয়া গেছে: v'+latest+'।';
+   if(confirm('Gold Manager-এর নতুন সংস্করণ v'+latest+' পাওয়া গেছে। এখনই ডাউনলোড করবেন?\n\nআপডেটের আগে "JSON ব্যাকআপ নিন" চেপে ব্যাকআপ রাখা ভালো।\nডাউনলোড শেষে ফাইলে ট্যাপ করে Install চাপুন।')){
     msg.textContent='ডাউনলোড শুরু হচ্ছে… শেষ হলে ফাইলে ট্যাপ করে Install চাপুন।';
     window.location.href=APK_URL;
    }
   }catch(e){
-   msg.textContent='আপডেট চেক করা যায়নি। ইন্টারনেট পরীক্ষা করে আবার চেষ্টা করুন।';
-  }finally{btn.disabled=false}
+   msg.textContent=explainError(e);
+  }finally{
+   btn.disabled=false;
+  }
  });
 })();
 </script>
