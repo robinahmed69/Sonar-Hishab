@@ -1110,6 +1110,7 @@ body.dark-mode #gmStockSheet .tag.s, body.dark-mode #gmStockSheet .err, body.dar
 <div><label>পয়েন্ট</label><input id="gmStock-q3" type="number" inputmode="decimal" min="0" step="any" placeholder="0"></div></div>
 <label>প্রতি ভরির দাম (৳)</label><input id="gmStock-price" type="number" inputmode="decimal" step="any" placeholder="যেমন: 150000">
 <label>তারিখ</label><input id="gmStock-date" type="date"><div class="err" id="gmStock-err"></div><button type="button" class="save" id="gmStock-save">সংরক্ষণ করুন</button></div>
+<div class="card gm-stock-backup"><h2>স্টক ব্যাকআপ</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><button type="button" id="gmStock-export" class="save" style="margin-top:0;background:#16834a!important;padding:6px 8px!important;font-size:11px!important;min-height:32px!important;line-height:1.2!important;border-radius:7px!important">ব্যাকআপ ডাউনলোড</button><button type="button" id="gmStock-import-btn" class="save" style="margin-top:0;background:#64748b!important;padding:6px 8px!important;font-size:11px!important;min-height:32px!important;line-height:1.2!important;border-radius:7px!important">ব্যাকআপ ফিরিয়ে আনুন</button></div><input type="file" id="gmStock-import-file" accept=".json,application/json" style="display:none"><div class="err" id="gmStock-backup-msg" aria-live="polite"></div><small style="display:block;color:var(--muted)">অন্য ফোনে বা অ্যাপ আপডেটের পর হিসাব ফেরত পেতে আগে ব্যাকআপ ডাউনলোড করে রাখুন।</small></div>
 <div class="card"><h2>লেনদেনের তালিকা</h2><div class="err" id="gmStock-lerr"></div><div id="gmStock-list"></div></div>
 </div></div></details>
 <script id="gm-stock-feature-js">
@@ -1129,7 +1130,7 @@ function fq(q) {
   for (const [n, v] of U) { const c = Math.floor(p / v); p -= c * v; if (c) o.push(nf(c) + ' ' + n); }
   return o.join(' ');
 }
-function save() { try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {} }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(data)); return true; } catch (e) { console.error('Stock save failed:',e); $('gmStock-err').textContent='ডিভাইসে হিসাব সংরক্ষণ করা যায়নি। জায়গা খালি করে আবার চেষ্টা করুন এবং ব্যাকআপ রাখুন।'; return false; } }
 
 function calc(list) {
   const s = [...list].sort((a, b) => a.date.localeCompare(b.date) || a.id - b.id);
@@ -1176,14 +1177,14 @@ root.querySelectorAll('.seg button').forEach(b => b.onclick = () => {
 $('gmStock-date').value = new Date().toISOString().slice(0, 10);
 
 $('gmStock-save').onclick = () => {
-  const pts = [0, 1, 2, 3].reduce((s, i) => s + (parseFloat($('q' + i).value) || 0) * U[i][1], 0);
+  const pts = [0, 1, 2, 3].reduce((s, i) => s + (parseFloat($('gmStock-q' + i).value) || 0) * U[i][1], 0);
   const qty = pts / 960, price = parseFloat($('gmStock-price').value), date = $('gmStock-date').value;
   if (!(qty > 0) || !(price > 0) || !date) { $('gmStock-err').textContent = 'পরিমাণ, দাম ও তারিখ ঠিকভাবে দিন।'; return; }
   const item = { id: Date.now(), type, qty, price, date };
   const test = calc([...data[cur], item]);
   if (!test.ok) { $('gmStock-err').textContent = 'স্টকে যা আছে তার চেয়ে বেশি বেচা যাবে না।'; return; }
-  data[cur].push(item); save();
-  [0, 1, 2, 3].forEach(i => $('q' + i).value = ''); $('gmStock-price').value = ''; $('gmStock-err').textContent = '';
+  data[cur].push(item); if (!save()) { data[cur].pop(); return; }
+  [0, 1, 2, 3].forEach(i => $('gmStock-q' + i).value = ''); $('gmStock-price').value = ''; $('gmStock-err').textContent = 'লেনদেন সফলভাবে সংরক্ষণ হয়েছে।';
   render();
 };
 
@@ -1193,7 +1194,40 @@ $('gmStock-list').onclick = e => {
   if (!calc(next).ok) { $('gmStock-lerr').textContent = 'এটি মুছলে স্টক নেগেটিভ হয়ে যাবে, আগে পরের বেচা মুছুন।'; pend = null; render(); return; }
   $('gmStock-lerr').textContent = '';
   if (pend !== id) { pend = id; render(); return; }
-  pend = null; data[cur] = next; save(); render();
+  pend = null; const previous = data[cur]; data[cur] = next; if (!save()) { data[cur] = previous; return; } render();
+};
+
+// JSON backup: includes both gold and silver transaction histories.
+$('gmStock-export').onclick = () => {
+  try {
+    const payload = { app: 'Gold Manager Stock Backup', version: 1, exportedAt: new Date().toISOString(), data };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url; a.download = 'Gold-Manager-Stock-Backup-' + new Date().toISOString().slice(0,10) + '.json';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1500);
+    $('gmStock-backup-msg').textContent = 'ব্যাকআপ ফাইল তৈরি হয়েছে। ডাউনলোড সম্পন্ন হলে ফাইলটি নিরাপদে রাখুন।';
+  } catch (e) { console.error(e); $('gmStock-backup-msg').textContent = 'ব্যাকআপ তৈরি করা যায়নি।'; }
+};
+$('gmStock-import-btn').onclick = () => $('gmStock-import-file').click();
+$('gmStock-import-file').onchange = e => {
+  const file = e.target.files && e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(String(reader.result || ''));
+      const incoming = parsed && parsed.data ? parsed.data : parsed;
+      const validList = arr => Array.isArray(arr) && arr.every(t => t && (t.type === 'buy' || t.type === 'sell') && Number.isFinite(Number(t.qty)) && Number(t.qty) > 0 && Number.isFinite(Number(t.price)) && Number(t.price) > 0 && /^\d{4}-\d{2}-\d{2}$/.test(String(t.date)) && (typeof t.id === 'string' || Number.isFinite(Number(t.id))));
+      if (!incoming || !validList(incoming.gold) || !validList(incoming.silver)) throw new Error('Invalid backup');
+      if (!confirm('বর্তমান স্টকের হিসাব ব্যাকআপের হিসাব দিয়ে প্রতিস্থাপন হবে। আগে বর্তমান হিসাবের ব্যাকআপ রেখেছেন তো? চালিয়ে যাবেন?')) return;
+      const restored = { gold: incoming.gold.map(t => ({...t, qty:Number(t.qty), price:Number(t.price)})), silver: incoming.silver.map(t => ({...t, qty:Number(t.qty), price:Number(t.price)})) };
+      const old = data; data = restored;
+      if (!save()) { data = old; render(); throw new Error('Save failed'); }
+      pend = null; $('gmStock-lerr').textContent = ''; $('gmStock-backup-msg').textContent = 'ব্যাকআপ সফলভাবে ফিরিয়ে আনা হয়েছে।'; render();
+    } catch (err) { console.error('Stock restore failed:', err); $('gmStock-backup-msg').textContent = 'ব্যাকআপ ফাইলটি সঠিক নয় বা ফিরিয়ে আনা যায়নি।'; }
+    finally { e.target.value = ''; }
+  };
+  reader.onerror = () => { $('gmStock-backup-msg').textContent = 'ফাইলটি পড়া যায়নি।'; e.target.value = ''; };
+  reader.readAsText(file);
 };
 render();
 
