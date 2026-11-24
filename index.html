@@ -1054,7 +1054,42 @@ body.dark-mode .metals-market-notice{background:#1f1013!important;border-color:#
 
 #gmStockSheet .gm-sheet-close{margin:0 auto 12px 0;padding:8px 16px;border-radius:10px}
 #gmStockSheet .wrap{max-width:560px;margin:0 auto;padding:8px 0}
-#gmStockSheet input{color:var(--text);background:var(--bg)}
+#gmStockSheet{color:#243247!important}
+#gmStockSheet .seg button{color:#243247!important;background:#ffffff!important;border:1px solid #cbd5e1!important;font-weight:700!important;min-height:44px}
+#gmStockSheet .seg button.buy.on{background:#16834a!important;color:#ffffff!important;border-color:#16834a!important}
+#gmStockSheet .seg button.sell.on{background:#c93636!important;color:#ffffff!important;border-color:#c93636!important}
+#gmStockSheet button.save{display:block!important;visibility:visible!important;opacity:1!important;background:#2457a7!important;color:#ffffff!important;border:0!important;font-weight:750!important;min-height:48px;text-shadow:none!important}
+#gmStockSheet input{color:#243247;background:#ffffff}
+body.dark-mode #gmStockSheet{color:#edf2fa!important}
+body.dark-mode #gmStockSheet .seg button{background:#1c2a3b!important;color:#edf2fa!important;border-color:#46566d!important}
+body.dark-mode #gmStockSheet .seg button.buy.on{background:#16834a!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet .seg button.sell.on{background:#c93636!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet button.save{background:#356fc4!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet input{color:#edf2fa;background:#182536}
+/* Stock feature: force every label and text element to remain readable over app-wide styles */
+#gmStockSheet, #gmStockSheet *{color:#243247!important;text-shadow:none!important}
+#gmStockSheet .tab{color:#243247!important;background:#ffffff!important}
+#gmStockSheet .tab.on{color:#ffffff!important;background:#2457a7!important;border-color:#2457a7!important}
+#gmStockSheet .seg button{color:#243247!important}
+#gmStockSheet .seg button.buy.on{color:#ffffff!important}
+#gmStockSheet .seg button.sell.on{color:#ffffff!important}
+#gmStockSheet button.save{color:#ffffff!important}
+#gmStockSheet .tag.b{color:#16834a!important}
+#gmStockSheet .tag.s, #gmStockSheet .err, #gmStockSheet .del.ask{color:#c93636!important}
+#gmStockSheet input, #gmStockSheet input::placeholder{color:#243247!important}
+#gmStockSheet .box small, #gmStockSheet label, #gmStockSheet .row .l span, #gmStockSheet .empty, #gmStockSheet .del{color:#526174!important}
+body.dark-mode #gmStockSheet, body.dark-mode #gmStockSheet *{color:#edf2fa!important}
+body.dark-mode #gmStockSheet .tab{background:#1c2a3b!important;color:#edf2fa!important;border-color:#46566d!important}
+body.dark-mode #gmStockSheet .tab.on{background:#356fc4!important;color:#ffffff!important;border-color:#356fc4!important}
+body.dark-mode #gmStockSheet .seg button{background:#1c2a3b!important;color:#edf2fa!important;border-color:#46566d!important}
+body.dark-mode #gmStockSheet .seg button.buy.on{background:#16834a!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet .seg button.sell.on{background:#c93636!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet button.save{background:#356fc4!important;color:#ffffff!important}
+body.dark-mode #gmStockSheet input, body.dark-mode #gmStockSheet input::placeholder{color:#edf2fa!important;background:#182536!important}
+body.dark-mode #gmStockSheet .box small, body.dark-mode #gmStockSheet label, body.dark-mode #gmStockSheet .row .l span, body.dark-mode #gmStockSheet .empty, body.dark-mode #gmStockSheet .del{color:#b8c5d6!important}
+body.dark-mode #gmStockSheet .tag.b{color:#55d68b!important}
+body.dark-mode #gmStockSheet .tag.s, body.dark-mode #gmStockSheet .err, body.dark-mode #gmStockSheet .del.ask{color:#ff7777!important}
+
 </style>
 <details class="card gm-sheet-card" id="gmStockSheet">
 <summary>সোনা-রূপার স্টক</summary><div class="folder-content">
@@ -2136,6 +2171,101 @@ html body header {
 
 
 
+
+<!-- Gold Manager stock text visibility safeguard -->
+<style id="gm-stock-text-visibility-final">
+/* Keep the complete stock feature readable regardless of the app-wide theme. */
+#gmStockSheet,
+#gmStockSheet .folder-content,
+#gmStockSheet .wrap,
+#gmStockSheet .card,
+#gmStockSheet .box {
+  background-color: #ffffff !important;
+  color: #243247 !important;
+}
+#gmStockSheet, #gmStockSheet * {
+  color: #243247 !important;
+  -webkit-text-fill-color: #243247 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+#gmStockSheet summary,
+#gmStockSheet h1,
+#gmStockSheet h2,
+#gmStockSheet label,
+#gmStockSheet small,
+#gmStockSheet b,
+#gmStockSheet strong,
+#gmStockSheet span,
+#gmStockSheet .row,
+#gmStockSheet .empty {
+  color: #243247 !important;
+  -webkit-text-fill-color: #243247 !important;
+}
+#gmStockSheet .box small,
+#gmStockSheet label,
+#gmStockSheet .row .l span,
+#gmStockSheet .empty,
+#gmStockSheet .del {
+  color: #526174 !important;
+  -webkit-text-fill-color: #526174 !important;
+}
+#gmStockSheet .tabs .tab {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #243247 !important;
+  -webkit-text-fill-color: #243247 !important;
+  font-weight: 750 !important;
+  min-height: 44px !important;
+}
+#gmStockSheet .tabs .tab.on {
+  background: #2457a7 !important;
+  border-color: #2457a7 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#gmStockSheet .seg button {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #243247 !important;
+  -webkit-text-fill-color: #243247 !important;
+  font-weight: 750 !important;
+  min-height: 44px !important;
+}
+#gmStockSheet .seg button.buy.on {
+  background: #16834a !important;
+  border-color: #16834a !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#gmStockSheet .seg button.sell.on {
+  background: #c93636 !important;
+  border-color: #c93636 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#gmStockSheet button.save {
+  display: block !important;
+  visibility: visible !important;
+  background: #2457a7 !important;
+  border: 0 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 800 !important;
+  min-height: 48px !important;
+}
+#gmStockSheet input,
+#gmStockSheet input::placeholder {
+  background: #ffffff !important;
+  color: #243247 !important;
+  -webkit-text-fill-color: #243247 !important;
+  opacity: 1 !important;
+}
+#gmStockSheet .tag.b { color: #16834a !important; -webkit-text-fill-color: #16834a !important; }
+#gmStockSheet .tag.s,
+#gmStockSheet .err,
+#gmStockSheet .del.ask { color: #c93636 !important; -webkit-text-fill-color: #c93636 !important; }
+</style>
 </body></html>`;
   gmShowReceipt(docHtml,receiptNo);
  });
